@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/galetahub/rails-ckeditor.git
+  revision: 68ca94d70e15838ebb5efb56cf88193281cac2b2
+  branch: rails3
+  specs:
+    ckeditor (3.4.3.pre)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/odorcicd/authlogic.git
   revision: a087ad0cba3c165ba22fcf176c28b6f7517931e8
   branch: rails3
@@ -154,7 +162,6 @@ GEM
     ruby-openid (2.1.8)
     spruz (0.2.2)
     thor (0.14.4)
-    tiny_mce (0.1.4)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
@@ -171,6 +178,7 @@ DEPENDENCIES
   authlogic-oauth
   bhm-google-maps
   capistrano
+  ckeditor!
   declarative_authorization!
   dynamic_form
   friendly_id (~> 3.1)
@@ -191,6 +199,5 @@ DEPENDENCIES
   responds_to_parent
   rmagick
   ruby-openid
-  tiny_mce
   web-app-theme
   will_paginate
