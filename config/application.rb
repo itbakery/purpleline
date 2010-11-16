@@ -32,7 +32,7 @@ module Purpleline
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui application rails ckeditor)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui application slide s3Slider rails ckeditor)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
