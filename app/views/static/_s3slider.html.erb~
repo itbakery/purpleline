@@ -1,0 +1,13 @@
+<div id="s3slider">
+   <ul id="s3sliderContent">
+      <li class="s3sliderImage">
+          <img src="#" />
+          <span>Your text comes here</span>
+      </li>
+      <li class="s3sliderImage">
+          <img src="#" />
+          <span>Your text comes here</span>
+      </li>
+      <div class="clear s3sliderImage"></div>
+   </ul>
+</div> 

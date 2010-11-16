@@ -1,0 +1,672 @@
+
+body{
+  background: url('../images/bg-page.jpg') repeat-x scroll center top #fff;
+  font:13px/16px "Lucida Grande",Arial,Sans-serif;
+  /* font-family: Georgia,Verdana, "Lucida Sans Unicode",sans-serif;*/
+  font-size:12px;
+}
+/*--blueprint------------------------------------------------*/
+.maincontainer{
+  -moz-box-shadow: 0 0 10px #c4c4c4;
+  -moz-border-radius: 4px 4px 4px 4px;
+  
+  background-color: #E5EaF3;
+  border: 0px solid #F4f4f4;
+  margin: 5px auto;
+
+}
+.contentbox_1 {
+  -moz-box-shadow: 1px 1px 1px #e8c1e3;
+  background-color: #f9f9f9;
+  border:1px solid white;
+  margin:5px 5px 5px 5px;
+  padding:0px 0px;
+}
+
+.contentbox_2 {
+  background-color: transparent;
+  margin:5px 0px 5px 5px;
+  padding:10px 0px;
+}
+
+.contentbox_3 {
+  -moz-box-shadow: 1px 1px 1px #e8c1e3;
+  background-color: #f9f9f9;
+  border:1px solid white;
+  margin:5px 5px 5px 0px;
+  padding:10px 0px;
+}
+
+.contentbox_4 {
+  -moz-box-shadow: 1px 1px 1px #e8c1e3;
+  background-color: #f9f9f9;
+  border:1px solid white;
+  margin:5px 0px 5px 0px;
+  padding:10px 0px;
+}
+#header{
+  -moz-box-shadow: 0 0 10px #c4c4c4;
+  -moz-border-radius: 4px 4px 0px 0px;
+  background: #a579b0;
+  width: 100%;
+  height: 120px;
+
+}
+#login{
+  padding:5px 5px;
+  height: 20px;
+}
+#logo{
+	padding:5px 5px;
+	width:300px;
+  height: 65px;
+  background: url('../images/logo.jpg') no-repeat 5px 5px;
+  text-indent: -9999px
+}
+#footer {
+  -moz-box-shadow: 0px -3px 5px rgba(0,0,0,0.5);
+  background: url('../images/footer-bg.jpg') repeat-x;
+  border-top: 3px solid #a57980;
+  height:30px;
+}
+.footertext {
+  color: #fff;
+  text-align:center;
+  size: 10px;
+}
+.page_header {
+  -moz-box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+/*--FontFace-------------------------------------------------*/
+@font-face {
+	font-family: Negotiate;
+	src: url('./negotiate_free.ttf');
+}
+#main-navigation  .title{
+  margin-top: 7px;	
+  padding:10px;
+  font-family: Negotiate;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+  position:relative;
+  float: left;
+  padding: 5px 100px 0px 0px;
+  display: block;
+  border-right: 0px solid #777;
+  vertical-align:middle;
+}
+#main-navigation  .cycle{
+	background: transparent url('../images/cycle.png') no-repeat 0 50%;
+	width: 40px ;
+	height: 40px;
+	display: block;
+	border-right: 0px solid #777;
+	padding: 0px 10px 0px 0px;
+}
+
+#main-navigation  .first {
+}
+/*--s3slider--------------------------------------------------*/
+#s3slider {
+   width: 630px; /* important to be same as image width */
+   height: 280px; /* important to be same as image height */
+   position: relative; /* important */
+   overflow: hidden; /* important */
+
+}
+
+#s3sliderContent {
+   width: 630px; /* important to be same as image width or wider */
+   position: absolute; /* important */
+   top: 0; /* important */
+   margin-left: 0; /* important */
+}
+
+.s3sliderImage {
+   float: left; /* important */
+   position: relative; /* important */
+   display: none; /* important */
+}
+
+.s3sliderImage span {
+   position: absolute; /* important */
+   left: 0;
+   font: 10px/15px Arial, Helvetica, sans-serif;
+   padding: 10px 13px;
+   width: 630px;
+   background-color: #000;
+   filter: alpha(opacity=70); /* here you can set the opacity of box with text */
+   -moz-opacity: 0.7; /* here you can set the opacity of box with text */
+   -khtml-opacity: 0.7; /* here you can set the opacity of box with text */
+   opacity: 0.7; /* here you can set the opacity of box with text */
+   color: #fff;
+   display: none; /* important */
+   top: 0;
+
+   /*
+       if you put
+       top: 0; -> the box with text will be shown at the top of the image
+       if you put
+       bottom: 0; -> the box with text will be shown at the bottom of the image
+   */
+}
+
+.clear {
+   clear: both;
+} 
+/*--Blueprint css---------------------------------------------*/
+#project_detail{}
+#announcement{}
+#project{}
+#progress{}
+#new_event{}
+#org{}
+#callcenter{}
+#footer{}
+/*--main-navigation------------------------------------------*/
+#navigation{
+	 width: 102%;
+   position:relative;
+   -moz-border-radius: 4px;
+   -khtml-border-radius: 4px;
+   -webkit-border-radius: 4px;
+     border-radius: 4px;
+   background: -webkit-gradient(linear, left top, left bottom, from(#9d3598), to(#880882));
+   background: -moz-linear-gradient(top,  #9d3598,  #880882);
+   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#880882', endColorstr='#1b193a');
+   border: 1px solid #e8c1e3;
+   left: -12px;
+}
+#main-navigation {
+   list-style: none;
+   padding: 0 0 0 5px;
+   margin: 0;
+   position:relative;
+   float:left;
+   display:block;
+   }
+ 
+#main-navigation li {
+   float: left;
+   border-right: 1px solid #777;
+   }
+ 
+#main-navigation li a {
+   font: 14px Georgia, Verdana, "Lucida Sans Unicode",sans-serif;
+   font-weight: bold;
+   letter-spacing: 1px;
+   padding: 10px 10px;
+   border-right: 1px solid #333;
+   display: block;
+   color: #fff;
+   text-decoration: none;
+   }
+#main-navigation li a:hover {
+	  background: transparent; 
+		background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );  
+		background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);  
+   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#444444');
+   text-decoration: none;
+}
+
+/*---login Facebook style------------------------------*/
+#loginWrapper { /* WRAPS THE BUTTON AND LOGIN FORM FOR ALIGNMENT PURPOSES */
+  float: right;
+  width: 190px;
+  height: auto;
+  margin-top:-25px;
+}
+
+#loginButton {
+  float: right;
+  width: 80px;
+  height: 30px;
+}
+
+#loginButton a {
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 22px 0 0;
+  background: #88bbd4 url(../images/loginSprite.png) 0px 0px no-repeat;
+  cursor: pointer;
+  border: 1px solid #88bbd4;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  outline: none;  
+}
+
+#loginButton a:hover {
+  color: #fff;
+  background: #5599bb url(../images/loginSprite.png) 0px -30px no-repeat;
+}
+
+#loginButton a.active {
+  color: #477;
+  border: 1px solid #ddeef6;
+  background: #ddeef6 url(../images/loginSprite.png) 0px -60px no-repeat;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+}
+
+/* THIS IS THE HIDDEN FORM */
+
+#loginForm {
+  position: fixed;
+  width: 200px;
+  font-size: 0.8em;
+  color: #477;
+  margin: 32px 0 0 0;
+  padding: 15px;
+  background: #ddeef6;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  display: none;
+   z-index: 10;
+
+}
+
+#loginForm ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#loginForm ul li {
+  margin: 0;
+  padding: 0;
+}
+
+#loginForm ul li a {
+  display: block;
+  color: #27b;
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+#loginForm ul li a:hover {
+  color: #27b;
+  text-decoration: underline;
+}
+
+#loginForm form,fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#loginForm label {
+  display: block;
+  margin: 0 0 5px 0;
+  
+}
+
+.textfield {
+  display: block;
+  width: 186px;
+  font: 1.2em arial;
+  color: #000;
+  margin: 0 0 10px 0;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #0bacea;
+}
+
+.loginButton {
+  font: bold 1.1em tahoma;
+  color: #fff;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  background: #33bef6 url(../images/loginButtonBackgr.png) repeat-x;
+  border: 1px solid #0bacea;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;  
+  text-shadow: 1px 1px 1px #044660;
+}
+
+.checkBox {
+  vertical-align: middle;
+}
+
+/*--loginzone ----------------------------------------------*/
+
+
+/* Panel Tab/button */
+.tab {
+  	background: url(../images/tab_b.png) repeat-x 0 0;
+	height: 42px;
+	position: relative;
+    top: 0;
+    z-index: 999;
+}
+
+.tab ul.login {
+	display: block;
+	position: relative;
+  	float: right;
+  	clear: right;
+  	height: 42px;
+	width: auto;
+  	font-weight: bold;
+	line-height: 42px;
+	margin: 0;
+	right: 150px;
+  	color: white;
+  	font-size: 80%;
+	text-align: center;
+}
+
+.tab ul.login li.left {
+  	background: url(../images/tab_l.png) no-repeat left 0;
+  	height: 42px;
+	width: 30px;
+	padding: 0;
+	margin: 0;
+  	display: block;
+	float: left;
+}
+
+.tab ul.login li.right {
+  	background: url(../images/tab_r.png) no-repeat left 0;
+  	height: 42px;
+	width: 30px;
+	padding: 0;
+	margin: 0;
+  	display: block;
+	float: left;
+}
+
+.tab ul.login li {
+ 	text-align: left;
+  	padding: 0 6px;
+	display: block;
+	float: left;
+	height: 42px;
+  	background: url(../images/tab_m.png) repeat-x 0 0;
+}
+
+.tab ul.login li a {
+	color: #15ADFF;
+}
+
+.tab ul.login li a:hover {
+	color: white;
+}
+
+.tab .sep {color:#414141}
+
+.tab a.open, .tab a.close {
+	height: 20px;
+	line-height: 20px !important;
+	padding-left: 30px !important;
+	cursor: pointer;
+	display: block;
+	width: 100px;
+	position: relative;
+	top: 11px;
+}
+
+.tab a.open {background: url(../images/bt_open.png) no-repeat left 0;}
+.tab a.close {background: url(../images/bt_close.png) no-repeat left 0;}
+.tab a:hover.open {background: url(../images/bt_open.png) no-repeat left -19px;}
+.tab a:hover.close {background: url(../images/bt_close.png) no-repeat left -19px;}
+
+/* sliding panel */
+#toppanel {
+    position: absolute;   /*Panel will overlap  content */
+    /*position: relative;*/   /*Panel will "push" the content down */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#panel {
+	width: 100%;
+	height: 270px;
+	color: #999999;
+	background: #272727;
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
+	display: none;
+}
+
+#panel h1 {
+	font-size: 1.6em;
+	padding: 5px 0 10px;
+	margin: 0;
+	color: white;
+}
+
+#panel h2{
+	font-size: 1.2em;
+	padding: 10px 0 5px;
+	margin: 0;
+	color: white;
+}
+
+#panel p {
+	margin: 5px 0;
+	padding: 0;
+}
+
+#panel a {
+	text-decoration: none;
+	color: #15ADFF;
+}
+
+#panel a:hover {
+	color: white;
+}
+
+#panel a-lost-pwd {
+	display: block;
+	float: left;
+}
+
+#panel .content {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 15px;
+	text-align: left;
+	font-size: 0.85em;
+}
+
+#panel .content .left {
+	width: 280px;
+	float: left;
+	padding: 0 15px;
+	border-left: 1px solid #333;
+}
+
+#panel .content .right {
+	border-right: 1px solid #333;
+}
+
+#panel .content form {
+	margin: 0 0 10px 0;
+}
+
+#panel .content label {
+	float: left;
+	padding-top: 8px;
+	clear: both;
+	width: 280px;
+	display: block;
+}
+
+#panel .content input.field {
+	border: 1px #1A1A1A solid;
+	background: #414141;
+	margin-right: 5px;
+	margin-top: 4px;
+	width: 200px;
+	color: white;
+	height: 16px;
+}
+
+#panel .content input:focus.field {
+	background: #545454;
+}
+
+/* BUTTONS */
+/* Login and Register buttons */
+#panel .content input.bt_login,
+#panel .content input.bt_register {
+	display: block;
+	float: left;
+	clear: left;
+	height: 24px;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+#panel .content input.bt_login {
+	width: 74px;
+	background: transparent url(../images/bt_login.png) no-repeat 0 0;
+}
+
+#panel .content input.bt_register {
+	width: 94px;
+	color: white;
+	background: transparent url(../images/bt_register.png) no-repeat 0 0;
+}
+
+#panel .lost-pwd {
+	display: block;
+	float:left;
+	clear: right;
+	padding: 15px 5px 0;
+	font-size: 0.95em;
+	text-decoration: underline;
+}
+
+/*---org------------------------------*/
+.greenfield {
+	background: transparent url(../images/bottom0.jpg) no-repeat 0 0;
+	-moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
+	height: 139px;
+	overflow:hidden;
+	margin-top: 5px;
+}
+
+#org {
+overflow:hidden;
+background-color: transparent;
+
+}
+#org #orgcontent {
+float:left;
+}
+#org #orgcontent ul{
+float:left;
+}
+#org #orgcontent li {
+display:block;
+float:left;
+height:auto !important;
+position:relative;
+}
+
+#org li.orgcontentlist {
+  min-height:50px;
+  padding: 5px 5px 5px  75px;
+  position:relative;
+  width:170px;
+  fload:left;
+}
+
+#org li.orgcontentlist .orgimage {
+   position: absolute;
+   top:5px;
+   left:0px;
+   
+}
+
+#org li.suborg{
+   padding:7px 0px 5px 0px;	
+}
+
+
+/*---communicate-----------------------------*/
+
+
+#com {
+overflow:hidden;
+background-color: transparent;
+
+}
+
+#com #comcontent {
+float:left;
+}
+#com #comcontent ul{
+float:left;
+}
+#com #comcontent li {
+display:block;
+float:left;
+height:auto !important;
+position:relative;
+}
+
+#com li.suborg{
+   padding:7px 5px 5px 5px;	
+}
+
+/*--- select location-----------------------------*/
+#banner {
+  overflow: hidden;
+}
+#feature {
+  position: relative;
+  float: left;
+  
+}
+#selectlocation {
+  float: right;
+  background: url("../images/selectlocation.png") no-repeat scroll 0 0 transparent;
+  position: relative;
+  width: 320px;
+  height: 280px;
+}
+
+#destination_dropdown {
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  background: none repeat scroll 0 0 rgba(0,0,0,0.3);
+  bottom: 20px;
+  left:20px;
+  padding: 10px 10px 10px 15px;
+  position: absolute;
+  width: 250px;
+}
+
+#destination_dropdown  .go {
+  vertical-align:middle;
+}
+

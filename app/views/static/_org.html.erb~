@@ -1,0 +1,9 @@
+<!-- s3slider width=940px, height=270px -->
+<div id="org">
+   <ul id="orgcontent">
+      <li class="orgcontenlist">
+          <img src="images/mrta-org.gif" />
+          <span>Station 1</span>
+      </li>
+   </ul>
+</div>   
