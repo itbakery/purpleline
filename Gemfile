@@ -11,7 +11,7 @@ gem 'mysql2'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'
@@ -28,3 +28,31 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'mysql'
+gem 'rmagick'
+gem 'paperclip'
+gem 'rack'
+gem 'tiny_mce'
+gem 'will_paginate'
+gem 'meta_where'
+gem 'responds_to_parent'
+gem 'jquery-rails'
+gem 'ruby-openid'
+gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
+gem 'authlogic',:git => 'git://github.com/odorcicd/authlogic.git',:branch => 'rails3'
+gem 'oauth'
+gem 'oauth2'
+gem "authlogic-connect"
+gem 'authlogic-oauth'
+gem 'rails3-generators'
+gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
+gem 'dynamic_form'
+gem 'web-app-theme'
+gem 'acts_as_tree'
+gem 'friendly_id', "~> 3.1"
+gem 'passenger'
+gem  'geokit-rails3'         
+gem  'bhm-google-maps'
+gem  'geokit-rails'
+gem  'bhm-google-maps'
