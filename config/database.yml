@@ -11,8 +11,8 @@ development:
   reconnect: false
   database: purpleline_development
   pool: 5
-  username: root
-  password:
+  username: 
+  password: 
   socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -24,7 +24,7 @@ test:
   reconnect: false
   database: purpleline_test
   pool: 5
-  username: root
+  username: 
   password:
   socket: /var/lib/mysql/mysql.sock
 
@@ -34,6 +34,6 @@ production:
   reconnect: false
   database: purpleline_production
   pool: 5
-  username: root
+  username: 
   password:
-  socket: /var/lib/mysql/mysql.sock
+  socket: /tmp/mysql.sock
