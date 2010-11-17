@@ -1,4 +1,9 @@
 Purpleline::Application.routes.draw do
+namespace :admin do
+  resources :pages_translations
+  resources :pages
+  resources :languages
+end
   root :to => "home#index"
   get "home/index"
  

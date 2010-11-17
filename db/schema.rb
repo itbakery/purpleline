@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101117003957) do
+ActiveRecord::Schema.define(:version => 20101117131613) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                                 :null => false
@@ -29,5 +29,31 @@ ActiveRecord::Schema.define(:version => 20101117003957) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
+
+  create_table "languages", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.string   "cached_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages_translations", :force => true do |t|
+    t.integer  "page_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "publish"
+    t.date     "start_on"
+    t.date     "stop_on"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
