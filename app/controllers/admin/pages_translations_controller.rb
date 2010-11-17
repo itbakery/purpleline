@@ -45,7 +45,7 @@ class Admin::PagesTranslationsController < ApplicationController
 
     respond_to do |format|
       if @pages_translation.save
-        format.html { redirect_to(@pages_translation, :notice => 'Pages translation was successfully created.') }
+        format.html { redirect_to([:admin,@pages_translation], :notice => 'Pages translation was successfully created.') }
         format.xml  { render :xml => @pages_translation, :status => :created, :location => @pages_translation }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class Admin::PagesTranslationsController < ApplicationController
 
     respond_to do |format|
       if @pages_translation.update_attributes(params[:pages_translation])
-        format.html { redirect_to(@pages_translation, :notice => 'Pages translation was successfully updated.') }
+        format.html { redirect_to([:admin,@pages_translation], :notice => 'Pages translation was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -77,7 +77,7 @@ class Admin::PagesTranslationsController < ApplicationController
     @pages_translation.destroy
 
     respond_to do |format|
-      format.html { redirect_to(pages_translations_url) }
+      format.html { redirect_to(admin_pages_translations_url) }
       format.xml  { head :ok }
     end
   end

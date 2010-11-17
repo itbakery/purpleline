@@ -45,7 +45,7 @@ class Admin::LanguagesController < ApplicationController
 
     respond_to do |format|
       if @language.save
-        format.html { redirect_to(@language, :notice => 'Language was successfully created.') }
+        format.html { redirect_to([:admin,@language], :notice => 'Language was successfully created.') }
         format.xml  { render :xml => @language, :status => :created, :location => @language }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class Admin::LanguagesController < ApplicationController
 
     respond_to do |format|
       if @language.update_attributes(params[:language])
-        format.html { redirect_to(@language, :notice => 'Language was successfully updated.') }
+        format.html { redirect_to([:admin,@language], :notice => 'Language was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -77,7 +77,7 @@ class Admin::LanguagesController < ApplicationController
     @language.destroy
 
     respond_to do |format|
-      format.html { redirect_to(languages_url) }
+      format.html { redirect_to(admin_languages_url) }
       format.xml  { head :ok }
     end
   end
