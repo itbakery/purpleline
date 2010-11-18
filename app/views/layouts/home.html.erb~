@@ -20,7 +20,7 @@
     <div class="span-11" id="logo"> <p>logo</p> </div>
 			
 
-    <div class="clear span-24 last" id="">
+    <div class="clear span-24 last" id="navigation">
      	 <%= render :partial => '/static/menu'%>
  
     </div>
