@@ -31,22 +31,25 @@
   <!-- end header -->
   <div class="span-24 page_header last" id="banner">
     <%= render :partial => '/static/subslider'%></div>
-
-  <div class="span-16" id="project_detail">
-    <div class="contentbox_2">projectdetail</div> 
+    
+  <div class="span-7" id="announcement">
+   <div class="contentbox_3">menu</div> 
+  </div>
+   <!-- end project_detail --> 
+  <div class="span-17 last" id="project_detail">
+    <div class="contentbox_2"><%= @mrta.content.html_safe %></div>
+        <div class="contentbox_2"><%= @mrtatrack.content.html_safe %></div> 
   </div>
   <!-- end project_detail -->
-  <div class="span-8 last" id="announcement">
-   <div class="contentbox_3">projectdetail</div> 
-  </div>
+
   <!-- end announcement -->
-  <div class="span-8" id="project"><div class="contentbox_2">Project</div>
+  <div class="span-8" id="project"><div class="contentbox_2a"></div>
   </div>
   <!-- end project -->
-  <div class="span-8" id="progress"><div class="contentbox_4">Progress</div>
+  <div class="span-8" id="progress"><div class="contentbox_4a"></div>
   </div>
   <!-- end progress -->
-  <div class="span-8 last" id="new_event"><div class="contentbox_3">new</div>
+  <div class="span-8 last" id="new_event"><div class="contentbox_3a"></div>
   </div>
   <!-- end new_event -->
   <div class="span-24 last greenfield">

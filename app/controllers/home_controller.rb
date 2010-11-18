@@ -8,6 +8,8 @@ class HomeController < ApplicationController
   end
 
   def mrta
+  	@mrta = PagesTranslation.find(1)  rescue nil
+  	@mrtatrack = PagesTranslation.find(2)  rescue nil
   	render :layout=>"mrta"
   end
   
