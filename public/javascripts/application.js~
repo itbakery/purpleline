@@ -9,12 +9,8 @@ $(function($) {
 		   return false;
 	   });  
 	 $('#s3slider').s3Slider({
-            timeOut: 9000
-          });
-
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
+      timeOut: 9000
+   });
 });
 
 

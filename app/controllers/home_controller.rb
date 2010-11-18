@@ -1,9 +1,16 @@
 class HomeController < ApplicationController
-  layout "home"
+
   def index
+  	render :layout=>"home"
   end
 
   def present
   end
 
+  def mrta
+  	render :layout=>"mrta"
+  end
+  
+  def pcpl
+  end
 end

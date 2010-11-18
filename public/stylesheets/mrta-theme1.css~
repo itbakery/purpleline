@@ -114,7 +114,6 @@ body{
    height: 280px; /* important to be same as image height */
    position: relative; /* important */
    overflow: hidden; /* important */
-z-index:-1;
 }
 
 #s3sliderContent {
