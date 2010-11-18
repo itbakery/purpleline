@@ -607,13 +607,14 @@ display:block;
 float:left;
 height:auto !important;
 position:relative;
+width:180px;
 }
 
 #org li.orgcontentlist {
   min-height:50px;
-  padding: 5px 5px 5px  75px;
+  padding: 5px 0px 5px  75px;
   position:relative;
-  width:170px;
+  width:200px;
   fload:left;
 }
 
