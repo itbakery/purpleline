@@ -12,9 +12,12 @@ $(function($) {
             timeOut: 9000
           });
 
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
+
+        $('#slider').s3Slider({
+            timeOut: 9000
+          });
+
+ 
 });
 
 
