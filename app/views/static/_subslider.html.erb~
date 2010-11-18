@@ -1,4 +1,6 @@
-<!-- s3slider width=940px, height=270px -->
-<div id="subs3slider">
 
+<div id="slider" class="nivoSlider">
+  <img src="images/asset/nivo/image1.png" alt="" />
+  <img src="images/asset/nivo/image2.png" alt="" />
+  <img src="images/asset/nivo/image3.png" alt="" />
 </div> 
