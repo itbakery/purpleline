@@ -33,12 +33,14 @@
     <%= render :partial => '/static/subslider'%></div>
     
   <div class="span-7" id="announcement">
-   <div class="contentbox_3">menu</div> 
+   <div class="contentbox_3">
+   <%= render :partial => '/static/leftmenu'%>
+   </div> 
   </div>
    <!-- end project_detail --> 
   <div class="span-17 last" id="project_detail">
-    <div class="contentbox_2"><%= @mrta.content.html_safe %></div>
-        <div class="contentbox_2"><%= @mrtatrack.content.html_safe %></div> 
+    <div class="contentbox_2"><%= @mrta.content.html_safe rescue nil %></div>
+        <div class="contentbox_2"><%= @mrtatrack.content.html_safe rescue nil%></div> 
   </div>
   <!-- end project_detail -->
 
