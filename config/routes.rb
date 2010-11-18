@@ -4,10 +4,12 @@ namespace :admin do
   resources :pages
   resources :languages
 end
-  root :to => "home#index"
-  get "home/index"
-  get "home/mrta"
-  get "home/present"
+root :to => "home#index"
+  #get "home/index"
+  #get "home/mrta"
+  #get "home/present"
+  match "/index" => "home#index"
+  match "/mrta" => "home#mrta"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -114,6 +114,7 @@ body{
    height: 280px; /* important to be same as image height */
    position: relative; /* important */
    overflow: hidden; /* important */
+   background: url(../images/loading.gif) no-repeat 50% 50%;
 }
 
 #s3sliderContent {
@@ -156,6 +157,23 @@ body{
 .clear {
    clear: both;
 } 
+
+#slider{
+  position: relative;
+  width: 950px;
+  height: 200px;
+  background: url(../images/loading.gif) no-repeat 50% 50%;
+}
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
 /*--Blueprint css---------------------------------------------*/
 #project_detail{}
 #announcement{}

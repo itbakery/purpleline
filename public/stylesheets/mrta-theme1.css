@@ -162,13 +162,13 @@ body{
   position: relative;
   width: 950px;
   height: 200px;
-  background: url(../images/loading.gif) no-repeat 50% 50%;
+  background: url(../images/loading.gif) no-repeat 50% 50;
 }
 #slider img {
 	position:absolute;
 	top:0px;
 	left:0px;
-	display:none;
+	/*--display:none;--*/
 }
 #slider a {
 	border:0;

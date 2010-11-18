@@ -11,7 +11,7 @@
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
-   <%= javascript_include_tag "jquery.nivo.slider" %>
+
   <%= csrf_meta_tag %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
@@ -30,7 +30,6 @@
   </div>
   <!-- end header -->
   <div class="span-24 page_header last" id="banner">
-
     <%= render :partial => '/static/subslider'%></div>
 
   <div class="span-16" id="project_detail">
@@ -68,6 +67,5 @@ information please contact Email: admin@mrta.co.th</div>
   <!-- end footer -->
 </div>
 <!-- <%= yield %> -->
-
 </body>
 </html>
