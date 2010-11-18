@@ -40,7 +40,9 @@
    <!-- end project_detail --> 
   <div class="span-17 last" id="project_detail">
     <div class="contentbox_2"><%= @mrta.content.html_safe rescue nil %></div>
-        <div class="contentbox_2"><%= @mrtatrack.content.html_safe rescue nil%></div> 
+        <div class="contentbox_2">
+          <%= @mrtatrack.content.html_safe rescue nil%>
+        </div> 
   </div>
   <!-- end project_detail -->
 
