@@ -38,11 +38,11 @@ class Admin::StationsTranslationsController < ApplicationController
   def new
     @stations_translation = StationsTranslation.new
 
-    coordinates = [41.8921254,-87.6096669]
+    coordinates = [13.83333,100.522413]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init(coordinates,14)
-    @gmarker = GMarker.new(coordinates,:title => "Navy Pier", :info_window => "Navy Pier", :draggable => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
     @map.overlay_global_init(@gmarker, "gmarker")
     @map.overlay_init(@gmarker)
     #watch_this = remote_function(:url => {:controller =>:stations_translations, :action => :new, :latitude => "lat_ph", :longitude => "lng_ph" } )
