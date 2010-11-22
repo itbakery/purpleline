@@ -75,6 +75,25 @@ body{
   -moz-box-shadow: 0 3px 5px rgba(0,0,0,0.3);
 }
 
+.block {
+  margin-right:5px;	
+  padding-top: 0px;
+  background: #fff;
+  -moz-border-radius:9px 9px 9px 9px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+}
+
+.block .contentblock {
+   padding-top: 3px;
+}
+
+.block .contentblock  .inner {
+	
+   padding:0 15px 15px;
+}
 /*--FontFace-------------------------------------------------*/
 @font-face {
 	font-family: Negotiate;
@@ -219,9 +238,9 @@ body{
    text-decoration: none;
    }
 #main-navigation li a:hover {
-	  background: transparent; 
-		background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );  
-		background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);  
+   background: transparent; 
+   background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );  
+   background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);  
    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#444444');
    text-decoration: none;
 }
@@ -688,34 +707,36 @@ position:relative;
 
 
 /*--- Ribbon ------------------------------------*/
-div#container {
-	margin: 50px auto 0px auto; /* centered */
-	width: 400px;
+div#containerribbon {
+	margin: 1px auto 0px auto; /* centered */
+	width: 240px;
 }
 
 .bubble {
-	clear: both;
-	margin: 0px auto;
-	width: 260px;
-	background: #fff;
-	-moz-border-radius: 10px;
+  clear: both;
+  margin: 0px auto;
+  width: 225px;
+  background: #fff;
+
+  -moz-border-radius: 10px;
   -khtml-border-radius: 10px;
   -webkit-border-radius: 10px;
-	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-  -khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-	position: relative;
-	z-index: 90; /* the stack order: displayed under ribbon rectangle (100) */
+  -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  -khtml-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+   position: relative;
+   z-index: 90; /* the stack order: displayed under ribbon rectangle (100) */
 }
 
 .rectangle {
 	background: #7f9db9;
-	height: 50px;
-	width: 290px;
+	height: 40px;
+	width: 240px;
 	position: relative;
-	left:-15px;
-	top: 30px;
+	left:-7px;
+	top: 15px;
 	float: left;
+
 	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -725,8 +746,10 @@ div#container {
 .rectangle h2 {
 	font-size: 30px;
 	color: #fff;
-	padding-top: 6px ;
+	padding-top: 6px;
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	text-align: center;
+
 }
 .triangle-l {
 	border-color: transparent #7d90a3 transparent transparent;
@@ -735,8 +758,8 @@ div#container {
 	height:0px;
 	width:0px;
 	position: relative;
-	left: -30px;
-	top: 65px;
+	left: -23px;
+	top: 36px;
 	z-index: -1; /* displayed under bubble */
 }
 
@@ -747,23 +770,23 @@ div#container {
 	height:0px;
 	width:0px;
 	position: relative;
-	left: 350px;
-	top: 35px;
+	left: 219px;
+	top: 7px;
 	z-index: -1; /* displayed under bubble */
 }
 
 .info {
-	padding: 60px 25px 35px 25px;
+	padding: 10px 25px 5px 25px;
 }
 
 .info h2 {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .info p {
-	padding-top: 10px;
+	padding-top: 2px;
 	font-size: 14px;
-	line-height: 22px;
+	line-height: 20px;
 }
 
 .info p a {
@@ -775,3 +798,7 @@ div#container {
 	text-decoration: underline;
 }
 
+.info ul li {
+	font-size: 14px;
+	text-decoration: none;
+}

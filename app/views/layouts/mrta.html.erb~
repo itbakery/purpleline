@@ -32,13 +32,13 @@
   <div class="span-24 page_header last" id="banner">
     <%= render :partial => '/static/subslider'%></div>
     
-  <div class="span-6" id="announcement">
+  <div class="span-7" id="announcement">
    <div class="contentbox_3">
    <%= render :partial => '/static/leftmenu'%>
    </div> 
   </div>
    <!-- end project_detail --> 
-  <div class="span-18 last" id="project_detail">
+  <div class="span-17 last" id="project_detail">
     <div class="contentbox_2">
         <div class="block">
           <div class="contentblock"
