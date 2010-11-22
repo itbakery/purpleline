@@ -6,6 +6,9 @@
   <%= javascript_include_tag :defaults  %>
   <%= javascript_include_tag :ckeditor %>
   <%= csrf_meta_tag %>
+  <%= GMap.header.html_safe %>
+  <%= @map.to_html.html_safe unless @map.blank? %>
+
 </head>
 <body>
   <div id="container">
@@ -19,7 +22,7 @@
         </ul>
       </div>
       <div id="main-navigation">
-        <ul class="wat-cf"> <li class="<%= controller.controller_path == 'admin/pages_translations' ? 'active' : '' %>"><a href="<%= admin_pages_translations_path %>">PagesTranslations</a></li> <li class="<%= controller.controller_path == 'admin/languages' ? 'active' : '' %>"><a href="<%= admin_languages_path %>">Languages</a></li> <li class="<%= controller.controller_path == 'admin/pages' ? 'active' : '' %>"><a href="<%= admin_pages_path %>">Pages</a></li></ul>
+        <ul class="wat-cf"> <li class="<%= controller.controller_path == 'admin/pages_translations' ? 'active' : '' %>"><a href="<%= admin_pages_translations_path %>">PagesTranslations</a></li> <li class="<%= controller.controller_path == 'admin/languages' ? 'active' : '' %>"><a href="<%= admin_languages_path %>">Languages</a></li> <li class="<%= controller.controller_path == 'admin/pages' ? 'active' : '' %>"><a href="<%= admin_pages_path %>">Pages</a></li> <li class="<%= controller.controller_path == 'admin/stations' ? 'active' : '' %>"><a href="<%= admin_stations_path %>">Stations</a></li> <li class="<%= controller.controller_path == 'admin/stations_translations' ? 'active' : '' %>"><a href="<%= admin_stations_translations_path %>">StationsTranslations</a></li></ul>
       </div>
     </div>    
     <div id="wrapper" class="wat-cf">

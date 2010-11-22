@@ -1,0 +1,41 @@
+<%= form_for(@stations_translation) do |f| %>
+  <% if @stations_translation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stations_translation.errors.count, "error") %> prohibited this stations_translation from being saved:</h2>
+
+      <ul>
+      <% @stations_translation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :station_id %><br />
+    <%= f.text_field :station_id %>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br />
+    <%= f.text_field :language_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longtitude %><br />
+    <%= f.text_field :longtitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

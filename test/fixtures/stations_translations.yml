@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  station_id: 1
+  language_id: 1
+  title: MyString
+  content: MyText
+  latitude: 1.5
+  longtitude: 1.5
+
+two:
+  station_id: 1
+  language_id: 1
+  title: MyString
+  content: MyText
+  latitude: 1.5
+  longtitude: 1.5

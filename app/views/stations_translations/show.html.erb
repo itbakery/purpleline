@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Station:</b>
+  <%= @stations_translation.station_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @stations_translation.language_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @stations_translation.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @stations_translation.content %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @stations_translation.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @stations_translation.longtitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_stations_translation_path(@stations_translation) %> |
+<%= link_to 'Back', stations_translations_path %>

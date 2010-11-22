@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101117145219) do
+ActiveRecord::Schema.define(:version => 20101122102550) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                                 :null => false
@@ -56,6 +56,29 @@ ActiveRecord::Schema.define(:version => 20101117145219) do
     t.datetime "updated_at"
   end
 
+  create_table "purple_asset_resources", :force => true do |t|
+    t.string   "caption"
+    t.integer  "purple_asset_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "resource_file_name"
+    t.string   "resource_content_type"
+    t.integer  "resource_file_size"
+    t.datetime "resource_updated_at"
+  end
+
+  create_table "purple_assets", :force => true do |t|
+    t.string   "title"
+    t.string   "type"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.boolean  "publish"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "slugs", :force => true do |t|
     t.string   "name"
     t.integer  "sluggable_id"
@@ -67,5 +90,23 @@ ActiveRecord::Schema.define(:version => 20101117145219) do
 
   add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "stations", :force => true do |t|
+    t.string   "name"
+    t.string   "cached_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stations_translations", :force => true do |t|
+    t.integer  "station_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

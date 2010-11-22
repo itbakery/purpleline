@@ -1,0 +1,33 @@
+<h1>Listing stations_translations</h1>
+
+<table>
+  <tr>
+    <th>Station</th>
+    <th>Language</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Latitude</th>
+    <th>Longtitude</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stations_translations.each do |stations_translation| %>
+  <tr>
+    <td><%= stations_translation.station_id %></td>
+    <td><%= stations_translation.language_id %></td>
+    <td><%= stations_translation.title %></td>
+    <td><%= stations_translation.content %></td>
+    <td><%= stations_translation.latitude %></td>
+    <td><%= stations_translation.longtitude %></td>
+    <td><%= link_to 'Show', stations_translation %></td>
+    <td><%= link_to 'Edit', edit_stations_translation_path(stations_translation) %></td>
+    <td><%= link_to 'Destroy', stations_translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stations translation', new_stations_translation_path %>

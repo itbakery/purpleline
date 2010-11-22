@@ -3,6 +3,10 @@ namespace :admin do
   resources :pages_translations
   resources :pages
   resources :languages
+  resources :stations
+  resources :stations_translations do
+    get 'info', :on => :member
+  end
 end
 root :to => "home#index"
   #get "home/index"
@@ -10,7 +14,6 @@ root :to => "home#index"
   #get "home/present"
   match "/index" => "home#index"
   match "/mrta" => "home#mrta"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
