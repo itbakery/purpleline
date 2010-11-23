@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @announce.name %>
+</p>
+
+<p>
+  <b>Cache slug:</b>
+  <%= @announce.cache_slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_announce_path(@announce) %> |
+<%= link_to 'Back', announces_path %>

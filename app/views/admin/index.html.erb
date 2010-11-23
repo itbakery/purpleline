@@ -1,0 +1,39 @@
+<h1>Listing tasks_translations</h1>
+
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Language</th>
+    <th>Station</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Publish</th>
+    <th>Start on</th>
+    <th>Stop on</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks_translations.each do |tasks_translation| %>
+  <tr>
+    <td><%= tasks_translation.task_id %></td>
+    <td><%= tasks_translation.language_id %></td>
+    <td><%= tasks_translation.station_id %></td>
+    <td><%= tasks_translation.title %></td>
+    <td><%= tasks_translation.content %></td>
+    <td><%= tasks_translation.publish %></td>
+    <td><%= tasks_translation.start_on %></td>
+    <td><%= tasks_translation.stop_on %></td>
+    <td><%= tasks_translation.user_id %></td>
+    <td><%= link_to 'Show', tasks_translation %></td>
+    <td><%= link_to 'Edit', edit_tasks_translation_path(tasks_translation) %></td>
+    <td><%= link_to 'Destroy', tasks_translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tasks translation', new_tasks_translation_path %>

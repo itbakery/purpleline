@@ -10,7 +10,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101122102550) do
+ActiveRecord::Schema.define(:version => 20101123014521) do
+
+  create_table "announces", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "announces_translations", :force => true do |t|
+    t.integer  "announce_id"
+    t.integer  "announces_type_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "announces_types", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                                 :null => false
@@ -105,6 +132,27 @@ ActiveRecord::Schema.define(:version => 20101122102550) do
     t.text     "content"
     t.float    "latitude"
     t.float    "longtitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "name"
+    t.string   "cached_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks_translations", :force => true do |t|
+    t.integer  "task_id"
+    t.integer  "language_id"
+    t.integer  "station_id"
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "publish"
+    t.date     "start_on"
+    t.date     "stop_on"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,49 @@
+<%= form_for(@announces_translation) do |f| %>
+  <% if @announces_translation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@announces_translation.errors.count, "error") %> prohibited this announces_translation from being saved:</h2>
+
+      <ul>
+      <% @announces_translation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :announce_id %><br />
+    <%= f.text_field :announce_id %>
+  </div>
+  <div class="field">
+    <%= f.label :announces_type_id %><br />
+    <%= f.text_field :announces_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br />
+    <%= f.text_field :language_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longtitude %><br />
+    <%= f.text_field :longtitude %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

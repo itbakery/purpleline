@@ -1,0 +1,25 @@
+<%= form_for(@announces_type) do |f| %>
+  <% if @announces_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@announces_type.errors.count, "error") %> prohibited this announces_type from being saved:</h2>
+
+      <ul>
+      <% @announces_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cache_slug %><br />
+    <%= f.text_field :cache_slug %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

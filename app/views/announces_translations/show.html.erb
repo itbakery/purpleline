@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Announce:</b>
+  <%= @announces_translation.announce_id %>
+</p>
+
+<p>
+  <b>Announces type:</b>
+  <%= @announces_translation.announces_type_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @announces_translation.language_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @announces_translation.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @announces_translation.content %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @announces_translation.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @announces_translation.longtitude %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @announces_translation.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_announces_translation_path(@announces_translation) %> |
+<%= link_to 'Back', announces_translations_path %>

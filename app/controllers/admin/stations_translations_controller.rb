@@ -45,10 +45,6 @@ class Admin::StationsTranslationsController < ApplicationController
     @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
     @map.overlay_global_init(@gmarker, "gmarker")
     @map.overlay_init(@gmarker)
-    #watch_this = remote_function(:url => {:controller =>:stations_translations, :action => :new, :latitude => "lat_ph", :longitude => "lng_ph" } )
-
-    #watch_this[/lat_ph/] = "'+px+'"
-    #watch_this[/lng_ph/] = "'+py+'"
 
     @map.event_init(@gmarker, :dragend, "function(){
       var latlng = gmarker.getLatLng().toUrlValue();

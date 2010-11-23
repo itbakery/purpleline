@@ -1,0 +1,37 @@
+<h1>Listing announces_translations</h1>
+
+<table>
+  <tr>
+    <th>Announce</th>
+    <th>Announces type</th>
+    <th>Language</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Latitude</th>
+    <th>Longtitude</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @announces_translations.each do |announces_translation| %>
+  <tr>
+    <td><%= announces_translation.announce_id %></td>
+    <td><%= announces_translation.announces_type_id %></td>
+    <td><%= announces_translation.language_id %></td>
+    <td><%= announces_translation.title %></td>
+    <td><%= announces_translation.content %></td>
+    <td><%= announces_translation.latitude %></td>
+    <td><%= announces_translation.longtitude %></td>
+    <td><%= announces_translation.user_id %></td>
+    <td><%= link_to 'Show', announces_translation %></td>
+    <td><%= link_to 'Edit', edit_announces_translation_path(announces_translation) %></td>
+    <td><%= link_to 'Destroy', announces_translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Announces translation', new_announces_translation_path %>
