@@ -26,6 +26,22 @@ class Admin::AnnouncesTranslationsController < ApplicationController
   # GET /announces_translations/new.xml
   def new
     @announces_translation = AnnouncesTranslation.new
+    coordinates = [13.83333,100.522413]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+
+    @map.event_init(@gmarker, :dragend, "function(){
+      var latlng = gmarker.getLatLng().toUrlValue();
+      var tmp = latlng.split(',');
+      var px = tmp[0];
+      var py = tmp[1];
+      $('#announces_translation_latitude').val(px);
+      $('#announces_translation_longtitude').val(py);
+       }")
 
     respond_to do |format|
       format.html # new.html.erb
