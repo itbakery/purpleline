@@ -1,13 +1,13 @@
 
   <div class="group">
     <%= f.label :page_id, t("activerecord.attributes.pages_translation.page_id", :default => "Page"), :class => :label %>
-    <%= f.collection_select :page_id, Page.all, :id, :name,:prompt => "Select Page Name", :class => 'text_field' %>
+    <%= f.text_field :page_id, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
 
   <div class="group">
     <%= f.label :language_id, t("activerecord.attributes.pages_translation.language_id", :default => "Language"), :class => :label %>
-    <%= f.collection_select :language_id, Language.all, :id, :name, :prompt => "Select Language", :class => 'text_field' %>
+    <%= f.text_field :language_id, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
 
@@ -19,7 +19,7 @@
 
   <div class="group">
     <%= f.label :content, t("activerecord.attributes.pages_translation.content", :default => "Content"), :class => :label %>
-    <%= f.cktext_area :content,:class => 'text_area' %>
+    <%= f.text_area :content, :class => 'text_area' %>
     <span class="description">Ex: a simple text</span>
   </div>
 

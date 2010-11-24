@@ -4,10 +4,11 @@ class Admin::StationsTranslationsController < ApplicationController
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
 
+
   # GET /stations_translations
   # GET /stations_translations.xml
   def index
-    @stations_translations = StationsTranslation.all
+    @stations_translations = StationsTranslation.all.paginate(:page => params[:page], :per_page => 8)
 
 
     respond_to do |format|

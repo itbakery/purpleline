@@ -17,8 +17,6 @@ $(function($) {
             timeOut: 9000
           });
 
-        $("#tasks_translation_start_on").datepicker(); 
-        $("#tasks_translation_stop_on").datepicker(); 
 });
 
 

@@ -8,6 +8,8 @@ class CreateAnnouncesTranslations < ActiveRecord::Migration
       t.text :content
       t.float :latitude
       t.float :longtitude
+      t.date :start_on
+      t.date :stop_on
       t.integer :user_id
 
       t.timestamps

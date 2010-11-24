@@ -1,9 +1,9 @@
 class Admin::AnnouncesTranslationsController < ApplicationController
-  layout "admin"
+   layout "admin"
   # GET /announces_translations
   # GET /announces_translations.xml
   def index
-    @announces_translations = AnnouncesTranslation.all
+    @announces_translations = AnnouncesTranslation.all.paginate(:page => params[:page], :per_page => 8)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +42,6 @@ class Admin::AnnouncesTranslationsController < ApplicationController
       $('#announces_translation_latitude').val(px);
       $('#announces_translation_longtitude').val(py);
        }")
-
 
     respond_to do |format|
       format.html # new.html.erb

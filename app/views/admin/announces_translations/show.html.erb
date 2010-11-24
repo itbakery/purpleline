@@ -45,6 +45,16 @@
         </p>
 
         <p>
+          <b><%= t("activerecord.attributes.admin_announces_translation.start_on", :default => t("activerecord.labels.start_on", :default => "Start on")) %>:</b>
+          <%= @announces_translation.start_on %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_announces_translation.stop_on", :default => t("activerecord.labels.stop_on", :default => "Stop on")) %>:</b>
+          <%= @announces_translation.stop_on %>
+        </p>
+
+        <p>
           <b><%= t("activerecord.attributes.admin_announces_translation.user_id", :default => t("activerecord.labels.user_id", :default => "User")) %>:</b>
           <%= @announces_translation.user_id %>
         </p>

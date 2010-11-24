@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101123014521) do
+ActiveRecord::Schema.define(:version => 20101124190739) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -27,9 +27,12 @@ ActiveRecord::Schema.define(:version => 20101123014521) do
     t.text     "content"
     t.float    "latitude"
     t.float    "longtitude"
+    t.date     "start_on"
+    t.date     "stop_on"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "task_id"
   end
 
   create_table "announces_types", :force => true do |t|

@@ -8,6 +8,8 @@ one:
   content: MyText
   latitude: 1.5
   longtitude: 1.5
+  start_on: 2010-11-25
+  stop_on: 2010-11-25
   user_id: 1
 
 two:
@@ -18,4 +20,6 @@ two:
   content: MyText
   latitude: 1.5
   longtitude: 1.5
+  start_on: 2010-11-25
+  stop_on: 2010-11-25
   user_id: 1

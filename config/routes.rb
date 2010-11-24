@@ -1,21 +1,20 @@
 Purpleline::Application.routes.draw do
 
 
+
 namespace :admin do
   resources :pages_translations
   resources :pages
   resources :languages
-  resources :announces_types
-  resources :announces_translations
-  resources :stations
-  resources :tasks
+  resources :announces_types  
   resources :announces
+  resources :announces_translations
+  resources :tasks
   resources :tasks_translations
-  resources :stations_translations do
-    get 'info', :on => :member
-  end
+  resources :stations
+  resources :stations_translations 
 end
-root :to => "home#index"
+root :to => "home#present"
   #get "home/index"
   #get "home/mrta"
   #get "home/present"
