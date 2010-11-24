@@ -35,6 +35,14 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
+
+task :after_update_code, :roles => :app do
+  %w{uploads  avatars}.each do |share|
+    run "rm -rf #{release_path}/public/#{share} "
+    run "mkdir -p #{shared_path}/purple/#{share} "
+    run "ln -nfs #{shared_path}/purple/#{share} #{release_path}/public/#{share} "
+  end
+
 end
 
 

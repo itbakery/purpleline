@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def present
+       render  :layout => "preset"
   end
 
   def mrta
