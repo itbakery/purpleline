@@ -14,7 +14,7 @@
   <li>
   <div class="group">
     <%= f.label :announces_type_id, t("activerecord.attributes.announces_translation.announces_type_id", :default => "Announces type"), :class => :label %>
-    <%= f.collection_select :announces_type_id, AnnouncesType.all,:id,:name,{:prompt=>"Select Announce type"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :announces_type_id, AnnouncesType.all,:id,:name,{:prompt=>"Select Announce type"}, {:class => 'text_field',:style=>"width:180px"} %>
   </div>
   </li>
   <li>

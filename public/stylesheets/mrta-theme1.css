@@ -23,7 +23,7 @@ body{
 *[class$="two"]>*{
   width:50%;
 }
-*[class$="tree"]>*{
+*[class$="three"]>*{
   width:33.33%;
 }
 *[class$="four"]>*{

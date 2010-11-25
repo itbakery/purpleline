@@ -1,16 +1,16 @@
-
+<ol class="formatcol-four">
+  <li>
   <div class="group">
     <%= f.label :station_id, t("activerecord.attributes.stations_translation.station_id", :default => "Station"), :class => :label %>
-    <%= f.text_field :station_id, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
+    <%= f.collection_select :station_id,Station.all,:id,:name,{:prompt=>"Select Station"}, {:class => 'text_field',:style=>"width:150px"} %>
+  </li>
+  <li>
   <div class="group">
     <%= f.label :language_id, t("activerecord.attributes.stations_translation.language_id", :default => "Language"), :class => :label %>
-    <%= f.text_field :language_id, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
+    <%= f.collection_select :language_id,Language.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
   </div>
-
+  </li>
+</ol>
   <div class="group">
     <%= f.label :title, t("activerecord.attributes.stations_translation.title", :default => "Title"), :class => :label %>
     <%= f.text_field :title, :class => 'text_field' %>
@@ -23,18 +23,25 @@
     <span class="description">Ex: a simple text</span>
   </div>
 
+<ol class="formatcol-three">
+  <li>
   <div class="group">
     <%= f.label :latitude, t("activerecord.attributes.stations_translation.latitude", :default => "Latitude"), :class => :label %>
     <%= f.text_field :latitude, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
-
+  </li>
+  <li>
   <div class="group">
     <%= f.label :longtitude, t("activerecord.attributes.stations_translation.longtitude", :default => "Longtitude"), :class => :label %>
     <%= f.text_field :longtitude, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
-        
+  </li>
+</ol>
+  <div class="group">
+    <%= @map.div(:width => 700, :height => 370).html_safe %>
+  </div>        
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
