@@ -7,7 +7,6 @@
   <%= csrf_meta_tag %>
   <%= javascript_include_tag :ckeditor %>
   <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
-  <%= @map.to_html.html_safe rescue nil %>
 </head>
 <body>
   <div id="container">
@@ -22,7 +21,7 @@
       </div>
       <div id="main-navigation">
         <ul class="wat-cf"> <li class="<%= controller.controller_path == 'admin/tasks_translations' ? 'active' : '' %>"><a href="<%= admin_tasks_translations_path %>">TasksTranslations</a></li>
-<li class="<%= controller.controller_path == 'admin/pages_translations' ? 'active' : '' %>"><a href="<%= admin_pages_translations_path %>">PagesTranslations</a></li> <li class="<%= controller.controller_path == 'admin/stations_translations' ? 'active' : '' %>"><a href="<%= admin_stations_translations_path %>">StationsTranslations</a></li> <li class="<%= controller.controller_path == 'admin/announces_translations' ? 'active' : '' %>"><a href="<%= admin_announces_translations_path %>">AnnouncesTranslations</a></li></ul>
+<li class="<%= controller.controller_path == 'admin/announces_translations' ? 'active' : '' %>"><a href="<%= admin_announces_translations_path %>">AnnouncesTranslations</a></li> <li class="<%= controller.controller_path == 'admin/pages_translations' ? 'active' : '' %>"><a href="<%= admin_pages_translations_path %>">PagesTranslations</a></li> <li class="<%= controller.controller_path == 'admin/stations_translations' ? 'active' : '' %>"><a href="<%= admin_stations_translations_path %>">StationsTranslations</a></li> <li class="<%= controller.controller_path == 'admin/announces_translations' ? 'active' : '' %>"><a href="<%= admin_announces_translations_path %>">AnnouncesTranslations</a></li></ul>
       </div>
     </div>    
     <div id="wrapper" class="wat-cf">
