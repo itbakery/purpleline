@@ -5,6 +5,37 @@ body{
   /* font-family: Georgia,Verdana, "Lucida Sans Unicode",sans-serif;*/
   font-size:12px;
 }
+
+*[class*="formatcol"]{ /*Fixed IE 7 Floating Bug*/
+  height:1%
+}
+*[class*="formatcol"]:after { /*Fixed Modern Browser floating bug*/
+  content: "";
+  display: block;
+  clear: both;
+}
+*[class*="formatcol"] >* {
+  float: left;
+}
+*[class*="formatcol"]>*>*:first-child{
+  padding: 5px;
+}
+*[class$="two"]>*{
+  width:50%;
+}
+*[class$="tree"]>*{
+  width:33.33%;
+}
+*[class$="four"]>*{
+  width:25%;
+}
+*[class$="five"]>*{
+  width:20%;
+}
+*{
+  list-style: none outside none;
+}
+
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 10px #c4c4c4;
