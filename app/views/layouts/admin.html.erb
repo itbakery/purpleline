@@ -1,8 +1,9 @@
 <head>
-  <title>Web App</title>
-  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/djime-cerulean/style", "web-app-theme/override", :cache => true %>
+  <title>MRTA-PURPLE LINE PROJECT</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults  %>
+  <%= javascript_include_tag :ckeditor %>
 
-  <%= javascript_include_tag :defaults, :cache => true %>
   <%= GMap.header(:with_vml => false,:host => request.host).html_safe %>
   <%= @map.to_html.html_safe unless @map.blank? %>
   <%= javascript_include_tag :ckeditor %>
