@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101124190739) do
+ActiveRecord::Schema.define(:version => 20101125061439) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20101124190739) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "task_id"
+    t.boolean  "publish"
   end
 
   create_table "announces_types", :force => true do |t|

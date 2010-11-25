@@ -3,6 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
-require 'swf_fu/tasks'
-
 Purpleline::Application.load_tasks
