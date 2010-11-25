@@ -3,20 +3,10 @@
 $(function($) {
    $('#tabs').tabs();
    $('#tabs').tabs('paging', { cycle: true, follow: true } );
- 	 $("#loginButton").click(function() {
-		  $("#loginForm").toggle();
-		  $("#loginButton a").toggleClass("active");
-		   return false;
-	   });  
-	 $('#s3slider').s3Slider({
-            timeOut: 9000
-          });
-
-
-        $('#slider').s3Slider({
-            timeOut: 9000
-          });
-
+   $('#s3slider').s3Slider({timeOut: 9000 });
+   $('#slider').s3Slider({timeOut: 9000});
+   $('#announces_translation_start_on').datepicker();
+   $('#announces_translation_stop_on').datepicker();
 });
 
 
