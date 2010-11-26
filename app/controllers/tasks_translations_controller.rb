@@ -1,4 +1,4 @@
-class Admin::TasksTranslationsController < ApplicationController
+class TasksTranslationsController < ApplicationController
   # GET /tasks_translations
   # GET /tasks_translations.xml
   def index
