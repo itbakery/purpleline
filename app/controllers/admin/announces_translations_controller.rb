@@ -1,5 +1,9 @@
 class Admin::AnnouncesTranslationsController < ApplicationController
    layout "admin"
+  include ActionView::Helpers::PrototypeHelper
+  include ActionView::Helpers::JavaScriptHelper
+  include ActionView::Helpers::TagHelper
+
   # GET /announces_translations
   # GET /announces_translations.xml
   def index

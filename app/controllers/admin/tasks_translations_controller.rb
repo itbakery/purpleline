@@ -1,5 +1,9 @@
 class Admin::TasksTranslationsController < ApplicationController
   layout "admin"
+  include ActionView::Helpers::PrototypeHelper
+  include ActionView::Helpers::JavaScriptHelper
+  include ActionView::Helpers::TagHelper
+
   # GET /tasks_translations
   # GET /tasks_translations.xml
   def index
