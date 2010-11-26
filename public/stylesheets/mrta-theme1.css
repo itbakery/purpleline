@@ -73,11 +73,11 @@ body{
   padding:10px 0px;
 }
 #header{
-  -moz-box-shadow: 0 0 10px #c4c4c4;
+  -moz-box-shadow: 0 0 2px #c4c4c4;
   -moz-border-radius: 4px 4px 0px 0px;
   background: #a579b0;
   width: 100%;
-  height: 120px;
+  height: 65px;
 
 }
 #login{
