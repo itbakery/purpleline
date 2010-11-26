@@ -42,7 +42,7 @@ module Purpleline
     config.filter_parameters += [:password]
     config.autoload_paths += %W( #{config.root}/app/models/ckeditor )
 
-    ActionController::Base.asset_host = "http://www.mrta-purpleline.com"
+    #ActionController::Base.asset_host = "http://www.mrta-purpleline.com"
 
   end
 end
