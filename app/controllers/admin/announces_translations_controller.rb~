@@ -1,12 +1,13 @@
 class Admin::AnnouncesTranslationsController < ApplicationController
-  layout "admin"
+   layout "admin"
   include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
+
   # GET /announces_translations
   # GET /announces_translations.xml
   def index
-    @announces_translations = AnnouncesTranslation.paginate :page => params[:page], :order => 'created_at DESC'
+    @announces_translations = AnnouncesTranslation.all.paginate(:page => params[:page], :per_page => 8)
 
     respond_to do |format|
       format.html # index.html.erb
