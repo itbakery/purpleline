@@ -7,6 +7,8 @@ class Admin::TasksTranslationsController < ApplicationController
   # GET /tasks_translations
   # GET /tasks_translations.xml
   def index
+  	page = params[:page] || 1
+
     @tasks_translations = TasksTranslation.paginate :page => params[:page], :order => 'created_at DESC'
 
     respond_to do |format|

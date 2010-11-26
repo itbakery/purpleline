@@ -3,13 +3,10 @@ class Admin::StationsTranslationsController < ApplicationController
   include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
-
-
   # GET /stations_translations
   # GET /stations_translations.xml
   def index
-    @stations_translations = StationsTranslation.all.paginate(:page => params[:page], :per_page => 8)
-
+    @stations_translations = StationsTranslation.paginate :page => params[:page], :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

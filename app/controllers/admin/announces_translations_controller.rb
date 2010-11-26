@@ -6,6 +6,8 @@ class Admin::AnnouncesTranslationsController < ApplicationController
   # GET /announces_translations
   # GET /announces_translations.xml
   def index
+  	page = params[:page] || 1
+
     @announces_translations = AnnouncesTranslation.paginate :page => params[:page], :order => 'created_at DESC' rescue nil
 
     respond_to do |format|
