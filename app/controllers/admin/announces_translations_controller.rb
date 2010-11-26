@@ -8,7 +8,7 @@ class Admin::AnnouncesTranslationsController < ApplicationController
   def index
   	page = params[:page] || 1
 
-    @announces_translations = AnnouncesTranslation.paginate :page => params[:page], :order => 'created_at DESC' rescue nil
+    @announces_translations = AnnouncesTranslation.paginate :page => page, :order => 'created_at DESC' rescue nil
 
     respond_to do |format|
       format.html # index.html.erb

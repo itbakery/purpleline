@@ -8,7 +8,7 @@ class Admin::StationsTranslationsController < ApplicationController
   def index
   	page = params[:page] || 1
 
-    @stations_translations = StationsTranslation.paginate :page => params[:page], :order => 'created_at DESC'
+    @stations_translations = StationsTranslation.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb
