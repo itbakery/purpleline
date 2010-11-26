@@ -7,7 +7,7 @@ class Admin::TasksTranslationsController < ApplicationController
   # GET /tasks_translations
   # GET /tasks_translations.xml
   def index
-    @tasks_translations = TasksTranslation.all.paginate(:page => params[:page], :per_page => 8)
+    @tasks_translations = TasksTranslation.all.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
