@@ -10,10 +10,12 @@ $(document).ready(function() {
    $('#pages_translation_start_on').datepicker({numberOfMonths:2});
    $('#pages_translation_stop_on').datepicker({numberOfMonths:2});
    
-   $(".linkbox").click(function(){
-     window.location=$(this).find("a").attr("href");
-     return false;
-   });
+   $('div.mrtalink').click(function(){location.href='http://www.mrta.co.th'});
+   $('div.mrtalink').css('cursor','pointer');
+   
+   $('div.pcpl').click(function(){location.href='http://mrta-purpleline.com/project',target='_blank'});
+   $('div.pcpllink').css('cursor','pointer');
+   
    $('#tabs').tabs();
    $('#tabs').tabs('paging', { cycle: true, follow: true } );   
    $('#s3slider').s3Slider({timeOut: 9000 });
