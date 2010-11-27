@@ -141,6 +141,7 @@
 #menu li:hover .dropdown_5columns {
 	left:-1px;
 	top:auto;
+		z-index:5;
 }
 
 .col_1,
