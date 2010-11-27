@@ -9,8 +9,10 @@
   <script>
   $(document).ready(
 	function() {
-		$('#myFlash').flash('./swfs/intro01.swf');
-	}
+		$('#myFlash').flash({
+                               swf:'./swfs/intro01.swf',
+                               width:960
+	});
   );
   </script>
 
