@@ -43,6 +43,6 @@ module Purpleline
     config.autoload_paths += %W( #{config.root}/app/models/ckeditor )
 
     #ActionController::Base.asset_host = "http://www.mrta-purpleline.com"
-
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   end
 end
