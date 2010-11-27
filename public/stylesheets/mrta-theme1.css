@@ -95,7 +95,7 @@ body{
   -moz-box-shadow: 0px -3px 5px rgba(0,0,0,0.5);
   background: url('../images/footer-bg.jpg') repeat-x;
   border-top: 3px solid #a57980;
-  height:30px;
+  height:60px;
 }
 .footertext {
   color: #fff;
@@ -114,9 +114,18 @@ body{
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-
 }
 
+.station {
+  color: #fff;
+  margin:2px;	
+  padding: 2px;
+  background: #A579b0;
+  -moz-border-radius:2px 2px 2px 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
 .block .contentblock {
    padding-top: 3px;
 }
@@ -808,7 +817,7 @@ div#containerribbon {
 }
 
 .info {
-	padding: 10px 5px 5px 5px;
+	padding: 10px 0px 5px 0px;
 }
 
 .info h2 {
@@ -829,7 +838,13 @@ div#containerribbon {
 .info p a:hover {
 	text-decoration: underline;
 }
+.info ul {
+  margin: 0px 0px 0px 2px;
+}
 
+.info ul li  {
+    margin-bottom: 10px;
+}
 .info ul li a {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:15px; 

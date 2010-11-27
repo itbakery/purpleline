@@ -1,31 +1,21 @@
 <!-- s3slider width=940px, height=270px -->
 <div id="org">
-   <ul id="orgcontent">
-      <li class="orgcontentlist">
-          <div class="orgimage">
-             <img src="images/mrta-org.gif" />
+   <ol class="formatcol-two">
+      <li>
+          <div class="orgimage" style="padding:5px;">
+             <img src="images/mrta-logo-sss.png" height="33" width="80" />
           </div>
-          <span>การรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย<br/>175 ถ.พระราม 9 ห้วยขวาง กรุงเทพฯ 10320
-โทร. 0 2612 2444 โทรสาร. 0 2612 2436
+          <span>Mass Rapid Transit Authority of Thailand <br/>175 Rama IX Rd., Huay Khwang, Bangkok 10320
          </span>
       </li>
-      <li class="suborg">
-         <img src="images/logorft.gif" />
+      <li>
+         <div class="orgimage" style="padding:5px;">
+         <img src="images/logo-pcpl.jpg" height="33" width="80"/>
+         </div>
+         <span  style="padding-left:5px;">
+The Project Consulting Services<br/>for the MRT PURPLE line <br/>Project Bang Yai -Bang Sue Section
+         </span>
       </li>
-      <li class="suborg">
-         <a href="">
-         <img src="images/logobkk01.jpg" />
-         </a>
-      </li>
-      <li class="suborg">
-         <a href="">
-         <img src="images/logosnk01.jpg" />
-         </a>
-      </li>
-      <li class="suborg">
-         <a href="">
-         <img src="images/logbrt02.jpg" />
-         </a>
-      </li>    
-   </ul>
+  
+   </ol>
 </div>   

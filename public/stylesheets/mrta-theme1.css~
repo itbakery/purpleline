@@ -73,7 +73,7 @@ body{
   padding:10px 0px;
 }
 #header{
-  -moz-box-shadow: 0 0 2px #c4c4c4;
+  -moz-box-shadow: 0 0 1px #c4c4c4;
   -moz-border-radius: 4px 4px 0px 0px;
   background: #a579b0;
   width: 100%;
@@ -134,12 +134,12 @@ body{
   margin-top: 7px;	
   padding:10px;
   font-family: Negotiate;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   position:relative;
   float: left;
-  padding: 5px 100px 0px 0px;
+  padding: 5px 20px 0px 0px;
   display: block;
   border-right: 0px solid #777;
   vertical-align:middle;
@@ -760,14 +760,14 @@ div#containerribbon {
 }
 
 .rectangle {
-	background: #7f9db9;
+	background: #A579B0 ;  /*#7f9db98*/
 	height: 40px;
 	width: 240px;
 	position: relative;
 	left:-7px;
 	top: 15px;
 	float: left;
-
+  vertical-align:middle;
 	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -775,15 +775,16 @@ div#containerribbon {
 }
 
 .rectangle h2 {
-	font-size: 30px;
+	font-size: 27px;
 	color: #fff;
 	padding-top: 6px;
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-	text-align: center;
+	  vertical-align:middle;
 
 }
+
 .triangle-l {
-	border-color: transparent #7d90a3 transparent transparent;
+	border-color: transparent #A579B0 transparent transparent;
 	border-style:solid;
 	border-width:15px;
 	height:0px;
@@ -795,7 +796,7 @@ div#containerribbon {
 }
 
 .triangle-r {
-	border-color: transparent transparent transparent #7d90a3;
+	border-color: transparent transparent transparent #A579B0;
 	border-style:solid;
 	border-width:15px;
 	height:0px;
@@ -807,7 +808,7 @@ div#containerribbon {
 }
 
 .info {
-	padding: 10px 25px 5px 25px;
+	padding: 10px 5px 5px 5px;
 }
 
 .info h2 {
@@ -829,7 +830,11 @@ div#containerribbon {
 	text-decoration: underline;
 }
 
-.info ul li {
-	font-size: 14px;
-	text-decoration: none;
+.info ul li a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px; 
+	color: #015b86;
+	display:block;
+	outline:0;
+	text-decoration:none;
 }

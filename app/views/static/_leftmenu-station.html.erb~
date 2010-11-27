@@ -1,0 +1,35 @@
+<div id="containerribbon"> <!-- Main Container -->    
+
+<div class="bubble"> <!-- Bubble -->
+<div class="rectangle"><h2 style="hight:29px;"><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;Stations</h2></div> <!-- Rectangle with a title -->
+<div class="triangle-l"></div> <!-- Left triangle -->
+<div class="triangle-r"></div> <!-- Right triangle -->
+
+<div class="info">
+<!--<h2>MRTA</h2>-->
+
+<ul class="">
+		<li><a href="#"><b>S01</b>-Khlong Bang Phai</a></li>
+		<li><a href="#"><b>S02</b>-Talad Bang Yai </a></li>
+		<li><a href="#"><b>S03</b>-Sam Yaek Bang Yai</a></li>
+		<li><a href="#"><b>S04</b>-Bang Phlu </a></li>
+		<li><a href="#"><b>S05</b>-Bang Rak Yai </a></li>
+		<li><a href="#"><b>S06</b>-Tha It </a></li>
+		<li><a href="#"><b>S07</b>-Sai Ma</a></li>
+		<li><a href="#"><b>S08</b>-Phra Nang Klao Bridge </a></li>
+		<li><a href="#"><b>S09</b>-Yaek Nonthaburi I </a></li>
+		<li><a href="#"><b>S10</b>-Si Phon Sawan </a></li>
+		<li><a href="#"><b>S11</b>-Nonthaburi Civic Center </a></li>
+		<li><a href="#"><b>S12</b>-Ministry of Public Health </a></li>
+		<li><a href="#"><b>S13</b>-Yaek Tiwanon </a></li>
+		<li><a href="#"><b>S14</b>-Wong Sawang </a></li>
+		<li><a href="#"><b>S15</b>-Bang Son </a></li>
+		<li><a href="#"><b>S16</b>-Tao Poon </a></li>
+                    
+</ul> 
+
+</div>
+</div>
+
+</div>
+
