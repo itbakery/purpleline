@@ -14,6 +14,11 @@ class HomeController < ApplicationController
   	render :layout=>"mrta"
   end
   
+  def project
+  	
+  	render :layout=>"project"
+  end
+  
   def pcpl
   end
 end

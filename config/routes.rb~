@@ -1,14 +1,28 @@
 Purpleline::Application.routes.draw do
+
+
+
+
 namespace :admin do
   resources :pages_translations
   resources :pages
   resources :languages
+  resources :announces_types  
+  resources :announces
+  resources :announces_translations
+  resources :tasks
+  resources :tasks_translations
+  resources :stations
+  resources :stations_translations 
+  resources :new_events_translations
+  resources :new_events
 end
-  root :to => "home#index"
-  get "home/index"
-  get "home/mrta"
-  get "home/present"
-
+root :to => "home#present"
+  #get "home/index"
+  #get "home/mrta"
+  #get "home/present"
+  match "/index" => "home#index"
+  match "/mrta" => "home#mrta"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
