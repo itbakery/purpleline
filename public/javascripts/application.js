@@ -10,6 +10,10 @@ $(document).ready(function() {
    $('#pages_translation_start_on').datepicker({numberOfMonths:2});
    $('#pages_translation_stop_on').datepicker({numberOfMonths:2});
    
+   $(".linkbox").click(function(){
+     window.location=$(this).find("a").attr("href");
+     return false;
+   });
    $('#tabs').tabs();
    $('#tabs').tabs('paging', { cycle: true, follow: true } );   
    $('#s3slider').s3Slider({timeOut: 9000 });
