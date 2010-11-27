@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101126165512) do
+ActiveRecord::Schema.define(:version => 20101127013051) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -63,6 +63,26 @@ ActiveRecord::Schema.define(:version => 20101126165512) do
 
   create_table "languages", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "new_events", :force => true do |t|
+    t.string   "name"
+    t.string   "cached_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "new_events_translations", :force => true do |t|
+    t.integer  "new_event_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "publish"
+    t.date     "start_on"
+    t.date     "stop_on"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

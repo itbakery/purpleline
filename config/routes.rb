@@ -2,6 +2,7 @@ Purpleline::Application.routes.draw do
 
 
 
+
 namespace :admin do
   resources :pages_translations
   resources :pages
@@ -13,6 +14,8 @@ namespace :admin do
   resources :tasks_translations
   resources :stations
   resources :stations_translations 
+  resources :new_events_translations
+  resources :new_events
 end
 root :to => "home#present"
   #get "home/index"

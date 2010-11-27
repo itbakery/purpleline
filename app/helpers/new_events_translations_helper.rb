@@ -1,0 +1,2 @@
+module NewEventsTranslationsHelper
+end

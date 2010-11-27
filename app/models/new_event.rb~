@@ -1,0 +1,2 @@
+class NewEvent < ActiveRecord::Base
+end

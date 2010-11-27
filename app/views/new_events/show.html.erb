@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @new_event.name %>
+</p>
+
+<p>
+  <b>Cached slug:</b>
+  <%= @new_event.cached_slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_new_event_path(@new_event) %> |
+<%= link_to 'Back', new_events_path %>
