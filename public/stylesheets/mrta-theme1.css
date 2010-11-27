@@ -831,6 +831,10 @@ div#containerribbon {
 }
 
 .info ul li a {
-	font-size: 14px;
-	text-decoration: none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px; 
+	color: #015b86;
+	display:block;
+	outline:0;
+	text-decoration:none;
 }
