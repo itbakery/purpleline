@@ -35,7 +35,10 @@ body{
 *{
   list-style: none outside none;
 }
-
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 10px #c4c4c4;
