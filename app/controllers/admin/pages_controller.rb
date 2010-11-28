@@ -1,5 +1,6 @@
 class Admin::PagesController < ApplicationController
-		layout  "admin"
+	layout  "admin"
+  before_filter :authenticate_user!		
   # GET /pages
   # GET /pages.xml
   def index

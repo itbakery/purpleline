@@ -1,8 +1,10 @@
-class NewEventsController < ApplicationController
+class Admin::NewEventsController < ApplicationController
+	layout "admin"
   # GET /new_events
   # GET /new_events.xml
   def index
-    @new_events = NewEvent.all
+  	page = params[:page] || 1
+    @new_events = NewEvent.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

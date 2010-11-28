@@ -3,7 +3,8 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+  	page = params[:page] || 1
+    @pages = Page.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

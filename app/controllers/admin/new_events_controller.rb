@@ -1,5 +1,6 @@
 class Admin::NewEventsController < ApplicationController
 	layout "admin"
+  before_filter :authenticate_user!
   # GET /new_events
   # GET /new_events.xml
   def index

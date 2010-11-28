@@ -1,8 +1,10 @@
-class NewEventsTranslationsController < ApplicationController
+class Admin::NewEventsTranslationsController < ApplicationController
+	layout "admin"
   # GET /new_events_translations
   # GET /new_events_translations.xml
   def index
-    @new_events_translations = NewEventsTranslation.all
+  	page = params[:page] || 1
+    @new_events_translations = NewEventsTranslation.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

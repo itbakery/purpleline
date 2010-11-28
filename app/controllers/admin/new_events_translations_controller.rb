@@ -1,5 +1,6 @@
 class Admin::NewEventsTranslationsController < ApplicationController
 	layout "admin"
+  before_filter :authenticate_user!
   # GET /new_events_translations
   # GET /new_events_translations.xml
   def index

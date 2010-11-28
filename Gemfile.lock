@@ -49,6 +49,7 @@ GEM
     bcrypt-ruby (2.1.2)
     bhm-google-maps (0.3.0)
     builder (2.1.2)
+    cancan (1.4.1)
     capistrano (2.5.19)
       highline
       net-scp (>= 1.0.0)
@@ -149,6 +150,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_tree
   bhm-google-maps
+  cancan
   capistrano
   ckeditor!
   declarative_authorization!
