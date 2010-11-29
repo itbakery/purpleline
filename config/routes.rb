@@ -24,6 +24,7 @@ root :to => "home#present"
   match "/mrta" => "home#mrta"
   match "/project" => "home#project"
   match "/station/:id" => 'home#station'
+  match "/pagetran/:id" => 'home#pagetran'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

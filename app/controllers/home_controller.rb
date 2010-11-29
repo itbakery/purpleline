@@ -33,4 +33,10 @@ class HomeController < ApplicationController
     @map.overlay_init(@gmarker)
   	render :layout=>"project"
   end
+  
+  def pagetran
+  	@page = PagesTranslation.find(params[:id])
+  	render :layout=>"mrta"
+  	
+  end
 end
