@@ -9,14 +9,23 @@
   <%= javascript_include_tag :ckeditor %>
   <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
   <%= @map.to_html.html_safe rescue nil %>
-
+<style type='text/css'>
+  #user_nav {
+  float: right;
+  margin:3px 3px;
+  color:#FFFFFF;
+  float:right; 
+  -moz-border-radius:8px 8px 8px 8px;
+  background:none repeat scroll 0 0 #008BBF;
+  padding:4px 16px;
+}
+</style>
 </head>
 <body>
   <div id="container">
+  
     <div id="header">
-      <h1><a href="/">MRTA PURPLE LINE</a></h1>
-      
-      <div id="user_nav">
+    <div id="user_nav">
          <% if user_signed_in? %>
             Signed in as <%= current_user.email %>. Not you?
             <%= link_to "Sign out", destroy_user_session_path %>
@@ -24,10 +33,17 @@
             <!-- <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %> -->
         <% end %>
      </div>	
+      <h1><a href="/">MRTA PURPLE LINE</a></h1>
+      
+
      
       <div id="user-navigation">
         <ul class="wat-cf">
-          <li><a href="#"><%= t("web-app-theme.profile", :default => "Profile") %></a></li>
+          <% if current_user.profile.nil?%>
+          
+          <%else%>
+             <li><a href="/profiles/<%=current_user.id%>/edit"><%= t("web-app-theme.profile", :default => "Edit Profile") %></a></li>
+          <%end%>  
           <li><a href="#"><%= t("web-app-theme.settings", :default => "Settings") %></a></li>
           <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
         </ul>
