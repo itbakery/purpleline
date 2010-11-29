@@ -37,7 +37,7 @@ namespace :deploy do
   end
 
 task :after_update_code, :roles => :app do
-  %w{uploads  avatars swfs}.each do |share|
+  %w{uploads  avatars swfs ckeditor_assets }.each do |share|
     run "rm -rf #{release_path}/public/#{share} "
     run "mkdir -p #{shared_path}/purple/#{share} "
     run "ln -nfs #{shared_path}/purple/#{share} #{release_path}/public/#{share} "
