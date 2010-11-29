@@ -47,7 +47,7 @@ class Admin::NewEventsTranslationsController < ApplicationController
 
     respond_to do |format|
       if @new_events_translation.save
-        format.html { redirect_to(@new_events_translation, :notice => 'New events translation was successfully created.') }
+        format.html { redirect_to([:admin,@new_events_translation], :notice => 'New events translation was successfully created.') }
         format.xml  { render :xml => @new_events_translation, :status => :created, :location => @new_events_translation }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class Admin::NewEventsTranslationsController < ApplicationController
 
     respond_to do |format|
       if @new_events_translation.update_attributes(params[:new_events_translation])
-        format.html { redirect_to(@new_events_translation, :notice => 'New events translation was successfully updated.') }
+        format.html { redirect_to([:admin,@new_events_translation], :notice => 'New events translation was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +79,7 @@ class Admin::NewEventsTranslationsController < ApplicationController
     @new_events_translation.destroy
 
     respond_to do |format|
-      format.html { redirect_to(new_events_translations_url) }
+      format.html { redirect_to(admin_new_events_translations_url) }
       format.xml  { head :ok }
     end
   end

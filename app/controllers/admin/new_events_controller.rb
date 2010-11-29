@@ -47,7 +47,7 @@ class Admin::NewEventsController < ApplicationController
 
     respond_to do |format|
       if @new_event.save
-        format.html { redirect_to(@new_event, :notice => 'New event was successfully created.') }
+        format.html { redirect_to([:admin,@new_event], :notice => 'New event was successfully created.') }
         format.xml  { render :xml => @new_event, :status => :created, :location => @new_event }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class Admin::NewEventsController < ApplicationController
 
     respond_to do |format|
       if @new_event.update_attributes(params[:new_event])
-        format.html { redirect_to(@new_event, :notice => 'New event was successfully updated.') }
+        format.html { redirect_to([:admin,@new_event], :notice => 'New event was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +79,7 @@ class Admin::NewEventsController < ApplicationController
     @new_event.destroy
 
     respond_to do |format|
-      format.html { redirect_to(new_events_url) }
+      format.html { redirect_to(admin_new_events_url) }
       format.xml  { head :ok }
     end
   end
