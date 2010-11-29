@@ -23,9 +23,5 @@ class HomeController < ApplicationController
   
   def station
   	@station = StationsTranslation.find(params[:id])
-  	render :update do |page|
-  		page.replace_html 'station', :partial => 'station'
-  	end
-  	
   end
 end
