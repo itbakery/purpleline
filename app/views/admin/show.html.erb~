@@ -22,7 +22,7 @@
 
 <p>
   <b>Content:</b>
-  <%= @tasks_translation.content.html_safe %>
+  <%= @tasks_translation.content %>
 </p>
 
 <p>

@@ -31,7 +31,7 @@
 
         <p>
           <b><%= t("activerecord.attributes.admin_announces_translation.content", :default => t("activerecord.labels.content", :default => "Content")) %>:</b>
-          <%= @announces_translation.content.html_safe %>
+          <%= @announces_translation.content %>
         </p>
 
         <p>

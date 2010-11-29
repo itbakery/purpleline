@@ -20,4 +20,13 @@ class HomeController < ApplicationController
   
   def pcpl
   end
+  
+  def station
+  	@station = StationsTranslation.find(params[:id])
+  	render :update do |page|
+  		page.replace_html 'station', :partial => 'station'
+
+  	end
+  	
+  end
 end
