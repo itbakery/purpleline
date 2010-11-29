@@ -1,3 +1,8 @@
 <ul>
- <%@station.html_safe%>
+ <h2><%=@station.title%></h2>
+ <div style="position:relative;">
+ <%=@station.content.html_safe%> <br/>
+ <p>Latitude:<%=@station.latitude%></p>
+ <p>Longtitude:<%=@station.longtitude%></p>
+ </div>
 </ui>
