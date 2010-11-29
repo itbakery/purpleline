@@ -8,21 +8,6 @@
          <a href="">
          <img src="images/q_a.gif" />
          </a>
-      </li>
-      <li class="suborg">
-         <a href="">
-         <img src="images/knowledge.gif" />
-         </a>
-      </li>
-      <li class="suborg">
-         <a href="">
-         <img src="images/l-facebook.png" />
-         </a>
-      </li>    
-      <li class="suborg">
-         <a href="">
-         <img src="images/l-twitter.png" />
-         </a>
-      </li>        
+      </li>     
    </ul>
 </div>   
