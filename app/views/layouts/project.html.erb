@@ -53,6 +53,8 @@
                					<%=@station.content.html_safe%> <br/>
                					<p>Latitude:<%=@station.latitude%></p>
                					<p>Longtitude:<%=@station.longtitude%></p>
+               					<%= draw_map_of Location.new(@station.title, @station.latitude, @station.longtitude) %>
+
                					</div>
                	 </ui>
                </div>
