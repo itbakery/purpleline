@@ -13,6 +13,8 @@
   <%= javascript_include_tag :defaults %>
 
   <%= csrf_meta_tag %>
+    <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
+  <%= @map.to_html.html_safe rescue nil %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
 <body>
@@ -53,7 +55,7 @@
                					<%=@station.content.html_safe%> <br/>
                					<p>Latitude:<%=@station.latitude%></p>
                					<p>Longtitude:<%=@station.longtitude%></p>
-               					<%= draw_map_of Location.new(@station.title, @station.latitude, @station.longtitude) %>
+               					 <%= @map.div(:width => 320, :height => 200).html_safe %>
 
                					</div>
                	 </ui>
