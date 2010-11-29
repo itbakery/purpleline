@@ -44,34 +44,12 @@
         <div class="block">
           <div class="contentblock">
              <div class="inner">
-               <%= @mrta.content.html_safe rescue nil %>
+             <%= yield %> 
              </div>
-              <%if !@station.nil?%>
-               <div id="station">
-               <ul>
-               		<li>
-               				<h2><%=@station.title%></h2>
-               					<div style="position:relative;">
-               					<%=@station.content.html_safe%> <br/>
-               					<p>Latitude:<%=@station.latitude%></p>
-               					<p>Longtitude:<%=@station.longtitude%></p>
-               					 <%= @map.div(:width => 320, :height => 200).html_safe %>
-
-               					</div>
-               	 </ui>
-               </div>
-               <%end%>
           </div>
         </div>
 
     </div>
-        <div class="block">
-          <div class="contentblock"
-             <div class="inner">
-                <%= @mrtatrack.content.html_safe rescue nil%>
-             </div>
-          </div>
-        </div> 
   </div>
   <!-- end project_detail -->
 
