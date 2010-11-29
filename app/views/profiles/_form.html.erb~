@@ -1,5 +1,5 @@
 <%= form_for(@profile) do |f| %>
- <!--  <%f.hidden_field :user_id ,:value => current_user.id %> -->
+  <%f.hidden_field :user_id :value => current_user.id %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -11,11 +11,7 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  
+
   <div class="field">
     <%= f.label :company_id %><br />
     <%= f.text_field :company_id %>
