@@ -39,7 +39,12 @@
         <%= yield %>
         <div id="footer">
           <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> Web App.</p>
+     <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
+     All rights reserved <br/> 
+     Webmaster : webmaster@pcpl-th.com<br/>
+     Public Relation Division : pr@mrta.co.th
+     
+     </div>
           </div>      
         </div>
       </div>
