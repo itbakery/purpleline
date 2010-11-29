@@ -65,6 +65,22 @@ class Admin::StationsTranslationsController < ApplicationController
   # GET /stations_translations/1/edit
   def edit
     @stations_translation = StationsTranslation.find(params[:id])
+    coordinates = [@stations_translation.latitude,@stations_translation.longtitude]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+
+    @map.event_init(@gmarker, :dragend, "function(){
+      var latlng = gmarker.getLatLng().toUrlValue();
+      var tmp = latlng.split(',');
+      var px = tmp[0];
+      var py = tmp[1];
+      $('#stations_translation_latitude').val(px);
+      $('#stations_translation_longtitude').val(py);
+       }")    
   end
 
   # POST /stations_translations
