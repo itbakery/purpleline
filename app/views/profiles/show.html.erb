@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @profile.user_id %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @profile.company_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <b>Surname:</b>
+  <%= @profile.surname %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @profile.position %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%= @profile.telephone %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= @profile.mobile %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @profile.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

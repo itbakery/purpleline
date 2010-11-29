@@ -1,4 +1,6 @@
 Purpleline::Application.routes.draw do
+  resources :profiles
+
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
   resources :pages_translations
