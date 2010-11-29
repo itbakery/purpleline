@@ -1,3 +1,0 @@
-update_page do |page|
-page[:station].html("test test est");
-end

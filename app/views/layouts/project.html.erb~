@@ -39,10 +39,12 @@
   <div class="span-18 last" id="project_detail">
     <div class="contentbox_2">
         <div class="block">
-          <div class="contentblock"
+          <div class="contentblock">
              <div class="inner">
                <%= @mrta.content.html_safe rescue nil %>
              </div>
+               <div id="station">
+               </div>
           </div>
         </div>
 

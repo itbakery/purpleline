@@ -23,5 +23,6 @@ class HomeController < ApplicationController
   
   def station
   	@station = StationsTranslation.find(params[:id])
+  	render :layout=>"project"
   end
 end
