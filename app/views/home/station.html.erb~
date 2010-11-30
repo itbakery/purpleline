@@ -8,6 +8,5 @@
             <p>Longtitude:<%=@station.longtitude%></p>
             <%= @map.div(:width => 525, :height => 300).html_safe %>
       </div>
-       </li>
   </ui>
 </div>

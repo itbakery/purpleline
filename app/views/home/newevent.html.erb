@@ -1,0 +1,11 @@
+<div id="station">
+    <ul>
+      <% @newevents.each do |newevent|%>
+       <li>
+        <h2><%=newevent.title%></h2>
+         <div style="position:relative;">
+            <%=newevent.content.html_safe%> <br/>
+        </div>
+      </li>  
+  </ui>
+</div>

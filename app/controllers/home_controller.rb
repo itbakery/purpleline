@@ -6,7 +6,15 @@ class HomeController < ApplicationController
   	@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	render :layout=>"home"
   end
-
+ 
+  def newevent
+  	if params[:id]
+  		@newevents = NewEventsTranslation.where("id=?",params[:id])
+  	else
+  		@newevents = NewEventsTranslation.order("start_on desc")
+  	end
+  	render :layout=>"newevent"
+  end
   def present
        render  :layout => "present"
   end
@@ -38,6 +46,5 @@ class HomeController < ApplicationController
   def pagetran
   	@page = PagesTranslation.find(params[:id])
   	render :layout=>"mrta"
-  	
   end
 end

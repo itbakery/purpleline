@@ -74,12 +74,13 @@ border:medium none;
 #boxarea .boxmenu ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  /*list-style: none;*/
+  list-style-image: url('../images/tick.gif');
 }
 #boxarea .boxmenu ul li a {
   text-decoration: none;
   color: #15ADFF;
-  list-style-image: url('../images/tick.gif');
+
 }
 
 /*--blueprint------------------------------------------------*/
