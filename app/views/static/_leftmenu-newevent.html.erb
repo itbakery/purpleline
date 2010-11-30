@@ -12,10 +12,7 @@
             <ul>
             	<% @allnewevents.each do |newevent|%>
             		<li>
-            			<h2><%=newevent.title%></h2>
-            			<div style="position:relative;">
-            			<%=newevent.content.html_safe%> <br/>
-            			</div>
+                  <a href="/newevent/<%=newevent.id%>"><%=newevent.title%>
             		</li> 
              <%end%>
           </ui>
@@ -25,10 +22,7 @@
             <ul>
             	<% @lasttennewevents.each do |newevent|%>
             		<li>
-            			<h2><%=newevent.title%></h2>
-            			<div style="position:relative;">
-            			<%=newevent.content.html_safe%> <br/>
-            			</div>
+                   <a href="/newevent/<%=newevent.id%>"><%=newevent.title%>
             		</li> 
              <%end%>
           </ui>
