@@ -1,16 +1,38 @@
 <div id="containerribbon"> <!-- Main Container -->    
 
   <div class="bubble"> <!-- Bubble -->
-    <div class="rectangle"><h2 style="hight:29px;"><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;Project</h2></div> <!-- Rectangle with a title -->
+    <div class="rectangle"><h2 style="hight:29px;"><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;News&Event</h2></div> <!-- Rectangle with a title -->
     <div class="triangle-l"></div> 
     <div class="triangle-r"></div> 
 
     <div class="info">
       <div id="accordion">
           <h3><a href="">All Announcement</a></h3>
-            <div></div>
+            <div>
+            <ul>
+            	<% @allnewevents.each do |newevent|%>
+            		<li>
+            			<h2><%=newevent.title%></h2>
+            			<div style="position:relative;">
+            			<%=newevent.content.html_safe%> <br/>
+            			</div>
+            		</li> 
+             <%end%>
+          </ui>
+            </div>
           <h3><a href="">Lastest Announcement</a></h3>
-            <div></div>
+            <div>
+            <ul>
+            	<% @lasttennewevents.each do |newevent|%>
+            		<li>
+            			<h2><%=newevent.title%></h2>
+            			<div style="position:relative;">
+            			<%=newevent.content.html_safe%> <br/>
+            			</div>
+            		</li> 
+             <%end%>
+          </ui>
+            </div>
           <h3><a href="">This Mounth</a></h3>
             <div></div>
      </div>
