@@ -6,7 +6,6 @@
          <div style="position:relative;">
             <%=newevent.content.html_safe%> <br/>
         </div>
-        <%= @map.div(:width => 700, :height => 370).html_safe %>
       </li> 
       <%end%>
   </ui>

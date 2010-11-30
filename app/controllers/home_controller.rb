@@ -8,14 +8,33 @@ class HomeController < ApplicationController
   end
  
   def newevent
+#  	if params[:id]
+#  		@newevents = NewEventsTranslation.where("id=?",params[:id]).where("publish =?",1)
+#  	else
+#  		@newevents = NewEventsTranslation.order("start_on desc")
+#  	end
+#  	  @allnewevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc")
+#  	  @lasttennewevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(10)
+#  	render :layout=>"newevent"
+  	
+  	
   	if params[:id]
-  		@newevents = NewEventsTranslation.where("id=?",params[:id]).where("publish =?",1)
+  		@newevents = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)
+  		
+  		coordinates = @newevents.first.latitude,@newevents.first.longtitude]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)	
+    @gmarker = GMarker.new(coordinates,:title => "#{@newevents.first.title}")
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
   	else
-  		@newevents = NewEventsTranslation.order("start_on desc")
+  		@newevents = AnnouncesTranslation.order("start_on desc")
   	end
-  	  @allnewevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc")
-  	  @lasttennewevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(10)
+  	  @allnewevents = Announceslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc")
+  	  @lasttennewevents = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(10)
   	render :layout=>"newevent"
+  	
   end
   def present
        render  :layout => "present"
