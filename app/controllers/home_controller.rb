@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
   def index
+  	@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	render :layout=>"home"
   end
 
