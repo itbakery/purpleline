@@ -19,9 +19,8 @@ class HomeController < ApplicationController
   	
   	
   	if params[:id]
-  		@newevents = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)
-  		
-  		coordinates = @newevents.first.latitude,@newevents.first.longtitude]
+  	@newevents = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)
+  	coordinates = [@newevents.first.latitude,@newevents.first.longtitude]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
     @map.center_zoom_init(coordinates,15)	
