@@ -1,7 +1,10 @@
 <ul >
   <% @announces.each do |announce|%>
-     <li style="list-style-image: url('../images/tick.gif');">
-     <a href="/announce/<%=announce.id%>"><%=announce.title%>
+     <li >
+     <a href="/announce/<%=announce.id%>">
+     <span>[<%=announce.start_on%>]</span>
+     <span><%=announce.title%></span>
      </li>
   <%end%>
 </ul>
+

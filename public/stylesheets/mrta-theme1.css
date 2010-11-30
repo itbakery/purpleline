@@ -82,7 +82,9 @@ border:medium none;
   color: #15ADFF;
 
 }
-
+#announcebox ul li{
+border-bottom:1px solid #fff;
+}
 #announcebox ul li h3 {
 /*
 -moz-border-radius-bottomleft:5px;

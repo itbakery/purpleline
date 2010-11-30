@@ -25,7 +25,6 @@
                 
                     <ul class="simple">
 										<div class="">
-												<h3>Announcement</h3>
                         <li><a href="#">Traffic</a></li>
                         <li><a href="#">Safety</a></li>
                         <li><a href="#">Environment</a></li>
@@ -88,7 +87,8 @@
 		</div>
         
 	</li>
-	<li class="menu_right"><a href="/index" class="">Home</a>
+	
+	<li class="menu_right"><a href="/index" class="drop">Home</a>
     
 		<div class="dropdown_1column">
         
