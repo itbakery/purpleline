@@ -37,21 +37,42 @@
     <div id="feature"><%= render :partial => '/static/s3slider'%></div>
     <div id="selectlocation"><%= render :partial => '/static/selectlocation'%> </div>
   </div>
+  <!--
   <div class="span-16" id="project_detail">
     <div class="contentbox_2">projectdetail</div> 
-  </div>
+  </div>-->
   <!-- end project_detail -->
+  <!--
   <div class="span-8 last" id="announcement">
    <div class="contentbox_3">projectdetail</div> 
-  </div>
+  </div>-->
   <!-- end announcement -->
-  <div class="span-8" id="project"><div class="contentbox_2">Project</div>
+  <div class="span-24 last" id="boxarea">
+    <img src="../images/global-footer-line.jpg">
+  <div class="span-8" id="project">
+     <div class="boxmenu">
+        <img src="../images/contruction.png">
+        <h2>Construction</h2>
+        <span>contruction information</span>
+     </div>
   </div>
   <!-- end project -->
-  <div class="span-8" id="progress"><div class="contentbox_4">Progress</div>
+  <div class="span-8" id="progress">
+     <div class="boxmenu">
+     <img src="../images/progress.png">
+       <h2>Progress</h2>
+       <span></span>
+     </div>
   </div>
   <!-- end progress -->
-  <div class="span-8 last" id="new_event"><div class="contentbox_3">new</div>
+  <div class="span-8 last" id="new_event">
+      <div class="boxmenu">
+      <img src="../images/announce.png">
+       <h2>News&Event</h2>
+       <%= render :partial => 'static/newevent'%>
+      </div>
+  </div>
+  <img src="../images/global-footer-line.jpg">
   </div>
   <!-- end new_event -->
   <div class="span-24 last greenfield">

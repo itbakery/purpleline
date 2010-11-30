@@ -1,12 +1,21 @@
-<div id="station">
+<div id="announcebox">
     <ul>
       <%@announces.each do |announce|%>
        <li>
-        <h2><%=announce.title%></h2>
-         <div style="position:relative;">
-            <%=announce.content.html_safe%> <br/>
-        </div>
-        <%= @map.div(:width => 700, :height => 370).html_safe %>
+        <h3 ><%=announce.title%></h3>
+         <div class="group">
+               <div class="envelope">
+                 <h4>Detail</h4>
+                 <div class="">
+                 <%=announce.content.html_safe%> 
+                 </div>
+                 <div class="">
+                 start:<%=announce.start_on%>
+                 stop:<%=announce.stop_on%>
+                 </div>
+              </div>
+        <%= @map.div(:width => 630, :height => 370).html_safe %>    
+         </div>     
       </li> 
       <%end%>
   </ui>

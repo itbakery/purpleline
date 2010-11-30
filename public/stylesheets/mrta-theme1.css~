@@ -51,6 +51,38 @@ body{
   text-decoration:none;
 }
 
+#boxarea {
+  background-color: #191919;
+  height:300px;
+  overflow: hidden;
+}
+#boxarea  .boxmenu {
+  padding:10px;
+  color: #fff;
+}
+#boxarea  .boxmenu h2 {
+  color: #fff;
+}
+
+#boxarea  .boxmenu span {
+  color: #fff;
+}
+#boxarea  .boxmenu img {
+border:medium none;
+}
+
+#boxarea .boxmenu ul {
+  margin: 0;
+  padding: 0;
+  /*list-style: none;*/
+  list-style-image: url('../images/tick.gif');
+}
+#boxarea .boxmenu ul li a {
+  text-decoration: none;
+  color: #15ADFF;
+
+}
+
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 2px #c4c4c4;
@@ -148,6 +180,10 @@ body{
 .block .contentblock  .inner {
    list-style-image: url('../images/tick.gif');
    padding:15px 15px 15px;
+}
+
+.block .contentblock  .inner  ul li {
+   list-style-image: url('../images/tick.gif');
 }
 /*--FontFace-------------------------------------------------*/
 @font-face {
@@ -659,7 +695,7 @@ body{
 	-moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
 	height: 139px;
 	overflow:hidden;
-	margin-top: 5px;
+	margin-top: 1px;
 }
 
 #org {
