@@ -70,6 +70,18 @@ body{
 #boxarea  .boxmenu img {
 border:medium none;
 }
+
+#boxarea .boxmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#boxarea .boxmenu ul li a {
+  text-decoration: none;
+  color: #15ADFF;
+  list-style-image: url('../images/tick.gif');
+}
+
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 2px #c4c4c4;
@@ -167,6 +179,10 @@ border:medium none;
 .block .contentblock  .inner {
    list-style-image: url('../images/tick.gif');
    padding:15px 15px 15px;
+}
+
+.block .contentblock  .inner  ul li {
+   list-style-image: url('../images/tick.gif');
 }
 /*--FontFace-------------------------------------------------*/
 @font-face {
