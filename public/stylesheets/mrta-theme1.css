@@ -113,12 +113,13 @@ border-left:1px solid #BEDCE7;
 border-right:1px solid #BEDCE7
 padding:0 0.7em 0.7em;
 overflow:hidden;
+position:relative;
 }
 
 #announcebox .left {
 float:left;
 padding-top:0.7em;
-width:4em;
+width:40em;
 }
 
 #announcebox .right {
