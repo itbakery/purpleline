@@ -1,7 +1,12 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 $(document).ready(function() {
-   $( "#accordion" ).accordion();
+   $( "#accordion" ).accordion({
+                      collapsible: true,
+                      autoHeight: false,
+                      autoHeight: false,
+
+   	 	});
 	
    $('#announces_translation_start_on').datepicker({numberOfMonths:2});
    $('#announces_translation_stop_on').datepicker({numberOfMonths:2});

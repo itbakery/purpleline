@@ -146,8 +146,8 @@ body{
 }
 
 .block .contentblock  .inner {
-	
-   padding:0 15px 15px;
+   list-style-image: url('../images/tick.gif');
+   padding:15px 15px 15px;
 }
 /*--FontFace-------------------------------------------------*/
 @font-face {
