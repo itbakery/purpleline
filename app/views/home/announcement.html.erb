@@ -1,0 +1,13 @@
+<div id="station">
+    <ul>
+      <%@announces.each do |announce|%>
+       <li>
+        <h2><%=announce.title%></h2>
+         <div style="position:relative;">
+            <%=announce.content.html_safe%> <br/>
+        </div>
+        <%= @map.div(:width => 700, :height => 370).html_safe %>
+      </li> 
+      <%end%>
+  </ui>
+</div>
