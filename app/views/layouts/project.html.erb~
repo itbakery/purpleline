@@ -13,6 +13,8 @@
   <%= javascript_include_tag :defaults %>
 
   <%= csrf_meta_tag %>
+    <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
+  <%= @map.to_html.html_safe rescue nil %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
 <body>
@@ -28,7 +30,8 @@
   </div>
   <!-- end header -->
   <div class="span-24 page_header last" id="banner">
-    <%= render :partial => '/static/subslider'%></div>
+      <img src="../images/asset/nivo/image1.png" />
+    <!--<%= render :partial => '/static/subslider'%></div>-->
     
   <div class="span-6" id="announcement">
    <div class="contentbox_3">
@@ -41,21 +44,12 @@
         <div class="block">
           <div class="contentblock">
              <div class="inner">
-               <%= @mrta.content.html_safe rescue nil %>
+             <%= yield %> 
              </div>
-               <div id="station">
-               </div>
           </div>
         </div>
 
     </div>
-        <div class="block">
-          <div class="contentblock"
-             <div class="inner">
-                <%= @mrtatrack.content.html_safe rescue nil%>
-             </div>
-          </div>
-        </div> 
   </div>
   <!-- end project_detail -->
 

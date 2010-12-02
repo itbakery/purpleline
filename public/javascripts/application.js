@@ -18,7 +18,8 @@ $(document).ready(function() {
    $('#pages_translation_stop_on').datepicker({numberOfMonths:2});
    
    $('#new_events_translation_start_on').datepicker({numberOfMonths:2});
-   $('#new_events_translation_stop_on').datepicker({numberOfMonths:2});   
+   $('#new_events_translation_stop_on').datepicker({numberOfMonths:2});  
+   
    
    $('div.mrtalink').click(function(){location.href='http://www.mrta.co.th'});
    $('div.mrtalink').css('cursor','pointer');

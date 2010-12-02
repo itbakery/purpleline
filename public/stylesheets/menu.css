@@ -96,7 +96,7 @@
 }
 #menu li .drop {
 	padding-right:21px;
-	background:url("../imags/drop.png") no-repeat right 8px;
+	background:url("../images/drop.png") no-repeat right 8px;
 }
 #menu li:hover .drop {
 	background:url("../images/drop.png") no-repeat right 7px;
