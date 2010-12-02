@@ -1,0 +1,4 @@
+<p>Progress Chart</p>
+<%= raw high_chart("progress", @h)%>
+
+

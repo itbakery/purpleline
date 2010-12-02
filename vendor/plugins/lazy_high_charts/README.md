@@ -5,9 +5,6 @@ LazyHighCharts
   ruby 1.8.7 (2009-12-24 patchlevel 248) [i686-linux], MBARI 0x8770, Ruby Enterprise Edition 2010.01
   rspec 2.0.0.beta.22
   rails 3.0.0
-  
-### rails 2.x 
-  use the rails-2-3 branch
 
 Usage
 =======
@@ -41,10 +38,11 @@ Usage
 
   Usage in layout:
       
-  <%= javascript_include_tag 'highcharts' %>
-  <!--[if IE]>
-  <%= javascript_include_tag 'excanvas.compiled' %>
-  <![endif]-->
+     <%= javascript_include_tag :defaults %>
+     <%= javascript_include_tag :high_charts %>
+     <!--[if IE]>
+      <%= javascript_include_tag :ie_high_charts %>
+     <![endif]-->
       
   Usage in view:
   
@@ -72,4 +70,4 @@ Usage
    deshi(xiaods@gmail.com) 
 
 
-Copyright (c) 2010 Miguel Michelson Martinez, released under the MIT license
+Copyright (c) 2009 Miguel Michelson Martinez, released under the MIT license
