@@ -38,6 +38,7 @@ module HighChartsHelper
     else
       return graph
     end
+
   end
   
 end

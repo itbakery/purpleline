@@ -8,8 +8,9 @@
 	Copyright: Feel free to redistribute the script/modify it, as
 			   long as you leave my infos at the top.
 ------------------------------------------------------------------------- */
-jQuery.noConflict();
-(function($){ 
+
+
+(function($){  
 
     $.fn.s3Slider = function(vars) {       
         

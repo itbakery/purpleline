@@ -12,6 +12,13 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <script type='text/javascript'>  
+  jQuery.noConflict();
+  jQuery(document).ready(function() {
+      jQuery("#s3slider").s3Slider({timeOut: 9000 });	
+   });  
+  </script>
+  
 </head>
 <body>
 <div class="container  maincontainer bluebg">

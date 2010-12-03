@@ -1,4 +1,4 @@
 <p>Progress Chart</p>
 <%= high_chart("progress", @h)%>
 
-
+<%= @h%>
