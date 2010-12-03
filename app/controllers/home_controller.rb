@@ -60,16 +60,21 @@ class HomeController < ApplicationController
   	render :layout=>"mrta"
   end
   def progress
-  	
+  	@progresses = Progress.all
     @h = HighChart.new('graph') do |f|
       f.title({ :text=>"Progress Report  MRTA Purple Line Project : BANG YAI - BANG SUE SECTION "})
       f.subtitle({:text => "Source from: PCPL "})
-      f.options[:x_axis][:categories] = ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
-      f.series(:type=> 'line',:name=> 'Schedule Progress',:data=> [3, 2, 1, 3, 4])
-      f.series(:type=> 'line',:name=> 'Actual Progress',:data=> [2, 3, 5, 100, 6])
+      f.legend({:layout=>"vertical",:align=>"right",:verticalAlign=> "top",:borderWidth =>'top',:style=>{:position=>'absolute', :bottom=>'auto', :left=>'0px', :top=>'20px'}})
+      f.options[:x_axis][:categories] = @progresses.map(&:month)
+      f.options[:x_axis][:labels] = {:rotation=>0 , :align => 'right'}
+      f.options[:x_axis][:title] = {:text=> "Months"}
+      f.options[:y_axis][:title] = {:text=> "Project Progress"}
+      f.series(:type=> 'line',:name=> 'Schdule',:data=>  @progresses.map(&:schedule))
+      f.series(:type=> 'line',:name=> 'Actual',:data=>  @progresses.map(&:actual))
     end
-  	
-  	render :layout=>"blank"
+  	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
+
+  	render :layout=>"progress"
 
   end
 end
