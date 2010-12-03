@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Month:</b>
+  <%= @progress.month %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @progress.schedule %>
+</p>
+
+<p>
+  <b>Actual:</b>
+  <%= @progress.actual %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @progress.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_progress_path(@progress) %> |
+<%= link_to 'Back', progresses_path %>

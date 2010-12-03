@@ -1,4 +1,6 @@
 Purpleline::Application.routes.draw do
+  resources :progresses
+
   resources :profiles
 
   devise_for :users, :path_names => {:sign_up => "register"}
@@ -25,7 +27,8 @@ root :to => "home#present"
   match "/project" => "home#project"
   match "/station/:id" => 'home#station'
   match "/pagetran/:id" => 'home#pagetran'
-  match "/announce/:id" => 'home#announcement'  
+  match "/announce/:id" => 'home#announcement' 
+  match "/progress" => 'home#progress'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

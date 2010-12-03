@@ -28,9 +28,9 @@ $(document).ready(function() {
    $('div.pcpllink').css('cursor','pointer');
    
    $('#tabs').tabs();
-   $('#tabs').tabs('paging', { cycle: true, follow: true } );   
-   $('#s3slider').s3Slider({timeOut: 9000 });
-   $('#slider').s3Slider({timeOut: 9000});
+   $('#tabs').tabs('paging', { cycle: true, follow: true } ); 
+   
+   $("#s3slider").s3Slider({timeOut: 9000 });
 });
 
 

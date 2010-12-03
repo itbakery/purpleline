@@ -1,0 +1,29 @@
+<h1>Listing progresses</h1>
+
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Schedule</th>
+    <th>Actual</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @progresses.each do |progress| %>
+  <tr>
+    <td><%= progress.month %></td>
+    <td><%= progress.schedule %></td>
+    <td><%= progress.actual %></td>
+    <td><%= progress.note %></td>
+    <td><%= link_to 'Show', progress %></td>
+    <td><%= link_to 'Edit', edit_progress_path(progress) %></td>
+    <td><%= link_to 'Destroy', progress, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Progress', new_progress_path %>

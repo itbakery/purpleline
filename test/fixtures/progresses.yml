@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  month: MyString
+  schedule: 1.5
+  actual: 1.5
+  note: MyString
+
+two:
+  month: MyString
+  schedule: 1.5
+  actual: 1.5
+  note: MyString
