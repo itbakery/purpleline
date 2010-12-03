@@ -11,10 +11,7 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-           <th>
-            <%= t("activerecord.attributes.admin_progress.issuedate", :default => t("activerecord.labels.issuedate", :default => "IssueDate")) %>
-          </th>          
-           <th>
+                    <th>
             <%= t("activerecord.attributes.admin_progress.month", :default => t("activerecord.labels.month", :default => "Month")) %>
           </th>
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
@@ -22,17 +19,13 @@
         </tr>
         <% @progresses.each do |progress| -%>
         <tr class="<%= cycle("odd", "even") %>">
-
           <td>
             <%= progress.id %>
           </td>
-          <td>
-            <%= progress.issuedate %>
-          </td>
-          <td>
+                    <td>
             <%= link_to progress.month, admin_progress_path(progress) %>
           </td>
-          <td>
+                    <td>
             <%= progress.created_at %>
           </td>
           <td class="last">
