@@ -26,7 +26,7 @@
 
         <p>
           <b><%= t("activerecord.attributes.admin_stations_translation.content", :default => t("activerecord.labels.content", :default => "Content")) %>:</b>
-          <%= @stations_translation.content %>
+          <%= @stations_translation.content.html_safe %>
         </p>
 
         <p>
@@ -38,6 +38,8 @@
           <b><%= t("activerecord.attributes.admin_stations_translation.longtitude", :default => t("activerecord.labels.longtitude", :default => "Longtitude")) %>:</b>
           <%= @stations_translation.longtitude %>
         </p>
+        
+        
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_stations_translation_path(@stations_translation), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_stations_translation_path(@stations_translation), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

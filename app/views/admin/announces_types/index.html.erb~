@@ -26,7 +26,7 @@
             <%= link_to announces_type.name, admin_announces_type_path(announces_type) %>
           </td>
                     <td>
-            <%= display_date(announces_type.created_at) %>
+            <%= announces_type.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_announces_type_path(announces_type) %> |

@@ -33,7 +33,7 @@
             <%= link_to progress.month, admin_progress_path(progress) %>
           </td>
           <td>
-            <%= progress.created_at %>
+            <%= display_date(progress.created_at) %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_progress_path(progress) %> |

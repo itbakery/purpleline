@@ -26,7 +26,7 @@
             <%= link_to new_event.name, admin_new_event_path(new_event) %>
           </td>
                     <td>
-            <%= display_date(new_event.created_at) %>
+            <%= new_event.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_new_event_path(new_event) %> |

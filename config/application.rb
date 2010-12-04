@@ -45,6 +45,6 @@ module Purpleline
 
     #ActionController::Base.asset_host = "http://www.mrta-purpleline.com"
     config.action_mailer.default_url_options = { :host => 'http://mrta-purpleline.com' }
-  
+
   end
 end

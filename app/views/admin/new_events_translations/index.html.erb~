@@ -14,9 +14,6 @@
                     <th>
             <%= t("activerecord.attributes.admin_new_events_translation.new_event_id", :default => t("activerecord.labels.new_event_id", :default => "New_event_id")) %>
           </th>
-                    <th>
-            <%= t("activerecord.attributes.admin_new_events_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
-          </th>          
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
@@ -28,11 +25,8 @@
                     <td>
             <%= link_to new_events_translation.new_event_id, admin_new_events_translation_path(new_events_translation) %>
           </td>
-          <td>
-            <%= new_events_translation.title%>
-          </td>
                     <td>
-            <%= display_date(new_events_translation.created_at) %>
+            <%= new_events_translation.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_new_events_translation_path(new_events_translation) %> |

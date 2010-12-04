@@ -26,7 +26,7 @@
             <%= link_to language.name, admin_language_path(language) %>
           </td>
                     <td>
-            <%= display_date(language.created_at) %>
+            <%= language.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_language_path(language) %> |

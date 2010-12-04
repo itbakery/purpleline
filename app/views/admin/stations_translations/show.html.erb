@@ -18,7 +18,10 @@
           <b><%= t("activerecord.attributes.admin_stations_translation.language_id", :default => t("activerecord.labels.language_id", :default => "Language")) %>:</b>
           <%= @stations_translation.language_id %>
         </p>
-
+        <p>
+          <b><%= t("activerecord.attributes.admin_stations_translation.code", :default => t("activerecord.labels.code", :default => "Code")) %>:</b>
+          <%= @stations_translation.code %>
+        </p>
         <p>
           <b><%= t("activerecord.attributes.admin_stations_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
           <%= @stations_translation.title %>
