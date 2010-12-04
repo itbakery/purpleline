@@ -11,6 +11,8 @@
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+ <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
+  <%= @map.to_html.html_safe rescue nil %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
   <script type='text/javascript'>  
 

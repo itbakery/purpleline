@@ -13,11 +13,8 @@
 		if(ddVal != 0) {
 			output = "You Selected " + ddText;
 		}
-		/*alert(output);*/
+		alert(output);
 		/*document.getElementById("output").innerHTML = output;*/
-		jQuery.getScript("/home/filterstation",function(){
-		  alert("load ok");
-		});
 	}
   jQuery('#filterstation').change(onSelectChange);  
 </script>

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
   	#@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
-
+    @stations = StationsTranslation.all
   	render :layout=>"home"
   end
  
@@ -75,6 +75,16 @@ class HomeController < ApplicationController
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
 
   	render :layout=>"progress"
-
+  end
+  def filterstation
+  	@station = StationsTranslation.where("id=?",params[:station])
+  	coordinates = [13.83333,100.522413]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+  	respond_to do |format|
+  		format.html
+  		format.js 
+  	end
   end
 end
