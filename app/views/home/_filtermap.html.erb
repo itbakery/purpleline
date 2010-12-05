@@ -1,7 +1,7 @@
 <%=@map.div(:width => 630, :height => 280).html_safe %>
 <%= javascript_tag do %>
 			var tinyIcon = new GIcon();
-			tinyIcon.image = "http://labs.google.com/ridefinder/images/mm_20_red.png";
+			tinyIcon.image = "http://labs.google.com/ridefinder/images/mm_20_purple.png";
 			tinyIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
 			tinyIcon.iconSize = new GSize(12, 20);
 			tinyIcon.shadowSize = new GSize(22, 20);
@@ -13,14 +13,13 @@
         map.setCenter(new GLatLng(13.83333,100.522413), 13);
         map.setUIToDefault();
         <%@stations = StationsTranslation.all%>
-        	<%@stations.each do |station| %>
+        	<%@stations.each_with_index do |station,index| %>
         	var point = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
         	marker = new GMarker(point,{icon:tinyIcon});
           map.addOverlay(marker);
-         
-          GEvent.addListener(marker,"click",function(){
-             var detail = "<%=station.title%>";
-             map.openInfoWindowHtml(point,detail);
-          });
+
+          GEvent.addListener(point, "click", function() {
+             marker.openInfoWindowHtml('<b><%=station.title%></b>');
+           });
         	<%end%>
 <% end %>
