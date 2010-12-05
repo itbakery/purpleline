@@ -39,9 +39,9 @@
 	float: left;
 }
 #menu  .title{
-  margin-top: 7px;	
-  font-family: Negotiate;
-  font-size: 15px;
+  margin-top: 10px;	
+  font-family: SteinemBold;
+  font-size: 22px;
   font-weight: bold;
   color: #fff;
   position:relative;
