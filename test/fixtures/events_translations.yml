@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  event_id: 1
+  events_type_id: 1
+  language_id: 1
+  title: MyString
+  content: MyText
+  latitude: 1.5
+  longtitude: 1.5
+  start_on: 2010-12-05
+  stop_on: 2010-12-05
+  user_id: 1
+  publish: false
+
+two:
+  event_id: 1
+  events_type_id: 1
+  language_id: 1
+  title: MyString
+  content: MyText
+  latitude: 1.5
+  longtitude: 1.5
+  start_on: 2010-12-05
+  stop_on: 2010-12-05
+  user_id: 1
+  publish: false

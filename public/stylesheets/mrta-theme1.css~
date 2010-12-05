@@ -35,6 +35,28 @@ body{
 *{
   list-style: none outside none;
 }
+
+.mrtalink a {
+   text-decoration:none;
+}
+
+.pcpllink a {
+   text-decoration:none;
+}
+
+h3.section-title, h2.section-title {
+font-family:"SteinemBold","Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Sans,FreeSans,Jamrul,Garuda,Kalimati;
+font-size:250%;
+font-weight:normal;
+letter-spacing:-0.04em;
+margin:0;
+padding:0.2em 0 0.5em 0;
+/*text-shadow:1px 1px 1px #FFFFFF;*/
+}
+
+#progresschart {
+
+}
 #user_nav {
   float: right;
   margin:3px 3px;
@@ -246,6 +268,26 @@ clear:both;
 @font-face {
 	font-family: Negotiate;
 	src: url('./negotiate_free.ttf');
+}
+
+@font-face {
+font-family: DeliciousBold;
+src: url(./Delicious-Bold.otf);
+}
+
+@font-face {
+font-family: DeliciousRoman;
+src: url(./Delicious-Roman.otf);
+}
+
+@font-face {
+font-family: SteinemBold;
+src: url(./STEINEMB.ttf);
+}
+
+@font-face {
+font-family: SteinemRegular;
+src: url(./STEINEMU.ttf);
 }
 #main-navigation  .title{
   margin-top: 7px;	

@@ -3,8 +3,17 @@ Purpleline::Application.routes.draw do
 
 
 
+  resources :events_translations
+
+  resources :events_types
+
+  resources :events
+
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
+	resources :events_translations
+  resources :events_types
+  resources :events
   resources :pages_translations
   resources :pages
   resources :languages

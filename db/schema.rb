@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101204011739) do
+ActiveRecord::Schema.define(:version => 20101205130511) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -60,6 +60,36 @@ ActiveRecord::Schema.define(:version => 20101204011739) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_translations", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "events_type_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.date     "start_on"
+    t.date     "stop_on"
+    t.integer  "user_id"
+    t.boolean  "publish"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_types", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "languages", :force => true do |t|
     t.string   "name"
@@ -128,6 +158,13 @@ ActiveRecord::Schema.define(:version => 20101204011739) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "issuedate"
+  end
+
+  create_table "projectnews", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "purple_asset_resources", :force => true do |t|

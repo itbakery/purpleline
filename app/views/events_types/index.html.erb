@@ -1,0 +1,25 @@
+<h1>Listing events_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Cache slug</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events_types.each do |events_type| %>
+  <tr>
+    <td><%= events_type.name %></td>
+    <td><%= events_type.cache_slug %></td>
+    <td><%= link_to 'Show', events_type %></td>
+    <td><%= link_to 'Edit', edit_events_type_path(events_type) %></td>
+    <td><%= link_to 'Destroy', events_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Events type', new_events_type_path %>

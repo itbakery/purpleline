@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event:</b>
+  <%= @events_translation.event_id %>
+</p>
+
+<p>
+  <b>Events type:</b>
+  <%= @events_translation.events_type_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @events_translation.language_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @events_translation.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @events_translation.content %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @events_translation.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @events_translation.longtitude %>
+</p>
+
+<p>
+  <b>Start on:</b>
+  <%= @events_translation.start_on %>
+</p>
+
+<p>
+  <b>Stop on:</b>
+  <%= @events_translation.stop_on %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @events_translation.user_id %>
+</p>
+
+<p>
+  <b>Publish:</b>
+  <%= @events_translation.publish %>
+</p>
+
+
+<%= link_to 'Edit', edit_events_translation_path(@events_translation) %> |
+<%= link_to 'Back', events_translations_path %>
