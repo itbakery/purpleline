@@ -3,17 +3,9 @@ Purpleline::Application.routes.draw do
 
 
 
-  resources :news_translations
 
-  resources :news_types
 
-  resources :news
 
-  resources :events_translations
-
-  resources :events_types
-
-  resources :events
 
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
@@ -34,6 +26,9 @@ namespace :admin do
   resources :new_events
   resources :progresses
   resources :profiles
+  resources :news_translations
+  resources :news_types
+  resources :news
 end
 root :to => "home#present"
   #get "home/index"

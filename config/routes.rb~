@@ -3,8 +3,23 @@ Purpleline::Application.routes.draw do
 
 
 
+  resources :news_translations
+
+  resources :news_types
+
+  resources :news
+
+  resources :events_translations
+
+  resources :events_types
+
+  resources :events
+
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
+	resources :events_translations
+  resources :events_types
+  resources :events
   resources :pages_translations
   resources :pages
   resources :languages
@@ -30,6 +45,7 @@ root :to => "home#present"
   match "/project" => "home#project"
   match "/station/:id" => 'home#station'
   match "/pagetran/:id" => 'home#pagetran'
+  match "/pageview/:id" => 'home#pageview'
   match "/announce/:id" => 'home#announcement' 
   match "/progress" => 'home#progress'
   match "filterstation" => 'home#filterstation'
