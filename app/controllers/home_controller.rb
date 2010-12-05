@@ -77,14 +77,15 @@ class HomeController < ApplicationController
   	render :layout=>"progress"
   end
   def filterstation
-  	@station = StationsTranslation.where("id=?",params[:station])
-  	coordinates = [13.83333,100.522413]
-    @map = GMap.new("map")
-    @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init(coordinates,15)
+  	@station = StationsTranslation.where("id=?",1)
+	  @map = GMap.new("map_div")
+	  @map.control_init(:large_map => true,:map_type => true)
+	  @map.center_zoom_init([75.5,-42.56],4)
+	  @map.overlay_init(GMarker.new([75.6,-42.467],:title => "Hello", :info_window => "Info! Info!"))
+  	
   	respond_to do |format|
-  		format.html
-  		format.js 
-  	end
+      format.html  {render :layout=>"project"}
+      format.js  
+    end
   end
 end

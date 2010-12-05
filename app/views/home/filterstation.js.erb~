@@ -1,1 +1,2 @@
-page.replace_html :banner,"test"
+jQuery("#feature").html("<%= escape_javascript(render(:partial => "filtermap",:locals=>{:map => @map}))%>");
+

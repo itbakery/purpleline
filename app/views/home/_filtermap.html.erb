@@ -1,5 +1,26 @@
+<%=@map.div(:width => 630, :height => 280).html_safe %>
+<%= javascript_tag do %>
+			var tinyIcon = new GIcon();
+			tinyIcon.image = "http://labs.google.com/ridefinder/images/mm_20_red.png";
+			tinyIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+			tinyIcon.iconSize = new GSize(12, 20);
+			tinyIcon.shadowSize = new GSize(22, 20);
+			tinyIcon.iconAnchor = new GPoint(6, 20);
+			tinyIcon.infoWindowAnchor = new GPoint(5, 1);
 
 
-<%=map.class%>
-
-<%= map.div(:width => 630, :height => 280).html_safe %>
+			  var map = new GMap2(document.getElementById("map_div"));
+        map.setCenter(new GLatLng(13.83333,100.522413), 13);
+        map.setUIToDefault();
+        <%@stations = StationsTranslation.all%>
+        	<%@stations.each do |station| %>
+        	var point = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
+        	marker = new GMarker(point,{icon:tinyIcon});
+          map.addOverlay(marker);
+         
+          GEvent.addListener(marker,"click",function(){
+             var detail = "<%=station.title%>";
+             map.openInfoWindowHtml(point,detail);
+          });
+        	<%end%>
+<% end %>

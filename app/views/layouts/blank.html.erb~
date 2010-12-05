@@ -14,7 +14,7 @@
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
 <body>
-<p>test</p>
-<%=yield%>
+
+<%= yield %> 
 </body>
 </html>
