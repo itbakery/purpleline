@@ -19,7 +19,7 @@
           map.addOverlay(marker);
 
           GEvent.addListener(point, "click", function() {
-             marker.openInfoWindowHtml('<b><%=station.title%></b>');
+             marker.openInfoWindowHtml(point,'<b><%=station.title%></b>');
            });
         	<%end%>
 <% end %>

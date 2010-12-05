@@ -66,10 +66,10 @@ class HomeController < ApplicationController
       f.subtitle({:text => "Source from: PCPL "})
       f.legend({:layout=>"vertical",:align=>"right",:verticalAlign=> "top",:borderWidth =>'top',:style=>{:position=>'absolute', :bottom=>'auto', :left=>'0px', :top=>'20px'}})
       f.options[:x_axis][:categories] = @progresses.map(&:month)
-      f.options[:x_axis][:labels] = {:rotation=>90 , :align => 'right'}
+      f.options[:x_axis][:labels] = {:rotation=>-90 , :align => 'right'}
       f.options[:x_axis][:title] = {:text=> "Months"}
       f.options[:y_axis][:title] = {:text=> "Project Progress"}
-      f.series(:type=> 'line',:name=> 'Schdule',:data=>  @progresses.map(&:schedule))
+      f.series(:type=> 'line',:name=> 'Schedule',:data=>  @progresses.map(&:schedule))
       f.series(:type=> 'line',:name=> 'Actual',:data=>  @progresses.map(&:actual))
     end
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
