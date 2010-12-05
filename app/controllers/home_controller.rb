@@ -36,6 +36,10 @@ class HomeController < ApplicationController
   	render :layout=>"mrta"
   end
   
+  def pageview
+  	@page =  PagesTranslation.where("id=?",params[:id])
+  	render :layout=>"mrta"
+  end
   def project
   	render :layout=>"project"
   end

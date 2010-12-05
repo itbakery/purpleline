@@ -15,11 +15,11 @@
         <%@stations = StationsTranslation.all%>
         	<%@stations.each_with_index do |station,index| %>
         	var point = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
-        	marker = new GMarker(point,{icon:tinyIcon});
-          map.addOverlay(marker);
 
+        	marker = new GMarker(point,{icon:tinyIcon});
           GEvent.addListener(point, "click", function() {
              marker.openInfoWindowHtml(point,'<b><%=station.title%></b>');
            });
+          map.addOverlay(marker);           
         	<%end%>
 <% end %>
