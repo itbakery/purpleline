@@ -1,5 +1,4 @@
-class Admin::NewsTranslationsController < ApplicationController
-	layout "admin"
+class NewsTranslationsController < ApplicationController
   # GET /news_translations
   # GET /news_translations.xml
   def index
@@ -45,7 +44,7 @@ class Admin::NewsTranslationsController < ApplicationController
 
     respond_to do |format|
       if @news_translation.save
-        format.html { redirect_to([:admin,@news_translation], :notice => 'News translation was successfully created.') }
+        format.html { redirect_to(@news_translation, :notice => 'News translation was successfully created.') }
         format.xml  { render :xml => @news_translation, :status => :created, :location => @news_translation }
       else
         format.html { render :action => "new" }
@@ -61,7 +60,7 @@ class Admin::NewsTranslationsController < ApplicationController
 
     respond_to do |format|
       if @news_translation.update_attributes(params[:news_translation])
-        format.html { redirect_to([:admin,@news_translation], :notice => 'News translation was successfully updated.') }
+        format.html { redirect_to(@news_translation, :notice => 'News translation was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -77,7 +76,7 @@ class Admin::NewsTranslationsController < ApplicationController
     @news_translation.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_news_translations_url) }
+      format.html { redirect_to(news_translations_url) }
       format.xml  { head :ok }
     end
   end
