@@ -3,6 +3,12 @@ Purpleline::Application.routes.draw do
 
 
 
+  resources :news_translations
+
+  resources :news_types
+
+  resources :news
+
   resources :events_translations
 
   resources :events_types

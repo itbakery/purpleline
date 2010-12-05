@@ -1,0 +1,2 @@
+module NewsTranslationsHelper
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205130511) do
+ActiveRecord::Schema.define(:version => 20101205134404) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -113,6 +113,36 @@ ActiveRecord::Schema.define(:version => 20101205130511) do
     t.date     "start_on"
     t.date     "stop_on"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news_translations", :force => true do |t|
+    t.integer  "new_id"
+    t.integer  "news_type_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.date     "start_on"
+    t.date     "stop_on"
+    t.integer  "user_id"
+    t.boolean  "publish"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news_types", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

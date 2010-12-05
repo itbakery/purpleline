@@ -1,0 +1,2 @@
+module Admin::NewsTypesHelper
+end

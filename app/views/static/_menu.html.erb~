@@ -20,11 +20,16 @@
 	<li class="menu_right"><a href="#" class="drop">News&Events</a>
     
 		<div class="dropdown_1column align_right">
-        
+         <h3>News</h3>
                 <div class="col_1">
-                
                     <ul class="simple">
-										<div class="">
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">All News</a></li>
+                    </ul>
+                </div>
+         <h3>Announcements</h3>
+                <div class="col_1">
+                    <ul class="simple">
                         <li><a href="#">Traffic</a></li>
                         <li><a href="#">Safety</a></li>
                         <li><a href="#">Environment</a></li>
@@ -33,9 +38,17 @@
                         <li><a href="#">Relocation of Utilities</a></li>
                         <li><a href="#">Removals</a></li>
                         <li><a href="#">Activities</a></li>
-										</div>
                     </ul>   
                 </div>
+         <h3>Events</h3>
+                <div class="col_1">
+                    <ul class="simple">
+
+                        <li><a href="#">Public</a></li>
+                        <li><a href="#">Social</a></li>
+
+                    </ul>   
+                </div>                
 		</div>
 	</li>
 
@@ -56,7 +69,7 @@
 			</div>
       <hr  style="border: 1px dotted #736F6E;" >
                         <li><a href="#">Photo & Video</a></li>
-                        <li><a href="#">Graph</a></li>
+                        <li><a href="/progress">Graph</a></li>
       </ul>   
                      
                 </div>
@@ -94,13 +107,13 @@
         
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="/mrta">MRTA Home</a></li>
-                        <li><a href="#">Organization</a></li>
-                        <li><a href="#">Purple Line (I) Section</a></li>
-                        <li><a href="#">Purple Line Extension</a></li>
-                        <li><a href="#">MRTA Network Plan</a></li>
-                        <li><a href="#">PCPL</a></li>
-                        <li><a href="#">Contractors</a></li>
+											 <li><a href="/pageview/16">MRTA Home</a></li>
+											 <li><a href="/pageview/13">Organization</a></li>
+											 <li><a href="/pageview/14">Purple Line (I) Section</a></li>
+											 <li><a href="/pageview/10" style="padding-left:20px;">Project Consultant</a></li>
+											 <li><a href="/pageview/11" style="padding-left:20px;">Contractors</a></li>                        
+											 <li><a href="/pageview/18">Purple Line Extension</a></li>
+											 <li><a href="/pageview/15">MRTA Network Plan</a></li>
                     </ul>   
                      
                 </div>

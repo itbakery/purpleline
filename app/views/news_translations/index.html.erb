@@ -1,0 +1,43 @@
+<h1>Listing news_translations</h1>
+
+<table>
+  <tr>
+    <th>New</th>
+    <th>News type</th>
+    <th>Language</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Latitude</th>
+    <th>Longtitude</th>
+    <th>Start on</th>
+    <th>Stop on</th>
+    <th>User</th>
+    <th>Publish</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @news_translations.each do |news_translation| %>
+  <tr>
+    <td><%= news_translation.new_id %></td>
+    <td><%= news_translation.news_type_id %></td>
+    <td><%= news_translation.language_id %></td>
+    <td><%= news_translation.title %></td>
+    <td><%= news_translation.content %></td>
+    <td><%= news_translation.latitude %></td>
+    <td><%= news_translation.longtitude %></td>
+    <td><%= news_translation.start_on %></td>
+    <td><%= news_translation.stop_on %></td>
+    <td><%= news_translation.user_id %></td>
+    <td><%= news_translation.publish %></td>
+    <td><%= link_to 'Show', news_translation %></td>
+    <td><%= link_to 'Edit', edit_news_translation_path(news_translation) %></td>
+    <td><%= link_to 'Destroy', news_translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New News translation', new_news_translation_path %>

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>New:</b>
+  <%= @news_translation.new_id %>
+</p>
+
+<p>
+  <b>News type:</b>
+  <%= @news_translation.news_type_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @news_translation.language_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @news_translation.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @news_translation.content %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @news_translation.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @news_translation.longtitude %>
+</p>
+
+<p>
+  <b>Start on:</b>
+  <%= @news_translation.start_on %>
+</p>
+
+<p>
+  <b>Stop on:</b>
+  <%= @news_translation.stop_on %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @news_translation.user_id %>
+</p>
+
+<p>
+  <b>Publish:</b>
+  <%= @news_translation.publish %>
+</p>
+
+
+<%= link_to 'Edit', edit_news_translation_path(@news_translation) %> |
+<%= link_to 'Back', news_translations_path %>
