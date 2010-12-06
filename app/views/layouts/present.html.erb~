@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MRTA-PURPLE LINE BANG YAI - BANG SUE SECTION</title>
+  <title>MRTA PURPLE LINE</title>
   <%= stylesheet_link_tag "print", :media=>"print" %>
   <%= stylesheet_link_tag "reset" %>
   <%= stylesheet_link_tag "screen", :media=>"screen,projection" %>
@@ -62,13 +62,15 @@ margin: 0px auto;
 <div class="content-outer">
   <div class="main-outer">
     <div class="main-inner">
+    <a  href="http://mrta-purpleline.com/index">
+     <img src="../images/headerpresent.png"  />
+    </a>
       <div id="myFlash" style="width:960px;">
 	       The &quot;You don't have flash&quot; message.
 	     Or Please install flash.
       </div>
       
    </div>
-   <a style="text-decoration:none;padding-left:430px; href='http://mrta-purpleline.com/index'>Visit Website</a>
   </div>
 </div>
 </body>
