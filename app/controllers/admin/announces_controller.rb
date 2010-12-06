@@ -4,7 +4,8 @@ class Admin::AnnouncesController < ApplicationController
   # GET /announces
   # GET /announces.xml
   def index
-    @announces = Announce.all
+  	page = params[:page] || 1  	
+    @announces = Announce.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,0 +1,2 @@
+class NewslettersTranslation < ActiveRecord::Base
+end

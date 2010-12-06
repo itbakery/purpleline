@@ -1,5 +1,6 @@
 class Admin::AnnouncesController < ApplicationController
   layout "admin"
+  before_filter :authenticate_user!
   # GET /announces
   # GET /announces.xml
   def index

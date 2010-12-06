@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MRTA-PURPLE LINE BANG YAI - BANG SUE SECTION</title>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/djime-cerulean/style", "web-app-theme/override" %>
+  <%= stylesheet_link_tag "jquery-ui-1.8.6.custom" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <%= javascript_include_tag :ckeditor %>
+  <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
+  <%= @map.to_html.html_safe rescue nil %>
+<style type='text/css'>
+  #user_nav {
+  float: right;
+  margin:3px 3px;
+  color:#FFFFFF;
+  float:right; 
+  -moz-border-radius:8px 8px 8px 8px;
+  background:none repeat scroll 0 0 #008BBF;
+  padding:4px 16px;
+}
+</style>
+</head>
+<body>
+  <div id="container">
+  
+    <div id="header">
+    <div id="user_nav">
+         <% if user_signed_in? %>
+            Signed in as <%= current_user.email %>. Not you?
+            <%= link_to "Sign out", destroy_user_session_path %>
+         <% else %>
+            <!-- <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %> -->
+        <% end %>
+     </div>	
+      <h1><a href="/">MRTA PURPLE LINE</a></h1>
+      
+
+     
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <% if current_user.profile.nil?%>
+          
+          <%else%>
+             <li><a href="/profiles/<%=current_user.id%>/edit"><%= t("web-app-theme.profile", :default => "Edit Profile") %></a></li>
+          <%end%>  
+          <li><a href="#"><%= t("web-app-theme.settings", :default => "Settings") %></a></li>
+          <li> <%= link_to "Sign out", destroy_user_session_path %></li>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf"> 
+                  <li class="<%= controller.controller_path == 'admin/pages_translations' ? 'active' : '' %>"><a href="<%= admin_pages_translations_path %>">PagesTranslations</a></li> 
+                  <li class="<%= controller.controller_path == 'admin/stations_translations' ? 'active' : '' %>"><a href="<%= admin_stations_translations_path %>">StationsTranslations</a></li>
+                  <li class="<%= controller.controller_path == 'admin/announces_translations' ? 'active' : '' %>"><a href="<%= admin_announces_translations_path %>">AnnouncesTranslations</a></li> 
+                  <li class="<%= controller.controller_path == 'admin/tasks_translations' ? 'active' : '' %>"><a href="<%= admin_tasks_translations_path %>">TasksTranslations</a></li>
+                  <li class="<%= controller.controller_path == 'admin/newsletters_translations' ? 'active' : '' %>"><a href="<%= admin_newsletters_translations_path %>">NewlettersTranslation</a></li> 
+                  <li class="<%= controller.controller_path == 'admin/events_translations' ? 'active' : '' %>"><a href="<%= admin_events_translations_path %>">EventsTranslations</a></li> 
+                  <li class="<%= controller.controller_path == 'admin/progresses' ? 'active' : '' %>"><a href="<%= admin_progresses_path %>">Progresses</a></li> 
+  
+
+                  
+
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+     <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
+     All rights reserved <br/> 
+     Webmaster : webmaster@pcpl-th.com<br/>
+     Public Relation Division : pr@mrta.co.th 
+     </div>
+          </div>      
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>    
+  </div>
+</body>
+</html>

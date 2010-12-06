@@ -1,4 +1,4 @@
-class ProjectnewsController < ApplicationController
+class Admin::ProjectnewsController < ApplicationController
   # GET /projectnews
   # GET /projectnews.xml
   def index
@@ -44,7 +44,7 @@ class ProjectnewsController < ApplicationController
 
     respond_to do |format|
       if @projectnews.save
-        format.html { redirect_to(@projectnews, :notice => 'Projectnew was successfully created.') }
+        format.html { redirect_to([:admin,@projectnews], :notice => 'Projectnew was successfully created.') }
         format.xml  { render :xml => @projectnews, :status => :created, :location => @projectnews }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class ProjectnewsController < ApplicationController
 
     respond_to do |format|
       if @projectnews.update_attributes(params[:projectnews])
-        format.html { redirect_to(@projectnews, :notice => 'Projectnew was successfully updated.') }
+        format.html { redirect_to([:admin,@projectnews], :notice => 'Projectnew was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +76,7 @@ class ProjectnewsController < ApplicationController
     @projectnews.destroy
 
     respond_to do |format|
-      format.html { redirect_to(projectnews_url) }
+      format.html { redirect_to(admin_projectnews_url) }
       format.xml  { head :ok }
     end
   end

@@ -1,0 +1,43 @@
+<h1>Listing newsletters_translations</h1>
+
+<table>
+  <tr>
+    <th>Newsletter</th>
+    <th>Newsletters type</th>
+    <th>Language</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Latitude</th>
+    <th>Longtitude</th>
+    <th>Start on</th>
+    <th>Stop on</th>
+    <th>User</th>
+    <th>Publish</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @newsletters_translations.each do |newsletters_translation| %>
+  <tr>
+    <td><%= newsletters_translation.newsletter_id %></td>
+    <td><%= newsletters_translation.newsletters_type_id %></td>
+    <td><%= newsletters_translation.language_id %></td>
+    <td><%= newsletters_translation.title %></td>
+    <td><%= newsletters_translation.content %></td>
+    <td><%= newsletters_translation.latitude %></td>
+    <td><%= newsletters_translation.longtitude %></td>
+    <td><%= newsletters_translation.start_on %></td>
+    <td><%= newsletters_translation.stop_on %></td>
+    <td><%= newsletters_translation.user_id %></td>
+    <td><%= newsletters_translation.publish %></td>
+    <td><%= link_to 'Show', newsletters_translation %></td>
+    <td><%= link_to 'Edit', edit_newsletters_translation_path(newsletters_translation) %></td>
+    <td><%= link_to 'Destroy', newsletters_translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Newsletters translation', new_newsletters_translation_path %>

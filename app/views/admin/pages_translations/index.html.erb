@@ -11,28 +11,28 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.admin_pages_translation.page_id", :default => t("activerecord.labels.page_id", :default => "Page_id")) %>
           </th>
           <th>
             <%= t("activerecord.attributes.admin_pages_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
           </th>          
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
-          <th class="last">&nbsp;</th>
+          <th class="last">Actions</th>
         </tr>
         <% @pages_translations.each do |pages_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
             <%= pages_translation.id %>
           </td>
-                    <td>
-            <%= link_to pages_translation.page_id, admin_pages_translation_path(pages_translation) %>
+          <td>
+            <%= link_to pages_translation.page_id, admin_page_path(pages_translation.page_id) %>
           </td>
-           <td>
-            <%= pages_translation.title %>
-          </td>
-                    <td>
-            <%= display_date(pages_translation.created_at) %>
+          <td>
+            <%=pages_translation.title %>
+          </td>          
+          <td>
+            <%= pages_translation.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_pages_translation_path(pages_translation) %> |

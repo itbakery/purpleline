@@ -1,0 +1,74 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admin_newsletters_translations_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_newsletters_translation_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_newsletters_translation_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.newsletter_id", :default => t("activerecord.labels.newsletter_id", :default => "Newsletter")) %>:</b>
+          <%= @newsletters_translation.newsletter_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.newsletters_type_id", :default => t("activerecord.labels.newsletters_type_id", :default => "Newsletters type")) %>:</b>
+          <%= @newsletters_translation.newsletters_type_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.language_id", :default => t("activerecord.labels.language_id", :default => "Language")) %>:</b>
+          <%= @newsletters_translation.language_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
+          <%= @newsletters_translation.title %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.content", :default => t("activerecord.labels.content", :default => "Content")) %>:</b>
+          <%= @newsletters_translation.content %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.latitude", :default => t("activerecord.labels.latitude", :default => "Latitude")) %>:</b>
+          <%= @newsletters_translation.latitude %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.longtitude", :default => t("activerecord.labels.longtitude", :default => "Longtitude")) %>:</b>
+          <%= @newsletters_translation.longtitude %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.start_on", :default => t("activerecord.labels.start_on", :default => "Start on")) %>:</b>
+          <%= @newsletters_translation.start_on %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.stop_on", :default => t("activerecord.labels.stop_on", :default => "Stop on")) %>:</b>
+          <%= @newsletters_translation.stop_on %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.user_id", :default => t("activerecord.labels.user_id", :default => "User")) %>:</b>
+          <%= @newsletters_translation.user_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_newsletters_translation.publish", :default => t("activerecord.labels.publish", :default => "Publish")) %>:</b>
+          <%= @newsletters_translation.publish %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_newsletters_translation_path(@newsletters_translation), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_newsletters_translation_path(@newsletters_translation), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

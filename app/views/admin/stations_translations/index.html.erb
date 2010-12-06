@@ -11,34 +11,28 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-           <th>
+          <th>
             <%= t("activerecord.attributes.admin_stations_translation.station_id", :default => t("activerecord.labels.station_id", :default => "Station_id")) %>
           </th>
-           <th>
-            <%= t("activerecord.attributes.admin_stations_translation.code", :default => t("activerecord.labels.code", :default => "Code")) %>
-          </th> 
-           <th>
-            <%= t("activerecord.attributes.admin_stations_translation.title", :default => t("activerecord.labels.title", :default => "title")) %>
-          </th>            
+          <th>
+            <%= t("activerecord.attributes.admin_stations_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
+          </th>          
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
-          <th class="last">&nbsp;</th>
+          <th class="last">Actions</th>
         </tr>
         <% @stations_translations.each do |stations_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
             <%= stations_translation.id %>
           </td>
-                    <td>
-            <%= link_to stations_translation.station_id, admin_stations_translation_path(stations_translation) %>
+          <td>
+            <%=  link_to stations_translation.station_id, admin_station_path(stations_translation.station_id) %>
           </td>
           <td>
-            <%= stations_translation.code %>
-          </td>
-          <td>
-            <%= stations_translation.title %>
+            <%= stations_translation.title%>
           </td>          
-          <td>
-            <%= display_date(stations_translation.created_at) %>
+                    <td>
+            <%= stations_translation.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_stations_translation_path(stations_translation) %> |

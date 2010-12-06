@@ -26,7 +26,7 @@
             <%= link_to announce.name, admin_announce_path(announce) %>
           </td>
                     <td>
-            <%= display_date(announce.created_at) %>
+            <%= announce.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_announce_path(announce) %> |
@@ -39,6 +39,8 @@
       <div class="actions-bar wat-cf">
         <div class="actions">
         </div>
+        
+        <%= will_paginate @announces  %>
         
       </div>
     </div>

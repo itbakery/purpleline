@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @newsletters_type.name %>
+</p>
+
+<p>
+  <b>Cache slug:</b>
+  <%= @newsletters_type.cache_slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsletters_type_path(@newsletters_type) %> |
+<%= link_to 'Back', newsletters_types_path %>

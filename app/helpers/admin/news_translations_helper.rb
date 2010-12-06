@@ -1,2 +1,0 @@
-module Admin::NewsTranslationsHelper
-end

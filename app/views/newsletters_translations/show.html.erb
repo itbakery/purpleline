@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Newsletter:</b>
+  <%= @newsletters_translation.newsletter_id %>
+</p>
+
+<p>
+  <b>Newsletters type:</b>
+  <%= @newsletters_translation.newsletters_type_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @newsletters_translation.language_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @newsletters_translation.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @newsletters_translation.content %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @newsletters_translation.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @newsletters_translation.longtitude %>
+</p>
+
+<p>
+  <b>Start on:</b>
+  <%= @newsletters_translation.start_on %>
+</p>
+
+<p>
+  <b>Stop on:</b>
+  <%= @newsletters_translation.stop_on %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @newsletters_translation.user_id %>
+</p>
+
+<p>
+  <b>Publish:</b>
+  <%= @newsletters_translation.publish %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsletters_translation_path(@newsletters_translation) %> |
+<%= link_to 'Back', newsletters_translations_path %>

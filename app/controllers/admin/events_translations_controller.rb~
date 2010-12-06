@@ -1,4 +1,5 @@
-class EventsTranslationsController < ApplicationController
+class Admin::EventsTranslationsController < ApplicationController
+	layout "admin"
   # GET /events_translations
   # GET /events_translations.xml
   def index
@@ -44,7 +45,7 @@ class EventsTranslationsController < ApplicationController
 
     respond_to do |format|
       if @events_translation.save
-        format.html { redirect_to(@events_translation, :notice => 'Events translation was successfully created.') }
+        format.html { redirect_to([:admin,@events_translation], :notice => 'Events translation was successfully created.') }
         format.xml  { render :xml => @events_translation, :status => :created, :location => @events_translation }
       else
         format.html { render :action => "new" }
@@ -60,7 +61,7 @@ class EventsTranslationsController < ApplicationController
 
     respond_to do |format|
       if @events_translation.update_attributes(params[:events_translation])
-        format.html { redirect_to(@events_translation, :notice => 'Events translation was successfully updated.') }
+        format.html { redirect_to([:admin,@events_translation], :notice => 'Events translation was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +77,7 @@ class EventsTranslationsController < ApplicationController
     @events_translation.destroy
 
     respond_to do |format|
-      format.html { redirect_to(events_translations_url) }
+      format.html { redirect_to(admin_events_translations_url) }
       format.xml  { head :ok }
     end
   end

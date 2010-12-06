@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205134404) do
+ActiveRecord::Schema.define(:version => 20101206063323) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -117,16 +117,16 @@ ActiveRecord::Schema.define(:version => 20101205134404) do
     t.datetime "updated_at"
   end
 
-  create_table "news", :force => true do |t|
+  create_table "newsletters", :force => true do |t|
     t.string   "name"
     t.string   "cache_slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "news_translations", :force => true do |t|
-    t.integer  "new_id"
-    t.integer  "news_type_id"
+  create_table "newsletters_translations", :force => true do |t|
+    t.integer  "newsletter_id"
+    t.integer  "newsletters_type_id"
     t.integer  "language_id"
     t.string   "title"
     t.text     "content"
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(:version => 20101205134404) do
     t.datetime "updated_at"
   end
 
-  create_table "news_types", :force => true do |t|
+  create_table "newsletters_types", :force => true do |t|
     t.string   "name"
     t.string   "cache_slug"
     t.datetime "created_at"
@@ -191,6 +191,13 @@ ActiveRecord::Schema.define(:version => 20101205134404) do
   end
 
   create_table "projectnews", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projectnews_types", :force => true do |t|
     t.string   "name"
     t.string   "cache_slug"
     t.datetime "created_at"

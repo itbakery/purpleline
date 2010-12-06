@@ -26,7 +26,7 @@
             <%= link_to task.name, admin_task_path(task) %>
           </td>
                     <td>
-            <%= display_date(task.created_at) %>
+            <%= task.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_task_path(task) %> |
@@ -39,6 +39,8 @@
       <div class="actions-bar wat-cf">
         <div class="actions">
         </div>
+        
+        <%= will_paginate @tasks  %>
         
       </div>
     </div>

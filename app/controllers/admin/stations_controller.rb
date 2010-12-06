@@ -4,7 +4,8 @@ class Admin::StationsController < ApplicationController
   # GET /stations
   # GET /stations.xml
   def index
-    @stations = Station.all
+  	page = params[:page] || 1  	
+    @stations = Station.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

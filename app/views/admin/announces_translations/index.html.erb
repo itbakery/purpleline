@@ -11,28 +11,29 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-           <th>
+          <th>
             <%= t("activerecord.attributes.admin_announces_translation.announce_id", :default => t("activerecord.labels.announce_id", :default => "Announce_id")) %>
           </th>
-           <th>
+          <th>
             <%= t("activerecord.attributes.admin_announces_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
-          </th>          
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
-          <th class="last">&nbsp;</th>
+          </th>
+          
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">Actions</th>
         </tr>
         <% @announces_translations.each do |announces_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
             <%= announces_translation.id %>
           </td>
-                    <td>
-            <%= link_to announces_translation.announce_id, admin_announces_translation_path(announces_translation) %>
+          <td>
+            <%= announces_translation.announce_id%>
           </td>
-                    <td>
+          <td>
             <%= announces_translation.title %>
           </td>          
                     <td>
-            <%= display_date(announces_translation.created_at) %>
+            <%= announces_translation.created_at %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_announces_translation_path(announces_translation) %> |
