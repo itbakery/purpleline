@@ -24,7 +24,7 @@
 
            var marker = new LabeledMarker(latlng,opts);
            GEvent.addListener(marker, "click", function() {
-           		 marker.openInfoWindowHtml('<p class="badge-small"><%=station.code%><p><b><%=station.title%>&nbsp;&nbsp;station</b><br/>location:<%=station.latitude%>,<%=station.longtitude%>');
+           		 this.openInfoWindowHtml('<p class="badge-small"><%=station.code%></p><b><%=station.title%>&nbsp;&nbsp;station</b><br/>location:<%=station.latitude%>,<%=station.longtitude%>');
             });
 
            map.addOverlay(marker);   
