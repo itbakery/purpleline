@@ -1,12 +1,5 @@
 <%=@map.div(:width => 630, :height => 280).html_safe %>
 <%= javascript_tag do %>
-			var tinyIcon = new GIcon();
-			tinyIcon.image = "http://labs.google.com/ridefinder/images/mm_20_purple.png";
-			tinyIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
-			tinyIcon.iconSize = new GSize(12, 20);
-			tinyIcon.shadowSize = new GSize(22, 20);
-			tinyIcon.iconAnchor = new GPoint(6, 20);
-			tinyIcon.infoWindowAnchor = new GPoint(5, 1);
 
 
 			  var map = new GMap2(document.getElementById("map_div"));
@@ -14,12 +7,30 @@
         map.setUIToDefault();
         <%@stations = StationsTranslation.all%>
         	<%@stations.each_with_index do |station,index| %>
-        	var point = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
+           var latlng = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
+           
+        	  var icon = new GIcon();
+        	  icon.image = './images/purple_marker.png';
+        	  icon.iconSize = new GSize(32, 32);
+        	  icon.iconAnchor = new GPoint(16, 16);
+        	  icon.infoWindowAnchor = new GPoint(25, 7);
 
-        	marker = new GMarker(point,{icon:tinyIcon});
-          GEvent.addListener(point, "click", function() {
-             marker.openInfoWindowHtml(point,'<b><%=station.title%></b>');
-           });
-          map.addOverlay(marker);           
+        	  opts = {
+        	  		'icon': icon,
+        	  		'clickable': true,
+        	  		'labelText': '<span style="color:#ffffff;font-weight:bold;"><%=station.code%></span>',
+        	  		'labelOffset': new GSize(-12, -9)
+        	  		};
+
+           var marker = new LabeledMarker(latlng,opts);
+           GEvent.addListener(marker, "click", function() {
+           		 marker.openInfoWindowHtml('<p class="badge-small"><%=station.code%><p><b><%=station.title%>&nbsp;&nbsp;station</b><br/>location:<%=station.latitude%>,<%=station.longtitude%>');
+            });
+
+           map.addOverlay(marker);   
+
+        
+
+
         	<%end%>
 <% end %>

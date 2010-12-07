@@ -97,26 +97,6 @@ ActiveRecord::Schema.define(:version => 20101206063323) do
     t.datetime "updated_at"
   end
 
-  create_table "new_events", :force => true do |t|
-    t.string   "name"
-    t.string   "cached_slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "new_events_translations", :force => true do |t|
-    t.integer  "new_event_id"
-    t.integer  "language_id"
-    t.string   "title"
-    t.text     "content"
-    t.boolean  "publish"
-    t.date     "start_on"
-    t.date     "stop_on"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "newsletters", :force => true do |t|
     t.string   "name"
     t.string   "cache_slug"
@@ -188,20 +168,6 @@ ActiveRecord::Schema.define(:version => 20101206063323) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "issuedate"
-  end
-
-  create_table "projectnews", :force => true do |t|
-    t.string   "name"
-    t.string   "cache_slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "projectnews_types", :force => true do |t|
-    t.string   "name"
-    t.string   "cache_slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "purple_asset_resources", :force => true do |t|

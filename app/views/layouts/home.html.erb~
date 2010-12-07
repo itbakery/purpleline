@@ -10,6 +10,7 @@
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "labeledmarker","map_function" %>
   <%= csrf_meta_tag %>
  <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
   <%= @map.to_html.html_safe rescue nil %>
@@ -61,8 +62,8 @@
   <div class="span-8" id="project">
      <div class="boxmenu">
         <img src="../images/contruction.png">
-        <h2 class="section-title">Construction</h2>
-        <span>contruction information</span>
+        <h2 class="section-title">New&Event</h2>
+        <span>New & Event</span>
      </div>
   </div>
   <!-- end project -->

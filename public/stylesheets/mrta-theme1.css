@@ -178,6 +178,22 @@ color:#FFFFFF;
 line-height:100%;
 }
 
+.badge-small {
+-moz-border-radius:2px 2px 2px 2px;
+color:#333333;
+display:block;
+float:left;
+font-weight:bold;
+margin-right:10px;
+margin-top:-1px;
+padding:2px;
+text-align:center;
+width:25px;
+background-color:#5596C4;
+color:#FFFFFF;
+line-height:100%;
+}
+
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 2px #c4c4c4;
