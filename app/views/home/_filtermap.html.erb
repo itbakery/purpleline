@@ -28,8 +28,11 @@
             });
 
            map.addOverlay(marker);   
-
-        
+           <% location = StationsTranslation.where("id=?",params[:id]).first%>
+           	 var  selectlat = <%=location.latitude%>;
+             var  selectlng = <%=location.longtitude%>;
+             map.panTo(new GLatLng(selectlat,selectlng));
+                     
 
 
         	<%end%>
