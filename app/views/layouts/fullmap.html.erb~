@@ -22,13 +22,12 @@
   </script>
   
 </head>
-<body style="margin:0px;">
+<body>
 <div id="header_upper">
   <div id="inside">
      <div class="home_icon_link">
-        <a href="http://mrta-purpleline.com/test">MRTA-Purple Line Project</a>
+        <a href="http://mrta-purpleline.com/test"></a>
      </div>
-     <!--
      <div class="no_icon_link" style="margin-left: 5px;">
         <a href="#">WEB LIFE</a>
      </div>
@@ -41,27 +40,26 @@
      <div class="no_icon_link">
         <a href="#">STYLE</a>
      </div>
-     -->
      <div class="downloads_icon_link" style="margin-left: 90px;">
-        <a href="#">STATIONS</a>
+        <a href="#">DOWNLOADS</a>
      </div>
      <div class="shopping_icon_link">
-        <a href="#">NEWS&EVENTS</a>
+        <a href="#">SHOPPING</a>
      </div>
      <div class="support_icon_link">
-        <a href="#">ANNOUNCEMENT</a>
+        <a href="#">TECH SUPPORT</a>
      </div>
      <div class="forums_icon_link">
         <a href="#">FORUMS</a>
      </div>
      <p class="toms_links">
-       	<A HREF="http://www.mrta.co.th/" target="_blank">MRTA</A>
-       	<A HREF="#" target="_blank">PCPL</A>
-       	<A HREF="www.otp.go.th" target="_blank">OTP</A>
+       	<A HREF="#" target="_blank">Tom's Hardware</A>
+       	<A HREF="#" target="_blank">Tom's Games</A>
+       	<A HREF="#" target="_blank">PC Safety Suite</A>
      </P>
  </div>
 </div>
-<div id="full">
+<div id="fullmap">
    <%=yield%>
 </div>
 </body>
