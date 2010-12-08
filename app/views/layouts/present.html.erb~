@@ -9,9 +9,9 @@
   <%= javascript_include_tag "jquery.swfobject.1-1-1.min"  %>
   <%= csrf_meta_tag %>
   <script>
-  $(document).ready(
+  jQuery(document).ready(
 	function() {
-		$('#myFlash').flash({swf: './swfs/intro01.swf',width:900,height:500});
+		jQuery('#myFlash').flash({swf: './swfs/intro01.swf',width:900,height:500});
 
                    }
          );
