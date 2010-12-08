@@ -1,0 +1,1 @@
+<%=@map.div(:width=>950,:height=>500).html_safe%>

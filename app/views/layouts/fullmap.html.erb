@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>MRTA-PURPLE LINE BANG YAI - BANG SUE SECTION</title>
+  <%= stylesheet_link_tag "print", :media=>"print" %>
+  <%= stylesheet_link_tag "reset" %>
+  <%= stylesheet_link_tag "screen", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "menu", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "map" %>
+  <%= javascript_include_tag :defaults %>
+
+  <%= csrf_meta_tag %>
+ <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
+  <%= @map.to_html.html_safe rescue nil %>
+    <%= javascript_include_tag "labeledmarker"%>
+  <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <script type='text/javascript'>  
+
+  </script>
+  
+</head>
+<body>
+<%=yield%>
+</body>
+
+</html>

@@ -81,7 +81,6 @@ class HomeController < ApplicationController
   	render :layout=>"progress"
   end
   def filterstation
-  	@station = StationsTranslation.where("id=?",1)
 	  @map = GMap.new("map_div")
 	  @map.control_init(:large_map => true,:map_type => true)
 	  @map.center_zoom_init([75.5,-42.56],4)
@@ -91,5 +90,14 @@ class HomeController < ApplicationController
       format.html  {render :layout=>"project"}
       format.js  
     end
+  end
+  def fullmap
+
+    coordinates = [13.83333,100.522413]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)	
+
+  	render :layout => "fullmap"
   end
 end

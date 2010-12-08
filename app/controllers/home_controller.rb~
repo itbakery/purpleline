@@ -36,6 +36,10 @@ class HomeController < ApplicationController
   	render :layout=>"mrta"
   end
   
+  def pageview
+  	@page =  PagesTranslation.where("id=?",params[:id])
+  	render :layout=>"mrta"
+  end
   def project
   	render :layout=>"project"
   end
@@ -66,10 +70,10 @@ class HomeController < ApplicationController
       f.subtitle({:text => "Source from: PCPL "})
       f.legend({:layout=>"vertical",:align=>"right",:verticalAlign=> "top",:borderWidth =>'top',:style=>{:position=>'absolute', :bottom=>'auto', :left=>'0px', :top=>'20px'}})
       f.options[:x_axis][:categories] = @progresses.map(&:month)
-      f.options[:x_axis][:labels] = {:rotation=>0 , :align => 'right'}
-      f.options[:x_axis][:title] = {:text=> "Months"}
-      f.options[:y_axis][:title] = {:text=> "Project Progress"}
-      f.series(:type=> 'line',:name=> 'Schdule',:data=>  @progresses.map(&:schedule))
+      f.options[:x_axis][:labels] = {:rotation=>-90 , :align => 'right'}
+      #f.options[:x_axis][:title] = {:text=> "Months"}
+      f.options[:y_axis][:title] = {:text=> "Project Progress (%)"}
+      f.series(:type=> 'line',:name=> 'Schedule',:data=>  @progresses.map(&:schedule))
       f.series(:type=> 'line',:name=> 'Actual',:data=>  @progresses.map(&:actual))
     end
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
@@ -77,12 +81,15 @@ class HomeController < ApplicationController
   	render :layout=>"progress"
   end
   def filterstation
-  	@station = StationsTranslation.where("id=?",params[:station])
+  	@station = StationsTranslation.where("id=?",1)
 	  @map = GMap.new("map_div")
 	  @map.control_init(:large_map => true,:map_type => true)
 	  @map.center_zoom_init([75.5,-42.56],4)
 	  @map.overlay_init(GMarker.new([75.6,-42.467],:title => "Hello", :info_window => "Info! Info!"))
-  	render :layout=>"project"
   	
+  	respond_to do |format|
+      format.html  {render :layout=>"project"}
+      format.js  
+    end
   end
 end

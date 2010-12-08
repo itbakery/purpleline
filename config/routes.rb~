@@ -29,7 +29,7 @@ root :to => "home#present"
   #get "home/index"
   #get "home/mrta"
   #get "home/present"
-  get "home/filterstation"
+  #get "home/filterstation"
   match "/index" => "home#index"
   match "/mrta" => "home#mrta"
   match "/project" => "home#project"
@@ -38,7 +38,7 @@ root :to => "home#present"
   match "/pageview/:id" => 'home#pageview'
   match "/announce/:id" => 'home#announcement' 
   match "/progress" => 'home#progress'
-  match "filterstation" => 'home#filterstation'
+  match "/filterstation/:id" => 'home#filterstation'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
