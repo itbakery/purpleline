@@ -98,13 +98,24 @@ class HomeController < ApplicationController
     @map.center_zoom_init(coordinates,13)	
     @stations = StationsTranslation.all
     markers = Array.new()
+        
+    @Icon=GIcon.new(:image=> "./images/purple_marker.png",
+    	      					:iconSize =>GSize.new(32,32),
+    	      					:iconAnchor =>GPoint.new(16,16),
+    	      					:infoWindowAnchor=> GPoint.new(25,7))
+
     @stations.each_with_index do |station,index|
     	coordinate = [station.latitude,station.longtitude]
-    	markers << GMarker.new(coordinate,:title=>station.title)
+    	markers << GMarker.new(coordinate,:title=>station.title,:icon=>@Icon)
     end
     markers.each do |m|
     	@map.overlay_init(m)
     end
+
+    
+    
   	render :layout => "fullmap"
   end
+  
+  	
 end

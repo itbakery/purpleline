@@ -92,12 +92,19 @@ class HomeController < ApplicationController
     end
   end
   def fullmap
-
-    coordinates = [13.83333,100.522413]
+    coordinates = [13.8705,100.479]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init(coordinates,15)	
-
+    @map.center_zoom_init(coordinates,13)	
+    @stations = StationsTranslation.all
+    markers = Array.new()
+    @stations.each_with_index do |station,index|
+    	coordinate = [station.latitude,station.longtitude]
+    	markers << GMarker.new(coordinate,:title=>station.title)
+    end
+    markers.each do |m|
+    	@map.overlay_init(m)
+    end
   	render :layout => "fullmap"
   end
 end

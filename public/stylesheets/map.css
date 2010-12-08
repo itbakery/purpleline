@@ -162,7 +162,7 @@ body.nosidebar a#button-sidebar-hide { display: none; }
 }
 #full {
    position:relative;
-   height:95%;
+   height:100%;
 }
 .home_icon_link {
     float: left;
