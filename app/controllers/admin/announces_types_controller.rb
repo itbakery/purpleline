@@ -1,6 +1,6 @@
 class Admin::AnnouncesTypesController < ApplicationController
   layout "admin"
-  before(:authenticate_user!)
+  before_filter :authenticate_user!
   # GET /announces_types
   # GET /announces_types.xml
   def index

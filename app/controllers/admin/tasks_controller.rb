@@ -1,6 +1,6 @@
 class Admin::TasksController < ApplicationController
   layout "admin"
-  before(:authenticate_user!) 
+  before_filter :authenticate_user!  
   # GET /tasks
   # GET /tasks.xml
   def index

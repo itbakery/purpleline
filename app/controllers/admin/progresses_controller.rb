@@ -1,6 +1,6 @@
 class Admin::ProgressesController < ApplicationController
   layout "admin"
-  before(:authenticate_user!)	
+  before_filter :authenticate_user!	
   # GET /progresses
   # GET /progresses.xml
   def index

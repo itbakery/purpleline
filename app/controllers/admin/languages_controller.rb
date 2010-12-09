@@ -1,6 +1,6 @@
 class Admin::LanguagesController < ApplicationController
 		layout  "admin"
-		before(:authenticate_user!)
+		before_filter :authenticate_user!
   # GET /languages
   # GET /languages.xml
   def index
