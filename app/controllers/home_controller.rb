@@ -99,10 +99,10 @@ include  Geokit::Mappable
   	@userip = request.env['REMOTE_ADDR']
   	
   	
-  	userlocation = IpGeocoder.geocode('@userip')
+  	userlocation = IpGeocoder.geocode("@userip")
   	markers = Array.new()
     
-  	if userlocation.success
+  	if !userlocation.lat.nil?
   		lat = userlocation.lat
   		lng = userlocatlat.lng
   		markers << GMarker.new([lat,lng],:title=>"You are here",:info_window=>"#{lat}  #{lnt} #{@userip}") 
