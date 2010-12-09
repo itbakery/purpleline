@@ -105,7 +105,7 @@ include  Geokit::Mappable
   	if userlocation.success
   		lat = userlocation.lat
   		lng = userlocatlat.lng
-  		markers << GMarker.new([lat,lng],:title=>"You are here") 
+  		markers << GMarker.new([lat,lng],:title=>"You are here",:info_window=>"#{lat}  #{lnt} #{@userip}") 
   	end
   	
     coordinates = [13.8705,100.479]
