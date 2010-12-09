@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
+  
   def index
   	#@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
@@ -99,13 +100,13 @@ include  Geokit::Mappable
   	@userip = request.env['REMOTE_ADDR']
   	
   	
-  	userlocation = IpGeocoder.geocode("@userip")
+  	@userlocation = IpGeocoder.geocode("#{@userip}")
   	markers = Array.new()
     
-  	if !userlocation.lat.nil?
-  		lat = userlocation.lat
-  		lng = userlocatlat.lng
-  		markers << GMarker.new([lat,lng],:title=>"You are here",:info_window=>"#{lat}  #{lnt} #{@userip}") 
+    if @userlocation.lat.nil?
+  		lat = @userlocation.lat
+  		lng = @userlocation.lng
+  		markers << GMarker.new([lat,lng],:title=>"You are here",:info_window=>"#{lat}  #{lng}") 
   	end
   	
     coordinates = [13.8705,100.479]
@@ -114,7 +115,7 @@ include  Geokit::Mappable
     @map.center_zoom_init(coordinates,13)	
     @stations = StationsTranslation.all
     markers = Array.new()
-    markers << GMarker.new([lat,lng],:title=>"You are here")    
+   
     @Icon=GIcon.new(:image=> "./images/purple_marker.png",
     	      					:iconSize =>GSize.new(32,32),
     	      					:iconAnchor =>GPoint.new(16,16),
