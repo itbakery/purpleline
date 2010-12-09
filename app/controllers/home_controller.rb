@@ -91,14 +91,30 @@ class HomeController < ApplicationController
       format.js  
     end
   end
+  
+include  Geokit::Geocoders
+include  Geokit::Mappable
+  
   def fullmap
+  	@userip = request.env['REMOTE_ADDR']
+  	
+  	
+  	userlocation = IpGeocoder.geocode('@userip')
+  	markers = Array.new()
+    
+  	if userlocation.success
+  		lat = userlocation.lat
+  		lng = userlocatlat.lng
+  		markers << GMarker.new([lat,lng],:title=>"You are here") 
+  	end
+  	
     coordinates = [13.8705,100.479]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
     @map.center_zoom_init(coordinates,13)	
     @stations = StationsTranslation.all
     markers = Array.new()
-        
+    markers << GMarker.new([lat,lng],:title=>"You are here")    
     @Icon=GIcon.new(:image=> "./images/purple_marker.png",
     	      					:iconSize =>GSize.new(32,32),
     	      					:iconAnchor =>GPoint.new(16,16),
@@ -106,7 +122,10 @@ class HomeController < ApplicationController
 
     @stations.each_with_index do |station,index|
     	coordinate = [station.latitude,station.longtitude]
-    	markers << GMarker.new(coordinate,:title=>station.title,:icon=>@Icon)
+    	markers << GMarker.new(coordinate,
+    												:title=>"#{station.code} #{station.title}",
+    												:info_window =>"<p class='badge-small'>#{station.code}</p> #{station.title}",
+    												:icon=>@Icon)
     end
     markers.each do |m|
     	@map.overlay_init(m)

@@ -68,9 +68,8 @@ GEM
       spruz (>= 0.1.0)
     friendly_id (3.1.7)
       babosa (~> 0.2.0)
+    geoip (0.8.7)
     geokit (1.5.0)
-    geokit-rails (1.1.4)
-      geokit (>= 1.5.0)
     geokit-rails3 (0.1.2)
       geokit (~> 1.5.0)
       rails (~> 3.0.0)
@@ -125,6 +124,7 @@ GEM
       activesupport (= 3.0.1)
       bundler (~> 1.0.0)
       railties (= 3.0.1)
+    rails-geocoder (0.9.5)
     rails3-generators (0.14.0)
     railties (3.0.1)
       actionpack (= 3.0.1)
@@ -158,7 +158,8 @@ DEPENDENCIES
   devise
   dynamic_form
   friendly_id (~> 3.1)
-  geokit-rails
+  geoip
+  geokit
   geokit-rails3
   jquery-rails
   json
@@ -170,6 +171,7 @@ DEPENDENCIES
   rack
   rack-openid (>= 0.2.1)
   rails (= 3.0.1)
+  rails-geocoder
   rails3-generators
   responds_to_parent
   rmagick
