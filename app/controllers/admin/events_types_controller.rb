@@ -1,6 +1,6 @@
 class Admin::EventsTypesController < ApplicationController
 	layout "admin"
-	before_filter :authenticate_user!	
+	before(:authenticate_user!)	
   # GET /events_types
   # GET /events_types.xml
   def index

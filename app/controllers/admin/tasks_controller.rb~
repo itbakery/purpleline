@@ -4,7 +4,8 @@ class Admin::TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all
+  	page = params[:page] || 1  	
+    @tasks = Task.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

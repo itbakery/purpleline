@@ -1,9 +1,14 @@
 class Admin::EventsTranslationsController < ApplicationController
 	layout "admin"
+	before_filter :authenticate_user!	
+  include ActionView::Helpers::PrototypeHelper
+  include ActionView::Helpers::JavaScriptHelper
+  include ActionView::Helpers::TagHelper	
   # GET /events_translations
   # GET /events_translations.xml
   def index
-    @events_translations = EventsTranslation.all
+  	page = params[:page] || 1  	
+    @events_translations = EventsTranslation.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +31,22 @@ class Admin::EventsTranslationsController < ApplicationController
   # GET /events_translations/new.xml
   def new
     @events_translation = EventsTranslation.new
+    coordinates = [13.83333,100.522413]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
 
+    @map.event_init(@gmarker, :dragend, "function(){
+      var latlng = gmarker.getLatLng().toUrlValue();
+      var tmp = latlng.split(',');
+      var px = tmp[0];
+      var py = tmp[1];
+      jQuery('#events_translation_latitude').val(px);
+      jQuery('#events_translation_longtitude').val(py);
+       }")
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @events_translation }
@@ -36,6 +56,22 @@ class Admin::EventsTranslationsController < ApplicationController
   # GET /events_translations/1/edit
   def edit
     @events_translation = EventsTranslation.find(params[:id])
+    coordinates = [@events_translation.latitude,@events_translation.longtitude]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+
+    @map.event_init(@gmarker, :dragend, "function(){
+      var latlng = gmarker.getLatLng().toUrlValue();
+      var tmp = latlng.split(',');
+      var px = tmp[0];
+      var py = tmp[1];
+      jQuery('#events_translation_latitude').val(px);
+      jQuery('#events_translation_longtitude').val(py);
+       }")  
   end
 
   # POST /events_translations

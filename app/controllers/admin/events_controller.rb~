@@ -1,9 +1,11 @@
 class Admin::EventsController < ApplicationController
 	layout "admin"
+	before_filter :authenticate_user!	
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+  	page = params[:page] || 1  	
+    @events = Event.paginate :page => page, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

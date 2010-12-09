@@ -1,6 +1,6 @@
 class Admin::NewslettersController < ApplicationController
   layout "admin"
-  before_filter :authenticate_user!	
+  before(:authenticate_user!)
   # GET /newsletters
   # GET /newsletters.xml
   def index

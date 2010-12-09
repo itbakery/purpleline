@@ -52,8 +52,8 @@ class Admin::StationsTranslationsController < ApplicationController
       var tmp = latlng.split(',');
       var px = tmp[0];
       var py = tmp[1];
-      $('#stations_translation_latitude').val(px);
-      $('#stations_translation_longtitude').val(py);
+      jQuery('#stations_translation_latitude').val(px);
+      jQuery('#stations_translation_longtitude').val(py);
        }")
 
     respond_to do |format|
@@ -78,8 +78,8 @@ class Admin::StationsTranslationsController < ApplicationController
       var tmp = latlng.split(',');
       var px = tmp[0];
       var py = tmp[1];
-      $('#stations_translation_latitude').val(px);
-      $('#stations_translation_longtitude').val(py);
+      jQuery('#stations_translation_latitude').val(px);
+      jQuery('#stations_translation_longtitude').val(py);
        }")    
   end
 

@@ -1,6 +1,6 @@
 class Admin::TasksTranslationsController < ApplicationController
   layout "admin"
-  before_filter :authenticate_user!  
+  before(:authenticate_user!)  
   include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper

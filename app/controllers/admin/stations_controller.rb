@@ -1,6 +1,6 @@
 class Admin::StationsController < ApplicationController
   layout "admin"
-  before_filter :authenticate_user!
+  before(:authenticate_user!)
   # GET /stations
   # GET /stations.xml
   def index

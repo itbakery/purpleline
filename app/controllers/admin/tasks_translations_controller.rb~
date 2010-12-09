@@ -46,8 +46,8 @@ class Admin::TasksTranslationsController < ApplicationController
       var tmp = latlng.split(',');
       var px = tmp[0];
       var py = tmp[1];
-      $('#tasks_translation_latitude').val(px);
-      $('#tasks_translation_longtitude').val(py);
+      jQuery('#tasks_translation_latitude').val(px);
+      jQuery('#tasks_translation_longtitude').val(py);
        }")
     respond_to do |format|
       format.html # new.html.erb
@@ -71,8 +71,8 @@ class Admin::TasksTranslationsController < ApplicationController
       var tmp = latlng.split(',');
       var px = tmp[0];
       var py = tmp[1];
-      $('#tasks_translation_latitude').val(px);
-      $('#tasks_translation_longtitude').val(py);
+      jQuery('#tasks_translation_latitude').val(px);
+      jQuery('#tasks_translation_longtitude').val(py);
        }")    
   end
 
