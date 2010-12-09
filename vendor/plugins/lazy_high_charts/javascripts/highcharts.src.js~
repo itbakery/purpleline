@@ -4625,7 +4625,7 @@ function Chart (options, callback) {
 				roundedMin = mathFloor(min / tickInterval) * tickInterval,
 				roundedMax = mathCeil(max / tickInterval) * tickInterval;
 				
-			tickPositions = [];z
+			tickPositions = [];
 			
 			// populate the intermediate values
 			i = correctFloat(roundedMin);
