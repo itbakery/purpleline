@@ -37,6 +37,7 @@ root :to => "home#present"
   match "/station/:id" => 'home#station'
   match "/pagetran/:id" => 'home#pagetran'
   match "/pageview/:id" => 'home#pageview'
+  match "/mrtaview/:id" => 'home#mrtaview'  
   match "/announce/:id" => 'home#announcement' 
   match "/progress" => 'home#progress'
   match "/filterstation/:id" => 'home#filterstation'
