@@ -6,9 +6,9 @@ background: #111111 url(../images/imagebg.jpg) repeat-x fixed top center;
 }
 #login {
 	margin:7em auto;
-	width:640px;
+	width:500px;
 	
-	background: transparent url(../images/serverroom.png) no-repeat ;
+	/*background: transparent url(../images/serverroom.png) no-repeat ;*/
 -moz-border-radius: 10px 10px 10px 10px;
 -webkit-border-top-left-radius: 10px;
 -webkit-border-top-right-radius: 10px;
@@ -58,13 +58,13 @@ width:97%;
 }
 
 h1 a {
-background:url("../images/loginlogo.png") no-repeat scroll center top transparent;
+background:url("../images/registlogo.png") no-repeat scroll center top transparent;
 display:block;
 height:40px;
 overflow:hidden;
 padding-bottom:15px;
 text-indent:-9999px;
-width:630px;
+width:500px;
 }
 
 </style>
@@ -74,6 +74,7 @@ width:630px;
 </h1>
 
 <div id="loginform">
+<% title "Registration" %>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 

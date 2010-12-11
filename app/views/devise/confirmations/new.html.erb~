@@ -8,5 +8,5 @@
 
   <p><%= f.submit "Resend confirmation instructions" %></p>
 <% end %>
-<p> &nbsp;</p>
+
 <%= render :partial => "devise/shared/links" %>

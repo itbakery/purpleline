@@ -1,13 +1,99 @@
-<% title "Sign In" %>
-<h2>Sign in</h2>
+
+<style type='text/css'>
+body {
+color: #333333;
+background: #111111 url(../images/imagebg.jpg) repeat-x fixed top center;
+}
+#login {
+	margin:7em auto;
+	width:500px;
+	
+	/*background: transparent url(../images/serverroom.png) no-repeat ;*/
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
+-goog-ms-border-radius: 10px 10px 10px 10px;
+border-radius: 10px 10px 10px 10px;
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+-goog-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+#login #loginform form p {
+margin-bottom:0;
+}
+
+#loginform {
+	width:400px;
+	margin:2em auto;
+	background: transparent url(../images/white80.png) repeat scroll top left;
+	-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
+-goog-ms-border-radius: 10px 10px 10px 10px;
+border-radius: 10px 10px 10px 10px;
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+-goog-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+#login #loginform form {
+	margin-left: 8px;
+	padding:16px 16px 40px;
+}
+#login #loginform form .input {
+background:none repeat scroll 0 0 #FBFBFB;
+border:1px solid #E5E5E5;
+font-size:24px;
+margin-bottom:16px;
+margin-right:6px;
+margin-top:2px;
+padding:3px;
+width:97%;
+}
+
+h1 a {
+background:url("../images/loginlogo.png") no-repeat scroll center top transparent;
+display:block;
+height:40px;
+overflow:hidden;
+padding-bottom:15px;
+text-indent:-9999px;
+width:500px;
+}
+
+</style>
+<div id="login">
+<h1>
+  <a title=""  href="http://mrta-purpleline.com/index">Adempiere Asia Sign In</a>
+</h1>
+
+<div id="loginform">
+
+<% title "Sign In Section" %>
+
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+  <p>
+  <label>
+  <%= f.label :email %><br />
+  <%= f.text_field :email  ,:class=>"input" %>
+  </label>
+  </p>
 
+  <p>
+  <label>
+  <%= f.label :password %><br />
+  <%= f.password_field :password, :class=>"input" %>
+  <label>
+  </p>
+  
   <% if devise_mapping.rememberable? -%>
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
   <% end -%>
@@ -16,3 +102,4 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+</div>
