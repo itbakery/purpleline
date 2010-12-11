@@ -2,14 +2,14 @@
   <li>  
   <div class="group">
     <%= f.label :newsletter_id, t("activerecord.attributes.newsletters_translation.newsletter_id", :default => "Newsletter"), :class => :label %>
-    <%= f.collection_select :newsletter_id, Newsletter.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :newsletter_id, Newsletter.all,:id,:name,{:prompt=>"Select Newsletter"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
   </li>
   <li>
   <div class="group">
     <%= f.label :newsletters_type_id, t("activerecord.attributes.newsletters_translation.newsletters_type_id", :default => "Newsletters type"), :class => :label %>
-    <%= f.collection_select :newsletters_type_id, NewslettersType.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :newsletters_type_id, NewslettersType.all,:id,:name,{:prompt=>"Select Newsletters Type"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
   </li>

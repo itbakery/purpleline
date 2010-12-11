@@ -26,13 +26,13 @@
  <li>
   <div class="group">
     <%= f.label :start_on, t("activerecord.attributes.pages_translation.start_on", :default => "Start on"), :class => :label %>
-    <%= f.date_select :start_on, :class => 'date_select' %>
+    <%= f.text_field :start_on, {:class => 'text_field',:style=>"width:150px"} %>
   </div>
  </li>
  <li>
   <div class="group">
     <%= f.label :stop_on, t("activerecord.attributes.pages_translation.stop_on", :default => "Stop on"), :class => :label %>
-    <%= f.date_select :stop_on, :class => 'date_select' %>
+    <%= f.text_field :stop_on, {:class => 'text_field',:style=>"width:150px"} %>
   </div>
  </li>
  <li>

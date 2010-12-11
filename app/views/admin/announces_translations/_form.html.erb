@@ -2,14 +2,14 @@
   <li>
   <div class="group">
     <%= f.label :announce_id, t("activerecord.attributes.announces_translation.announce_id", :default => "Announce"), :class => :label %>
-    <%= f.collection_select :announce_id,Announce.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :announce_id,Announce.all,:id,:name,{:prompt=>"Select Announce"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
  </li>
  <li>
   <div class="group">
     <%= f.label :announces_type_id, t("activerecord.attributes.announces_translation.announces_type_id", :default => "Announces type"), :class => :label %>
-    <%= f.collection_select :announces_type_id,AnnouncesType.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :announces_type_id,AnnouncesType.all,:id,:name,{:prompt=>"Select Announce Type"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
  </li>
@@ -23,7 +23,7 @@
  <li>
    <div class="group">
     <%= f.label :task_id, t("activerecord.attributes.announces_translation.task_id", :default => "Task"), :class => :label %>
-    <%= f.collection_select :task_id,Task.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :task_id,Task.all,:id,:name,{:prompt=>"Select Task"}, {:class => 'text_field',:style=>"width:150px"} %>
   </div>
  </li>
 </ol>
