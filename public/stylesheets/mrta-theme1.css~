@@ -193,7 +193,9 @@ background-color:#5596C4;
 color:#FFFFFF;
 line-height:100%;
 }
-
+.hiddenDiv {
+  display:none;
+}
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 2px #c4c4c4;
@@ -948,6 +950,8 @@ div#containerribbon {
   -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
    position: relative;
    z-index: 90; /* the stack order: displayed under ribbon rectangle (100) */
+background: -moz-linear-gradient(center top , #EEEEEE, #BBBBBB) repeat scroll 0 0 transparent;
+    border-color: -moz-use-text-color #777777 #777777;
 }
 
 .rectangle {

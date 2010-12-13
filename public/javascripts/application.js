@@ -40,7 +40,13 @@
     jQuery('#tabs').tabs();
     jQuery('#tabs').tabs('paging', { cycle: true, follow: true } ); 
    
-
+    jQuery('.toggle').mouseover(function(){  
+         if( jQuery(this).next().is(":hidden")){
+	     jQuery(this).next().slideDown("500");
+	  }else{
+             jQuery(this).next().hide();
+          }    
+    });
 });
 
 

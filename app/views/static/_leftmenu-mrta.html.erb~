@@ -8,20 +8,23 @@
 <div class="info">
 <!--<h2>MRTA</h2>-->
    <div id="accordion">
-
-						 <h3><a href="/pageview/16">MRTA Home</a></h3>
+						 <h3><a href="/mrtaview/16" onclick="window.open(this.href,'_self')">MRTA Home</a></h3>
 						 <div></div>
-						 <h3><a href="/pageview/13">Organization</a></h3>
+						 <h3><a href="/mrtaview/13" onclick="window.open(this.href,'_self')">Organization</a></h3>
 						 <div></div>
-						 <h3><a href="/pageview/14">Purple Line (I) Section</a></h3>
+						 <h3><a href="/mrtaview/14" onclick="window.open(this.href,'_self')">Purple Line (I) Section</a></h3>
 								 <div>
-										 <a href="/pageview/10" style="padding-left:20px;">Project Consultant</a>
-										 <a href="/pageview/11" style="padding-left:20px;">Contractors</a>                       
+										 <a href="/mrtaview/10"  style="padding-left:20px;">Project Consultant</a>
+										 <a href="/mrtaview/11"  style="padding-left:20px;">Contractors</a>                       
 								 </div>
-						 <h3><a href="/pageview/18">Purple Line Extension</a></h3>
+						 <h3><a href="/mrtaview/18" onclick="window.open(this.href,'_self')">Purple Line Extension</a></h3>
 						 <div></div>
-						 <h3><a href="/pageview/15">MRTA Network Plan</a></h3>
+						 <h3><a href="/mrtaview/15" onclick="window.open(this.href,'_self')">MRTA Network Plan</a></h3>
 						 <div></div>
+   </div>
+   <div>
+       <span class="toggle">test</span>
+       <div class="hiddenDivx"> teststsetwetststt</div>
    </div>
 </div>
 </div>

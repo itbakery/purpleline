@@ -11,7 +11,13 @@
 	
     jQuery('#announces_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#announces_translation_stop_on').datepicker({numberOfMonths:2});
-
+    
+    jQuery('#events_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#events_translation_stop_on').datepicker({numberOfMonths:2});
+    
+    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2});    
+    
     jQuery('#tasks_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#tasks_translation_stop_on').datepicker({numberOfMonths:2});
    
@@ -34,7 +40,13 @@
     jQuery('#tabs').tabs();
     jQuery('#tabs').tabs('paging', { cycle: true, follow: true } ); 
    
-
+    jQuery('.toggle').click(function(){
+	if jQuery(this).next().is(""){
+	   jQuery(this).next().slideDown("medium");
+	}else{
+           jQuery(this).next().hide();
+	}
+    });
 });
 
 
