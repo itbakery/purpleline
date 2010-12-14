@@ -27,7 +27,7 @@
         var mastermap = new GMap2(document.getElementById("mastermap"));
         // Add custom map type     
         var options = {minZoom: 5, maxZoom: 13};   
-        var custommap = GMapBox('world-light', 'masterplan', options);
+        var custommap = GMapBox('../images/masterplan', 'masterplan', options);
         mastermap.setCenter(new GLatLng(13.8705,100.479),13);
         mastermap.addMapType(custommap);
         mastermap.setMapType(custommap);
