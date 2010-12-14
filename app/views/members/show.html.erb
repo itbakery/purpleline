@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @member.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @member.email %>
+</p>
+
+<p>
+  <b>Registerip:</b>
+  <%= @member.registerip %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @member.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @member.longtitude %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @member.comment %>
+</p>
+
+<p>
+  <b>Getnews:</b>
+  <%= @member.getnews %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

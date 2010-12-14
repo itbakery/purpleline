@@ -42,11 +42,13 @@
    
     jQuery('.toggle').mouseover(function(){  
          if( jQuery(this).next().is(":hidden")){
-	     jQuery(this).next().slideDown("500");
+	     jQuery(this).next().slideDown("slow");
 	  }else{
              jQuery(this).next().hide();
           }    
     });
+   
+    jQuery('#mapdialog').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
 });
 
 

@@ -2,12 +2,10 @@
 <div id="com">
    <ul id="comcontent">
       <li class="suborg">
-         <img src="images/callcenter.gif" />
+         <img src="../images/callcenter.gif" /><br/> <img src="../images/q_a.gif" />
       </li>
-      <li class="suborg">
-         <a href="">
-         <img src="images/q_a.gif" />
-         </a>
-      </li>     
+      <li class="comment">
+        efsdfasdf
+      </li>
    </ul>
 </div>   

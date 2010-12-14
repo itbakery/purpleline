@@ -75,8 +75,11 @@ padding:0.2em 0 0.5em 0;
 
 #boxarea {
   background-color: #191919;
-  height:300px;
-  overflow: hidden;
+   width: 950px;
+   overflow: hidden;
+   min-height:250px; 
+   height:auto !important;
+   height:250px;
 }
 #boxarea  .boxmenu {
   padding:10px;
@@ -134,7 +137,7 @@ text-shadow:1px 1px 0 rgba(255, 255, 255, 0.6);
 background:url("../images/bg_gradient.gif") repeat-x scroll 0 100% #EAF2F5;
 border-bottom:1px solid #BEDCE7;
 border-left:1px solid #BEDCE7;
-border-right:1px solid #BEDCE7
+border-right:1px solid #BEDCE7;
 padding:0 0.7em 0.7em;
 overflow:hidden;
 position:relative;
@@ -235,6 +238,26 @@ line-height:100%;
    display: block;
    text-decoration: none;
    }
+ 
+#com  ul  {
+    margin:5px 0px 5px 0px;
+    width:470px;
+} 
+#com  ul  li {
+    margin:0px;
+}    
+.memberform {
+    width:270px;
+}   
+.membertitle {
+     font-family: Negotiate;
+     font-size:1.2em;
+     text-decoration: none;
+}
+.mapdialog .map {
+    width:550px;
+}
+
 /*--blueprint------------------------------------------------*/
 .maincontainer{
   -moz-box-shadow: 0 0 2px #c4c4c4;
@@ -291,15 +314,17 @@ line-height:100%;
   text-indent: -9999px
 }
 #footer {
-  -moz-box-shadow: 0px -3px 5px rgba(0,0,0,0.5);
-  background: url('../images/footer-bg.jpg') repeat-x;
+ /* -moz-box-shadow: 0px -3px 5px rgba(0,0,0,0.5); */
+  background: #340616;
+  height:150px;
   border-top: 3px solid #a57980;
-  height:60px;
+  height:120px;
 }
 .footertext {
+  margin-top:20px;
   color: #fff;
   text-align:center;
-  size: 10px;
+  size: 11px;
 }
 .page_header {
   -moz-box-shadow: 0 3px 5px rgba(0,0,0,0.3);
@@ -461,7 +486,7 @@ src: url(./STEINEMU.ttf);
 #new_event{}
 #org{}
 #callcenter{}
-#footer{}
+
 /*--main-navigation------------------------------------------*/
 #navigation{
 	 width: 102%;
@@ -863,13 +888,25 @@ src: url(./STEINEMU.ttf);
 
 /*---org------------------------------*/
 .greenfield {
-	background: transparent url(../images/bottom0.jpg) no-repeat 0 0;
-	-moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
-	height: 139px;
-	overflow:hidden;
-	margin-top: 1px;
+   background: transparent url(../images/bottom0.jpg) no-repeat 0 0;
+   -moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
+   overflow:hidden;
+   margin-top: 1px;
+   min-height:200px; 
+   height:auto !important;
+   height:200px;
 }
 
+.comment {
+       background: #3d8eb5;
+    margin: 5px;
+    padding: 5px;
+  -moz-border-radius:5px 5px 5px 5px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+}
 #org {
 overflow:hidden;
 background-color: transparent;

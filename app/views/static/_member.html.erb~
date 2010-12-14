@@ -1,0 +1,45 @@
+<div class="memberform">
+<p class="membertitle">Please send me NewsLetter <span style="color:red;"> ip:<%= @userip%> </span></p>
+<%= form_for(@member) do |f| %>
+
+  <div class="field">
+    <%= f.text_field :username,:onBlur=>"if(this.value == '') this.value='Your Name';",:onFocus=>"if(this.value == 'Your Name') this.value='';",:value=>"Your Name",:class=>'span-7' %>
+    
+  </div>
+  <div class="field">
+    <%= f.text_field :email,:onBlur=>"if(this.value == '')  this.value='Your Email';",:onFocus=>"if(this.value == 'Your Email')  this.value='';" ,:value=>"Your Email" ,:class=>'span-7' %>
+  </div>
+  <div class="field">
+    <% @userip = request.env['REMOTE_ADDR']%>
+    <%= f.hidden_field :registerip, :value => @userip %>
+
+  </div>
+  <div id="mapdialog">
+			<div class="field">
+				<%= f.label :latitude %><br />
+				<%= f.text_field :latitude ,:class=>'span-7'%>
+			</div>
+			<div class="field">
+				<%= f.label :longtitude %><br />
+				<%= f.text_field :longtitude,:class=>'span-7'%>
+			</div>
+			<div class="span-10">
+				<%= @map.div(:width => 550, :height => 370).html_safe %>
+			</div> 
+  </div>
+
+  <div class="field">
+    <%= f.text_area :comment,:class=>'span-7',:style=>"height:100px;" ,:onBlur=>"if(this.value == '') this.value='Your Comment';",:onFocus=>"if(this.value == 'Your Comment') this.value='';",:value=>"Your Comment"%>
+  </div>
+  <div class="field">
+    <%= f.label :Sendme %>
+    <%= f.check_box :getnews %>
+    <%= link_to image_tag("membermarker.png",:border =>0),"#",:onclick=> "jQuery('#mapdialog').dialog('open');return false;" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+</div>

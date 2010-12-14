@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: MyString
+  email: MyString
+  registerip: MyString
+  latitude: 1.5
+  longtitude: 1.5
+  comment: MyText
+  getnews: false
+
+two:
+  username: MyString
+  email: MyString
+  registerip: MyString
+  latitude: 1.5
+  longtitude: 1.5
+  comment: MyText
+  getnews: false

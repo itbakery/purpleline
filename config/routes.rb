@@ -1,7 +1,7 @@
 Purpleline::Application.routes.draw do
 
 
-  
+  resources :members
 
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
