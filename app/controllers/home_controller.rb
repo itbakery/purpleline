@@ -162,6 +162,8 @@ include  Geokit::Mappable
     
   	render :layout => "fullmap"
   end
-  
+  def mastermap
+  	render :layout => "fullmap"
+  end
   	
 end

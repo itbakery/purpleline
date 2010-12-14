@@ -7,6 +7,25 @@ class HomeController < ApplicationController
   	#@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
     @stations = StationsTranslation.all
+    @userip = request.env['REMOTE_ADDR']
+    @member = Member.new
+    coordinates = [13.83333,100.522413]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+
+    @map.event_init(@gmarker, :dragend, "function(){
+      var latlng = gmarker.getLatLng().toUrlValue();
+      var tmp = latlng.split(',');
+      var px = tmp[0];
+      var py = tmp[1];
+      jQuery('#member_latitude').val(px);
+      jQuery('#member_longtitude').val(py);
+       }")
+    
   	render :layout=>"home"
   end
  

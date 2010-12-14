@@ -10,16 +10,37 @@
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "map" %>
+  <%= stylesheet_link_tag "gmapbox",:media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
 
   <%= csrf_meta_tag %>
+     <%= javascript_include_tag "mapbox" %>
  <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
   <%= @map.to_html.html_safe rescue nil %>
-    <%= javascript_include_tag "labeledmarker"%>
-  <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
-  <script type='text/javascript'>  
+ <%= javascript_include_tag "labeledmarker"%>
 
-  </script>
+  <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+  <script type="text/javascript">
+    function mastermap() {
+      if (GBrowserIsCompatible()) {
+        var mastermap = new GMap2(document.getElementById("mastermap"));
+        // Add custom map type     
+        var options = {minZoom: 5, maxZoom: 13};   
+        var custommap = GMapBox('world-light', 'masterplan', options);
+        mastermap.setCenter(new GLatLng(13.8705,100.479),13);
+        mastermap.addMapType(custommap);
+        mastermap.setMapType(custommap);
+        mastermap.setUIToDefault();
+        
+        
+      }
+      else {
+        alert("The Google Maps API is not compatible with this browser");
+      }
+    }
+    </script>
+
   
 </head>
 <body style="margin:0px;">
@@ -55,9 +76,9 @@
         <a href="#">FORUMS</a>
      </div>
      <p class="toms_links">
-       	<A HREF="http://www.mrta.co.th/" target="_blank">MRTA</A>
-       	<A HREF="#" target="_blank">PCPL</A>
-       	<A HREF="www.otp.go.th" target="_blank">OTP</A>
+       	<A href="#" onclick="mastermap();">Master Plan</A>
+       	<A >PCPL</A>
+       	<A >OTP</A>
      </P>
  </div>
 </div>
