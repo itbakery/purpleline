@@ -1,4 +1,5 @@
-<div class="memberform">
+<div id="memberform">
+      <div class="comment">
 <p class="membertitle">Please send me NewsLetter <span style="color:red;"> ip:<%= @userip%> </span></p>
 <%= form_for(@member) do |f| %>
 
@@ -34,12 +35,12 @@
   <div class="field">
     <%= f.label :Sendme %>
     <%= f.check_box :getnews %>
-    <%= link_to image_tag("membermarker.png",:border =>0),"#",:onclick=> "jQuery('#mapdialog').dialog('open');return false;" %>
+    <%= link_to image_tag("membermarker.png",:border =>0),"#",:onclick=> "jQuery('#mapform').dialog('open');return false;" %>
   </div>
   <div class="actions">
         <%= f.submit 'Register' %>
   </div>
 <% end %>
 
-
+</div>
 </div>

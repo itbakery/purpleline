@@ -5,7 +5,8 @@
          <img src="../images/callcenter.gif" /><br/> <img src="../images/q_a.gif" />
       </li>
       <li class="comment">
-        efsdfasdf
+      <%= render :partial => '/static/member' %>
+        
       </li>
    </ul>
 </div>   

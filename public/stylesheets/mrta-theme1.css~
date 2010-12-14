@@ -314,7 +314,7 @@ line-height:100%;
   text-indent: -9999px
 }
 #footer {
-  -moz-box-shadow: 0px -3px 5px rgba(0,0,0,0.5);
+ /* -moz-box-shadow: 0px -3px 5px rgba(0,0,0,0.5); */
   background: #340616;
   height:150px;
   border-top: 3px solid #a57980;
@@ -888,17 +888,18 @@ src: url(./STEINEMU.ttf);
 
 /*---org------------------------------*/
 .greenfield {
-	background: transparent url(../images/bottom0.jpg) no-repeat 0 0;
-	-moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
-	overflow:hidden;
-	margin-top: 1px;
-	   min-height:200px; 
+   background: transparent url(../images/bottom0.jpg) no-repeat 0 0;
+   background-position:  bottom;
+   -moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
+   overflow:hidden;
+   margin-top: 1px;
+   min-height:200px; 
    height:auto !important;
    height:200px;
 }
 
 .comment {
-       background: #bdc37a;
+       background: #23a7ec;
     margin: 5px;
     padding: 5px;
   -moz-border-radius:5px 5px 5px 5px;

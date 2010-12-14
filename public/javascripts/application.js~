@@ -47,6 +47,8 @@
              jQuery(this).next().hide();
           }    
     });
+   
+    jQuery('#mapdialog').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
 });
 
 
