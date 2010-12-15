@@ -1,6 +1,6 @@
 
 body{
-  background: url('../images/bg-page.jpg') repeat-x scroll center top #fff;
+  background: url('../images/contructbg.jpg') no-repeat  center top #ece9e9;
   font:13px/16px "Lucida Grande",Arial,Sans-serif;
   /* font-family: Georgia,Verdana, "Lucida Sans Unicode",sans-serif;*/
   font-size:12px;
@@ -45,9 +45,9 @@ body{
 }
 
 h3.section-title, h2.section-title {
-font-family:"SteinemBold","Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Sans,FreeSans,Jamrul,Garuda,Kalimati;
-font-size:250%;
-font-weight:normal;
+font-family:"Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Sans,FreeSans,Jamrul,Garuda,Kalimati;
+font-size:150%;
+font-weight:bold;
 letter-spacing:-0.04em;
 margin:0;
 padding:0.2em 0 0.5em 0;
@@ -265,7 +265,7 @@ line-height:100%;
   
   background-color: #E5EaF3;
   border: 0px solid #F4f4f4;
-  margin: 5px auto;
+  margin: 0px auto;
 
 }
 .contentbox_1 {
@@ -893,9 +893,9 @@ src: url(./STEINEMU.ttf);
    -moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
    overflow:hidden;
    margin-top: 1px;
-   min-height:200px; 
+   min-height:140px; 
    height:auto !important;
-   height:200px;
+   height:140px;
 }
 
 .comment {

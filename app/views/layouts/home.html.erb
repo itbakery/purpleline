@@ -28,15 +28,20 @@
 <body>
 <div class="container  maincontainer bluebg">
   <div class="span-24 last" id="header">
-
+    <div id="fullmap" style="top;0px;right:25px;">
+       <p> <a href="/fullmap">View in Full Map </a></p>
+    </div>
+    <!--
     <div id="user_nav">
          <% if user_signed_in? %>
             Signed in as <%= current_user.email %>. Not you?
             <%= link_to "Sign out", destroy_user_session_path %>
          <% else %>
-            <!--<%= link_to "Sign up", new_user_registration_path %> or --> <%= link_to "sign in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
         <% end %>
-    </div>			
+    </div>
+    -->
+    
 
     <div class="clear span-24 last" id="">
      	 <%= render :partial => '/static/menu'%>
