@@ -23,7 +23,3 @@ li.afghanistan-winter {
 li.afghanistan-summer-mrgs {
   background-image: url(images/afghanistan-summer-mrgs.png);
 }
-
-li.masterplan {
-  background-image: url(images/masterplan.jpg);
-}
