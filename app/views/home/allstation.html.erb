@@ -2,16 +2,16 @@
 <table>
 <% @stations.each do |s| %>
   <tr>
-   <td>
+   <td style="vertical-align:top;">
    <h3 class="station"><%=s.code%></h3>
    </td>
    <td>
-   <%=s.content.html_safe.gsub(/<img/,"<img width='150' style='float:left;margin:7px;'")%>
+   <%=s.content.html_safe.gsub(/<img/,"<img width='150' style='float:left;margin:7px;vertical-align:text-top;'")%>
    </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><a href="/station/<%=s.id%>">Station Detail</a></td>
+    <td><a href="/station/<%=s.id%>">More Detail</a></td>
   </tr>
 <%end%>
 </table>
