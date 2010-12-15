@@ -1,0 +1,18 @@
+<h1>List All Stations</h1>
+<table>
+<% @stations.each do |s| %>
+  <tr>
+   <td>
+   <h3 class="station"><%=s.code%></h3>
+   </td>
+   <td>
+   <%=s.content.html_safe.gsub(/<img/,"<img width='150' style='float:left;margin:7px;'")%>
+   </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="/station/<%=s.id%>">Station Detail</a></td>
+  </tr>
+<%end%>
+</table>
+

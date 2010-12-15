@@ -74,6 +74,11 @@ class HomeController < ApplicationController
   def pcpl
   end
   
+  def allstation
+  	@stations=StationsTranslation.all
+  	render :layout =>"project"
+  end
+  
   def station
   	@station = StationsTranslation.find(params[:id])
     coordinates = [@station.latitude,@station.longtitude]
