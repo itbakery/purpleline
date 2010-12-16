@@ -49,6 +49,18 @@
     });
    
     jQuery('#memberform').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
+    
+    
+    jQuery("#extruderRight").buildMbExtruder({
+        position:"right",
+        width:300,
+        extruderOpacity:.8,
+        textOrientation:"tb",
+        onExtOpen:function(){},
+        onExtContentLoad:function(){},
+        onExtClose:function(){}
+      });
+
 });
 
 
