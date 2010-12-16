@@ -30,7 +30,7 @@ root :to => "home#present"
   #get "home/mrta"
   #get "home/present"
   #get "home/filterstation"
-
+  match "/allstation" => "home#allstation"
   match "/test" => "home#index"
   match "/mrta" => "home#mrta"
   match "/project" => "home#project"

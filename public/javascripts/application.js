@@ -50,8 +50,6 @@
    
     jQuery('#memberform').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
     
-    
-
       jQuery("#extruderTop").buildMbExtruder({
         positionFixed:false,
         width:350,

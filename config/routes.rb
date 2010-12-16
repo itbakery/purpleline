@@ -1,8 +1,7 @@
 Purpleline::Application.routes.draw do
 
-
+  #get "static_pages/page"
   resources :members
-
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
 	resources :newsletters_translations
@@ -30,6 +29,7 @@ root :to => "home#present"
   #get "home/mrta"
   #get "home/present"
   #get "home/filterstation"
+  match "/page/:filename.:format" => "static_pages#page"
   match "/allstation" => "home#allstation"
   match "/test" => "home#index"
   match "/mrta" => "home#mrta"
