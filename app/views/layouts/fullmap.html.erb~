@@ -10,9 +10,13 @@
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "map" %>
+  <%= stylesheet_link_tag "mbExtruder" %>
   <%= stylesheet_link_tag "gmapbox",:media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
-
+  <%= javascript_include_tag "jquery.hoverIntent.min"%>
+  <%= javascript_include_tag "jquery.metadata.js"%>
+  <%= javascript_include_tag "jquery.mb.flipText"%>
+  <%= javascript_include_tag "mbExtruder"%>  
   <%= csrf_meta_tag %>
      <%= javascript_include_tag "mapbox" %>
  <%= GMap.header(:with_vml => false, :host => request.host).html_safe %>
@@ -44,47 +48,12 @@
   
 </head>
 <body style="margin:0px;">
-<div id="header_upper">
-  <div id="inside">
-     <div class="home_icon_link">
-        <a href="http://mrta-purpleline.com/test">MRTA-Purple Line Project</a>
-     </div>
-     <!--
-     <div class="no_icon_link" style="margin-left: 5px;">
-        <a href="#">WEB LIFE</a>
-     </div>
-     <div class="no_icon_link">
-        <a href="#">GADGETS</a>
-     </div>
-     <div class="no_icon_link">
-        <a href="#">SOFTWARE</a>
-     </div>
-     <div class="no_icon_link">
-        <a href="#">STYLE</a>
-     </div>
-     -->
-     <div class="downloads_icon_link" style="margin-left: 90px;">
-        <a href="#">STATIONS</a>
-     </div>
-     <div class="shopping_icon_link">
-        <a href="#">NEWS&EVENTS</a>
-     </div>
-     <div class="support_icon_link">
-        <a href="#">ANNOUNCEMENT</a>
-     </div>
-     <div class="forums_icon_link">
-        <a href="#">FORUMS</a>
-     </div>
-     <p class="toms_links">
-       	<A href="#" onclick="mastermap();">Master Plan</A>
-       	<A >PCPL</A>
-       	<A >OTP</A>
-     </P>
- </div>
-</div>
 <div id="full">
    <%=yield%>
 </div>
+
+<div id="extruderRight" class="{title:'Our Menu', url:'parts/extruderLeft.html'}"></div>
+
 </body>
 
 </html>

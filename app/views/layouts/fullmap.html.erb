@@ -14,7 +14,7 @@
   <%= stylesheet_link_tag "gmapbox",:media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag "jquery.hoverIntent.min"%>
-  <%= javascript_include_tag "jquery.metadata.js"%>
+  <%= javascript_include_tag "jquery.metadata"%>
   <%= javascript_include_tag "jquery.mb.flipText"%>
   <%= javascript_include_tag "mbExtruder"%>  
   <%= csrf_meta_tag %>
@@ -52,7 +52,8 @@
    <%=yield%>
 </div>
 
-<div id="extruderRight" class="{title:'Our Menu', url:'parts/extruderLeft.html'}"></div>
+<div id="extruderTop" class="{title:'Mrta Menu', url:'parts/extruderTop.html'}">
+</div>
 
 </body>
 

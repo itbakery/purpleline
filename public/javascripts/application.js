@@ -51,11 +51,13 @@
     jQuery('#memberform').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
     
     
-    jQuery("#extruderRight").buildMbExtruder({
-        position:"right",
-        width:300,
-        extruderOpacity:.8,
-        textOrientation:"tb",
+
+      jQuery("#extruderTop").buildMbExtruder({
+        positionFixed:false,
+        width:350,
+        extruderOpacity:1,
+        autoCloseTime:4000,
+       // hidePanelsOnClose:false,
         onExtOpen:function(){},
         onExtContentLoad:function(){},
         onExtClose:function(){}
