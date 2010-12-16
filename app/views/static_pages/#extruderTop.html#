@@ -1,0 +1,7 @@
+
+
+<div class="voice {}"><a class="label" href="/master">MRTA MASTER PLAN</a></div>
+<div id="top2" class="voice {panel:'page/extr.components.html'}"><a class="label" href="http://pupunzi.com/#mb.components/components.html">MRTA RAPID TRANSIT NETWORK</a></div>
+<div class="voice {panel:'page/extr.creativity.html'}"><span class="label">mb.creativity</span></div>
+<div class="voice {disabled:true}"><span class="label">mb.info (disabled)</span> </div>
+<div class="voice {panel:'page/extr.network.html'}"><span class="label">mb.network</span></div>
