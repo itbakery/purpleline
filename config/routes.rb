@@ -1,5 +1,7 @@
 Purpleline::Application.routes.draw do
 
+  #get "static_maps/map"
+
   #get "static_pages/page"
   resources :members
   devise_for :users, :path_names => {:sign_up => "register"}
@@ -30,6 +32,7 @@ root :to => "home#present"
   #get "home/present"
   #get "home/filterstation"
   match "/page/:filename.:format" => "static_pages#page"
+  match "/map/:mapname/:filename.:format" => "static_maps#map"
   match "/allstation" => "home#allstation"
   match "/test" => "home#index"
   match "/mrta" => "home#mrta"
