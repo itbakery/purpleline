@@ -4,7 +4,7 @@ class StaticMapsController < ApplicationController
   end
 
   def maptile
-    send_file  "#{Rails.root.to_s}/public/maps/#{params[:mapname]}/#{params[:z]}/#{params[:x]}/#{params[:y]}.#{params[:format]}",:disposition =>'inline',:type => StaticMap::Formats[params[:format]]
+    send_file  "/maps/#{params[:mapname]}/#{params[:z]}/#{params[:x]}/#{params[:y]}.#{params[:format]}",:disposition =>'inline',:type => StaticMap::Formats[params[:format]]
   	
   end
 end
