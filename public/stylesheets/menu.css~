@@ -5,7 +5,7 @@
 #menu {
    list-style: none;
    padding: 0 0 0 5px;
-   margin: 7px 0px;
+   margin: 1px 0px;
    position:relative;
    float:left;
    display:block;
