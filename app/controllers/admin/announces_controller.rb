@@ -63,7 +63,7 @@ class Admin::AnnouncesController < ApplicationController
 
 
     respond_to do |format|
-    	params[:annonce][:category_ids] ||= []
+    	params[:announce][:category_ids] ||= []
       if @announce.update_attributes(params[:announce])
         format.html { redirect_to([:admin,@announce], :notice => 'Announce was successfully updated.') }
         format.xml  { head :ok }

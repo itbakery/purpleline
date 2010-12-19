@@ -11,11 +11,10 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-          <th>
+                    <th>
             <%= t("activerecord.attributes.admin_announce.name", :default => t("activerecord.labels.name", :default => "Name")) %>
           </th>
-         <th class="first">Categories</th>
-         <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @announces.each do |announce| -%>
@@ -23,22 +22,10 @@
           <td>
             <%= announce.id %>
           </td>
-          <td>
+                    <td>
             <%= link_to announce.name, admin_announce_path(announce) %>
           </td>
-          <td>
-              <div  class="">
-              <%if announce.category_ids.empty?%>
-                    <p>Not defined</p>
-             <%else%>
-             				<% announce.category_ids.each do |id| %>
-										 <%=Category.where("id=?",id).first.name_en%>,
-						 <%end%>	
-                   
-						  <%end%>				
-							</div>
-          </td>
-          <td>
+                    <td>
             <%= announce.created_at %>
           </td>
           <td class="last">

@@ -30,14 +30,9 @@
          <h3>Announcements</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="#">Traffic</a></li>
-                        <li><a href="#">Safety</a></li>
-                        <li><a href="#">Environmental</a></li>
-                        <li><a href="#">Public/Social Events</a></li>
-                        <li><a href="#">PR/CR Activities</a></li>
-                        <li><a href="#">Public Opinions</a></li>
-                        <li><a href="#">Site Visits</a></li>
-                        <li><a href="#">Road Shows</a></li>                        
+                    <% Category.all.each do |c| %>
+                    <li><a href="#"><%=c.name_en%></li>
+                     <%end%>                      
                     </ul>   
                 </div>
          <h3>Events</h3>

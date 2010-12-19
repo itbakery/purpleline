@@ -18,13 +18,6 @@
           <b><%= t("activerecord.attributes.admin_announce.cache_slug", :default => t("activerecord.labels.cache_slug", :default => "Cache slug")) %>:</b>
           <%= @announce.cache_slug %>
         </p>
-        
-        <div  class="">
-        <b>In Categories: </b>
-        <% @announce.category_ids.each do |id| %>
-           <%=Category.where("id=?",id).first.name_en%>,
-        <%end%>
-        </div>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_announce_path(@announce), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_announce_path(@announce), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

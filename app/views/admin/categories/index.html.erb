@@ -14,11 +14,10 @@
                     <th>
             <%= t("activerecord.attributes.admin_category.name_th", :default => t("activerecord.labels.name_th", :default => "Name_th")) %>
           </th>
-          <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.admin_category.name_en", :default => t("activerecord.labels.name_en", :default => "Name_en")) %>
           </th>          
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @categories.each do |category| -%>

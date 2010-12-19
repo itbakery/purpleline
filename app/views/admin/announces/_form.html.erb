@@ -10,13 +10,15 @@
     <%= f.text_field :cache_slug, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
-  <% for category in Category.find(:all) %>
-<div>
+ <div class="group"> 
+   <label class="label">Select  Announcement Category</label>
+  <% for category in Category.all %>
+
+ 
   <%= check_box_tag "announce[category_ids][]", category.id, @announce.categories.include?(category) %>
-  <%= category.name %>
-</div>
+  <%= category.name_en %>
 <% end %>
-        
+</div>        
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
