@@ -10,11 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219034227) do
+ActiveRecord::Schema.define(:version => 20101219064854) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
     t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "announces_categories", :id => false, :force => true do |t|
+    t.integer  "announce_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,9 +43,9 @@ ActiveRecord::Schema.define(:version => 20101219034227) do
     t.boolean  "publish"
   end
 
-  create_table "announces_types", :force => true do |t|
-    t.string   "name"
-    t.string   "cache_slug"
+  create_table "categories", :force => true do |t|
+    t.string   "name_th"
+    t.string   "name_en"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

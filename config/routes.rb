@@ -1,13 +1,15 @@
 Purpleline::Application.routes.draw do
 
+
   #get "static_maps/map"
 
   #get "static_pages/page"
   resources :members
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
-	resources :newsletters_translations
-	resources :newsletters_types
+  resources :newsletters_translations
+  resources :categories
+  resources :newsletters_types
   resources :newsletters
   resources :events_translations
   resources :events_types

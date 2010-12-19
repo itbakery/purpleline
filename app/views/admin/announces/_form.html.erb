@@ -10,6 +10,12 @@
     <%= f.text_field :cache_slug, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
+  <% for category in Category.find(:all) %>
+<div>
+  <%= check_box_tag "announce[category_ids][]", category.id, @announce.categories.include?(category) %>
+  <%= category.name %>
+</div>
+<% end %>
         
 <div class="group navform wat-cf">
   <button class="button" type="submit">
