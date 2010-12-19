@@ -21,7 +21,9 @@
 
   jQuery(document).ready(function() {
       jQuery("#s3slider").s3Slider({timeOut: 9000 });	
+
    });  
+  
   </script>
   
 </head>
@@ -29,7 +31,7 @@
 <div class="container  maincontainer bluebg">
   <div class="span-24 last" id="header">
     <div id="fullmap">
-       <%= link_to image_tag("map.png", :border=>0, :size=>"25x25"), :action => 'fullmap' %>
+       <%= link_to image_tag("map.png", :border=>0, :size=>"25x25") ,:action => 'fullmap'%>
        <%= link_to image_tag("th.png", :border=>0, :size=>"25x25"), :action => 'setlang', :lang=>"th" %>
        <%= link_to image_tag("en.png", :border=>0, :size=>"25x25"), :action => 'setlang', :lang=>"en" %>
 

@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   include ActionView::Helpers::TagHelper
   
   def index
+  	session[:lang] = params[:lang] || "en"
   	#@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
     @stations = StationsTranslation.all
@@ -169,6 +170,11 @@ include  Geokit::Mappable
   end
   def mastermap
   	render :layout => "fullmap"
+  end
+  
+  def setlang
+  	session[:lang] = params[:lang] || "en"
+  	redirect_to :action=> "index", :lang=>session[:lang]
   end
   	
 end

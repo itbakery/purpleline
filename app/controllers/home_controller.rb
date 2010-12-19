@@ -142,7 +142,7 @@ include  Geokit::Mappable
   	end
   	
     coordinates = [13.8705,100.479]
-    @map = GMap.new("map")
+    @map = GMap.new("fullmap")
     @map.control_init(:large_map => true, :map_type => true)
     @map.center_zoom_init(coordinates,13)	
     @stations = StationsTranslation.all
@@ -156,17 +156,18 @@ include  Geokit::Mappable
     @stations.each_with_index do |station,index|
     	coordinate = [station.latitude,station.longtitude]
     	markers << GMarker.new(coordinate,
-    												:title=>"#{station.code} #{station.title}",
+    	                    	{:title=>"#{station.code} #{station.title}",
     												:info_window =>"<p class='badge-small'>#{station.code}</p> #{station.title}",
-    												:icon=>@Icon)
+    		                    :icon=>@Icon})
     end
+    
+    
     markers.each do |m|
     	@map.overlay_init(m)
     end
-
-    
-    
-  	render :layout => "fullmap"
+  	respond_to do |format|
+      format.html   {render :layout=>"fullmap"}
+    end
   end
   def mastermap
   	render :layout => "fullmap"
