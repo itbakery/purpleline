@@ -26,6 +26,11 @@
             <%= category.id %>
           </td>
           <td>
+          <%if  category.icon.exists? then %>
+                 <%= image_tag @category.icon.url(:iconsmall) %>
+           <%end%>
+          </td>
+          <td>
             <%= link_to category.name_th, admin_category_path(category) %>
           </td>          
           <td>
