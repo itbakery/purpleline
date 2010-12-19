@@ -13,7 +13,7 @@
  <div class="group">
    <label class="">Upload icon</label>
    <%=f.file_field  :icon%> 
- </div>        
+ </di>        
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
