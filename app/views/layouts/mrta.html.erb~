@@ -41,19 +41,11 @@
         <div class="block">
           <div class="contentblock"
              <div class="inner">
-               <%= @mrta.content.html_safe rescue nil %>
+             	 <%=yield%>
              </div>
           </div>
         </div>
-
     </div>
-        <div class="block">
-          <div class="contentblock"
-             <div class="inner">
-                <%= @mrtatrack.content.html_safe rescue nil%>
-             </div>
-          </div>
-        </div> 
   </div>
   <!-- end project_detail -->
 
