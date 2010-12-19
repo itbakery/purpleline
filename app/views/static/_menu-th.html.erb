@@ -32,8 +32,8 @@
                     <ul class="simple">
                     <% Category.all.each do |c| %>
                       <li>
-                       <%if  category.icon.exists? then %>
-                          <%= image_tag category.icon.url(:iconsmall), :size => "22x22"%>
+                       <%if  c.icon.exists? then %>
+                          <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
                        <a href="#"><%=c.name_th%>
                     </li>
