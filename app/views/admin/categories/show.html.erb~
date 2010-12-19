@@ -19,11 +19,9 @@
           <%= @category.name_en %>
         </p>
         <p>
-           <p>icon:
            <%if  @category.icon.exists? then %>
                  <%= image_tag @category.icon.url(:iconsmall) %>
            <%end%>
-           </p>
         </p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_category_path(@category), :class => "button" %> 

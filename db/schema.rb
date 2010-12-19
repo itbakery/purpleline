@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219064854) do
+ActiveRecord::Schema.define(:version => 20101219091223) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(:version => 20101219064854) do
     t.string   "name_en"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "ckeditor_assets", :force => true do |t|
