@@ -53,6 +53,33 @@
         	         icon.infoWindowAnchor = new GPoint(25, 7);    
         	       
         	  opts = {
+      	  
+        	  };
+        	  		
+           var marker = new LabeledMarker(latlng,opts);
+           GEvent.addListener(marker, "click", function() {
+           		 this.openInfoWindowHtml('<b><%=announce.title%>&nbsp;&nbsp;station</b><br/>location:<%=announce.latitude%>,<%=announce.longtitude%>');
+            });
+
+             map.addOverlay(marker); 
+        	  <%end%>
+        	<%end%>  
+        	  <%if session[:lang]=="th" %>
+        	  <%@announces = AnnouncesTranslation.where("language_id=?",1)%>
+        	  <%@announces.each_with_index do |announce,index|%>
+        	       var latlng = new GLatLng(<%=announce.latitude%>,<%=announce.longtitude%>);
+          	     var icon = new GIcon();
+          	     
+          	     <% ann = Announce.where("id=?",announce.announce_id).first %>
+          	     	 <% category = Category.where("id=?",ann.category_ids.first).first %>
+          	     	 <%unless category.nil? %>	 
+        	             icon.image = '<%=category.icon.url(:iconsmall)%>';
+        	         <%end%>
+        	         icon.iconSize = new GSize(32, 32);
+        	         icon.iconAnchor = new GPoint(16, 16);
+        	         icon.infoWindowAnchor = new GPoint(25, 7);    
+        	       
+        	  opts = {
         	  		'icon': icon,
         	  		'clickable': true,
         	  		'labelText': '',
@@ -64,7 +91,7 @@
            		 this.openInfoWindowHtml('<b><%=announce.title%>&nbsp;&nbsp;station</b><br/>location:<%=announce.latitude%>,<%=announce.longtitude%>');
             });
 
-           map.addOverlay(marker); 
+             map.addOverlay(marker); 
         	  <%end%>
         	<%end%>  
 <% end %>
