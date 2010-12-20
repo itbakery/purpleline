@@ -8,7 +8,7 @@
 			  var map = new GMap2(document.getElementById("fullmapdisplay"));
         map.setCenter(new GLatLng(13.83333,100.522413), 13);
         map.setUIToDefault();
-        <%@stations = StationsTranslation.all%>
+          <%@stations = StationsTranslation.all%>
         	<%@stations.each_with_index do |station,index| %>
            var latlng = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
            
@@ -32,8 +32,38 @@
 
            map.addOverlay(marker);   
 
-                     
-
-
+             <% location = StationsTranslation.where("id=?",12).first%>
+           	 var  selectlat = <%=location.latitude%>;
+             var  selectlng = <%=location.longtitude%>;
+             map.panTo(new GLatLng(selectlat,selectlng));       
         	<%end%>
+        	<%if session[:lang]=="en" %>
+        	  <%@announces = AnnouncesTranslation.where("language_id=?",2)%>
+        	  <%@announces.each_with_index do |announce,index|%>
+        	       var latlng = new GLatLng(<%=announce.latitude%>,<%=announce.longtitude%>);
+          	     var icon = new GIcon();
+          	     
+          	     <% ann = Announce.where("id=?",announce.announce_id) %>
+          	     	 <% category = Category.where("id=?",ann.first.category_ids.first).first %>
+          	     	 
+        	       icon.image = '<%category.icon.url(:iconsmall)%>';
+        	       icon.iconSize = new GSize(32, 32);
+        	       icon.iconAnchor = new GPoint(16, 16);
+        	       icon.infoWindowAnchor = new GPoint(25, 7);    
+        	       
+        	  opts = {
+        	  		'icon': icon,
+        	  		'clickable': true,
+        	  		'labelText': '',
+        	  		'labelOffset': new GSize(-17, -17)        	  
+        	  };
+        	  		
+           var marker = new LabeledMarker(latlng,opts);
+           GEvent.addListener(marker, "click", function() {
+           		 this.openInfoWindowHtml('<b><%=announce.title%>&nbsp;&nbsp;station</b><br/>location:<%=announce.latitude%>,<%=announce.longtitude%>');
+            });
+
+           map.addOverlay(marker); 
+        	  <%end%>
+        	<%end%>  
 <% end %>
