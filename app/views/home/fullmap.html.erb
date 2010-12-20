@@ -45,11 +45,12 @@
           	     
           	     <% ann = Announce.where("id=?",announce.announce_id) %>
           	     	 <% category = Category.where("id=?",ann.first.category_ids.first).first %>
-          	     	 
-        	       icon.image = '<%category.icon.url(:iconsmall)%>';
-        	       icon.iconSize = new GSize(32, 32);
-        	       icon.iconAnchor = new GPoint(16, 16);
-        	       icon.infoWindowAnchor = new GPoint(25, 7);    
+          	     	 <%unless category.nil? %>	 
+        	             icon.image = '<%category.icon.url(:iconsmall)%>';
+        	         <%end%>
+        	         icon.iconSize = new GSize(32, 32);
+        	         icon.iconAnchor = new GPoint(16, 16);
+        	         icon.infoWindowAnchor = new GPoint(25, 7);    
         	       
         	  opts = {
         	  		'icon': icon,
