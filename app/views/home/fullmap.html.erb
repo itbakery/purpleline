@@ -43,10 +43,10 @@
         	       var latlng = new GLatLng(<%=announce.latitude%>,<%=announce.longtitude%>);
           	     var icon = new GIcon();
           	     
-          	     <% ann = Announce.where("id=?",announce.announce_id) %>
-          	     	 <% category = Category.where("id=?",ann.first.category_ids.first).first %>
+          	     <% ann = Announce.where("id=?",announce.announce_id).first %>
+          	     	 <% category = Category.where("id=?",ann.category_ids.first).first %>
           	     	 <%unless category.nil? %>	 
-        	             icon.image = '<%category.icon.url(:iconsmall)%>';
+        	             icon.image = '<%=category.icon.url(:iconsmall)%>';
         	         <%end%>
         	         icon.iconSize = new GSize(32, 32);
         	         icon.iconAnchor = new GPoint(16, 16);
