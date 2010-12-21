@@ -1,0 +1,45 @@
+<%= form_for(@purple_asset) do |f| %>
+  <% if @purple_asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@purple_asset.errors.count, "error") %> prohibited this purple_asset from being saved:</h2>
+
+      <ul>
+      <% @purple_asset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :attachable_id %><br />
+    <%= f.text_field :attachable_id %>
+  </div>
+  <div class="field">
+    <%= f.label :attachable_type %><br />
+    <%= f.text_field :attachable_type %>
+  </div>
+  <div class="field">
+    <%= f.label :publish %><br />
+    <%= f.check_box :publish %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longtitude %><br />
+    <%= f.text_field :longtitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

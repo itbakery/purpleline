@@ -70,7 +70,7 @@ width:500px;
 </style>
 <div id="login">
 <h1>
-  <a title=""  href="http://mrta-purpleline.com/index">Adempiere Asia Sign In</a>
+  <a title=""  href="http://mrta-purpleline.com/index">MRTA Sign In</a>
 </h1>
 
 <div id="loginform">
@@ -102,7 +102,14 @@ width:500px;
   <%= f.password_field :password_confirmation ,:class=>"input" %>
   </label>
   </p>
-
+  <p>
+			<% for role in Role.all %>
+			 <div>
+			  <%=check_box_tag  "user[role_ids][]", role.id %>
+			  <%= role.name_en %>(<%=role.name_th%>)
+			</div>
+			<%end%>
+  </p>
   <p><%= f.submit "Sign up" %></p>
 <% end %>
 </div>

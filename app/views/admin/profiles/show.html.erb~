@@ -1,0 +1,79 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admin_profiles_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_profile_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_profile_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.user_id", :default => t("activerecord.labels.user_id", :default => "User")) %>:</b>
+          <%= @profile.user_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.company_id", :default => t("activerecord.labels.company_id", :default => "Company")) %>:</b>
+          <%= @profile.company_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
+          <%= @profile.name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.surname", :default => t("activerecord.labels.surname", :default => "Surname")) %>:</b>
+          <%= @profile.surname %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.position", :default => t("activerecord.labels.position", :default => "Position")) %>:</b>
+          <%= @profile.position %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.telephone", :default => t("activerecord.labels.telephone", :default => "Telephone")) %>:</b>
+          <%= @profile.telephone %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.mobile", :default => t("activerecord.labels.mobile", :default => "Mobile")) %>:</b>
+          <%= @profile.mobile %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.email", :default => t("activerecord.labels.email", :default => "Email")) %>:</b>
+          <%= @profile.email %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.avatar_file_name", :default => t("activerecord.labels.avatar_file_name", :default => "Avatar file name")) %>:</b>
+          <%= @profile.avatar_file_name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.avatar_content_type", :default => t("activerecord.labels.avatar_content_type", :default => "Avatar content type")) %>:</b>
+          <%= @profile.avatar_content_type %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.avatar_file_size", :default => t("activerecord.labels.avatar_file_size", :default => "Avatar file size")) %>:</b>
+          <%= @profile.avatar_file_size %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_profile.avatar_updated_at", :default => t("activerecord.labels.avatar_updated_at", :default => "Avatar updated at")) %>:</b>
+          <%= @profile.avatar_updated_at %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_profile_path(@profile), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_profile_path(@profile), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

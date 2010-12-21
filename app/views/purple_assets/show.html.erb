@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @purple_asset.title %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @purple_asset.type %>
+</p>
+
+<p>
+  <b>Attachable:</b>
+  <%= @purple_asset.attachable_id %>
+</p>
+
+<p>
+  <b>Attachable type:</b>
+  <%= @purple_asset.attachable_type %>
+</p>
+
+<p>
+  <b>Publish:</b>
+  <%= @purple_asset.publish %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @purple_asset.latitude %>
+</p>
+
+<p>
+  <b>Longtitude:</b>
+  <%= @purple_asset.longtitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_purple_asset_path(@purple_asset) %> |
+<%= link_to 'Back', purple_assets_path %>

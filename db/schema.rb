@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219091223) do
+ActiveRecord::Schema.define(:version => 20101220094954) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -181,6 +181,10 @@ ActiveRecord::Schema.define(:version => 20101219091223) do
     t.integer  "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "progresses", :force => true do |t|
@@ -212,6 +216,20 @@ ActiveRecord::Schema.define(:version => 20101219091223) do
     t.boolean  "publish"
     t.float    "latitude"
     t.float    "longtitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name_th"
+    t.string   "name_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

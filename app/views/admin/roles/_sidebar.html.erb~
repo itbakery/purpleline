@@ -19,7 +19,13 @@
     <li><a href="<%= admin_newsletters_types_path %>">NewlettersTypes</a></li>    
   </ul>
 
+  <h3>User Management (only Admin)</h3>
+  <ul class="navigation">
+    <li><a href="<%= admin_profiles_path %>">User Profile</a></li>
+    <li><a href="<%= admin_roles_path %>">Roles Base Authentication</a></li>    
+  </ul>
 </div>
+
 
 <div class="block notice">
   <h3>Simple Block</h3>

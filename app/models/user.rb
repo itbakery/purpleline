@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_one :profile
+  has_and_belongs_to_many  :roles
+  def role?(role)
+    return !!self.roles.include?(role.to_s.camelize)
+  end
+  cattr_reader :per_page
+  @@per_page = 10
 end

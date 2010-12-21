@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+	before_filter :authenticate_user!
   # GET /profiles
   # GET /profiles.xml
   def index
@@ -13,6 +14,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.xml
   def show
+  	@user = current_user
     @profile = Profile.find(params[:id])
 
     respond_to do |format|
@@ -24,8 +26,9 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   # GET /profiles/new.xml
   def new
-    @profile = Profile.new
-
+  	@user = current_user
+    #@profile = Profile.new
+    @profile = @user.build_profile
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @profile }
@@ -34,14 +37,16 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+  	@user = current_user
     @profile = Profile.find(params[:id])
   end
 
   # POST /profiles
   # POST /profiles.xml
   def create
-    @profile = Profile.new(params[:profile])
-
+  	@user = current_user
+    #@profile = Profile.new(params[:profile])
+    @profile = @user.create_profile(params[:profile])
     respond_to do |format|
       if @profile.save
         format.html { redirect_to(@profile, :notice => 'Profile was successfully created.') }

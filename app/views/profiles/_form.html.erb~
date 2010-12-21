@@ -1,5 +1,5 @@
-<%= form_for(@profile) do |f| %>
-  <%f.hidden_field :user_id :value => current_user.id %>
+<%= form_for(@profile, :html => { :multipart => true }) do |f| %>
+ <!--  <%f.hidden_field :user_id ,:value => current_user.id %> -->
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -11,7 +11,12 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.hidden_field :user_id,:value=>@user.id %>
+    <%= @user.id %>
+  </div>
+  
   <div class="field">
     <%= f.label :company_id %><br />
     <%= f.text_field :company_id %>
@@ -38,7 +43,12 @@
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email,:value=>@user.email %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+
   </div>
   <div class="actions">
     <%= f.submit %>

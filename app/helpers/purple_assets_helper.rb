@@ -1,0 +1,2 @@
+module PurpleAssetsHelper
+end

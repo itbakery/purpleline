@@ -1,13 +1,20 @@
 Purpleline::Application.routes.draw do
 
+
+
+  resources :purple_assets
+
   #get "static_maps/map"
 
   #get "static_pages/page"
   resources :members
   devise_for :users, :path_names => {:sign_up => "register"}
 namespace :admin do
-	resources :newsletters_translations
-	resources :newsletters_types
+  resources :profiles
+  resources :roles
+  resources :newsletters_translations
+  resources :categories
+  resources :newsletters_types
   resources :newsletters
   resources :events_translations
   resources :events_types
@@ -23,7 +30,7 @@ namespace :admin do
   resources :stations
   resources :stations_translations  
   resources :progresses
-  resources :profiles
+  resources :users
 
 end
 root :to => "home#present"
@@ -31,6 +38,7 @@ root :to => "home#present"
   #get "home/mrta"
   #get "home/present"
   #get "home/filterstation"
+  get   "home/setlang"
   match "/page/:filename.:format" => "static_pages#page"
   match "/map/:mapname/:filename.:format" => "static_maps#map"
   match "/map/:mapname/:z/:x/:y.:format" => "static_maps#maptile"
