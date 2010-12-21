@@ -6,7 +6,7 @@
     <div class="triangle-r"></div> 
 
     <div class="info">
-      <div id="accordion">
+      <div id="">
           <h3><a href="">All Announcement</a></h3>
             <div>
             <ul>
@@ -15,7 +15,7 @@
                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%>
             		</li> 
              <%end%>
-          </ui>
+           </ui>
             </div>
           <h3><a href="">Lastest Announcement</a></h3>
             <div>
@@ -28,8 +28,18 @@
             
           </ui>
             </div>
-          <h3><a href="">This Mounth</a></h3>
-            <div></div>
+          <h3><a href="">Monthly Announce</a></h3>
+            <div>
+							<%@allannounces_month.sort.each do |month, announces| %>
+									<h2><%= month.strftime('%B') %></h2>
+									<% for announce in announces %>
+										<div class="task">
+											<strong><%= announce.title %></strong>
+											create on <%= announce.start_on.to_date.to_s(:long) %>
+										</div>
+									<% end %>
+							<% end %>
+            </div>
      </div>
     </div>
   </div>
