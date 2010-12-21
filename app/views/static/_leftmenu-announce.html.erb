@@ -6,36 +6,38 @@
     <div class="triangle-r"></div> 
 
     <div class="info">
-      <div id="">
-          <h3><a href="">All Announcement</a></h3>
-            <div>
+      <div id="menuleft">
+          <h3 class='toggle'><a href="">All Announcement</a></h3>
+            <div class="hiddenDiv">
             <ul>
             	<% @allannounces.each do |announce|%>
             		<li>
-                  <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%>
+                  <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>25)%><br/>
+                  <small>start on <%= announce.start_on.to_date.to_s(:long) %></small>
             		</li> 
              <%end%>
            </ui>
             </div>
-          <h3><a href="">Lastest Announcement</a></h3>
-            <div>
+          <h3 class='toggle'><a href="">Lastest Announcement</a></h3>
+            <div class="hiddenDiv">
             <ul>
             	<%@lasttenannounces.each do |announce|%>
             		<li>
-                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%>
+                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%><br/>
+                   <small> start on <%= announce.start_on.to_date.to_s(:long) %> </small>
             		</li> 
              <%end%>
             
           </ui>
             </div>
-          <h3><a href="">Monthly Announce</a></h3>
-            <div>
+          <h3 class='toggle'><a href="">Monthly Announce</a></h3>
+            <div class="hiddenDiv">
 							<%@allannounces_month.sort.each do |month, announces| %>
 									<h2><%= month.strftime('%B') %></h2>
 									<% for announce in announces %>
 										<div class="task">
 											<strong><%= announce.title %></strong>
-											create on <%= announce.start_on.to_date.to_s(:long) %>
+											<small> start on <%= announce.start_on.to_date.to_s(:long) %> </small>
 										</div>
 									<% end %>
 							<% end %>
