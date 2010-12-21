@@ -71,7 +71,7 @@ class Admin::PurpleAssetsController < ApplicationController
     respond_to do |format|
       if @purple_asset.save
         #format.html { redirect_to([:admin,@purple_asset], :notice => 'Purple asset was successfully created.') }
-        format.html {redirect_to[@attachable,:purple_assets]) }
+        format.html {redirect_to([:admin,@attachable,:purple_assets]) }
         format.xml  { render :xml => @purple_asset, :status => :created, :location => @purple_asset }
       else
         format.html { render :action => "new" }

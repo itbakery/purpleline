@@ -12,7 +12,7 @@
             <ul>
             	<% @allannounces.each do |announce|%>
             		<li>
-                  <a href="/announce/<%=announce.id%>"><%=announce.title%>
+                  <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%>
             		</li> 
              <%end%>
           </ui>
@@ -22,7 +22,7 @@
             <ul>
             	<%@lasttenannounces.each do |announce|%>
             		<li>
-                   <a href="/announce/<%=announce.id%>"><%=announce.title%>
+                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%>
             		</li> 
              <%end%>
             
