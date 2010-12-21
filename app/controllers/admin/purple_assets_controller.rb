@@ -87,7 +87,7 @@ class Admin::PurpleAssetsController < ApplicationController
 
     respond_to do |format|
       if @purple_asset.update_attributes(params[:purple_asset])
-        format.html { redirect_to([:admin,@purple_asset], :notice => 'Purple asset was successfully updated.') }
+        format.html { redirect_to([:admin,@attachable,:purple_assets], :notice => 'Purple asset was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

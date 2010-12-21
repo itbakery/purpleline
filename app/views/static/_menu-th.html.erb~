@@ -30,14 +30,14 @@
          <h3>ประกาศโครงการ</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="#">ด้านจราจร</a></li>
-                        <li><a href="#">ด้านความปลอดภัย</a></li>
-                        <li><a href="#">ด้านสิ่งแวดล้อม</a></li>
-                        <li><a href="#">Public/Social Events</a></li>
-                        <li><a href="#">PR/CR Activities</a></li>
-                        <li><a href="#">Public Opinions</a></li>
-                        <li><a href="#">เยี่ยมชมโครงการ</a></li>
-                        <li><a href="#">งานออกแสดง</a></li>                        
+                    <% Category.all.each do |c| %>
+                      <li>
+                       <%if  c.icon.exists? then %>
+                          <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
+                       <%end%>
+                       <a href="#" style="display:inline; vertical-align:middle;"><%=c.name_th%>
+                    </li>
+                     <%end%>   
                     </ul>   
                 </div>
          <h3>งาน Events</h3>
