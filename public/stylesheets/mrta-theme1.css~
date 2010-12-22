@@ -258,10 +258,15 @@ line-height:100%;
     width:550px;
 }
 
+#fullmapdisplay {
+   width: 100%;
+   height: 98%;
+}
+
 #fullmap {
     -moz-border-radius-bottomleft: 5px;
     -moz-border-radius-bottomright: 5px;
-    background: -moz-linear-gradient(center bottom , #2A668E 11%, #3879A4 56%, #4387B4 78%) repeat scroll 0 0 #008dd7;
+    /*background: -moz-linear-gradient(center bottom , #2A668E 11%, #3879A4 56%, #4387B4 78%) repeat scroll 0 0 #008dd7;*/
     float: right;
     position: relative;
     width: 125px;

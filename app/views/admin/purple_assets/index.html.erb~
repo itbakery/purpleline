@@ -17,7 +17,7 @@
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
-        <% @purple_assets.each do |purple_asset| -%>
+        <% @assets.each do |purple_asset| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
             <%= purple_asset.id %>
@@ -45,6 +45,60 @@
       </div>
     </div>
   </div>
+  
+   <div class="secondary-navigation">
+    <ul class="wat-cf">
+      
+      <li>New Purple asset</li>
+    </ul>
+  </div> 
+  
+     <div class="content">
+      <h2 class="title">Create New Attachment </h2>
+      <div class="inner">
+						 <%= form_for [:admin,@attachable,PurpleAsset.new] do |f| %>
+
+						
+							<div class="field">
+								<%= f.label :title %><br />
+								<%= f.text_field :title %>
+							</div>
+							<div class="field">
+								<%= f.label :type %><br />
+								<%= f.text_field :type %>
+							</div>
+							<!--
+							<div class="field">
+								<%= f.label :attachable_id %><br />
+								<%= f.text_field :attachable_id %>
+							</div>
+							<div class="field">
+								<%= f.label :attachable_type %><br />
+								<%= f.text_field :attachable_type %>
+							</div>
+							-->
+							<div class="field">
+								<%= f.label :publish %><br />
+								<%= f.check_box :publish %>
+							</div>
+							<div class="field">
+								<%= f.label :latitude %><br />
+								<%= f.text_field :latitude %>
+							</div>
+							<div class="field">
+								<%= f.label :longtitude %><br />
+								<%= f.text_field :longtitude %>
+							</div>
+							  <div class="group">
+                <%= @map.div(:width => 700, :height => 370).html_safe %>
+               </div>
+							<div class="actions">
+								<%= f.submit %>
+							</div>
+						<% end %>
+      </div>
+     </div>
+  
 </div>
 
 <% content_for :sidebar, render(:partial => 'sidebar') -%>

@@ -27,7 +27,9 @@ class Admin::PurpleAssetsController < ApplicationController
       jQuery('#purple_asset_longtitude').val(py);
        }")
     
-    
+    #image
+    @asset = PurpleAsset.new
+    2.times {@asset.images.build}
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @purple_assets }
@@ -83,6 +85,7 @@ class Admin::PurpleAssetsController < ApplicationController
   # PUT /purple_assets/1
   # PUT /purple_assets/1.xml
   def update
+  	@attachable = session[:attach]
     @purple_asset = PurpleAsset.find(params[:id])
 
     respond_to do |format|
@@ -99,11 +102,12 @@ class Admin::PurpleAssetsController < ApplicationController
   # DELETE /purple_assets/1
   # DELETE /purple_assets/1.xml
   def destroy
+  	@attachable = session[:attach]
     @purple_asset = PurpleAsset.find(params[:id])
     @purple_asset.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_purple_assets_url) }
+      format.html { redirect_to([:admin,@attachable,:purple_assets]) }
       format.xml  { head :ok }
     end
   end
@@ -113,6 +117,7 @@ class Admin::PurpleAssetsController < ApplicationController
   def find_attachable
   params.each do |name, value|
     if name =~ /(.+)_id$/
+    	session[:attach] = $1.classify.constantize.find(value)
       return $1.classify.constantize.find(value)
     end
   end

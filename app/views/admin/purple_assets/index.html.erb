@@ -32,7 +32,14 @@
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_purple_asset_path(purple_asset) %> |
             <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_purple_asset_path(purple_asset) %> |
             <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_purple_asset_path(purple_asset), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-          </td>
+<!--
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_purple_asset_path(purple_asset) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_purple_asset_path(purple_asset) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_purple_asset_path(purple_asset), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+
+-->
+            
+            </td>
         </tr>          
         <% end -%>
       </table>
@@ -56,7 +63,7 @@
      <div class="content">
       <h2 class="title">Create New Attachment </h2>
       <div class="inner">
-						 <%= form_for [:admin,@attachable,PurpleAsset.new] do |f| %>
+						 <%= form_for [:admin,@attachable,@asset] do |f| %>
 
 						
 							<div class="field">
@@ -92,6 +99,11 @@
 							  <div class="group">
                 <%= @map.div(:width => 700, :height => 370).html_safe %>
                </div>
+                 <div class="group">
+										<% f.fields_for :images do |builder| %>
+											<%= render "images_fields", :f => builder %>
+										<% end %>
+								</div>
 							<div class="actions">
 								<%= f.submit %>
 							</div>

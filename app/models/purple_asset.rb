@@ -3,5 +3,6 @@ class PurpleAsset < ActiveRecord::Base
 	cattr_reader :per_page
   @@per_page = 10
   has_many  :images
-  accepts_nested_attributes_for  :images, :reject_if => lambda {|t| t['image'].nil?}
+  accepts_nested_attributes_for  :images, :reject_if => lambda {|t| t['caption'].nil?}, :allow_destroy => true
+
 end
