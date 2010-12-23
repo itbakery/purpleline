@@ -958,8 +958,10 @@ src: url(./STEINEMU.ttf);
    -webkit-animation-timing-function: ease-in-out;
    -webkit-animation-duration: 50s;
    -webkit-animation-iteration-count: infinite;
+
+   -moz-transition: all 2s ease-in-out;
+
    
-    -moz-transition: move 50s ease-in-out;
    
 }
 
