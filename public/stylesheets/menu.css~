@@ -5,7 +5,7 @@
 #menu {
    list-style: none;
    padding: 0 0 0 5px;
-   margin: 1px 0px;
+   margin: 10px 0px;
    position:relative;
    float:left;
    display:block;
@@ -128,7 +128,7 @@
 	z-index:5;
 }
 
-.dropdown_1column {width: 140px;}
+.dropdown_1column {width:  220px;}
 .dropdown_2columns {width: 280px;}
 .dropdown_3columns {width: 420px;}
 .dropdown_4columns {width: 560px;}
@@ -155,7 +155,7 @@
 	margin-left: 5px;
 	margin-right: 5px;
 }
-.col_1 {width:130px;}
+.col_1 {width:250px;}
 .col_2 {width:270px;}
 .col_3 {width:410px;}
 .col_4 {width:550px;}
@@ -266,7 +266,7 @@
 	margin:0;
 	float:none;
 	text-align:left;
-	width:130px;
+	width:200px;
 }
 #menu li ul li:hover {
 	background:none;

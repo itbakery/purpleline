@@ -101,7 +101,7 @@
   <img src="../images/global-footer-line.jpg">
   </div>
   <!-- end new_event -->
-  <div class="span-24 last greenfield">
+  <div id="movebg" class="span-24 last">
     <div class="span-12" id="org">
     <div class=" "><%= render :partial => '/static/org' %></div>
     </div>

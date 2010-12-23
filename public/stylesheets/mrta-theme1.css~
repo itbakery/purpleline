@@ -928,6 +928,42 @@ src: url(./STEINEMU.ttf);
    height:auto !important;
    height:140px;
 }
+@-webkit-keyframes 'move' {
+   0% {background-position: 0% 0%; }
+   50% {background-position: 100% 0%;}
+   100% {background-position: 0% 0%;}
+ }
+ 
+@-moz-keyframes 'move' {
+   0% {background-position: 0% 0%; }
+   50% {background-position: 100% 0%;}
+   100% {background-position: 0% 0%;}
+ } 
+ 
+@-o-keyframes 'move' {
+   0% {background-position: 0% 0%; }
+   50% {background-position: 100% 0%;}
+   100% {background-position: 0% 0%;}
+ } 
+#movebg {
+   background: transparent url(../images/bkkpanorama.png) no-repeat 0 0;
+   background-position:  bottom;
+   -moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
+   overflow:hidden;
+   margin-top: 1px;
+   min-height:140px; 
+   height:auto !important;
+   height:140px;
+   -webkit-animation-name: move;
+   -webkit-animation-timing-function: ease-in-out;
+   -webkit-animation-duration: 50s;
+   -webkit-animation-iteration-count: infinite;
+
+   -moz-transition: all 2s ease-in-out;
+
+   
+   
+}
 
 .comment {
        background: #23a7ec;

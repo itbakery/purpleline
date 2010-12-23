@@ -21,7 +21,12 @@
 
 <div class="container  maincontainer bluebg">
   <div class="span-24 last" id="header">
-       <div class="span-11" id=""> &nbsp;</div>
+    <div id="fullmap">
+       <%= link_to image_tag("map.png", :border=>0, :size=>"30x28",:alt=>"click view full screen map") ,:action => 'fullmap'%>
+       <%= link_to image_tag("th.png", :border=>0, :size=>"51x28"), :action => 'setlang', :lang=>"th" %>
+       <%= link_to image_tag("en.png", :border=>0, :size=>"36x28"), :action => 'setlang', :lang=>"en" %>
+
+    </div>
     <div class="clear span-24 last" id="">
      	 <%= render :partial => '/static/menu'%>
  
