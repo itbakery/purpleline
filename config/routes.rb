@@ -55,6 +55,7 @@ root :to => "home#present"
   match "/progress" => 'home#progress'
   match "/filterstation/:id" => 'home#filterstation'
   match "/fullmap" => 'home#fullmap'
+  match "/admin" => 'admin/pages#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
