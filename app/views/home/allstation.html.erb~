@@ -1,4 +1,4 @@
-<h1>List All Stations</h1>
+<h1>Stations</h1>
 <table>
 <% @stations.each do |s| %>
   <tr>
