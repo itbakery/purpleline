@@ -40,13 +40,14 @@
     jQuery('#tabs').tabs();
     jQuery('#tabs').tabs('paging', { cycle: true, follow: true } ); 
    
-    jQuery('.toggle').mouseover(function(){  
-         if( jQuery(this).next().is(":hidden")){
-	     jQuery(this).next().slideDown("slow");
-	  }else{
-             jQuery(this).next().hide("slow");
-          }    
-    });
+    jQuery('#menuleft  li').hover(
+                    function(){
+    		         jQuery('ul',this).slideDown(100);
+    		    },
+    		    function(){
+    		    	 jQuery('ul',this).slideUp(100);
+    		    }
+    );
    
     jQuery('#memberform').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
     
