@@ -35,7 +35,7 @@
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_en%>
+                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
                     </li>
                      <%end%>                      
                     </ul>   
@@ -44,8 +44,8 @@
                 <div class="col_1">
                     <ul class="simple">
 
-                        <li><a href="#">Public</a></li>
-                        <li><a href="#">Social</a></li>
+                        <li><a href="#">Public Events</a></li>
+                        <li><a href="#">Social Events</a></li>
 
                     </ul>   
                 </div>                
@@ -65,7 +65,7 @@
                <li><a href="#">Depot</a></li>
                <li><a href="#">Park & Ride Buildings</a></li>
                <li><a href="#">Bridge</a></li> 
-               <li class="underline"><a href="#">Special Items</a></li>                
+               <li class="underline"><a href="#">Railsways System</a></li>                
 			</div>
       <hr  style="border: 1px dotted #736F6E;" >
                         <li><a href="#">Photo & Video</a></li>
@@ -92,15 +92,14 @@
 				<div class="">
 					 <h3>Special Systems</h3>
 				</div>
-													<li><a style="padding-left:15px;" href="/pageview/23">Track Works</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/24">Systems</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/25">Rolling Stocks</a></li>				
+													<li><a style="padding-left:15px;" href="/pageview/23">Trackworks</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/24">Railways Systems</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/25">Rolling Stock</a></li>				
 				<div class="">
 					 <h3>Facilities</h3>
 				</div>			
-													<li><a style="padding-left:15px;" href="#">Elevetor</a></li>
-													<li><a style="padding-left:15px;" href="#">Handicap Facility</a></li>
-													<li><a style="padding-left:15px;" href="#">Telephone</a></li>														
+													<li><a style="padding-left:15px;" href="#">Lifts & Escalators</a></li>
+													<li><a style="padding-left:15px;" href="#">Handicap Facility</a></li>													
       </ul>                  
       </div>  
 		</div>
