@@ -44,7 +44,7 @@
          if( jQuery(this).next().is(":hidden")){
 	     jQuery(this).next().slideDown("slow");
 	  }else{
-             jQuery(this).next().hide();
+             jQuery(this).next().hide("slow");
           }    
     });
    
