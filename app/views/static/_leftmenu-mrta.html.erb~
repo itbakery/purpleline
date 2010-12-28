@@ -7,24 +7,20 @@
 
 <div class="info">
 <!--<h2>MRTA</h2>-->
-   <div id="accordion">
-						 <h3><a href="/mrtaview/16" onclick="window.open(this.href,'_self')">MRTA Home</a></h3>
-						 <div></div>
-						 <h3><a href="/mrtaview/13" onclick="window.open(this.href,'_self')">Organization</a></h3>
-						 <div></div>
-						 <h3><a href="/mrtaview/14" onclick="window.open(this.href,'_self')">Purple Line (I) Section</a></h3>
-								 <div>
-										 <a href="/mrtaview/10"  style="padding-left:20px;">Project Consultant</a>
-										 <a href="/mrtaview/11"  style="padding-left:20px;">Contractors</a>                       
+   <div id="menuleft">
+						 <h3 class='toggle'><a href="/mrtaview/16" >MRTA Home</a></h3>
+             <div></div>
+						 <h3 class='toggle'><a href="/mrtaview/13" >Organization</a></h3>
+             <div></div>
+						 <h3 class='toggle'><a href="/mrtaview/14" >Purple Line (I) Section</a></h3>
+								 <div class="hiddenDiv">
+										 <a href="/mrtaview/10" >Project Consultant</a><br>
+										 <a href="/mrtaview/11" >Contractors</a>                       
 								 </div>
-						 <h3><a href="/mrtaview/18" onclick="window.open(this.href,'_self')">Purple Line Extension</a></h3>
+						 <h3 class='toggle'><a href="/mrtaview/18" >Purple Line Extension</a></h3>
 						 <div></div>
-						 <h3><a href="/mrtaview/15" onclick="window.open(this.href,'_self')">MRTA Network Plan</a></h3>
+						 <h3 class='toggle'><a href="/mrtaview/15" >MRTA Network Plan</a></h3>
 						 <div></div>
-   </div>
-   <div>
-       <span class="toggle">test</span>
-       <div class="hiddenDivx"> teststsetwetststt</div>
    </div>
 </div>
 </div>
