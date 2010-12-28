@@ -3,17 +3,13 @@
   <div class="bubble"> <!-- Bubble -->
     <div class="rectangle-t"><h2 ><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;PROJECT</h2></div> 
     <div class="info">
-      <div id="menuleft">
-          <h3  class='toggle'><a href="/pageview/19">Ridership Forecast</a></h3>
-            <div></div>
-          <h3  class='toggle'><a href="/pageview/26">Operational Data</a></h3>
-            <div></div>
-          <h3  class='toggle'>
+      <ul id="menuleft">
+          <li  class='toggle'><a href="/pageview/19">Ridership Forecast</a></li>
+          <li  class='toggle'><a href="/pageview/26">Operational Data</a></li>
+          <li  class='toggle'>
              <a href="/allstation">Stations<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a>
-             
-          </h3>
-             <div class="hiddenDiv">
-							<ul class="">
+
+							<ul id="liststation" style="width:250px;">
 							<li><a href="/station/1"><b class="station">S01</b>&nbsp;&nbsp;Khlong Bang Phai</a></li>
 							<li><a href="/station/2"><b class="station">S02</b>&nbsp;&nbsp;Talad Bang Yai </a></li>
 							<li><a href="/station/3"><b class="station">S03</b>&nbsp;&nbsp;Sam Yaek Bang Yai</a></li>
@@ -30,23 +26,25 @@
 							<li><a href="/station/14"><b class="station">S14</b>&nbsp;&nbsp;Wong Sawang </a></li>
 							<li><a href="/station/15"><b class="station">S15</b>&nbsp;&nbsp;Bang Son </a></li>
 							<li><a href="/station/16"><b class="station">S16</b>&nbsp;&nbsp;Tao Poon </a></li>               
-							</ul> 
-            </div>
-           <h3 style="height:35px;"><a href="/pageview/20">Elevated Structures and Route Alignment</a></h3> 
-           <div></div>
-           <h3 class='toggle'><a href="/pageview/21">Depot</a></h3> 
-           <div></div>
-           <h3 class='toggle'><a href="/pageview/22">Park & Ride Buildings</a></h3> 
-           <div></div>
-           <h3 class='toggle'><a href="">Special Systems<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a></h3> 
-             <div class="hiddenDiv">
-               <ul>
-                 <li><a href="/pageview/23">Track Works </a></li>
-                 <li><a href="/pageview/24">Systems </a></li>
+							</ul>
+					</li>		
+           <li style="height:35px;"><a href="/pageview/20">Elevated Structures and Route Alignment</a></li> 
+           <li class='toggle'><a href="/pageview/21">Depot</a></li> 
+           <li class='toggle'><a href="/pageview/22">Park & Ride Buildings</a></li> 
+           <li class='toggle'><a href="">Special Systems<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a> 
+               <ul  id="#listspecial" style="width:250px;">
+                 <li><a href="/pageview/23">Trackworks </a></li>
+                 <li><a href="/pageview/24">Railway Systems </a></li>
                  <li><a href="/pageview/25">Rolling Stocks </a></li>
                </ul>
-             </div>
-     </div>
+           </li>
+           <li class='toggle'><a href="">Facilities<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a> 
+               <ul  id="#listspecial" style="width:250px;">
+                 <li><a href="/pageview/23">Lifts & Escalators </a></li>
+                 <li><a href="/pageview/24">Handicap Facility</a></li>
+               </ul>
+           </li>           
+     </ul>
     </div>
   </div>
 
