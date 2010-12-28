@@ -26,7 +26,12 @@
 
     </div>
     <div class="clear span-24 last" id="">
+    	<%if session[:lang]=="en" %>
      	 <%= render :partial => '/static/menu'%>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <%= render :partial => '/static/menu-th'%>
+      <%end%> 
  
     </div>
     <!-- end main-navigation -->
@@ -36,8 +41,13 @@
     <%= render :partial => '/static/subslider'%></div>
     
   <div class="span-6" id="announcement">
-   <div class="contentbox_3">
+     <div class="contentbox_3">
+      <%if session[:lang]=="en" %>
    <%= render :partial => '/static/leftmenu-mrta'%>
+      <%end%>
+      <%if session[:lang]=="th" %>
+   <%= render :partial => '/static/leftmenu-mrta-th'%>
+      <%end%> 
    </div> 
   </div>
    <!-- end project_detail --> 
@@ -64,7 +74,7 @@
   <div class="span-8 last" id="new_event"><div class="contentbox_3a"></div>
   </div>
   <!-- end new_event -->
-  <div class="span-24 last greenfield">
+  <div  id="movebg" class="span-24 last">
     <div class="span-12" id="org">
     <div class=" "><%= render :partial => '/static/org' %></div>
     </div>

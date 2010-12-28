@@ -8,9 +8,6 @@
                 <div class="col_1">
                     <ul class="simple">
 										<div class="">
-                        <li><a href="#">Project Details</a></li>
-                        <li><a href="#">Overall Progress</a></li>
-                        <li><a href="#">Announcements</a></li>
 										</div>
                     </ul>   
                 </div>
@@ -44,8 +41,7 @@
                 <div class="col_1">
                     <ul class="simple">
 
-                        <li><a href="#">Public Events</a></li>
-                        <li><a href="#">Social Events</a></li>
+                        <li><a href="#">Public/Social Events</a></li>
 
                     </ul>   
                 </div>                
@@ -119,7 +115,7 @@
 											 <li><a href="/mrtaview/10" style="padding-left:20px;">Project Consultant</a></li>
 											 <li><a href="/mrtaview/11" style="padding-left:20px;">Contractors</a></li>                        
 											 <li><a href="/mrtaview/18">Purple Line Extension</a></li>
-											 <li><a href="/mrtaview/15">MRTA Network Plan</a></li>
+											 <li><a href="/mrtaview/15">MRT Network Plan</a></li>
                     </ul>   
                      
                 </div>
