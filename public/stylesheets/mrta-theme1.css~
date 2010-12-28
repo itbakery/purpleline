@@ -1,6 +1,7 @@
 
 body{
-  background: url('../images/contructbg.jpg') no-repeat  center top #ece9e9;
+  /*background: url('../images/contructbg.jpg') no-repeat  center top #c7e3ef;*/
+  background: #c7e3ef;
   font:13px/16px "Lucida Grande",Arial,Sans-serif;
   /* font-family: Georgia,Verdana, "Lucida Sans Unicode",sans-serif;*/
   font-size:12px;
@@ -32,6 +33,7 @@ body{
 *[class$="five"]>*{
   width:20%;
 }
+
 *{
   list-style: none outside none;
 }
@@ -197,28 +199,49 @@ color:#FFFFFF;
 line-height:100%;
 }
 
-#menuleft h3 {
-   height:40px;	
+#menuleft li {
    background: -moz-linear-gradient(center top , #EEEEEE, #BBBBBB) repeat scroll 0 0 transparent;
    border-color: -moz-use-text-color #777777 #777777;
    font-size: 1.5em;
-   min-height:29px; 
-   height:auto !important;
-   height:29px;
-   margin-bottom: 1px;
-   padding-left:5px
+   min-height:20px; 
+   margin-bottom: 2px;
+   margin-top: 2px;
+   padding-left:10px;
+   padding-top:9px;
+   padding-bottom:9px;
+}
+#menuleft li .arrow{
+   float: right;
+   padding-right:10px;
+   padding-bottom:7px;
 }
 
-#menuleft h3 a {
+#menuleft li a {
   text-decoration: none;
-  font-family: Negotiate;
+  /*font-family: Negotiate;*/
+  font-family:Arial, Helvetica, sans-serif;
   display:block;
   color: #015B86;
+  font-weight:bold;
+  
 }
 
-.hiddenDiv {
-  display:none;
-  background-color:#E8C1E3;
+#menuleft li a:hover {
+  color: #7e0066;
+  border-left:4px solid #ce0000;
+}
+
+#menuleft  ul {
+  position:absolute;   
+  left:0;   
+  display:none;   
+  margin:-10px 0 0 220px;   
+  padding:4px;   
+  list-style:none; 
+  background-color:#7e7e7e;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 .hiddenDiv a {
    margin-left:10px;	
@@ -1085,7 +1108,7 @@ div#containerribbon {
   margin: 0px auto;
   width: 225px;
   background: #fff;
-
+  padding: 0px 5px;
   -moz-border-radius: 10px;
   -khtml-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -1094,32 +1117,40 @@ div#containerribbon {
   -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
    position: relative;
    z-index: 90; /* the stack order: displayed under ribbon rectangle (100) */
-background: -moz-linear-gradient(center top , #EEEEEE, #BBBBBB) repeat scroll 0 0 transparent;
+   background: -moz-linear-gradient(center top , #d3d3d3, #7e7e7e) repeat scroll 0 0 transparent;
     border-color: -moz-use-text-color #777777 #777777;
 }
 
 .rectangle {
-	background: #A579B0 ;  /*#7f9db98*/
+	/*background: #A579B0 ;  #7f9db98*/
 	height: 40px;
 	width: 240px;
 	position: relative;
 	left:-7px;
 	top: 15px;
 	float: left;
-  vertical-align:middle;
+        vertical-align:middle;
 	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
   -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
 	z-index: 100; /* the stack order: foreground */
 }
 
-.rectangle h2 {
-	font-size: 27px;
-	color: #fff;
-	padding-top: 6px;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-	  vertical-align:middle;
+.rectangle-t {
 
+	height: 40px;
+	width: 240px;
+	top: 15px;
+        vertical-align:middle;
+}
+.rectangle-t h2 {
+   font-size: 27px;
+   color: #7e0066;
+   font-weight:bold;
+   padding-top: 6px;	
+   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+   vertical-align:middle;
+   font-family:Arial,Helvetica,Sans,FreeSans,Jamrul,Garuda,Kalimati;
 }
 
 .triangle-l {
@@ -1147,7 +1178,7 @@ background: -moz-linear-gradient(center top , #EEEEEE, #BBBBBB) repeat scroll 0 
 }
 
 .info {
-	padding: 10px 0px 5px 0px;
+	padding: 0px 0px 5px 0px;
 }
 
 .info h2 {
