@@ -1,6 +1,7 @@
 
 body{
-  background: url('../images/contructbg.jpg') no-repeat  center top #ece9e9;
+  /*background: url('../images/contructbg.jpg') no-repeat  center top #c7e3ef;*/
+  background: #c7e3ef;
   font:13px/16px "Lucida Grande",Arial,Sans-serif;
   /* font-family: Georgia,Verdana, "Lucida Sans Unicode",sans-serif;*/
   font-size:12px;
@@ -32,6 +33,7 @@ body{
 *[class$="five"]>*{
   width:20%;
 }
+
 *{
   list-style: none outside none;
 }
