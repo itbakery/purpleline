@@ -16,17 +16,17 @@
 		-->
 	</li>
    
-	<li class="menu_right"><a href="#" class="drop">News&Events</a>
+	<li class="menu_right"><a href="#" class="drop">ข่าวและเหตุการณ์</a>
     
 		<div class="dropdown_1column align_right">
-         <h3>News</h3>
+         <h3>ข่าวสาร</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="#">Latest News</a></li>
-                        <li><a href="#">All News</a></li>
+                        <li><a href="#">ข่าวสารล่าสุด</a></li>
+                        <li><a href="#">ข่าวสารทั้งหมด</a></li>
                     </ul>
                 </div>
-         <h3>Announcements</h3>
+         <h3>ประกาศ</h3>
                 <div class="col_1">
                     <ul class="simple">
                     <% Category.all.each do |c| %>
@@ -34,16 +34,16 @@
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
+                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a>
                     </li>
                      <%end%>                      
                     </ul>   
                 </div>
-         <h3>Events</h3>
+         <h3>เหตุการณ์</h3>
                 <div class="col_1">
                     <ul class="simple">
 
-                        <li><a href="#">Public/Social Events</a></li>
+                        <li><a href="#">กิจกรรมประชาสัมพันธ์และมวลชลสัมพันธ์</a></li>
 
                     </ul>   
                 </div>                

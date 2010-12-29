@@ -5,9 +5,10 @@
          <div style="position:relative;">
             <%=@station.content.html_safe%> <br/>
             <%= @map.div(:width => 525, :height => 300).html_safe %>
-            <small>Latitude:<%=@station.latitude%> | Longtitude:<%=@station.longtitude%></small>
-            
-      </div>
+            <small>Latitude:<%=@station.latitude%> / Longtitude:<%=@station.longtitude%></small>
+            <span><a href="/faceboxmap/<%=@station.id%>" target="_blank" toolbar="no" width="800" height="600" left="200"
+top="20" status="no" scrollbars="no" resize="no" >View Enlarge Map</a></span>
+       </div>
        </li>
   </ui>
 </div>

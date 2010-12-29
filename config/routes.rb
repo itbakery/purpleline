@@ -48,6 +48,7 @@ root :to => "home#present"
   match "/mrta" => "home#mrta"
   match "/project" => "home#project"
   match "/station/:id" => 'home#station'
+  match "/faceboxmap/:id" => 'home#faceboxmap'
   match "/pagetran/:id" => 'home#pagetran'
   match "/pageview/:id" => 'home#pageview'
   match "/mrtaview/:id" => 'home#mrtaview'  

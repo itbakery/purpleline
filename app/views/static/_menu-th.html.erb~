@@ -1,51 +1,49 @@
 
 <ul id="menu">
     <span class="cycle"></span> 
-   <span class="title">รฟม โครงการรถไฟฟ้าสายสีม่วง</span> 
+   <span class="title">รฟม. โครงการรถไฟฟ้าสายสีม่วง</span> 
    
 	<li class="menu_right"><a href="#" class="drop">เชื่อมโยง</a>
+	<!--
 		<div class="dropdown_1column align_right">
                 <div class="col_1">
                     <ul class="simple">
 										<div class="">
-                        <li><a href="#">รายละเอียดโครงการ</a></li>
-                        <li><a href="#">ภาพรวมความก้าวหน้า</a></li>
-                        <li><a href="#">ประกาศ</a></li>
 										</div>
                     </ul>   
                 </div>
 		</div>
+		-->
 	</li>
    
-	<li class="menu_right"><a href="#" class="drop">ข่าวสารโครงการ</a>
+	<li class="menu_right"><a href="#" class="drop">News&Events</a>
     
 		<div class="dropdown_1column align_right">
-         <h3>ข่าว</h3>
+         <h3>News</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="#">ข่าวล่าสุด</a></li>
-                        <li><a href="#">ข่าวทั้งหมด</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">All News</a></li>
                     </ul>
                 </div>
-         <h3>ประกาศโครงการ</h3>
+         <h3>Announcements</h3>
                 <div class="col_1">
                     <ul class="simple">
                     <% Category.all.each do |c| %>
-                      <li>
+                    <li>
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="#" style="display:inline; vertical-align:middle;"><%=c.name_th%>
+                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
                     </li>
-                     <%end%>   
+                     <%end%>                      
                     </ul>   
                 </div>
-         <h3>งาน Events</h3>
+         <h3>Events</h3>
                 <div class="col_1">
                     <ul class="simple">
 
-                        <li><a href="#">ด้านสังคม</a></li>
-                        <li><a href="#">ด้านสังคม</a></li>
+                        <li><a href="#">Public/Social Events</a></li>
 
                     </ul>   
                 </div>                
@@ -55,21 +53,21 @@
 
 
 
-	<li class="menu_right"><a href="#" class="drop">ความคืบหน้าโครงการ</a>
+	<li class="menu_right"><a href="#" class="drop">ความก้าวหน้า</a>
 		<div class="dropdown_1column ">
                 <div class="col_1">
      <ul class="simple">
 			<div class="">
-               <li><a href="#">Elevated Works</a></li>
-               <li><a href="#">Stations</a></li>
-               <li><a href="#">Depot</a></li>
-               <li><a href="#">Park & Ride Buildings</a></li>
-               <li><a href="#">Bridge</a></li> 
-               <li class="underline"><a href="#">Special Items</a></li>                
+               <li><a href="#">ทางรถไฟยกระดับ</a></li>
+               <li><a href="#">สถานีรถไฟฟ้า</a></li>
+               <li><a href="#">ศูนย์ซ่อมบำรุง</a></li>
+               <li><a href="#">อาคารจอดรถ</a></li>
+               <li><a href="#">สะพานข้ามแม่น้ำ</a></li> 
+               <li class="underline"><a href="#">งานระบบรถไฟฟ้า</a></li>                
 			</div>
       <hr  style="border: 1px dotted #736F6E;" >
-                        <li><a href="#">รูปภาพโครงการ & วิดีโอ</a></li>
-                        <li><a href="/progress">แผนภูมิ</a></li>
+                        <li><a href="#">วิดีโอ และ ภาพถ่าย</a></li>
+                        <li><a href="/progress">แผนภูมิความก้าวหน้า</a></li>
       </ul>   
                      
                 </div>
@@ -77,50 +75,49 @@
 		</div>
         
 	</li>
-	<li class="menu_right"><a href="/project" class="drop">โครงการ</a>
+	<li class="menu_right"><a href="/project" class="drop">โครงการฯ</a>
 		<div class="dropdown_1column ">
                 <div class="col_1">
      <ul class="simple">
 				<div class="">
-								 <li><a href="/pageview/19">Ridership Forecast</a></li>
-								 <li><a href="/pageview/26">Operational Data</a></li>
-								 <li><a href="/allstation">Stations</a></li>
-								 <li><a href="/pageview/20">Elevated Structures & Route Alignment</a></li>
-								 <li><a href="/pageview/21">Depot</a></li> 
-								 <li><a href="/pageview/22">Park & Ride Buildings</a></li>                
+								 <li><a href="/pageview/19">การประมาณจำนวนผู้โดยสาร</a></li>
+								 <li><a href="/pageview/26">ข้อมูลการให้บริการเดินรถไฟฟ้า</a></li>
+								 <li><a href="/allstation">สถานีรถไฟฟ้า</a></li>
+								 <li><a href="/pageview/20">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li>
+								 <li><a href="/pageview/21">ศูนย์ซ่อมบำรุง</a></li> 
+								 <li><a href="/pageview/22">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li>                
 				</div>
 				<div class="">
-					 <h3>Special Systems</h3>
+					 <h3>ระบบอื่น	ๆ</h3>
 				</div>
-													<li><a style="padding-left:15px;" href="/pageview/23">Track Works</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/24">Systems</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/25">Rolling Stocks</a></li>	
+													<li><a style="padding-left:15px;" href="/pageview/23">ระบบรางรถไฟฟ้า</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/24">ระบบรถไฟฟ้า</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/25">ตู้รถไฟฟ้า</a></li>				
 				<div class="">
-					 <h3>Facilities</h3>
+					 <h3>สิ่งอำนวยความสะดวก</h3>
 				</div>			
-													<li><a style="padding-left:15px;" href="#">Elevetor</a></li>
-													<li><a style="padding-left:15px;" href="#">Handicap Facility</a></li>
-													<li><a style="padding-left:15px;" href="#">Telephone</a></li>					
-													
+													<li><a style="padding-left:15px;" href="#">ลิฟท์และบันไดเลื่อน</a></li>
+													<li><a style="padding-left:15px;" href="#">สำหรับผู้พิการ</a></li>													
       </ul>                  
       </div>  
 		</div>
         
 	</li>
 	
-	<li class="menu_right"><a href="/index" class="drop">หน้าแรก</a>
+	<li class="menu_right"><a href="/index" class="drop">รฟม.</a>
     
 		<div class="dropdown_1column">
         
                 <div class="col_1">
                     <ul class="simple">
-											 <li><a href="/mrtaview/16">รู้จัก รฟม</a></li>
-											 <li><a href="/mrtaview/13">โครงสร้างองค์กร</a></li>
-											 <li><a href="/mrtaview/14">Purple Line (I) Section</a></li>
-											 <li><a href="/mrtaview/10" style="padding-left:20px;">Project Consultant</a></li>
-											 <li><a href="/mrtaview/11" style="padding-left:20px;">Contractors</a></li>                        
-											 <li><a href="/mrtaview/18">ส่วนต่อขยายโครงการสายสีม่วง</a></li>
-											 <li><a href="/mrtaview/15">MRTA Network Plan</a></li>
+											 <li><a href="/mrtaview/16">ความเป็นมาของ รฟม.</a></li>
+											 <li><a href="/mrtaview/13">ผังองค์กรของ รฟม.</a></li>
+											 <li><a href="/mrtaview/14">โครงการรถไฟฟ้าสายสีม่วง</a></li>
+                       <li><a href="/mrtaview/10" style="padding-left:20px;">ผังองค์กรของโครงการ</a></li>
+											 <li><a href="/mrtaview/10" style="padding-left:20px;">กลุ่มบริษัทที่ปรึกษา</a></li>
+											 <li><a href="/mrtaview/11" style="padding-left:20px;">ผู้รับจ้างก่อสร้าง</a></li>                        
+											 <li><a href="/mrtaview/18">โครงการรถไฟฟ้าสายสีม่วง ส่วนต่อขยาย</a></li>
+											 <li><a href="/mrtaview/15">แปลนโครงข่ายรถไฟฟ้า</a></li>
                     </ul>   
                      
                 </div>

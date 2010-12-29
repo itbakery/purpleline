@@ -212,7 +212,7 @@ line-height:100%;
 }
 
 #menuleft li:hover {
-  border-left:4px solid #ce0000;
+  border-left:2px solid #ce0000;
 }
 #menuleft li .arrow{
    float: right;
