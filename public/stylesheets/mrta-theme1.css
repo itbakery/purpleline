@@ -467,7 +467,7 @@ src: url(./STEINEMU.ttf);
   vertical-align:middle;
 }
 #main-navigation  .cycle{
-	background: transparent url('../images/cycle.png') no-repeat 0 50%;
+	/*background: transparent url('../images/cycle.png') no-repeat 0 50%;*/
 	width: 40px ;
 	height: 40px;
 	display: block;

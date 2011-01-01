@@ -120,12 +120,23 @@
     <!-- end callcenter -->
   </div>
   <div class="span-24 last" id="footer">
-     <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
-     All rights reserved <br/> 
-     Webmaster : webmaster@pcpl-th.com<br/>
-     Public Relation Division : pr@mrta.co.th
-     
-     </div>
+    	<%if session[:lang]=="en" %>
+				 <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
+				 All rights reserved <br/> 
+				 Webmaster : webmaster@pcpl-th.com<br/>
+				 Public Relation Division : pr@mrta.co.th
+				 </div>
+      <%end%>
+      <%if session[:lang]=="th" %>
+				 <div class="footertext"> &copy;  2010 การรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย
+				 สงวนลิขสิทธิ์ <br/> 
+				 ดิดต่อผู้ดูแลเวปไซต์ : webmaster@pcpl-th.com<br/>
+				 ติดต่อฝ่ายประชาสัมพันธ์ : pr@mrta.co.th
+				 </div>
+      <%end%>     
+  
+  
+
   </div>
   <!-- end footer -->
 </div>
