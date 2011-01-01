@@ -4,10 +4,10 @@
     <div class="rectangle-t"><h2 ><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;โครงการฯ</h2></div> 
     <div class="info">
       <ul id="menuleft">
-          <li  class='toggle'><a href="/pageview/27">การประมาณจำนวนผู้โดยสาร</a></li>
-          <li  class='toggle' style="line-height:110%;"><a href="/pageview/28">ข้อมูลการให้บริการเดินรถไฟฟ้า</a></li>
+          <li  class='toggle'><a href="/pageview/19">การประมาณจำนวนผู้โดยสาร</a></li>
+          <li  class='toggle' style="line-height:110%;"><a href="/pageview/26">ข้อมูลการให้บริการเดินรถไฟฟ้า</a></li>
           <li  class='toggle'>
-             <a href="/pageview/29">สถานีรถไฟฟ้า<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a>
+             <a href="/allstation">สถานีรถไฟฟ้า<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a>
 
 							<ul id="liststation" style="width:250px;">
 							<li><a href="/station/1"><b class="station">S01</b>&nbsp;&nbsp;สถานีคลองบางไผ่</a></li>
@@ -28,21 +28,21 @@
 							<li><a href="/station/16"><b class="station">S16</b>&nbsp;&nbsp;สถานีเตาปูน </a></li>               
 							</ul>
 					</li>		
-           <li style="height:35px;line-height:110%"><a href="/pageview/30">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li> 
-           <li class='toggle'><a href="/pageview/31">ศูนย์ซ่อมบำรุง</a></li> 
-           <li class='toggle' style="line-height:110%;"><a href="/pageview/32">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li>
-           <li class='toggle' style="line-height:110%;"><a href="#">สะพานข้ามแม่น้ำเจ้าพระยา</a></li>
+           <li style="height:35px;line-height:110%"><a href="/pageview/20">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li> 
+           <li class='toggle'><a href="/pageview/21">ศูนย์ซ่อมบำรุง</a></li> 
+           <li class='toggle' style="line-height:110%;"><a href="/pageview/22">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li>
+           <li class='toggle' style="line-height:110%;"><a href="/pageview/22">สะพานข้ามแม่น้ำเจ้าพระยา</a></li>
            <li class='toggle'><a href="">ระบบอื่น	ๆ<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a> 
                <ul  id="#listspecial" style="width:250px;">
-                 <li><a href="/pageview/48">ระบบรางรถไฟฟ้า </a></li>
-                 <li><a href="/pageview/47">ระบบรถไฟฟ้า </a></li>
-                 <li><a href="/pageview/42">ตู้รถไฟฟ้า</a></li>
+                 <li><a href="/pageview/23">ระบบรางรถไฟฟ้า </a></li>
+                 <li><a href="/pageview/24">ระบบรถไฟฟ้า </a></li>
+                 <li><a href="/pageview/25">ตู้รถไฟฟ้า</a></li>
                </ul>
            </li>
            <li class='toggle'><a href="">สิ่งอำนวยความสะดวก<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a> 
                <ul  id="#listspecial" style="width:250px;">
-                 <li><a href="/pageview/43">ลิฟท์และบันไดเลื่อน </a></li>
-                 <li><a href="/pageview/46">สำหรับผู้พิการ</a></li>
+                 <li><a href="/pageview/23">ลิฟท์และบันไดเลื่อน </a></li>
+                 <li><a href="/pageview/24">สำหรับผู้พิการ</a></li>
                </ul>
            </li>           
      </ul>
