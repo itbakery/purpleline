@@ -110,14 +110,12 @@
   </div>
   <!-- end new_event -->
   <div id="movebg" class="span-24 last">
-    <div class="span-12" id="org">
-    <div class=" "><%= render :partial => '/static/org' %></div>
-    </div>
-    <!-- end org -->
-    <div class="span-12 last" id="callcenter">
-      <div class=""><%= render :partial => '/static/communicate' %></div>
-    </div>
-    <!-- end callcenter -->
+    	<%if session[:lang]=="en" %>
+     	 <div class=" "><%= render :partial => '/static/org' %></div>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <div class=" "><%= render :partial => '/static/org-th' %></div>
+      <%end%>    
   </div>
   <div class="span-24 last" id="footer">
     	<%if session[:lang]=="en" %>

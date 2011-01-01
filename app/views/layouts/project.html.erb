@@ -22,6 +22,14 @@
 
 <div class="container  maincontainer bluebg">
   <div class="span-24 last" id="header">
+   <div id="title">
+    	<%if session[:lang]=="en" %>
+     	 <%= link_to image_tag("title-en.png",:border=>0,:size=>"340x35")%>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <%= link_to image_tag("title-th.png",:border=>0,:size=>"340x35")%>
+      <%end%>   	 
+    </div>     
     <div id="fullmap">
        <%= link_to image_tag("map.png", :border=>0, :size=>"30x28",:alt=>"click view full screen map") ,:action => 'fullmap'%>
        <%= link_to image_tag("th.png", :border=>0, :size=>"51x28"), :action => 'setlang', :lang=>"th" %>
@@ -80,14 +88,12 @@
   </div>
   <!-- end new_event -->
   <div  id="movebg" class="span-24 last">
-    <div class="span-12" id="org">
-    <div class=" "><%= render :partial => '/static/org' %></div>
-    </div>
-    <!-- end org -->
-    <div class="span-12 last" id="callcenter">
-      <div class=""><%= render :partial => '/static/communicate' %></div>
-    </div>
-    <!-- end callcenter -->
+    	<%if session[:lang]=="en" %>
+     	 <div class=" "><%= render :partial => '/static/org' %></div>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <div class=" "><%= render :partial => '/static/org-th' %></div>
+      <%end%> 
   </div>
   <div class="span-24 last" id="footer">
      <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
