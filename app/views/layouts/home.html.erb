@@ -31,11 +31,18 @@
 <body>
 <div class="container  maincontainer bluebg">
   <div class="span-24 last" id="header">
+   <div id="title">
+    	<%if session[:lang]=="en" %>
+     	 <%= link_to image_tag("title-en.png",:border=>0,:size=>"340x35")%>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <%= link_to image_tag("title-th.png",:border=>0,:size=>"340x35")%>
+      <%end%>   	 
+    </div>   
     <div id="fullmap">
        <%= link_to image_tag("map.png", :border=>0, :size=>"30x28",:alt=>"click view full screen map") ,:action => 'fullmap'%>
        <%= link_to image_tag("th.png", :border=>0, :size=>"51x28"), :action => 'setlang', :lang=>"th" %>
        <%= link_to image_tag("en.png", :border=>0, :size=>"36x28"), :action => 'setlang', :lang=>"en" %>
-
     </div>
     <!--
     <div id="user_nav">

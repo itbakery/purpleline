@@ -210,6 +210,10 @@ line-height:100%;
    padding-top:9px;
    padding-bottom:9px;
 }
+
+#menuleft li:hover {
+  border-left:2px solid #ce0000;
+}
 #menuleft li .arrow{
    float: right;
    padding-right:10px;
@@ -223,12 +227,11 @@ line-height:100%;
   display:block;
   color: #015B86;
   font-weight:bold;
-  
 }
 
 #menuleft li a:hover {
   color: #7e0066;
-  border-left:4px solid #ce0000;
+
 }
 
 #menuleft  ul {
