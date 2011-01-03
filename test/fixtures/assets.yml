@@ -1,19 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
   type: MyString
-  attachable_id: 1
-  attachable_type: MyString
-  publish: false
+  assetable: 
   latitude: 1.5
   longtitude: 1.5
+  publish: false
+  user_id: 1
 
 two:
-  title: MyString
   type: MyString
-  attachable_id: 1
-  attachable_type: MyString
-  publish: false
+  assetable: 
   latitude: 1.5
   longtitude: 1.5
+  publish: false
+  user_id: 1

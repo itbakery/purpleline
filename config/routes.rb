@@ -1,9 +1,6 @@
 Purpleline::Application.routes.draw do
 
 
-
-
-
   #get "static_maps/map"
 
   #get "static_pages/page"

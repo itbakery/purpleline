@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101220094954) do
+ActiveRecord::Schema.define(:version => 20110103093147) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(:version => 20101220094954) do
     t.datetime "updated_at"
     t.integer  "task_id"
     t.boolean  "publish"
+  end
+
+  create_table "assets", :force => true do |t|
+    t.string   "type"
+    t.integer  "assetable_id"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.boolean  "publish"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "categories", :force => true do |t|
@@ -195,29 +210,6 @@ ActiveRecord::Schema.define(:version => 20101220094954) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "issuedate"
-  end
-
-  create_table "purple_asset_resources", :force => true do |t|
-    t.string   "caption"
-    t.integer  "purple_asset_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "resource_file_name"
-    t.string   "resource_content_type"
-    t.integer  "resource_file_size"
-    t.datetime "resource_updated_at"
-  end
-
-  create_table "purple_assets", :force => true do |t|
-    t.string   "title"
-    t.string   "type"
-    t.integer  "attachable_id"
-    t.string   "attachable_type"
-    t.boolean  "publish"
-    t.float    "latitude"
-    t.float    "longtitude"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
