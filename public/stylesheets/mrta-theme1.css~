@@ -1,9 +1,8 @@
 
 body{
-  /*background: url('../images/contructbg.jpg') no-repeat  center top #c7e3ef;*/
-  background: #c7e3ef;
-  font:13px/16px "Lucida Grande",Arial,Sans-serif;
-  /* font-family: Georgia,Verdana, "Lucida Sans Unicode",sans-serif;*/
+  background: url("../images/stripes.jpg") no-repeat  center top #c7e3ef;
+  
+  font:13px/16px Arial,Sans-serif;
   font-size:12px;
 }
 

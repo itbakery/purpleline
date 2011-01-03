@@ -382,7 +382,9 @@ line-height:100%;
   background: #340616;
   height:150px;
   border-top: 3px solid #a57980;
-  height:120px;
+  height:80px;
+      -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
 }
 .footertext {
   margin-top:20px;
