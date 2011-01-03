@@ -1,2 +1,1 @@
-class Video < PurpleAssetResource
-end
+
