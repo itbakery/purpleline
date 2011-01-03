@@ -1,6 +1,6 @@
-class CreateAssets < ActiveRecord::Migration
+class CreatePurpleAssets < ActiveRecord::Migration
   def self.up
-    create_table :assets do |t|
+    create_table :purple_assets do |t|
       t.string :type
       t.references :assetable
       t.float :latitude
@@ -13,6 +13,6 @@ class CreateAssets < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :assets
+    drop_table :purple_assets
   end
 end

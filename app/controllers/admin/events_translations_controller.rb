@@ -1,6 +1,6 @@
 class Admin::EventsTranslationsController < ApplicationController
-	layout "admin"
-	before_filter :authenticate_user!	
+  layout "admin"
+  before_filter :authenticate_user!	
   include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper	
@@ -31,6 +31,9 @@ class Admin::EventsTranslationsController < ApplicationController
   # GET /events_translations/new.xml
   def new
     @events_translation = EventsTranslation.new
+    3.times do 
+    	    @events_translation.images.build
+    end
     coordinates = [13.83333,100.522413]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)

@@ -9,7 +9,7 @@
   <div class="content">            
     <h2 class="title"><%= t("web-app-theme.edit", :default => "Edit") %> EventsTranslation</h2>
     <div class="inner">
-      <%= form_for @events_translation, :url => admin_events_translation_path(@events_translation), :html => { :class => :form,:multipart => true } do |f| -%>
+      <%= form_for @events_translation, :url => admin_events_translation_path(@events_translation), :html => { :class => :form } do |f| -%>
         <%= render :partial => "form", :locals => {:f => f} %>
       <% end -%>
     </div>

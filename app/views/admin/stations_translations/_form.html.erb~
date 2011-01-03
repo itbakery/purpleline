@@ -11,6 +11,14 @@
     <%= f.collection_select :station_id,Station.all,:id,:name,{:prompt=>"Select Station"}, {:class => 'text_field',:style=>"width:150px"} %>
   </li>
 </ol>
+
+
+  <div class="group">
+    <%= f.label :code, t("activerecord.attributes.stations_translation.code", :default => "Code"), :class => :label %>
+    <%= f.text_field :code, {:class => 'text_field',:style=>"width:150px"} %>
+  </div>
+  </li>
+  <li>
   <div class="group">
     <%= f.label :title, t("activerecord.attributes.stations_translation.title", :default => "Title"), :class => :label %>
     <%= f.text_field :title, :class => 'text_field' %>
