@@ -76,6 +76,8 @@
 </ol>  
   <div class="group">
   <%=f.fields_for :images do |image_form| %>
+    <%=image_form.label  :caption%>
+    <%=image_form.caption :caption%>
     <%=image_form.label  :image%>
     <%=image_form.file_field :attachment %>
   <%end%>

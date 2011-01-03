@@ -2,7 +2,7 @@ class CreatePurpleAssets < ActiveRecord::Migration
   def self.up
     create_table :purple_assets do |t|
       t.string :type
-      t.references :assetable, :polymorphic => true
+      t.references :assetable
       t.float :latitude
       t.float :longtitude
       t.boolean :publish

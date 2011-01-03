@@ -38,7 +38,7 @@ class Admin::StationsTranslationsController < ApplicationController
   # GET /stations_translations/new.xml
   def new
     @stations_translation = StationsTranslation.new
-    3.times do 
+    3.times do
     	   @stations_translation.images.build
     end
     coordinates = [13.83333,100.522413]
