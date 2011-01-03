@@ -3,7 +3,7 @@
    <!--<input class="go" type=submit value="GO">-->
 </div>
 
-<script type='text/javascript'> 
+<%= javascript_tag do %>
 	function mapobject(){
 			  var map = new GMap2(document.getElementById("map_div"));
         map.setCenter(new GLatLng(13.83333,100.522413), 13);
@@ -26,10 +26,11 @@
 
 		/*alert(output);*/
 		/*document.getElementById("output").innerHTML = output;*/
-		jQuery.getScript("/home/filterstation",function(){
+		jQuery.getScript("/filterstation/"+ddVal,function(){
         /*mapobject();*/
         /*alert(output);*/
+      
 		});
 	}
   jQuery('#filterstation').change(onSelectChange);  
-</script>
+<%end%>

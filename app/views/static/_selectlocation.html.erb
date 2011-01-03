@@ -1,5 +1,9 @@
 <div id="destination_dropdown">
-<%=select_tag(:filterstation,options_for_select(StationsTranslation.all.map{|s| ["#{s.code}  #{s.title}",s.id]}),{:prompt=>"select station"})%>
+<%session[:lang] = params[:lang] || "en"%>
+<%@stations =  StationsTranslation.where("language_id=?",1) if session[:lang]=="th"%>
+<%@stations =  StationsTranslation.where("language_id=?",2) if session[:lang]=="en"%>  
+
+<%=select_tag(:filterstation,options_for_select(@stations.map{|s| ["#{s.code}  #{s.title}",s.id]}),{:prompt=>"select station"})%>
    <!--<input class="go" type=submit value="GO">-->
 </div>
 
