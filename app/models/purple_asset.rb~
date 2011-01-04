@@ -1,3 +1,6 @@
 class PurpleAsset < ActiveRecord::Base
-  belongs_to :assetable
+  attr_accessible :nil	
+  belongs_to :assetable, :polymorphic=> true
+  delegate :url, :to=> :attachment
 end
+

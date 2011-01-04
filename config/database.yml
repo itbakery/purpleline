@@ -37,3 +37,4 @@ production:
   username: root
   password: 1q2w3e4r@q!
   socket: /tmp/mysql.sock
+  #socket: /var/lib/mysql/mysql.sock
