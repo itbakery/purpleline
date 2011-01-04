@@ -46,7 +46,7 @@
   <div class="group">
     <%= @map.div(:width => 700, :height => 370).html_safe %>
   </div>      
-
+<!--
 <div class="group">
   <%=f.fields_for :images do |image_form| %>
      <%=image_form.label  :caption%>
@@ -54,7 +54,9 @@
     <%=image_form.label  :image%>
     <%=image_form.file_field :attachment %>
 <%end%>
-  </div>  
+</div>
+-->
+  
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>

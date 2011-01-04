@@ -73,7 +73,8 @@
     <%= f.text_field :stop_on, :class => 'date_select' %>
   </div>
   </li>
-</ol>  
+</ol>
+<!--
   <div class="group">
   <%=f.fields_for :images do |image_form| %>
     <%=image_form.label  :caption%>
@@ -81,7 +82,8 @@
     <%=image_form.label  :image%>
     <%=image_form.file_field :attachment %>
   <%end%>
-  </div>
+ </div>
+-->  
   <div class="group">
     <%= f.label :user_id, t("activerecord.attributes.events_translation.user_id", :default => "User"), :class => :label %>
     <%= f.text_field :user_id, :class => 'text_field' %>
