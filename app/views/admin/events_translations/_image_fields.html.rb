@@ -1,7 +1,7 @@
  <div class="fields">
-<%=f.label  :caption%>
-<%=f.text_field :caption,:style=>"width:150px"%>
-<%=f.label  :image%>
-<%=f.file_field :attachment %>
-<%= link_to_remove_fields "remove", image_form %>
+	<%=f.label  :caption%>
+	<%=f.text_field :caption,:style=>"width:150px"%>
+	<%=f.label  :image%>
+	<%=f.file_field :attachment %>
+	<%= link_to_remove_fields "remove", image_form %>
 </div>
