@@ -67,6 +67,8 @@ class Admin::StationsTranslationsController < ApplicationController
   # GET /stations_translations/1/edit
   def edit
     @stations_translation = StationsTranslation.find(params[:id])
+    @stations_translation.latitude ||= 13.83333
+    @stations_translation.longtitude ||= 100.522413
     coordinates = [@stations_translation.latitude,@stations_translation.longtitude]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
