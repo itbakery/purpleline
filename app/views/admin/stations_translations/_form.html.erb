@@ -48,7 +48,7 @@
   </div>      
 
 <div class="group">
-  <%=f.fields_for :images do |image_form| %>
+  <%f.fields_for :images do |image_form| %>
      <%=image_form.label  :caption%>
     <%=image_form.text_field :caption%>
     <%=image_form.label  :image%>
