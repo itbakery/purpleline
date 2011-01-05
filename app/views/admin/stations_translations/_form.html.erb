@@ -49,16 +49,20 @@
      <li><a href="#tabs-2"> Images Gallery </a></li>     
   </ul>
   <div class="group" id="tabs-1">
-    <%= @map.div(:width => 700, :height => 350).html_safe %>
+    <%= @map.div(:width => 670, :height => 350).html_safe %>
   </div> 
 
    <div class="group" id="tabs-2">
-  <%f.fields_for :images do |image_form| %>
-    <%=image_form.label  :caption%>
-    <%=image_form.text_field :caption%>
-    <%=image_form.label  :image%>
-    <%=image_form.file_field :attachment %>
-  <%end%>
+     <div class="fields">
+				<%f.fields_for :images do |image_form| %>
+					<%=image_form.label  :caption%>
+					<%=image_form.text_field :caption%>
+					<%=image_form.label  :image%>
+					<%=image_form.file_field :attachment %>
+					<%=image_form.hidden_field :_destroy %>
+					<%= link_to_function "remove", "remove_field(this)" %>
+				<%end%>
+     </div>
  </div> 
 </div>
 
