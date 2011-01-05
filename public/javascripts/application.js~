@@ -51,7 +51,7 @@
    
     jQuery('#memberform').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
     
-
+    jQuery('a[rel*=facebox]').facebox(); 
 
 });
 

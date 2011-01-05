@@ -43,17 +43,23 @@
   </div>
   </li>
 </ol>
-  <div class="group">
+<div id="tabs">
+  <ul>
+     <li><a href="#tabs-1"> Maps </a></li>
+     <li><a href="#tabs-2"> Images Gallery </a></li>     
+  </ul>
+  <div class="group" id="tabs-1">
     <%= @map.div(:width => 700, :height => 370).html_safe %>
-  </div>      
+  </div> 
 
-<div class="group">
+   <div class="group" id="tabs-2">
   <%f.fields_for :images do |image_form| %>
-     <%=image_form.label  :caption%>
+    <%=image_form.label  :caption%>
     <%=image_form.text_field :caption%>
     <%=image_form.label  :image%>
     <%=image_form.file_field :attachment %>
-<%end%>
+  <%end%>
+ </div> 
 </div>
 
   

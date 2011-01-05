@@ -47,18 +47,27 @@
 
   </div>
   </li>
-  <li>
-    <div class="group">
-    <%= f.label :publish, t("activerecord.attributes.events_translation.publish", :default => "Publish"), :class => :label %>
-    <%= f.check_box :publish, :class => 'check_box' %>
-  </div>
-        
-  </li>
+
 </ol>  
   
-  <div class="group">
+<div id="tabs">
+  <ul>
+     <li><a href="#tabs-1"> Maps </a></li>
+     <li><a href="#tabs-2"> Images Gallery </a></li>     
+  </ul>
+  <div class="group" id="tabs-1">
     <%= @map.div(:width => 700, :height => 370).html_safe %>
   </div> 
+
+   <div class="group" id="tabs-2">
+  <%f.fields_for :images do |image_form| %>
+    <%=image_form.label  :caption%>
+    <%=image_form.text_field :caption%>
+    <%=image_form.label  :image%>
+    <%=image_form.file_field :attachment %>
+  <%end%>
+ </div> 
+</div>
 
 <ol class="formatcol-three">
   <li>  
@@ -73,15 +82,15 @@
     <%= f.text_field :stop_on, :class => 'date_select' %>
   </div>
   </li>
+    <li>
+    <div class="group">
+    <%= f.label :publish, t("activerecord.attributes.events_translation.publish", :default => "Publish"), :class => :label %>
+    <%= f.check_box :publish, :class => 'check_box' %>
+  </div>
+        
+  </li>
 </ol>
-  <div class="group">
-  <%f.fields_for :images do |image_form| %>
-    <%=image_form.label  :caption%>
-    <%=image_form.text_field :caption%>
-    <%=image_form.label  :image%>
-    <%=image_form.file_field :attachment %>
-  <%end%>
- </div>
+
   <div class="group">
     <%= f.label :user_id, t("activerecord.attributes.events_translation.user_id", :default => "User"), :class => :label %>
     <%= f.text_field :user_id, :class => 'text_field' %>
