@@ -60,16 +60,17 @@
   </div> 
 
    <div class="group" id="tabs-2">
-     <div class="fields">
+
 				<%f.fields_for :images do |image_form| %>
-					<%=image_form.label  :caption%>
-					<%=image_form.text_field :caption%>
-					<%=image_form.label  :image%>
-					<%=image_form.file_field :attachment %>
-					<%=image_form.hidden_field :_destroy %>
-					<%= link_to_function "remove", "remove_field(this)" %>
+				  <div class="fields">
+							<%=image_form.label  :caption%>
+							<%=image_form.text_field :caption,:style=>"width:150px"%>
+							<%=image_form.label  :image%>
+							<%=image_form.file_field :attachment %>
+							<%= link_to_remove_fields "remove", image_form %>
+					</div>
 				<%end%>
-     </div>
+				<p><%=link_to_add_fields "Add",f,images%> </p>
  </div> 
 </div>
 
