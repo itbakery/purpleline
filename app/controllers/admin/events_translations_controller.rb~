@@ -32,7 +32,7 @@ class Admin::EventsTranslationsController < ApplicationController
   def new
     @events_translation = EventsTranslation.new
     3.times do 
-    	    @events_translation.images.build
+    	@events_translation.images.build
     end
     coordinates = [13.83333,100.522413]
     @map = GMap.new("map")
