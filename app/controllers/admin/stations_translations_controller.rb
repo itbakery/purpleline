@@ -39,6 +39,7 @@ class Admin::StationsTranslationsController < ApplicationController
   def new
     @stations_translation = StationsTranslation.new
     3.times do
+    	   PurpleAsset.new
     	   @stations_translation.images.build
     end
     coordinates = [13.83333,100.522413]
