@@ -7,6 +7,7 @@
         map.setUIToDefault();
         <%@stations = StationsTranslation.all%>
         	<%@stations.each_with_index do |station,index| %>
+        	 <%unless station.latitude.nil?%>
            var latlng = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
            
         	  var icon = new GIcon();
@@ -31,9 +32,8 @@
            <% location = StationsTranslation.where("id=?",params[:id]).first%>
            	 var  selectlat = <%=location.latitude%>;
              var  selectlng = <%=location.longtitude%>;
-             map.panTo(new GLatLng(selectlat,selectlng));
-                     
-
+             map.panTo(new GLatLng(selectlat,selectlng)); 
+         <%end%>      
 
         	<%end%>
 <% end %>
