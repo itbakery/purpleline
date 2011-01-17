@@ -98,6 +98,21 @@ class HomeController < ApplicationController
   	render :layout=>"project"
   end
   
+  def faceboxmap
+  	@station = StationsTranslation.find(params[:id])
+    coordinates = [@station.latitude,@station.longtitude]
+    @map = GMap.new("faceboxmap")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,17)	
+    @gmarker = GMarker.new(coordinates,:title => "#{@station.title}")
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+    respond_to do |format|
+      format.html  {render :layout=>"faceboxmap"}
+      format.js  {render :layout=>"faceboxmap"}
+    end
+    
+  end
   def pagetran
   	@page = PagesTranslation.find(params[:id])
   	render :layout=>"mrta"

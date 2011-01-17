@@ -64,8 +64,14 @@ class HomeController < ApplicationController
   end
   
   def pageview
-  	@page =  PagesTranslation.where("id=?",params[:id])
-  	render :layout=>"project"
+  	  @page =  PagesTranslation.where("id=?",params[:id]) rescue nil
+  	if params[:p]=="link"
+  	  render :layout=>"link"	
+  	elsif params[:p]=="qa"
+  	  render :layout=>"qa"
+  	else	
+  	  render :layout=>"project"
+        end
   end
   
   def mrtaview
