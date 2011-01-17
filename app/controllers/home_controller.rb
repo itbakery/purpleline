@@ -57,8 +57,8 @@ class HomeController < ApplicationController
   
   
   def allstation
-  	@stations=StationsTranslation..where("language_id=?",1) if session[:lang]=="th"
-  	@stations=StationsTranslation..where("language_id=?",2) if session[:lang]=="en"
+  	@stations=StationsTranslation.where("language_id=?",1) if session[:lang]=="th"
+  	@stations=StationsTranslation.where("language_id=?",2) if session[:lang]=="en"
   	render :layout =>"project"
   end
     

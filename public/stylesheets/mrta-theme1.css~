@@ -382,7 +382,9 @@ line-height:100%;
   background: #340616;
   height:150px;
   border-top: 3px solid #a57980;
-  height:120px;
+  height:80px;
+      -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
 }
 .footertext {
   margin-top:20px;
@@ -979,14 +981,14 @@ src: url(./STEINEMU.ttf);
    100% {background-position: 0% 0%;}
  } 
 #movebg {
-   background: transparent url(../images/bkkpanorama.png) no-repeat 0 0;
+   background: transparent url(../images/bkkpanorama-white.png) no-repeat 0 0;
    background-position:  bottom;
    -moz-box-shadow: 0px -2px 3px rgba(0,0,0,0.3);
    overflow:hidden;
    margin-top: 1px;
-   min-height:140px; 
+   min-height:90px; 
    height:auto !important;
-   height:140px;
+   height:100px;
    -webkit-animation-name: move;
    -webkit-animation-timing-function: ease-in-out;
    -webkit-animation-duration: 50s;

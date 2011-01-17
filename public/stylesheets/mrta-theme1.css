@@ -1,6 +1,6 @@
 
 body{
-  background: url("../images/stripes.jpg") no-repeat  center top #c7e3ef;
+  background: url("../images/stripes.jpg") repeat-y  center top #c7e3ef;
   
   font:13px/16px Arial,Sans-serif;
   font-size:12px;
