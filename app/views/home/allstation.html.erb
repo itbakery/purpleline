@@ -7,7 +7,9 @@
    <td style="vertical-align:top;">
    <h3 class="station"><%=s.title%></h3><br/>
    <% text = s.content.gsub(/<img/,"<img width='150' style='float:left;margin:7px;vertical-align:top;'") %>
-   <%=truncate(text,:length=>500).html_safe%><a href="/station/<%=s.id%>">More Detail</a>
+   <p style='vertical-align:top;'>
+   <%=truncate(text,:length=>500).html_safe%><a href="/station/<%=s.id%>">More Detail</a></br>
+   </p>
    </td>
   </tr>
   <tr>
