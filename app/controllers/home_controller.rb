@@ -54,6 +54,14 @@ class HomeController < ApplicationController
  	  render :layout=>"announce"
   	
   end
+  
+  
+  def allstation
+  	@stations=StationsTranslation..where("language_id=?",1) if session[:lang]=="th"
+  	@stations=StationsTranslation..where("language_id=?",2) if session[:lang]=="en"
+  	render :layout =>"project"
+  end
+    
   def present
        render  :layout => "present"
   end
@@ -86,12 +94,7 @@ class HomeController < ApplicationController
   
   def pcpl
   end
-  
-  def allstation
-  	@stations=StationsTranslation.all
-  	render :layout =>"project"
-  end
-  
+
   def station
   	@station = StationsTranslation.find(params[:id])
     coordinates = [@station.latitude,@station.longtitude]

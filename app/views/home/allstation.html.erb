@@ -1,15 +1,16 @@
 <h1>Stations</h1>
 <table>
+
 <% @stations.each do |s| %>
   <tr>
    <td style="vertical-align:top;">
    <h3 class="station"><%=s.title%></h3><br/>
-
-   <%=s.content.html_safe.gsub(/<img/,"<img width='150' style='float:left;margin:7px;vertical-align:top;'")%>
+   <% text = s.content.gsub(/<img/,"<img width='150' style='float:left;margin:7px;vertical-align:top;'") %>
+   <%=truncate(text,:length=>500).html_safe%><a href="/station/<%=s.id%>">More Detail</a>
    </td>
   </tr>
   <tr>
-    <td><a href="/station/<%=s.id%>">More Detail</a></td>
+    <td></td>
   </tr>
 <%end%>
 </table>
