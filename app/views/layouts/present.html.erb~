@@ -62,7 +62,7 @@ margin: 0px auto;
 <div class="content-outer">
   <div class="main-outer">
     <div class="main-inner">
-    <a  href="http://mrta-purpleline.com/index">
+    <a  href="#">
      <img src="../images/headerpresent.png"  />
     </a>
       <div id="myFlash" style="width:960px;">
