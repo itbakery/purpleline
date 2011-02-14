@@ -1,0 +1,9 @@
+<ul>
+<h2>All Announces</h2>
+<% @allannounces.each do |announce|%>
+            		<li>
+                  <a href="/announce/<%=announce.id%>"><%=announce.title%>
+                  <i style="float:right;">start on <%= announce.start_on.to_date.to_s(:long) %></i>
+            		</li> 
+ <%end%>
+</ul>

@@ -1,0 +1,15 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2>Lastest Announces</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ประกาศล่าสุด</h2>
+      <%end%> 
+
+     <%@lasttenannounces.each do |announce|%>
+      <li>
+           <a href="/announce/<%=announce.id%>"><%=announce.title%>
+           <i style="float:right;"> start on <%= announce.start_on.to_date.to_s(:long) %> </i>
+      </li> 
+     <%end%>
+</ul>

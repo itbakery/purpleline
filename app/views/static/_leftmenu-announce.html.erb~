@@ -1,26 +1,21 @@
 <div id="containerribbon"> <!-- Main Container -->    
 
   <div class="bubble"> <!-- Bubble -->
-    <div class="rectangle"><h2 style="hight:29px;"><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;News&Event</h2></div> <!-- Rectangle with a title -->
-    <div class="triangle-l"></div> 
-    <div class="triangle-r"></div> 
-
+<div class="rectangle-t"><h2 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>News&Events</h2>
+</div>
     <div class="info">
-      <div id="menuleft">
-          <h3 class='toggle'><a href="">All Announcement</a></h3>
-            <div class="hiddenDiv">
-            <ul>
+      <ul id="menuleft">
+      
+         <li class='toggle'><a class="announce" href="#" >All Announcement</a></li>
             	<% @allannounces.each do |announce|%>
             		<li>
                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>25)%><br/>
                   <small>start on <%= announce.start_on.to_date.to_s(:long) %></small>
             		</li> 
              <%end%>
-           </ui>
-            </div>
-          <h3 class='toggle'><a href="">Lastest Announcement</a></h3>
-            <div class="hiddenDiv">
-            <ul>
+
+            
+          <li class='toggle'><a class="announce" href="#" >Lastest Announcement</a></li>  
             	<%@lasttenannounces.each do |announce|%>
             		<li>
                    <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%><br/>
@@ -28,23 +23,21 @@
             		</li> 
              <%end%>
             
-          </ui>
-            </div>
-          <h3 class='toggle'><a href="">Monthly Announce</a></h3>
-            <div class="hiddenDiv">
+          <li class='toggle'><a href="#" >Monthly Announce</a></li>
 							<%@allannounces_month.sort.each do |month, announces| %>
-									<h2><%= month.strftime('%B') %></h2>
+									<b><%= month.strftime('%B') %></b>
 									<% for announce in announces %>
-										<div class="task">
-											<strong><%= announce.title %></strong>
-											<small> start on <%= announce.start_on.to_date.to_s(:long) %> </small>
-										</div>
+										<li>
+											<p><%= announce.title %><br/>
+											<i> <small>start on <%= announce.start_on.to_date.to_s(:long) %> </small></i>
+											</p>
+										</li>
 									<% end %>
 							<% end %>
-            </div>
-     </div>
-    </div>
+     </ul>
   </div>
-
+ </div>
 </div>
+
+
 

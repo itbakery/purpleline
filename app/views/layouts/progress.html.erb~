@@ -58,8 +58,8 @@
   <div class="span-8" id="project">
      <div class="boxmenu">
         <img src="../images/contruction.png">
-        <h2 class="section-title">Construction</h2>
-        <span>contruction information</span>
+        <h2 class="section-title">News&Event</h2>
+        <span>Project's News&Event</span>
      </div>
   </div>
   <!-- end project -->

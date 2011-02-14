@@ -213,6 +213,7 @@ line-height:100%;
 #menuleft li:hover {
   border-left:2px solid #ce0000;
 }
+
 #menuleft li .arrow{
    float: right;
    padding-right:10px;

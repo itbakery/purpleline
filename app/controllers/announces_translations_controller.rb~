@@ -9,10 +9,7 @@ class AnnouncesTranslationsController < ApplicationController
       format.xml  { render :xml => @announces_translations }
     end
   end
-  
-  def search
-  	@announces_translations = AnnouncesTranslation
-  end
+
   # GET /announces_translations/1
   # GET /announces_translations/1.xml
   def show
