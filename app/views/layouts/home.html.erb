@@ -86,7 +86,14 @@
   <div class="span-8" id="project">
      <div class="boxmenu">
         <img src="../images/contruction.png">
-        <h2 class="section-title">Latest News&Events</h2>
+					<%if session[:lang]=="en" %>
+					 <h2 class="section-title">Latest News&Events</h2>
+					<%end%>
+					<%if session[:lang]=="th" %>
+					 <h2 class="section-title">ข่าวและเหตุการณ์ล่าสุด</h2>
+					<%end%>          
+        
+        
         <span>New & Event</span>
      </div>
   </div>
@@ -94,7 +101,13 @@
   <div class="span-8" id="progress">
      <div class="boxmenu">
      <img src="../images/progress.png">
-       <h2 class="section-title">Latest Progress</h2>
+					<%if session[:lang]=="en" %>
+             <h2 class="section-title">Latest Progress</h2>
+					<%end%>
+					<%if session[:lang]=="th" %>
+					 <h2 class="section-title">ความคืบหน้าล่าสุด</h2>
+					<%end%>       
+
        <span></span>
      </div>
   </div>
@@ -102,7 +115,16 @@
   <div class="span-8 last" id="new_event">
       <div class="boxmenu">
       <img src="../images/announce.png">
-       <h2 class="section-title">Latest Announcement</h2>
+        <h2 class="section-title">Latest Progress</h2>     
+      
+					<%if session[:lang]=="en" %>
+             <h2 class="section-title">Latest Announcement</h2>
+					<%end%>
+					<%if session[:lang]=="th" %>
+					 <h2 class="section-title">ประกาศล่าสุด</h2>
+					<%end%> 
+					
+       
        <%= render :partial => 'static/announce'%>
       </div>
   </div>
