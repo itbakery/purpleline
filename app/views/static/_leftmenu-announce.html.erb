@@ -1,24 +1,23 @@
 <div id="containerribbon"> <!-- Main Container -->    
 
   <div class="bubble"> <!-- Bubble -->
-    <div class="rectangle"><h2 style="hight:29px;"><%= image_tag("mrtaboy.png") %>&nbsp;&nbsp;News&Event</h2>
-    </div> 
-
+<div class="rectangle-t"><h2 style="hight:29px;"><%= image_tag("mrta-hg.png") %>&nbsp;&nbsp;News&Event</h2>
+</div>
     <div class="info">
       <ul id="menuleft">
       
-         <li class='toggle'><a href="/mrtaview/16" >All Announcement</a></li>
+         <li class='toggle'><a class="announce" href="/mrtaview/16" >All Announcement</a></li>
             	<% @allannounces.each do |announce|%>
-            		<li>
+            		<li class="announcelist">
                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>25)%><br/>
                   <small>start on <%= announce.start_on.to_date.to_s(:long) %></small>
             		</li> 
              <%end%>
 
             
-          <li class='toggle'><a href="/mrtaview/16" >Lastest Announcement</a></li>  
+          <li class='toggle'><a class="announce" href="/mrtaview/16" >Lastest Announcement</a></li>  
             	<%@lasttenannounces.each do |announce|%>
-            		<li>
+            		<li class="announcelist">
                    <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%><br/>
                    <small> start on <%= announce.start_on.to_date.to_s(:long) %> </small>
             		</li> 
@@ -28,7 +27,7 @@
 							<%@allannounces_month.sort.each do |month, announces| %>
 									<h3><%= month.strftime('%B') %></h3>
 									<% for announce in announces %>
-										<li>
+										<li class="announcelist">
 											<strong><%= announce.title %></strong>
 											<small> start on <%= announce.start_on.to_date.to_s(:long) %> </small>
 										</li>

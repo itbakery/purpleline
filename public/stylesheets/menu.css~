@@ -30,7 +30,7 @@
 	box-shadow:inset 0px 0px 1px #edf9ff;
 }
 #menu .cycle{
-	background: transparent url('../images/cycle.png') no-repeat 0 50%;
+	/*background: transparent url('../images/cycle.png') no-repeat 0 50%;*/
 	width: 40px ;
 	height: 35px;
 	display: block;
