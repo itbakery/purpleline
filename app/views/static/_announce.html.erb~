@@ -4,6 +4,7 @@
      <a href="/announce/<%=announce.id%>">
      <span class="badge"><%=announce.start_on%></span>
      <span><%=announce.title%></span>
+     </a>
      </li>
   <%end%>
 </ul>
