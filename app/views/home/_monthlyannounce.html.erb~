@@ -11,7 +11,7 @@
 										<li>
 											<p><small>
 											 <a href="/announce/<%=announce.id%>"><%= announce.title %> </a></small><br/>
-											<i style="float:right;"> start on <%= announce.start_on.to_date.to_s(:long) %></i>
+											<i style="float:right;">> start on <%= announce.start_on.to_date.to_s(:long) %></i>
 											</p>
 										</li>
 									<% end %>

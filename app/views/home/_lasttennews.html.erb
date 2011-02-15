@@ -1,0 +1,15 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2>Latest Newsletters</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ข่าวสารล่าสุด</h2>
+      <%end%> 
+
+<% @lasttennewletters.each do |newsletter|%>
+            		<li>
+                  <a href="/shownews/<%=newsletter.id%>"><%=newsletter.title%>
+                  <i style="float:right;">start on <%= newsletter.start_on.to_date.to_s(:long) %></i>
+            		</li> 
+ <%end%>
+</ul>

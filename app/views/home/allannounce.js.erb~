@@ -1,2 +1,2 @@
- $("display").html("<%= escape_javascript(render(:partial=>'allannounce'))%>");
+ jQuery("#display").html("<%=escape_javascript(render(:partial=>'allannounce'))%>");
 

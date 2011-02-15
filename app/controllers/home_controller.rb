@@ -126,18 +126,18 @@ class HomeController < ApplicationController
   end
   
   
-  def  allnew
+  def  allnews
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   end
   
-  def lasttennew
+  def lasttennews
   	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
   	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
   	
   end
   
-  def monthlynew
+  def monthlynews
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	

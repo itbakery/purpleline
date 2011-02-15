@@ -1,5 +1,11 @@
 <ul>
-<h2>All Announces</h2>
+    	<%if session[:lang]=="en" %>
+     	 <h2>All Announces</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ประกาศทั้งหมด</h2>
+      <%end%> 
+
 <% @allannounces.each do |announce|%>
             		<li>
                   <a href="/announce/<%=announce.id%>"><%=announce.title%>
