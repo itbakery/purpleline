@@ -104,7 +104,7 @@ class HomeController < ApplicationController
   	@allnewletters_month = @allnewletters.group_by { |t| t.start_on.beginning_of_month}
   	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
   	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
- 	  render :layout=>"newletters"
+ 	  render :layout=>"newsletters"
   end
   
   def allannounce
