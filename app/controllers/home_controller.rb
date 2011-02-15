@@ -167,6 +167,11 @@ class HomeController < ApplicationController
       f.series(:type=> 'line',:name=> 'Actual',:data=>  @progresses.map(&:actual))
     end
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"  
+
+  	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
+  	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"   	
 
   	render :layout=>"progress"
   end
