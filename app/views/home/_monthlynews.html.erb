@@ -5,7 +5,7 @@
       <%if session[:lang]=="th" %>
      	 <h2>ข่าวสารประจำเดือน</h2>
       <%end%> 
-							<%@@allnewletters_month.sort.each do |month,newletters| %>
+							<%@allnewletters_month.sort.each do |month,newletters| %>
 									<b><%= month.strftime('%B') %></b>
 									<% for newletter in newletters %>
 										<li>
