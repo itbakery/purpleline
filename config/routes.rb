@@ -40,7 +40,7 @@ end
   get   "home/lasttenannounce"
   get   "home/monthlyannounce"
   get   "/home/allnew"
-  get   "/home/lastennew"
+  get   "/home/lasttennew"
   get   "/home/monthlynew"
   get   "home/setlang"
   match "/page/:filename.:format" => "static_pages#page"
