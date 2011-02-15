@@ -57,9 +57,54 @@ class HomeController < ApplicationController
   	@allannounces_month = @allannounces.group_by { |t| t.start_on.beginning_of_month}
   	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
   	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
- 
  	  render :layout=>"announce"
+  end
+  
+  def showevent  	
+  	if params[:id]
+  		@events = EventsTranslation.where("id=?",params[:id]).where("publish =?",1)
+  	coordinates = [@events.first.latitude,@events.first.longtitude]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)	
+    @gmarker = GMarker.new(coordinates,:title => "#{@events.first.title}")
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+  	else
+  		@events = EventsTranslation.order("start_on desc")
+  	end
+  	@allevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@allevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	
+  	@allevents_month = @allevents.group_by { |t| t.start_on.beginning_of_month}
+  	@lasttenevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@lasttenevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+ 	  render :layout=>"event"
+  end
+  
+  def shownews  	
+  	if params[:id]
+  	@newletters = NewslettersTranslation.where("id=?",params[:id]).where("publish =?",1)
+  	unless @newletters.first.latitude.blank?
+				coordinates = [@newletters.first.latitude,@newletters.first.longtitude]
+				@map = GMap.new("map")
+				@map.control_init(:large_map => true, :map_type => true)
+				@map.center_zoom_init(coordinates,15)	
+				@gmarker = GMarker.new(coordinates,:title => "#{@newletters.first.title}")
+				@map.overlay_global_init(@gmarker, "gmarker")
+				@map.overlay_init(@gmarker)
+				end
+
+  	else
+  		@newletters = NewslettersTranslation.order("start_on desc")
+  	end
+  	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	
+  	@allnewletters_month = @allnewletters.group_by { |t| t.start_on.beginning_of_month}
+  	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+ 	  render :layout=>"newletters"
   end
   
   def allannounce
@@ -79,6 +124,26 @@ class HomeController < ApplicationController
   	@allannounces_month = @allannounces.group_by { |t| t.start_on.beginning_of_month}
 
   end
+  
+  
+  def  allnew
+  	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  end
+  
+  def lasttennew
+  	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  	
+  end
+  
+  def monthlynew
+  	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	
+  	@allnewletters_month = @allnewletters.group_by { |t| t.start_on.beginning_of_month}
+  end
+  
   
   def allstation
   	@stations=StationsTranslation.where("language_id=?",1) if session[:lang]=="th"

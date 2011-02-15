@@ -1,0 +1,21 @@
+<div id="announcebox">
+    <ul>
+      <%@newletters.each do |newletter|%>
+       <li>
+        <h3 ><%=newletter.title%></h3>
+         <div class="group">
+               <div class="envelope">
+                 <h4>Detail</h4>
+                 <div class="left">
+                 <%=newletter.content.html_safe%> 
+                 <h4>For more information, please contact: 0 2965 6000</h4>
+                 </div>
+              </div>
+              <% unless @map.nil? %>    
+                <%= @map.div(:width => 630, :height => 370).html_safe %>  
+              <%end%>
+         </div>     
+      </li> 
+      <%end%>
+  </ui>
+</div>

@@ -53,6 +53,8 @@ end
   match "/pageview/:id" => 'home#pageview'
   match "/mrtaview/:id" => 'home#mrtaview'  
   match "/announce/:id" => 'home#announcement' 
+  match "/showevent/:id" => 'home#showevent'   
+  match "/shownews/:id" => 'home#shownews'   
   match "/progress" => 'home#progress'
   match "/filterstation/:id" => 'home#filterstation'
   match "/fullmap" => 'home#fullmap'

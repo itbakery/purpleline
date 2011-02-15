@@ -1,0 +1,24 @@
+<div id="announcebox">
+    <ul>
+      <%@announces.each do |announce|%>
+       <li>
+        <h3 ><%=announce.title%></h3>
+         <div class="group">
+               <div class="envelope">
+                 <h4>Detail</h4>
+                 <div class="left">
+                 <%=announce.content.html_safe%> 
+                 <h4>For more information, please contact: 0 2965 6000</h4>
+                 </div>
+                <!-- <div class="right">
+                 From:<%=announce.start_on%>
+                 To:<%=announce.stop_on%>
+                 </div>-->
+              </div>
+        <%= @map.div(:width => 630, :height => 370).html_safe %>  
+        
+         </div>     
+      </li> 
+      <%end%>
+  </ui>
+</div>

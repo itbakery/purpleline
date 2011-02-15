@@ -1,7 +1,7 @@
 <ul >
   <% @news.each do |newletter|%>
      <li >
-     <a href="/newletter/<%=newletter.id%>">
+     <a href="/shownews/<%=newletter.id%>">
      <span class="badge"><%=newletter.start_on%></span>
      <span><%=newletter.title%></span>
      </a>

@@ -1,0 +1,38 @@
+<div id="containerribbon"> <!-- Main Container -->    
+<div class="bubble"> <!-- Bubble -->
+<%if session[:lang]=="en" %>
+
+<div class="rectangle-t"><h3 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>News</h3>
+<%end%>
+<%if session[:lang]=="th" %>
+<div class="rectangle-t"><h3 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>ข่าวสาร</h3>
+<%end%>
+</div>
+<%if session[:lang]=="en" %>
+    <div class="info">
+      <ul id="menuleft">
+      
+      <li class='toggle'><%=link_to "All News", {:action=>'allnew'}, :remote => true %></a></li> 
+      <li class='toggle'><%=link_to "Lastest News", {:action=>'lasttennew'}, :remote => true %></a></li> 
+      <li class='toggle'><%=link_to "Monthly News", {:action=>'monthlynew'}, :remote => true %></a></li>      
+
+     </ul>
+  </div>
+ </div>
+</div>
+
+<%end%>
+<%if session[:lang]=="th" %>
+    <div class="info">
+      <ul id="menuleft">
+      
+      <li class='toggle'><%=link_to "ข่าวสารทั้งหมด", {:action=>'allnew'}, :remote => true %></a></li>            
+      <li class='toggle'><%=link_to "ข่าวสารล่าสุด", {:action=>'lasttennew'}, :remote => true %></a></li>  
+      <li class='toggle'><%=link_to "ข่าวสารประจำเดือน", {:action=>'monthlynew'}, :remote => true %></a></li>      
+
+     </ul>
+  </div>
+ </div>
+</div>
+
+<%end%>
