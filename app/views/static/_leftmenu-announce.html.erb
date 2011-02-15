@@ -12,22 +12,10 @@
     <div class="info">
       <ul id="menuleft">
       
-      <li class='toggle'><%=link_to "All Announcement", {:action=>'allannounce'}, :remote => true %></a></li>
-            
-          <li class='toggle'><%=link_to "Lastest Announcement", {:action=>'lasttenannounce'}, :remote => true %></a></li>  
+      <li class='toggle'><%=link_to "All Announcement", {:action=>'allannounce'}, :remote => true %></a></li> 
+      <li class='toggle'><%=link_to "Lastest Announcement", {:action=>'lasttenannounce'}, :remote => true %></a></li> 
+      <li class='toggle'><%=link_to "Monthly Announce", {:action=>'monthlyannounce'}, :remote => true %></a></li>      
 
-            
-          <li class='toggle'><a href="#" >Monthly Announce</a></li>
-							<%@allannounces_month.sort.each do |month, announces| %>
-									<b><%= month.strftime('%B') %></b>
-									<% for announce in announces %>
-										<li>
-											<p><%= announce.title %><br/>
-											<i> <small>start on <%= announce.start_on.to_date.to_s(:long) %> </small></i>
-											</p>
-										</li>
-									<% end %>
-							<% end %>
      </ul>
   </div>
  </div>
@@ -38,21 +26,10 @@
     <div class="info">
       <ul id="menuleft">
       
-      <li class='toggle'><%=link_to "ประกาศทั้งหมด", {:action=>'allannounce'}, :remote => true %></a></li>
-            
-          <li class='toggle'><%=link_to "ประกาศล่าสุด", {:action=>'lasttenannounce'}, :remote => true %></a></li>  
+      <li class='toggle'><%=link_to "ประกาศทั้งหมด", {:action=>'allannounce'}, :remote => true %></a></li>            
+      <li class='toggle'><%=link_to "ประกาศล่าสุด", {:action=>'lasttenannounce'}, :remote => true %></a></li>  
+      <li class='toggle'><%=link_to "ประกาศประจำเดือน", {:action=>'monthlyannounce'}, :remote => true %></a></li>      
 
-            
-          <li class='toggle'><a href="" >ประกาศประจำเดือน</a></li>
-							<%@allannounces_month.sort.each do |month, announces| %>
-									<b><%= month.strftime('%B') %></b>
-									<% for announce in announces %>
-										<li>
-											<%= announce.title %><br/>
-											<i> <small>start on <%= announce.start_on.to_date.to_s(:long) %> </small></i>
-										</li>
-									<% end %>
-							<% end %>
      </ul>
   </div>
  </div>

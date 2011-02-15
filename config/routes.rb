@@ -38,6 +38,7 @@ end
   #get "home/filterstation"
   get   "home/allannounce"
   get   "home/lasttenannounce"
+  get   "home/monthlyannounce"
   get   "home/setlang"
   match "/page/:filename.:format" => "static_pages#page"
   match "/map/:mapname/:filename.:format" => "static_maps#map"

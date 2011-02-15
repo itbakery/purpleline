@@ -72,6 +72,14 @@ class HomeController < ApplicationController
   	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
   end
   
+  def monthlyannounce
+  	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	
+  	@allannounces_month = @allannounces.group_by { |t| t.start_on.beginning_of_month}
+
+  end
+  
   def allstation
   	@stations=StationsTranslation.where("language_id=?",1) if session[:lang]=="th"
   	@stations=StationsTranslation.where("language_id=?",2) if session[:lang]=="en"

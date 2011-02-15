@@ -1,0 +1,11 @@
+							<%@allannounces_month.sort.each do |month, announces| %>
+									<b><%= month.strftime('%B') %></b>
+									<% for announce in announces %>
+										<li>
+											<p><small>
+											 <a href="/announce/<%=announce.id%>"><%= announce.title %> </a></small><br/>
+											<i> <small>start on <%= announce.start_on.to_date.to_s(:long) %> </small></i>
+											</p>
+										</li>
+									<% end %>
+							<% end %>
