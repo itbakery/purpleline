@@ -1,6 +1,12 @@
 <div id="containerribbon"> <!-- Main Container -->    
 <div class="bubble"> <!-- Bubble -->
+<%if session[:lang]=="en" %>
+
 <div class="rectangle-t"><h2 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>News&Events</h2>
+<%end%>
+<%if session[:lang]=="th" %>
+<div class="rectangle-t"><h2 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>ข่าวและเหตุการณ์</h2>
+<%end%>
 </div>
 <%if session[:lang]=="en" %>
     <div class="info">
@@ -42,9 +48,8 @@
 									<b><%= month.strftime('%B') %></b>
 									<% for announce in announces %>
 										<li>
-											<p><%= announce.title %><br/>
+											<%= announce.title %><br/>
 											<i> <small>start on <%= announce.start_on.to_date.to_s(:long) %> </small></i>
-											</p>
 										</li>
 									<% end %>
 							<% end %>

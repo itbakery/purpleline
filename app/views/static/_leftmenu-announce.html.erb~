@@ -1,27 +1,15 @@
 <div id="containerribbon"> <!-- Main Container -->    
-
-  <div class="bubble"> <!-- Bubble -->
+<div class="bubble"> <!-- Bubble -->
 <div class="rectangle-t"><h2 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>News&Events</h2>
 </div>
+<%if session[:lang]=="en" %>
     <div class="info">
       <ul id="menuleft">
       
-         <li class='toggle'><a class="announce" href="#" >All Announcement</a></li>
-            	<% @allannounces.each do |announce|%>
-            		<li>
-                  <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>25)%><br/>
-                  <small>start on <%= announce.start_on.to_date.to_s(:long) %></small>
-            		</li> 
-             <%end%>
-
+      <li class='toggle'><%=link_to "All Announcement", {:action=>'allannounce'}, :remote => true %></a></li>
             
-          <li class='toggle'><a class="announce" href="#" >Lastest Announcement</a></li>  
-            	<%@lasttenannounces.each do |announce|%>
-            		<li>
-                   <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>29)%><br/>
-                   <small> start on <%= announce.start_on.to_date.to_s(:long) %> </small>
-            		</li> 
-             <%end%>
+          <li class='toggle'><%=link_to "Lastest Announcement", {:action=>'lasttenannounce'}, :remote => true %></a></li>  
+
             
           <li class='toggle'><a href="#" >Monthly Announce</a></li>
 							<%@allannounces_month.sort.each do |month, announces| %>
@@ -39,5 +27,30 @@
  </div>
 </div>
 
+<%end%>
+<%if session[:lang]=="th" %>
+    <div class="info">
+      <ul id="menuleft">
+      
+      <li class='toggle'><%=link_to "ประกาศทั้งหมด", {:action=>'allannounce'}, :remote => true %></a></li>
+            
+          <li class='toggle'><%=link_to "ประกาศล่าสุด", {:action=>'lasttenannounce'}, :remote => true %></a></li>  
 
+            
+          <li class='toggle'><a href="" >ประกาศประจำเดือน</a></li>
+							<%@allannounces_month.sort.each do |month, announces| %>
+									<b><%= month.strftime('%B') %></b>
+									<% for announce in announces %>
+										<li>
+											<p><%= announce.title %><br/>
+											<i> <small>start on <%= announce.start_on.to_date.to_s(:long) %> </small></i>
+											</p>
+										</li>
+									<% end %>
+							<% end %>
+     </ul>
+  </div>
+ </div>
+</div>
 
+<%end%>

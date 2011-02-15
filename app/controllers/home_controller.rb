@@ -8,6 +8,13 @@ class HomeController < ApplicationController
   	#@newevents = NewEventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"  	
+  	
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"  
+
+  	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
+  	@ness =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"   	
+  	
     @stations = StationsTranslation.all
     @userip = request.env['REMOTE_ADDR']
     @member = Member.new

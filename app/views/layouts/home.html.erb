@@ -92,9 +92,8 @@
 					<%if session[:lang]=="th" %>
 					 <h2 class="section-title">ข่าวและเหตุการณ์ล่าสุด</h2>
 					<%end%>          
-        
-        
-        <span>New & Event</span>
+          <%= render :partial => 'static/event'%>
+          <%= render :partial => 'static/new'%>
      </div>
   </div>
   <!-- end project -->
