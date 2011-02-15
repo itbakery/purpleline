@@ -59,11 +59,9 @@
         <div class="block">
           <div class="contentblock"
              <div class="inner">
-               <% form_remote_tag  announces_translations_path,  :method => :get  do %>
-								 <%=text_field_tag   :search , params[:search] %>
-								 <%=submit_tag "Search", :name => nil %>
-               <%end%>
-             	 <%=yield%>
+               <div id="display">
+             	      <%=yield%>
+             	 </div>
              </div>
           </div>
         </div>
@@ -71,7 +69,7 @@
   </div>
   <!-- end project_detail -->
 
-  <!-- end announcement -->
+   <!-- end announcement -->
   <div class="span-8" id="project"><div class="contentbox_2a"></div>
   </div>
   <!-- end project -->
@@ -81,15 +79,13 @@
   <div class="span-8 last" id="new_event"><div class="contentbox_3a"></div>
   </div>
   <!-- end new_event -->
-  <div class="span-24 last greenfield">
-    <div class="span-12" id="org">
-    <div class=" "><%= render :partial => '/static/org' %></div>
-    </div>
-    <!-- end org -->
-    <div class="span-12 last" id="callcenter">
-      <div class=""><%= render :partial => '/static/communicate' %></div>
-    </div>
-    <!-- end callcenter -->
+  <div  id="movebg" class="span-24 last">
+    	<%if session[:lang]=="en" %>
+     	 <div class=" "><%= render :partial => '/static/org' %></div>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <div class=" "><%= render :partial => '/static/org-th' %></div>
+      <%end%> 
   </div>
   <div class="span-24 last" id="footer">
      <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
