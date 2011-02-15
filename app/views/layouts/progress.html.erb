@@ -89,16 +89,14 @@
   </div>
   <img src="../images/global-footer-line.jpg">
   </div>
-  <!-- end new_event -->
-  <div class="span-24 last greenfield">
-    <div class="span-12" id="org">
-    <div class=" "><%= render :partial => '/static/org' %></div>
-    </div>
-    <!-- end org -->
-    <div class="span-12 last" id="callcenter">
-      <div class=""><%= render :partial => '/static/communicate' %></div>
-    </div>
-    <!-- end callcenter -->
+   <!-- end new_event -->
+  <div  id="movebg" class="span-24 last">
+    	<%if session[:lang]=="en" %>
+     	 <div class=" "><%= render :partial => '/static/org' %></div>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <div class=" "><%= render :partial => '/static/org-th' %></div>
+      <%end%> 
   </div>
   <div class="span-24 last" id="footer">
      <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
@@ -110,7 +108,6 @@
   </div>
   <!-- end footer -->
 </div>
-
-
+<!-- <%= yield %> -->
 </body>
 </html>
