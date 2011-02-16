@@ -30,11 +30,16 @@
 					</li>		
            <li style="height:35px;line-height:110%"><a href="/pageview/30">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li> 
            <li class='toggle'><a href="/pageview/31">ศูนย์ซ่อมบำรุง</a></li> 
-           <li class='toggle' style="line-height:110%;"><a href="/pageview/32">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li>
-								 <li><a style="padding-left:7px;" href="/pageview/56">P&R สามแยกบางใหญ่</a></li> 
+           <li class='toggle' style="line-height:110%;">
+             <a href="/pageview/32">อาคารจอดรถและสิ่งอำนวยความสะดวก <%=image_tag("DoubleArrowRight.gif")%></a>
+             <ul id="listpr" style="width:250px;">
+             		 <li><a style="padding-left:7px;" href="/pageview/56">P&R สามแยกบางใหญ่</a></li> 
 								 <li><a style="padding-left:7px;" href="/pageview/58">P&R ท่าอิฐ</a></li> 
 								 <li><a style="padding-left:7px;" href="/pageview/60">P&R แยกนนทบุรี</a></li>
-								 <li><a style="padding-left:px;" href="/pageview/62">P&R Depot</a></li>  		
+								 <li><a style="padding-left:px;" href="/pageview/62">P&R Depot</a></li> 
+						 </ul>		 
+           </li>
+ 		
            <li class='toggle' style="line-height:110%;"><a href="/pageview/52">สะพานข้ามแม่น้ำเจ้าพระยา</a></li>
            <li class='toggle'><a href="">ระบบอื่น	ๆ<span class="arrow"><%=image_tag("DoubleArrowRight.gif")%></span></a> 
                <ul  id="#listspecial" style="width:250px;">
