@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   	
     @stations = StationsTranslation.all
     @userip = request.env['REMOTE_ADDR']
-    @member = Member.new
+    #@member = Member.new
     coordinates = [13.83333,100.522413]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
