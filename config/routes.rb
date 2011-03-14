@@ -43,7 +43,7 @@ end
   get   "/home/lasttennews"
   get   "/home/monthlynews"
   get   "home/setlang"
-  match "/googlehostedservice.html"
+  #match "/googlehostedservice.html"
   match "/page/:filename.:format" => "static_pages#page"
   match "/map/:mapname/:filename.:format" => "static_maps#map"
   match "/map/:mapname/:z/:x/:y.:format" => "static_maps#maptile"
