@@ -12,7 +12,7 @@ development:
   database: purpleline_development
   pool: 5
   username: root
-  password: 1q2w3e4r@q! 
+  password:  
   socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
