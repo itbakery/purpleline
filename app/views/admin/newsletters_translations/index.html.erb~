@@ -11,20 +11,26 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.admin_newsletters_translation.newsletter_id", :default => t("activerecord.labels.newsletter_id", :default => "Newsletter_id")) %>
           </th>
+          <th>
+            <%= t("activerecord.attributes.admin_newsletters_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
+          </th>          
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
-          <th class="last">&nbsp;</th>
+          <th class="last">Actions</th>
         </tr>
         <% @newsletters_translations.each do |newsletters_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
             <%= newsletters_translation.id %>
           </td>
-                    <td>
-            <%= link_to newsletters_translation.newsletter_id, admin_newsletters_translation_path(newsletters_translation) %>
+          <td>
+            <%= link_to newsletters_translation.newsletter_id, admin_newsletter_path(newsletters_translation.newsletter_id) %>
           </td>
+          <td>
+            <%= link_to newsletters_translation.title %>
+          </td>          
                     <td>
             <%= newsletters_translation.created_at %>
           </td>
