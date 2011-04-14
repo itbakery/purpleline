@@ -4,4 +4,3 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 Purpleline::Application.load_tasks
-require 'thinking_sphinx/tasks' 

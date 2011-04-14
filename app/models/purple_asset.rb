@@ -3,11 +3,11 @@ class PurpleAsset < ActiveRecord::Base
   delegate :url, :to=> :attachment
 end
 
-class EventsTranslation::Image < PurpleAsset
+class Event::Image < PurpleAsset
   has_attached_file :attachment, :styles => { :small => "200x150>", :middle => "400x300>" ,:large => "800x600>" }	
 end
 
-class StationsTranslation::Image < PurpleAsset
+class Station::Image < PurpleAsset
   has_attached_file :attachment, :styles => { :small => "200x150>", :middle => "400x300>" ,:large => "800x600>" }	
 end
 

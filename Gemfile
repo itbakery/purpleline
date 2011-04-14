@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -26,7 +26,7 @@ gem 'capistrano'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 # group :development, :test do
-#   gem 'webrat'
+# gem 'webrat'
 # end
 
 gem 'mysql'
@@ -53,15 +53,21 @@ gem 'acts_as_tree'
 gem 'friendly_id', "~> 3.1"
 gem 'passenger'
 #geolocation
-gem  'geokit'
-gem  'geoip'
-gem  'rails-geocoder'
-#gem  'geo_location'
-gem  'geokit-rails3'         
-#gem  'bhm-google-maps'
-#gem  'geokit-rails'
-gem  'bhm-google-maps'
+gem 'geokit'
+gem 'geoip'
+gem 'rails-geocoder'
+#gem 'geo_location'
+gem 'geokit-rails3'
+#gem 'bhm-google-maps'
+#gem 'geokit-rails'
+gem 'bhm-google-maps'
 gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
 gem 'devise'
 gem 'cancan'
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
+gem 'thinking-sphinx',
+  :git     => 'git://github.com/freelancing-god/thinking-sphinx.git',
+  :branch  => 'rails3',
+  :require => 'thinking_sphinx'
+
+
