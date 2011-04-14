@@ -1,0 +1,6 @@
+<% form_tag :home_allannounce , :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :size=>18 %>
+    <%= submit_tag "GO!", :name => nil %>
+  </p>
+<% end %>
