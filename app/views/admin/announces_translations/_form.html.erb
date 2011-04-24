@@ -36,23 +36,45 @@
   
 <ol class="formatcol-three">
   <li>
+
+  </li>
+  <li>
+</ol>
+
+<ol class="formatcol-two">
+   <li>
+     <div class="group">
+<table><tr>
+<td><div id="hand_b"
+   onclick="stopEditing()"/></td>
+<td><div id="placemark_b"
+   onclick="placeMarker()"/></td>
+<td><div id="line_b"
+   onclick="startLine()"/></td>
+<td><div id="shape_b"
+  onclick="startShape()"/></td>
+</tr></table>
+    </div>
   <div class="group">
     <%= f.label :latitude, t("activerecord.attributes.announces_translation.latitude", :default => "Latitude"), :class => :label %>
     <%= f.text_field :latitude, :class => 'text_field' %>
 
   </div>
-  </li>
-  <li>
   <div class="group">
     <%= f.label :longtitude, t("activerecord.attributes.announces_translation.longtitude", :default => "Longtitude"), :class => :label %>
     <%= f.text_field :longtitude, :class => 'text_field' %>
-
+  </div>
+  <div class="group">
+    <%= f.label :polypoint, t("activerecord.attributes.announces_translation.polypoint", :default => "polypoint"), :class => :label %>
+    <%= f.text_area :polypoint, :class => 'text_area' %>
   </div>
   </li>
-</ol>  
+  <li>
   <div class="group">
-    <%= @map.div(:width => 700, :height => 370).html_safe %>
-  </div> 
+    <%= @map.div(:width => 500, :height => 370).html_safe %>
+  </div>
+  </li>
+</ol> 
 <ol class="formatcol-three">
   <li>
   <div class="group">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110103162654) do
+ActiveRecord::Schema.define(:version => 20110423083107) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110103162654) do
     t.datetime "updated_at"
     t.integer  "task_id"
     t.boolean  "publish"
+    t.text     "polypoint"
   end
 
   create_table "categories", :force => true do |t|
@@ -93,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20110103162654) do
     t.boolean  "publish"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "polypoint"
   end
 
   create_table "events_types", :force => true do |t|
@@ -141,6 +143,7 @@ ActiveRecord::Schema.define(:version => 20110103162654) do
     t.boolean  "publish"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "polypoint"
   end
 
   create_table "newsletters_types", :force => true do |t|
@@ -280,6 +283,7 @@ ActiveRecord::Schema.define(:version => 20110103162654) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longtitude"
+    t.text     "polypoint"
   end
 
   create_table "users", :force => true do |t|

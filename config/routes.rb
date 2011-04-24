@@ -31,7 +31,8 @@ namespace :admin do
   resources :users
 
 end
-  root :to => "home#present"
+  #root :to => "home#present"
+  root :to => "home#index",:lang=>"th"
   #get "home/index"
   #get "home/mrta"
   #get "home/present"

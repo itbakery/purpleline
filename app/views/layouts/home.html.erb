@@ -11,6 +11,7 @@
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "facebox", :media=>"screen,projection" %>  
+  <%= stylesheet_link_tag "li-scroller", :media=>"screen,projection" %>  
   <%= javascript_include_tag :defaults %>
  
   <%= csrf_meta_tag %>
@@ -22,6 +23,8 @@
 
   jQuery(document).ready(function() {
       jQuery("#s3slider").s3Slider({timeOut: 9000 });	
+      jQuery('ul#ticker01').liScroll();
+
 
    });  
   
@@ -70,6 +73,11 @@
   <div class="span-24 page_header last" id="banner">
     <div id="feature"><%= render :partial => '/static/s3slider'%></div>
     <div id="selectlocation"><%= render :partial => '/static/selectlocation'%> </div>
+  </div>
+  <div class="span-24 page_header  last">
+      <div class="mask">
+            <%= render :partial => '/static/newsticker' %>
+      </div>
   </div>
   <!--
   <div class="span-16" id="project_detail">
