@@ -106,6 +106,7 @@ function startDrawing(poly, name, onUpdate, color) {
     });
      alert("debug");   
      jQuery("#announces_translation_polypoint").val(data_path);
+     jQuery("#events_translation_polypoint").val(data_path);
     //end 
     
     GEvent.addListener(poly,"lineupdated",function(){
@@ -121,6 +122,7 @@ function startDrawing(poly, name, onUpdate, color) {
 	       newdata_path += value;
         });
          jQuery("#announces_translation_polypoint").val(newdata_path);
+         jQuery("#events_translation_polypoint").val(newdata_path);
 	});
     
     select("hand_b");

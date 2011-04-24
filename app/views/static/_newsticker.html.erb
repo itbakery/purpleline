@@ -2,9 +2,7 @@
   <% @announces.each do |announce| %>
      <li>
        <span><%=announce.start_on%></span>
-        <a href="/announce/<%=announce.id%>">
-           <span><%=announce.title%></span>
-        </a>
+        <a href="/announce/<%=announce.id%>"><%=announce.title%></a>
      </li>
   <%end%>
 </ul>
