@@ -1,9 +1,9 @@
 <ul >
   <% @news.each do |newletter|%>
-     <li  >
+     <li >
      <a href="/shownews/<%=newletter.id%>">
      <span class="badge"><%=newletter.start_on%></span>
-     <p style="min-height:30px;"><%=newletter.title%></p>
+     <span><%=newletter.title%></span>
      </a>
      </li>
   <%end%>

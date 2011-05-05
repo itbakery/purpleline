@@ -1,9 +1,10 @@
 <ul >
-  <% @announces.each do |announce|%>
+  <% @events.each do |event|%>
      <li >
-     <a href="/announce/<%=announce.id%>">
-     <span class="badge"><%=announce.start_on%></span>
-     <span><%=announce.title%></span>
+     <%= image_tag("animated_new.gif")  if (Date.today - event.start_on) < 15  %>
+     <a href="/showevent/<%=event.id%>">
+     <span class="badge"><%=event.start_on%></span>
+     <span><%=event.title%></span>
      </a>
      </li>
   <%end%>
