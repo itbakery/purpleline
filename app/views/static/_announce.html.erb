@@ -4,7 +4,7 @@
      <%= image_tag("animated_new.gif")  if (Date.today - announce.start_on) < 15  %>
      <a href="/announce/<%=announce.id%>">
      <span class="badge"><%=announce.start_on%></span>
-     <span><%=announce.title%></span>
+     <span style="font-size:14px;"><%=announce.title%></span>
      </a>
      </li>
   <%end%>
