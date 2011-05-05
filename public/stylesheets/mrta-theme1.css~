@@ -213,6 +213,7 @@ line-height:100%;
 #menuleft li:hover {
   border-left:2px solid #ce0000;
 }
+
 #menuleft li .arrow{
    float: right;
    padding-right:10px;
@@ -1301,4 +1302,5 @@ div#containerribbon {
     .extruder.left.a .flap .flapLabel{
       background:#772B14;
     }
-
+.odd {background :#BFB3CB;margin-top:5px;margin-bottom:5px;}
+.even {background :#FFFFFF;margin-top:5px;margin-bottom:5px;}
