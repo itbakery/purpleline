@@ -43,7 +43,7 @@ class HomeController < ApplicationController
   	if params[:id]
   		@category = Category.find(params[:id])	
   		@category.announces.each do |a|
-  			@announces  << a.announces_translations rescue  nil
+  			@announces = AnnouncesTranslation.where(:announce_id=>a.id)
   		end		
    end  
  

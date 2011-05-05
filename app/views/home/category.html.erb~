@@ -1,11 +1,11 @@
-<h2 style="line-height:1.5em;"><%=@category.name_th if session[:lang]=="th" %> <%=@category.name_en if session[:lang]=="en" %></h2>
+<b><%=@category.name_th if session[:lang]=="th" %> <%=@category.name_en if session[:lang]=="en" %></b>
 <% if @announces  %>
 	
 <div id="announcebox">
     <ul>
       <%@announces.each do |announce|%>
        <li>
-        <h3><%=announce.title%></h3>
+        <h3 ><%=announce.title%></h3>
          <div class="group">
                <div class="envelope">
                  <h4>Detail</h4>
@@ -13,7 +13,9 @@
                  <%=announce.content.html_safe%> 
                  <h4>For more information, please contact: 0 2965 6000</h4>
                  </div>
-              </div> 
+              </div>
+        <%= @map.div(:width => 630, :height => 370).html_safe %>  
+        
          </div>     
       </li> 
       <%end%>
