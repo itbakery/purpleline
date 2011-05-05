@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   	
     @stations = StationsTranslation.all
     @userip = request.env['REMOTE_ADDR']
-    @member = Member.new
+    #@member = Member.new
     coordinates = [13.83333,100.522413]
     @map = GMap.new("map")
     @map.control_init(:large_map => true, :map_type => true)
@@ -108,8 +108,12 @@ class HomeController < ApplicationController
   end
   
   def allannounce
-  	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
-  	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+    if params[:search] 
+      @allannounces = AnnouncesTranslation.search params[:search]
+    else
+  	  @allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	  @allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	end
   end
   
   def lasttenannounce

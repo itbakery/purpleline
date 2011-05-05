@@ -22,8 +22,9 @@
          <h3>News</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="#">Latest News</a></li>
-                        <li><a href="#">All News</a></li>
+                        <li><a href="/allnews">All News</a></li>                    
+                        <li><a href="/lasttennews">Latest News</a></li>
+
                     </ul>
                 </div>
          <h3>Announcements</h3>
@@ -53,7 +54,7 @@
 
 
 
-	<li class="menu_right"><a href="#" class="drop">Progress</a>
+	<li class="menu_right"><a href="/progress" class="drop">Progress</a>
 		<div class="dropdown_1column ">
                 <div class="col_1">
      <ul class="simple">
@@ -131,7 +132,7 @@
 		</div>
 	
 	</li>
-	<li class="menu_right"><a href="/main" class="drop">HOME</a>
+	<li class="menu_right"><a href="/main?lang=en" class="drop">HOME</a>
 	<!--
 		<div class="dropdown_1column align_right">
                 <div class="col_1">

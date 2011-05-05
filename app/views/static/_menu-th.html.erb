@@ -1,4 +1,3 @@
-
 <ul id="menu">
     <span class="cycle"></span> 
    <span class="title"></span> 
@@ -35,7 +34,7 @@
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a>
+                       <a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a>
                     </li>
                      <%end%>                      
                     </ul>   
@@ -142,3 +141,4 @@
 	-->
 	</li>	
 </ul>
+

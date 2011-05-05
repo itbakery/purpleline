@@ -38,6 +38,19 @@ class HomeController < ApplicationController
   	render :layout=>"home"
   end
  
+  def category  	
+  	@announce = []
+  	if params[:id]
+  		@category = Category.find(params[:id])	
+  		@category.announces.each do |a|
+  			@announces  << a.announces_translations rescue  nil
+  		end		
+   end  
+ 
+  
+  render :layout=>"announce"
+end
+
   def announcement  	
   	if params[:id]
   	@announces = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)

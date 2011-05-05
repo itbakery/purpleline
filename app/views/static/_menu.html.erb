@@ -35,7 +35,7 @@
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
+                       <a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
                     </li>
                      <%end%>                      
                     </ul>   

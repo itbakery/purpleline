@@ -11,6 +11,7 @@
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "facebox", :media=>"screen,projection" %>  
+  <%= stylesheet_link_tag "li-scroller", :media=>"screen,projection" %>  
   <%= javascript_include_tag :defaults %>
  
   <%= csrf_meta_tag %>
@@ -22,6 +23,8 @@
 
   jQuery(document).ready(function() {
       jQuery("#s3slider").s3Slider({timeOut: 9000 });	
+      jQuery('ul#ticker01').liScroll();
+
 
    });  
   
@@ -71,6 +74,11 @@
     <div id="feature"><%= render :partial => '/static/s3slider'%></div>
     <div id="selectlocation"><%= render :partial => '/static/selectlocation'%> </div>
   </div>
+  <div class="span-24 page_header  last">
+      <div class="mask">
+            <%= render :partial => '/static/newsticker' %>
+      </div>
+  </div>
   <!--
   <div class="span-16" id="project_detail">
     <div class="contentbox_2">projectdetail</div> 
@@ -92,9 +100,8 @@
 					<%if session[:lang]=="th" %>
 					 <h2 class="section-title">ข่าวและเหตุการณ์ล่าสุด</h2>
 					<%end%>          
-        
-        
-        <span>New & Event</span>
+          <%= render :partial => 'static/event'%>
+          <%= render :partial => 'static/new'%>
      </div>
   </div>
   <!-- end project -->
@@ -102,10 +109,23 @@
      <div class="boxmenu">
      <img src="../images/progress.png">
 					<%if session[:lang]=="en" %>
-             <h2 class="section-title">Latest Progress</h2>
+					 <h3 class="section-title">
+					   <a href="/progress" style=""> 
+					   <font color=#FFFFFF>
+					     Progress Graph
+					   </font>  
+					   </a>
+					 </h3>
 					<%end%>
 					<%if session[:lang]=="th" %>
-					 <h2 class="section-title">ความคืบหน้าล่าสุด</h2>
+					 <h3 class="section-title">
+					   <a href="/progress" style=""> 
+					   <font color=#FFFFFF>
+					     แผนภูมิความก้าวหน้า
+					   </font>  
+					   </a>
+					 </h3>
+					 
 					<%end%>       
 
        <span></span>
@@ -114,9 +134,7 @@
   <!-- end progress -->
   <div class="span-8 last" id="new_event">
       <div class="boxmenu">
-      <img src="../images/announce.png">
-        <h2 class="section-title">Latest Progress</h2>     
-      
+      <img src="../images/announce.png">   
 					<%if session[:lang]=="en" %>
              <h2 class="section-title">Latest Announcement</h2>
 					<%end%>
