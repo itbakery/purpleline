@@ -23,7 +23,7 @@
             <%= tasks_translation.id %>
           </td>
                     <td>
-            <%= link_to tasks_translation.task_id, admin_tasks_translation_path(tasks_translation) %>
+            <%= link_to tasks_translation.task_id, admin_tasks_translation_path(tasks_translation) if !tasks_translation.task_id.nil?%>
           </td>
                     <td>
             <%= tasks_translation.created_at %>

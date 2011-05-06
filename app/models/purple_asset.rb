@@ -4,10 +4,10 @@ class PurpleAsset < ActiveRecord::Base
 end
 
 class Event::Image < PurpleAsset
-  has_attached_file :attachment, :styles => { :small => "200x150>", :middle => "400x300>" ,:large => "800x600>" }	
+  has_attached_file :attachment, :styles => {:thumb => "130x70#", :small => "200x150>", :middle => "400x300>" ,:large => "800x600>" }	
 end
-
+                                
 class Station::Image < PurpleAsset
-  has_attached_file :attachment, :styles => { :small => "200x150>", :middle => "400x300>" ,:large => "800x600>" }	
+  has_attached_file :attachment, :styles => {:thumb => "130x70#",:small => "200x150>", :middle => "400x300>" ,:large => "800x600>" }	
 end
 

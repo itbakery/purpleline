@@ -23,7 +23,7 @@
 
   jQuery(document).ready(function() {
       jQuery("#s3slider").s3Slider({timeOut: 9000 });	
-      jQuery('ul#ticker01').liScroll();
+
 
 
    });  
@@ -76,7 +76,7 @@
   </div>
   <div class="span-24 page_header  last">
       <div class="mask">
-            <%= render :partial => '/static/newsticker' %>
+           <%= render :partial => '/static/newsticker' %>
       </div>
   </div>
   <!--

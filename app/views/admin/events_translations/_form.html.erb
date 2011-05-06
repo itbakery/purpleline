@@ -87,7 +87,14 @@
   </div> 
 
    <div class="group" id="tabs-2">
-
+        <%if !@events_translation.images.nil?%>
+            <%@events_translation.images.each do |image|%>
+            <p><%= image_tag   image.url(:middle)%></p>
+            <%end%>
+        <%else%>
+            <p>sorry there is no images relative</p>
+        <%end%>
+        
 				<%f.fields_for :images do |image_form| %>
             <%=render 'image_fields', :f=>image_form %>
 				<%end%>

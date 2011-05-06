@@ -11,21 +11,27 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.admin_events_translation.event_id", :default => t("activerecord.labels.event_id", :default => "Event_id")) %>
           </th>
+          <th>
+            <%= t("activerecord.attributes.admin_events_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
+          </th>          
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
-          <th class="last">&nbsp;</th>
+          <th class="last">Action</th>
         </tr>
         <% @events_translations.each do |events_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
             <%= events_translation.id %>
           </td>
-                    <td>
-            <%= link_to events_translation.event_id, admin_events_translation_path(events_translation) %>
+          <td>
+            <%= link_to  events_translation.event_id ,admin_event_path(events_translation.event_id) %> 
           </td>
-                    <td>
+          <td>
+            <%= events_translation.title %>
+          </td>
+          <td>
             <%= events_translation.created_at %>
           </td>
           <td class="last">

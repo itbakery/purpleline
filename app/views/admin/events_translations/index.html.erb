@@ -26,7 +26,7 @@
             <%= events_translation.id %>
           </td>
           <td>
-            <%= link_to  events_translation.event_id ,admin_event_path(events_translation.event_id) %> 
+            <%= link_to  events_translation.event_id ,admin_event_path(events_translation.event_id) if !events_translation.event_id.nil?%> 
           </td>
           <td>
             <%= events_translation.title %>

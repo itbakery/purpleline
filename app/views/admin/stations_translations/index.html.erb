@@ -26,7 +26,7 @@
             <%= stations_translation.id %>
           </td>
           <td>
-            <%=  link_to stations_translation.station_id, admin_station_path(stations_translation.station_id) %>
+            <%=  link_to stations_translation.station_id, admin_station_path(stations_translation.station_id)  if !stations_translation.station_id.nil? %>
           </td>
           <td>
             <%= stations_translation.title%>

@@ -231,6 +231,7 @@ function updateMarker(marker, cells, opt_changeColor) {
     
     jQuery('#tabs').tabs();
     jQuery('ul#ticker01').liScroll();
+    jQuery('.lightbox').lightBox();
 
 });
 

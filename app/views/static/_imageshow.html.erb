@@ -1,0 +1,13 @@
+                        
+
+<% @images.each  do |image| %>
+<div class="thumb">
+	   <%= link_to(image_tag(image.url(:thumb)), image.url(:large), :class => "lightbox") unless image.nil? %>
+	<div class="phototitle">
+	<%=truncate(image.caption,:length=>10,:omission=>"...")%>
+  </div>
+</div>  
+<%end%> 
+
+
+
