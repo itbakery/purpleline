@@ -8,10 +8,7 @@
 
      <%@lasttenannounces.each do |announce|%>
       <li class=<%=cycle('even', 'odd')%>
-           <span style="font-size:14px;">
            <a href="/announce/<%=announce.id%>"><%=announce.title%>
-           </span>
-           
            <i style="float:right;"> start on <%= announce.start_on.to_date.to_s(:long) %> </i>
       </li> 
      <%end%>

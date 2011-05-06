@@ -21,8 +21,9 @@
          <h3>ข่าวสาร</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="/home/allnews">ข่าวสารทั้งหมด</a></li>                    
-                        <li><a href="/home/lasttennews">ข่าวสารล่าสุด</a></li>
+      <li><%=link_to "ข่าวสารทั้งหมด", {:action=>'allnews'} %></a></li> 
+      <li><%=link_to "ข่าวสารล่าสุด", {:action=>'lasttennews'} %></a></li> 
+      <li><%=link_to "ข่าวสารประจำเดือน", {:action=>'monthlynews'} %></a></li>      
 
                     </ul>
                 </div>

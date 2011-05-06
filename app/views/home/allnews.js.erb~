@@ -1,2 +1,3 @@
-jQuery("#display").html("<%=escape_javascript(render(:partial=>'allannounce'))%>");
-
+jQuery(".container").html("<%=escape_javascript(render(:layout=>'newsletters'))%>");
+jQuery("#display").html("<%=escape_javascript(render(:partial=>'allnews'))%>");
+                                                           

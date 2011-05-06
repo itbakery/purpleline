@@ -22,8 +22,9 @@
          <h3>News</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="/allnews">All News</a></li>                    
-                        <li><a href="/lasttennews">Latest News</a></li>
+      <li ><%=link_to "All News", {:action=>'allnews'}, :remote => true %></a></li> 
+      <li ><%=link_to "Lastest News", {:action=>'lasttennews'}, :remote => true %></a></li> 
+      <li ><%=link_to "Monthly News", {:action=>'monthlynews'}, :remote => true %></a></li>      
 
                     </ul>
                 </div>
@@ -35,7 +36,7 @@
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="#"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
+                       <a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
                     </li>
                      <%end%>                      
                     </ul>   

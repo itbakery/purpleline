@@ -1,10 +1,10 @@
 <ul >
   <% @events.each do |event|%>
-     <li >
+     <li style="min-height:1.5em;" >
      <%= image_tag("animated_new.gif")  if (Date.today - event.start_on) < 15  %>
      <a href="/showevent/<%=event.id%>">
      <span class="badge"><%=event.start_on%></span>
-     <span><%=event.title%></span>
+     <span style="font-size:14px;"><%=event.title%></span>
      </a>
      </li>
   <%end%>
