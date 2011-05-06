@@ -1,9 +1,8 @@
-
 <ul id="menu">
     <span class="cycle"></span> 
    <span class="title"></span> 
    
-	<li class="menu_right"><a href="/pageview/50?p=link" class="drop">เน�เธ�เธทเน�เธญเธกเน�เธขเธ�</a>
+	<li class="menu_right"><a href="/pageview/50?p=link" class="drop">เชื่อมโยง</a>
 	<!--
 		<div class="dropdown_1column align_right">
                 <div class="col_1">
@@ -16,18 +15,18 @@
 		-->
 	</li>
    
-	<li class="menu_right"><a href="#" class="drop">เธ�เน�เธฒเธงเน�เธฅเธฐเน�เธซเธ�เธธเธ�เธฒเธฃเธ�เน�</a>
+	<li class="menu_right"><a href="#" class="drop">ข่าวและเหตุการณ์</a>
     
 		<div class="dropdown_1column align_right">
-         <h3>เธ�เน�เธฒเธงเธชเธฒเธฃ</h3>
+         <h3>ข่าวสาร</h3>
                 <div class="col_1">
                     <ul class="simple">
-                        <li><a href="/allnews">เธ�เน�เธฒเธงเธชเธฒเธฃเธ�เธฑเน�เธ�เธซเธกเธ�</a></li>                    
-                        <li><a href="/lasttennews">เธ�เน�เธฒเธงเธชเธฒเธฃเธฅเน�เธฒเธชเธธเธ�</a></li>
+                        <li><a href="/allnews">ข่าวสารทั้งหมด</a></li>                    
+                        <li><a href="/lasttennews">ข่าวสารล่าสุด</a></li>
 
                     </ul>
                 </div>
-         <h3>เธ�เธฃเธฐเธ�เธฒเธจ</h3>
+         <h3>ประกาศ</h3>
                 <div class="col_1">
                     <ul class="simple">
                     <% Category.all.each do |c| %>
@@ -35,16 +34,16 @@
                        <%if  c.icon.exists? then %>
                           <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
                        <%end%>
-                       <a href="/category/<%=c.id%>" style="display:inline; vertical-align:middle;"><%=c.name_th%></a>
+                       <a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a>
                     </li>
                      <%end%>                      
-                    </ul> 
+                    </ul>   
                 </div>
-         <h3>เน�เธซเธ�เธธเธ�เธฒเธฃเธ�เน�</h3>
+         <h3>เหตุการณ์</h3>
                 <div class="col_1">
                     <ul class="simple">
 
-                        <li><a href="#">เธ�เธดเธ�เธ�เธฃเธฃเธกเธ�เธฃเธฐเธ�เธฒเธชเธฑเธกเธ�เธฑเธ�เธ�เน�เน�เธฅเธฐเธกเธงเธฅเธ�เธ�เธชเธฑเธกเธ�เธฑเธ�เธ�เน�</a></li>
+                        <li><a href="#">กิจกรรมประชาสัมพันธ์และมวลชนสัมพันธ์</a></li>
 
                     </ul>   
                 </div>                
@@ -54,19 +53,19 @@
 
 
 
-	<li class="menu_right"><a href="/progress" class="drop">เธ�เธงเธฒเธกเธ�เน�เธฒเธงเธซเธ�เน�เธฒ</a>
+	<li class="menu_right"><a href="/progress" class="drop">ความก้าวหน้า</a>
 		<div class="dropdown_1column ">
                 <div class="col_1">
      <ul class="simple">
 			<div class="">
-               <li><a href="#">เธ�เธฒเธ�เธฃเธ�เน�เธ�เธขเธ�เธฃเธฐเธ�เธฑเธ�</a></li>
-               <li><a href="/allstation">เธชเธ�เธฒเธ�เธตเธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>
-               <li><a href="#">เธจเธนเธ�เธขเน�เธ�เน�เธญเธกเธ�เธณเธฃเธธเธ�</a></li>
-               <li><a href="#">เธญเธฒเธ�เธฒเธฃเธ�เธญเธ�เธฃเธ�</a></li>
-               <li><a href="#">เธชเธฐเธ�เธฒเธ�เธ�เน�เธฒเธกเน�เธกเน�เธ�เน�เธณ</a></li> 
-               <li class="underline"><a href="#">เธ�เธฒเธ�เธฃเธฐเธ�เธ�เธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>                
-               <li><a href="#">เธงเธดเธ�เธตเน�เธญ เน�เธฅเธฐ เธ เธฒเธ�เธ�เน�เธฒเธข</a></li>
-               <li><a href="/progress">เน�เธ�เธ�เธ เธนเธกเธดเธ�เธงเธฒเธกเธ�เน�เธฒเธงเธซเธ�เน�เธฒ</a></li>
+               <li><a href="#">ทางรถไฟยกระดับ</a></li>
+               <li><a href="/allstation">สถานีรถไฟฟ้า</a></li>
+               <li><a href="#">ศูนย์ซ่อมบำรุง</a></li>
+               <li><a href="#">อาคารจอดรถ</a></li>
+               <li><a href="#">สะพานข้ามแม่น้ำ</a></li> 
+               <li class="underline"><a href="#">งานระบบรถไฟฟ้า</a></li>                
+               <li><a href="#">วิดีโอ และ ภาพถ่าย</a></li>
+               <li><a href="/progress">แผนภูมิความก้าวหน้า</a></li>
       </ul>   
                      
     </div>
@@ -74,54 +73,54 @@
 		</div>
         
 	</li>
-	<li class="menu_right"><a href="/pageview/40" class="drop">เน�เธ�เธฃเธ�เธ�เธฒเธฃเธฏ</a>
+	<li class="menu_right"><a href="/pageview/40" class="drop">โครงการฯ</a>
 		<div class="dropdown_1column ">
                 <div class="col_1">
      <ul class="simple">
 				<div class="">
-								 <li><a href="/pageview/27">เธ�เธฒเธฃเธ�เธฃเธฐเธกเธฒเธ�เธ�เธณเธ�เธงเธ�เธ�เธนเน�เน�เธ�เธขเธชเธฒเธฃ</a></li>
-								 <li><a href="/pageview/28">เธ�เน�เธญเธกเธนเธฅเธ�เธฒเธฃเน�เธซเน�เธ�เธฃเธดเธ�เธฒเธฃเน�เธ�เธดเธ�เธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>
-								 <li><a href="/pageview/29">เธชเธ�เธฒเธ�เธตเธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>
-								 <li><a href="/pageview/30">เน�เธ�เธงเน�เธชเน�เธ�เธ�เธฒเธ� เน�เธฅเธฐ เน�เธ�เธฃเธ�เธชเธฃเน�เธฒเธ�เธ�เธฒเธ�เธฃเธ�เน�เธ�เธขเธ�เธฃเธฐเธ�เธฑเธ�</a></li>
-								 <li><a href="/pageview/31">เธจเธนเธ�เธขเน�เธ�เน�เธญเธกเธ�เธณเธฃเธธเธ�</a></li> 
-								 <li><a href="/pageview/32">เธญเธฒเธ�เธฒเธฃเธ�เธญเธ�เธฃเธ�เน�เธฅเธฐเธชเธดเน�เธ�เธญเธณเธ�เธงเธขเธ�เธงเธฒเธกเธชเธฐเธ�เธงเธ�</a></li> 
-								 <li><a style="padding-left:15px;" href="/pageview/56">P&R เธชเธฒเธกเน�เธขเธ�เธ�เธฒเธ�เน�เธซเธ�เน�</a></li> 
-								 <li><a style="padding-left:15px;" href="/pageview/58">P&R เธ�เน�เธฒเธญเธดเธ�</a></li> 
-								 <li><a style="padding-left:15px;" href="/pageview/60">P&R เน�เธขเธ�เธ�เธ�เธ�เธ�เธธเธฃเธต</a></li>
+								 <li><a href="/pageview/27">การประมาณจำนวนผู้โดยสาร</a></li>
+								 <li><a href="/pageview/28">ข้อมูลการให้บริการเดินรถไฟฟ้า</a></li>
+								 <li><a href="/pageview/29">สถานีรถไฟฟ้า</a></li>
+								 <li><a href="/pageview/30">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li>
+								 <li><a href="/pageview/31">ศูนย์ซ่อมบำรุง</a></li> 
+								 <li><a href="/pageview/32">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li> 
+								 <li><a style="padding-left:15px;" href="/pageview/56">P&R สามแยกบางใหญ่</a></li> 
+								 <li><a style="padding-left:15px;" href="/pageview/58">P&R ท่าอิฐ</a></li> 
+								 <li><a style="padding-left:15px;" href="/pageview/60">P&R แยกนนทบุรี</a></li>
 								 <li><a style="padding-left:15px;" href="/pageview/62">P&R Depot</a></li>  									 
-								 <li><a href="/pageview/52">เธชเธฐเธ�เธฒเธ�เธ�เน�เธฒเธกเน�เธกเน�เธ�เน�เธณเน�เธ�เน�เธฒเธ�เธฃเธฐเธขเธฒ</a></li> 
+								 <li><a href="/pageview/52">สะพานข้ามแม่น้ำเจ้าพระยา</a></li> 
 				</div>
 				<div class="">
-					 <h3>เธฃเธฐเธ�เธ�เธญเธทเน�เธ�	เน�</h3>
+					 <h3>ระบบอื่น	ๆ</h3>
 				</div>
-													<li><a style="padding-left:15px;" href="/pageview/48">เธฃเธฐเธ�เธ�เธฃเธฒเธ�เธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/47">เธฃเธฐเธ�เธ�เธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/42">เธ�เธนเน�เธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>				
+													<li><a style="padding-left:15px;" href="/pageview/48">ระบบรางรถไฟฟ้า</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/47">ระบบรถไฟฟ้า</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/42">ตู้รถไฟฟ้า</a></li>				
 				<div class="">
-					 <h3>เธชเธดเน�เธ�เธญเธณเธ�เธงเธขเธ�เธงเธฒเธกเธชเธฐเธ�เธงเธ�</h3>
+					 <h3>สิ่งอำนวยความสะดวก</h3>
 				</div>			
-													<li><a style="padding-left:15px;" href="/pageview/43">เธฅเธดเธ�เธ�เน�เน�เธฅเธฐเธ�เธฑเธ�เน�เธ�เน�เธฅเธทเน�เธญเธ�</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/46">เธชเธณเธซเธฃเธฑเธ�เธ�เธนเน�เธ�เธดเธ�เธฒเธฃ</a></li>													
+													<li><a style="padding-left:15px;" href="/pageview/43">ลิฟท์และบันไดเลื่อน</a></li>
+													<li><a style="padding-left:15px;" href="/pageview/46">สำหรับผู้พิการ</a></li>													
       </ul>                  
       </div>  
 		</div>
         
 	</li>
 	
-	<li class="menu_right"><a href="/mrtaview/1" class="drop">เธฃเธ�เธก.</a>
+	<li class="menu_right"><a href="/mrtaview/1" class="drop">รฟม.</a>
     
 		<div class="dropdown_1column">
         
                 <div class="col_1">
                     <ul class="simple">
-											 <li><a href="/mrtaview/1">เธ�เธงเธฒเธกเน�เธ�เน�เธ�เธกเธฒเธ�เธญเธ� เธฃเธ�เธก.</a></li>
-											 <li><a href="/mrtaview/33">เธ�เธฑเธ�เธญเธ�เธ�เน�เธ�เธฃเธ�เธญเธ� เธฃเธ�เธก.</a></li>
-											 <li><a href="/mrtaview/35">เน�เธ�เธฃเธ�เธ�เธฒเธฃเธฃเธ�เน�เธ�เธ�เน�เธฒเธชเธฒเธขเธชเธตเธกเน�เธงเธ�</a></li>
-                       <li><a href="/mrtaview/39" style="padding-left:20px;">เธ�เธฑเธ�เธญเธ�เธ�เน�เธ�เธฃเธ�เธญเธ�เน�เธ�เธฃเธ�เธ�เธฒเธฃ</a></li>
-											 <li><a href="/mrtaview/34" style="padding-left:20px;">เธ�เธฅเธธเน�เธกเธ�เธฃเธดเธฉเธฑเธ�เธ�เธตเน�เธ�เธฃเธถเธ�เธฉเธฒ</a></li>
-											 <li><a href="/mrtaview/45" style="padding-left:20px;">เธ�เธนเน�เธฃเธฑเธ�เธ�เน�เธฒเธ�เธ�เน�เธญเธชเธฃเน�เธฒเธ�</a></li>                        
-											 <li><a href="/mrtaview/36">เน�เธ�เธฃเธ�เธ�เธฒเธฃเธฃเธ�เน�เธ�เธ�เน�เธฒเธชเธฒเธขเธชเธตเธกเน�เธงเธ� เธชเน�เธงเธ�เธ�เน�เธญเธ�เธขเธฒเธข</a></li>
-											 <li><a href="/mrtaview/37">เน�เธ�เธฅเธ�เน�เธ�เธฃเธ�เธ�เน�เธฒเธขเธฃเธ�เน�เธ�เธ�เน�เธฒ</a></li>
+											 <li><a href="/mrtaview/1">ความเป็นมาของ รฟม.</a></li>
+											 <li><a href="/mrtaview/33">ผังองค์กรของ รฟม.</a></li>
+											 <li><a href="/mrtaview/35">โครงการรถไฟฟ้าสายสีม่วง</a></li>
+                       <li><a href="/mrtaview/39" style="padding-left:20px;">ผังองค์กรของโครงการ</a></li>
+											 <li><a href="/mrtaview/34" style="padding-left:20px;">กลุ่มบริษัทที่ปรึกษา</a></li>
+											 <li><a href="/mrtaview/45" style="padding-left:20px;">ผู้รับจ้างก่อสร้าง</a></li>                        
+											 <li><a href="/mrtaview/36">โครงการรถไฟฟ้าสายสีม่วง ส่วนต่อขยาย</a></li>
+											 <li><a href="/mrtaview/37">แปลนโครงข่ายรถไฟฟ้า</a></li>
                     </ul>   
                      
                 </div>
@@ -129,7 +128,7 @@
 		</div>
 	
 	</li>
-	<li class="menu_right"><a href="/main?lang=th" class="drop">เธซเธ�เน�เธฒเน�เธฃเธ�</a>
+	<li class="menu_right"><a href="/main?lang=th" class="drop">หน้าแรก</a>
 	<!--
 		<div class="dropdown_1column align_right">
                 <div class="col_1">
@@ -142,3 +141,4 @@
 	-->
 	</li>	
 </ul>
+
