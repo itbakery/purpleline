@@ -70,19 +70,9 @@
           </div>
         </div>
     </div>
-  </div>
-  <!-- end project_detail -->
 
-  <!-- end announcement -->
-  <div class="span-8" id="project"><div class="contentbox_2a"></div>
-  </div>
-  <!-- end project -->
-  <div class="span-8" id="progress"><div class="contentbox_4a"></div>
-  </div>
-  <!-- end progress -->
-  <div class="span-8 last" id="new_event"><div class="contentbox_3a"></div>
-  </div>
-  <!-- end new_event -->
+
+
   <div  id="movebg" class="span-24 last">
 
     	<%if session[:lang]=="en" %>
@@ -91,18 +81,17 @@
       <%if session[:lang]=="th" %>
      	 <div class=" "><%= render :partial => '/static/org-th' %></div>
       <%end%> 
-
-  </div>
+ </div>
   <div class="span-24 last" id="footer">
      <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
      All rights reserved <br/> 
      Webmaster : webmaster@pcpl-th.com<br/>
      Public Relation Division : pr@mrta.co.th
-     
      </div>
   </div>
-  <!-- end footer -->
 </div>
+  <!-- end footer -->
+
 <!-- <%= yield %> -->
 </body>
 </html>
