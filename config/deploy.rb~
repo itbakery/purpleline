@@ -1,3 +1,4 @@
+
 set :application, "purpleline"
 set :repository,  "git@github.com:itbakery/purpleline.git"
 set :user, "admin"
