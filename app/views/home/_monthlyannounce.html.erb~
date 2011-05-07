@@ -5,16 +5,16 @@
       <%if session[:lang]=="th" %>
      	 <h2>ประกาศประจำเดือน</h2>
       <%end%> 
-							<%@allannounces_month.sort.each do |month, announces| %>
-									<b><%= month.strftime('%B') %></b>
-									<% for announce in announces %>
-										<li>
-											<p><small>
-											 <a href="/announce/<%=announce.id%>"><%= announce.title %> </a></small><br/>
-											<i style="float:right;">> start on <%= announce.start_on.to_date.to_s(:long) %></i>
-											</p>
-										</li>
-									<% end %>
-							<% end %>
+		<%@allannounces_month.sort.each do |month, announces| %>
+		   <b><%= month.strftime('%B') %></b>
+			<% for announce in announces %>
+			<li class=<%=cycle('even', 'odd')%>
+				<p>
+				 <a href="/announce/<%=announce.id%>"><%= announce.title %> </a><br/>
+				<i style="float:right;"> start on <%= announce.start_on.to_date.to_s(:long) %></i>
+				</p>
+			</li>
+	 <% end %>
+	<% end %>
 
 </ul>

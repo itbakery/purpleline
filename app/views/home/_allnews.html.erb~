@@ -1,15 +1,17 @@
 
 <ul>
     	<%if session[:lang]=="en" %>
-     	 <h2>All Newsletters</h2>
+     	 <h2 style="margin-top:15px;">All Newsletters</h2>
       <%end%>
       <%if session[:lang]=="th" %>
-     	 <h2>ข่าวสารทั้งหมด</h2>
+     	 <h2 style="margin-top:15px;">ข่าวสารทั้งหมด</h2>
       <%end%> 
 
 <% @allnewletters.each do |newsletter|%>
             		<li>
-                  <a href="/shownews/<%=newsletter.id%>"><%=newsletter.title%>
+            		  <span style="font-size:14px;">
+                  <a href="/shownews/<%=newsletter.id%>"><%=newsletter.title%>   
+                  </span>
                   <i style="float:right;">start on <%= newsletter.start_on.to_date.to_s(:long) %></i>
             		</li> 
  <%end%>
