@@ -52,25 +52,35 @@ class HomeController < ApplicationController
 end
 
   def announcement  	
-  	if params[:id]
-  	@announces = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)
-  	coordinates = [@announces.first.latitude,@announces.first.longtitude]
-    @map = GMap.new("map")
-    @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init(coordinates,15)	
-    @gmarker = GMarker.new(coordinates,:title => "#{@announces.first.title}")
-    @map.overlay_global_init(@gmarker, "gmarker")
-    @map.overlay_init(@gmarker)
-  	else
-  		@announces = AnnouncesTranslation.order("start_on desc")
-  	end
-  	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
-  	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
-  	
-  	@allannounces_month = @allannounces.group_by { |t| t.start_on.beginning_of_month}
-  	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
-  	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
- 	  render :layout=>"announce"
+   if params[:id]
+			 @announces = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)
+			 coordinates = [@announces.first.latitude,@announces.first.longtitude]
+				@map = GMap.new("map")
+				@map.control_init(:large_map => true, :map_type => true)
+				@map.center_zoom_init(coordinates,15)
+				@gmarker = GMarker.new(coordinates,:title => "#{@announces.first.title}")
+				@map.overlay_global_init(@gmarker, "gmarker")
+				@map.overlay_init(@gmarker)
+				
+					unless @announces[0].blank?
+						s = @announces[0].polypoint.split("\r\n") unless @announces[0].polypoint.blank?
+						@p = s.collect {|item| GLatLng.new(item.split(" ")[2..3])}  unless s.nil?
+						@polyline =  GPolygon.new(@p,"#ff0000",3,1.0,"#00ff00",1.0)  unless p.nil?
+						@map.add_overlay(@polyline) unless p.nil?
+				  end				
+				
+   else
+   	 		@announces = AnnouncesTranslation.order("start_on desc")
+   end
+   
+   
+   @allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+   @allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  
+   @allannounces_month = @allannounces.group_by { |t| t.start_on.beginning_of_month}
+   @lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+   @lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"
+  render :layout=>"announce"
   end
   
   def showevent  	

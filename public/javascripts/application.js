@@ -104,7 +104,7 @@ function startDrawing(poly, name, onUpdate, color) {
 	jQuery.each(path,function(index,value){
 	  data_path += value;
     });
-     alert("debug");   
+     //alert("debug");   
      jQuery("#announces_translation_polypoint").val(data_path);
      jQuery("#events_translation_polypoint").val(data_path);
     //end 

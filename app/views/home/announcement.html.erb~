@@ -16,8 +16,7 @@
                  </div>-->
               </div>
         <%= @map.div(:width => 630, :height => 370).html_safe %>  
-        debug<%= @p %>
-        debug<%= @polyline %>
+        
          </div>     
       </li> 
       <%end%>
