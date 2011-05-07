@@ -1310,3 +1310,30 @@ div#containerribbon {
     }
 .odd {background :#BFB3CB;margin-top:5px;margin-bottom:5px;}
 .even {background :#FFFFFF;margin-top:5px;margin-bottom:5px;}
+
+
+
+
+div.thumb {
+	background-color: #EEEEEE;
+margin: 3px;
+border: 1px solid #A0ACC0;
+height: auto;
+float: left;
+text-align: center;
+}
+.thumb img{
+display: inline;
+margin: 2px;
+border: 1px solid #A0ACC0;
+}
+.thumb a:hover img {border: 1px solid black;}
+.photocattitle {text-align: center; font-weight: bold;}
+.phototitle {
+text-align: center;
+font-weight: normal;
+color:#000;
+font-size:13px;
+width: 130px;
+margin: 0 3px 3px 3px;
+} 
