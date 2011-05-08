@@ -46,8 +46,6 @@ class HomeController < ApplicationController
   			@announces = AnnouncesTranslation.where(:announce_id=>a.id)
   		end		
    end  
- 
-  
   render :layout=>"announce"
 end
 

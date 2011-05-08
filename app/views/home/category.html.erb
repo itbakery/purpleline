@@ -5,13 +5,15 @@
     <ul>
       <%@announces.each do |announce|%>
        <li>
-        <h3><%=announce.title%></h3>
+        <h3> <span class="badge" style="float:left;font-size:12px;"> <%=announce.start_on   %> </span>
+        <a href="/announce/<%=announce.id%>"> <%=announce.title%> </a>  </h3>
+
          <div class="group">
                <div class="envelope">
-                 <h4>Detail</h4>
-                 <div class="left">
+                 <div class="left clear">
                  <%=announce.content.html_safe%> 
-                 <h4>For more information, please contact: 0 2965 6000</h4>
+                 <h4><%= "For more information, please contact: 0 2965 6000 " if session[:lang]=="en" %></h4>
+                 <h4><%= "ต้องการข้อมูลเพิ่มเติม กรุณาติดต่อ: 0 2965 6000 " if session[:lang]=="th" %></h4>      
                  </div>
               </div> 
          </div>     
@@ -19,6 +21,10 @@
       <%end%>
   </ui>
 </div>
+
+
 <%else%>
 <p> No Infomation in this Category</p>
 <%end%>
+
+     
