@@ -3,23 +3,27 @@
 	
 <div id="announcebox">
     <ul>
-       <li> <%=@announces.count%> </li>
       <%@announces.each do |announce|%>
-       <li>
-        <h3> <span class="badge" style="float:left;font-size:12px;"> <%=announce.start_on   %> </span>
-        <%= image_tag("new.gif")  if (Date.today - announce.start_on) < 15  %>
-        <a href="/announce/<%=announce.id%>"> <%=announce.title%> </a>  </h3>
+        <% unless announce.nil? %>
+			   <li>
+                   <%announce.order("start_on DESC").each do  |ann|%>
+						<h3> <span class="badge" style="float:left;font-size:12px;"> <%=ann.start_on  %> </span>
+						<%= image_tag("new.gif")  if (Date.today - ann.start_on) < 15  %>
+						<a href="/announce/<%=ann.id%>"> <%=ann.title%> </a>  </h3>
 
-         <div class="group">
-               <div class="envelope">
-                 <div class="left clear">
-                 <%=announce.content.html_safe%> 
-                 <h4><%= "For more information, please contact: 0 2965 6000 " if session[:lang]=="en" %></h4>
-                 <h4><%= "ต้องการข้อมูลเพิ่มเติม กรุณาติดต่อ: 0 2965 6000 " if session[:lang]=="th" %></h4>      
-                 </div>
-              </div> 
-         </div>     
-      </li> 
+						 <div class="group">
+							   <div class="envelope">
+								 <div class="left clear">
+								 <%=ann.content.html_safe%> 
+								 <h4><%= "For more information, please contact: 0 2965 6000 " if session[:lang]=="en" %></h4>
+								 <h4><%= "ต้องการข้อมูลเพิ่มเติม กรุณาติดต่อ: 0 2965 6000 " if session[:lang]=="th" %></h4>      
+								 </div>
+							  </div> 
+						 </div> 
+                   <%end%>
+				     
+			  </li> 
+		 <%end%>
       <%end%>
   </ui>
 </div>

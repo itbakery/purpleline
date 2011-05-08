@@ -39,7 +39,7 @@ class HomeController < ApplicationController
   end
  
   def category  	
-  	@announces = []
+    @announces = []
   	if params[:id]
   		@category = Category.find(params[:id])	
   		@category.announces.each do |a|
