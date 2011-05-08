@@ -39,11 +39,11 @@ class HomeController < ApplicationController
   end
  
   def category  	
-  	@announce = []
+  	@announces = []
   	if params[:id]
   		@category = Category.find(params[:id])	
   		@category.announces.each do |a|
-  			@announces = AnnouncesTranslation.where(:announce_id=>a.id)
+  			@announces <<  AnnouncesTranslation.where(:announce_id=>a.id)
   		end		
    end  
   render :layout=>"announce"
