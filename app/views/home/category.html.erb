@@ -3,9 +3,11 @@
 	
 <div id="announcebox">
     <ul>
+       <li> <%=@announces.count%> </li>
       <%@announces.each do |announce|%>
        <li>
         <h3> <span class="badge" style="float:left;font-size:12px;"> <%=announce.start_on   %> </span>
+        <%= image_tag("new.gif")  if (Date.today - announce.start_on) < 15  %>
         <a href="/announce/<%=announce.id%>"> <%=announce.title%> </a>  </h3>
 
          <div class="group">
