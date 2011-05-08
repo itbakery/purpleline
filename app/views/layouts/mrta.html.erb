@@ -63,19 +63,19 @@
   <div class="span-18 last" id="project_detail">
     <div class="contentbox_2">
         <div class="block">
-          <div class="contentblock"
+          <div class="contentblock">
              <div class="inner">
              	 <%=yield%>
              </div>
           </div>
         </div>
     </div>
-
+  </div>
 
 
   <div  id="movebg" class="span-24 last">
 
-    	<%if session[:lang]=="en" %>
+     <%if session[:lang]=="en" %>
      	 <div class=" "><%= render :partial => '/static/org' %></div>
       <%end%>
       <%if session[:lang]=="th" %>
@@ -90,8 +90,5 @@
      </div>
   </div>
 </div>
-  <!-- end footer -->
-
-<!-- <%= yield %> -->
 </body>
 </html>

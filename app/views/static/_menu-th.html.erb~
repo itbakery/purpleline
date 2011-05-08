@@ -21,9 +21,9 @@
          <h3>ข่าวสาร</h3>
                 <div class="col_1">
                     <ul class="simple">
-      <li class='toggle'><%=link_to "ข่าวสารทั้งหมด", {:action=>'allnews'}, :remote => true %></a></li> 
-      <li class='toggle'><%=link_to "ข่าวสารล่าสุด", {:action=>'lasttennews'}, :remote => true %></a></li> 
-      <li class='toggle'><%=link_to "ข่าวสารประจำเดือน", {:action=>'monthlynews'}, :remote => true %></a></li>      
+      <li><%=link_to "ข่าวสารทั้งหมด", {:action=>'allnews'} %></a></li> 
+      <li><%=link_to "ข่าวสารล่าสุด", {:action=>'lasttennews'} %></a></li> 
+      <li><%=link_to "ข่าวสารประจำเดือน", {:action=>'monthlynews'} %></a></li>      
 
                     </ul>
                 </div>
