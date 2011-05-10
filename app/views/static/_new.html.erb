@@ -3,15 +3,15 @@
 <ul >
   <% @news.each do |newletter|%>
      <li>
-     <%= image_tag("animated_new.gif")  if (Date.today - newletter.start_on) < 15  %>
+
      <a href="/newletters/<%=newletter.id%>">
      <span class="badge" ><%=newletter.start_on%></span>
-     <div style="font-size:14px;display:block;margin-left:80px;color:#FFF;min-height:40px;"><%=newletter.title%></div>
+     <div style="font-size:14px;display:block;margin-left:80px;color:#FFF;min-height:40px;"><%=newletter.title%>
+          <%= image_tag("new.gif")  if (Date.today - newletter.start_on) < 15  %>
+     </div>
 
      </a>
           <div style="hight:5px;">&nbsp; </div>
      </li>
   <%end%>
 </ul>
-
-
