@@ -1,11 +1,17 @@
+
+
 <ul >
   <% @news.each do |newletter|%>
-     <li  >
-     <a href="/shownews/<%=newletter.id%>">
-     <span class="badge"><%=newletter.start_on%></span>
-     <p style="min-height:30px;font-size:14px;"><%=newletter.title%></p>
+     <li>
+     <%= image_tag("animated_new.gif")  if (Date.today - newletter.start_on) < 15  %>
+     <a href="/newletters/<%=newletter.id%>">
+     <span class="badge" ><%=newletter.start_on%></span>
+     <div style="font-size:14px;display:block;margin-left:80px;color:#FFF;min-height:40px;"><%=newletter.title%></div>
+
      </a>
+          <div style="hight:5px;">&nbsp; </div>
      </li>
   <%end%>
 </ul>
+
 

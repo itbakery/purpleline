@@ -1,11 +1,12 @@
 <ul >
   <% @announces.each do |announce|%>
      <li >
+     
      <%= image_tag("new.gif")  if (Date.today - announce.start_on) < 15  %>
      <a href="/announce/<%=announce.id%>">
-     <span class="badge"><%=announce.start_on%></span>
-     <span style="font-size:14px;"><%=announce.title%></span>
-     
+     <span class="badge" style="display:block;"><%=announce.start_on%></span>
+     <div style="font-size:14px;display:block;margin-left:80px;color:#FFF;"><%=announce.title%></div>
+     <div style="hight:5px;">&nbsp; </div>
      
      </a>
      </li>

@@ -3,10 +3,12 @@
      <li style="min-height:1.5em;" >
      <%= image_tag("animated_new.gif")  if (Date.today - event.start_on) < 15  %>
      <a href="/showevent/<%=event.id%>">
-     <span class="badge"><%=event.start_on%></span>
-     <span style="font-size:14px;"><%=event.title%></span>
+     <span class="badge" style="display:block;"><%=event.start_on%></span>
+     <div style="color:"#FFF";font-size:14px;display:block;margin-left:80px;"><%=event.title%></div>
+     <div style="hight:5px;">&nbsp; </div>     
      </a>
      </li>
   <%end%>
 </ul>
+
 
