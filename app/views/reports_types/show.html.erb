@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @reports_type.name %>
+</p>
+
+<p>
+  <b>Cache slug:</b>
+  <%= @reports_type.cache_slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_reports_type_path(@reports_type) %> |
+<%= link_to 'Back', reports_types_path %>

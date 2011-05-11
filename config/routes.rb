@@ -1,6 +1,8 @@
 Purpleline::Application.routes.draw do
 
 
+  resources :reports
+
   #get "static_maps/map"
 
   #get "static_pages/page"
@@ -29,7 +31,9 @@ namespace :admin do
   resources :stations_translations  
   resources :progresses
   resources :users
-
+  resources :reports
+  resources :reports_translations
+  resources :reports_types
 end
   #root :to => "home#present"
   root :to => "home#index",:lang=>"th"

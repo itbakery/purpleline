@@ -1,0 +1,69 @@
+<%= form_for(@reports_translation) do |f| %>
+  <% if @reports_translation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reports_translation.errors.count, "error") %> prohibited this reports_translation from being saved:</h2>
+
+      <ul>
+      <% @reports_translation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :report_id %><br />
+    <%= f.text_field :report_id %>
+  </div>
+  <div class="field">
+    <%= f.label :reports_type_id %><br />
+    <%= f.text_field :reports_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br />
+    <%= f.text_field :language_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longtitude %><br />
+    <%= f.text_field :longtitude %>
+  </div>
+  <div class="field">
+    <%= f.label :start_on %><br />
+    <%= f.date_select :start_on %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_on %><br />
+    <%= f.date_select :stop_on %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :task_id %><br />
+    <%= f.text_field :task_id %>
+  </div>
+  <div class="field">
+    <%= f.label :publish %><br />
+    <%= f.check_box :publish %>
+  </div>
+  <div class="field">
+    <%= f.label :polypoint %><br />
+    <%= f.text_area :polypoint %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

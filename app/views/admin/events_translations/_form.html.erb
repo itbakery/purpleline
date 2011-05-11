@@ -58,10 +58,6 @@
      </li>
   <li>
  
-
-
-
-
   <li>
   <div class="group">
     <%= f.label :latitude, t("activerecord.attributes.events_translation.latitude", :default => "Latitude"), :class => :label %>
@@ -72,7 +68,7 @@
     <%= f.text_field :longtitude, :class => 'text_field' %>
   </div>
   <div class="group">
-    <%= f.label :polypoint, t("activerecord.attributes.events_translation.longtitude", :default => "polypoint"), :class => :label %>
+    <%= f.label :polypoint, t("activerecord.attributes.events_translation.polypoint", :default => "polypoint"), :class => :label %>
     <%= f.text_area :polypoint, :class => 'text_area' %>
   </div>
 
@@ -80,9 +76,6 @@
 
 </ol>  
  
-
-
-
 
   </div> 
 
@@ -96,10 +89,10 @@
         <%end%>
         
 				<%f.fields_for :images do |image_form| %>
-            <%=render 'image_fields', :f=>image_form %>
+                    <%=render 'image_fields', :f=>image_form %>
 				<%end%>
 				<p><%=link_to_add_fields "Add",f,:images%> </p>
- </div> 
+  </div> 
 </div>
 
 <ol class="formatcol-three">

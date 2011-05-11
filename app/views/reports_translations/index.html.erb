@@ -1,0 +1,47 @@
+<h1>Listing reports_translations</h1>
+
+<table>
+  <tr>
+    <th>Report</th>
+    <th>Reports type</th>
+    <th>Language</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Latitude</th>
+    <th>Longtitude</th>
+    <th>Start on</th>
+    <th>Stop on</th>
+    <th>User</th>
+    <th>Task</th>
+    <th>Publish</th>
+    <th>Polypoint</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reports_translations.each do |reports_translation| %>
+  <tr>
+    <td><%= reports_translation.report_id %></td>
+    <td><%= reports_translation.reports_type_id %></td>
+    <td><%= reports_translation.language_id %></td>
+    <td><%= reports_translation.title %></td>
+    <td><%= reports_translation.content %></td>
+    <td><%= reports_translation.latitude %></td>
+    <td><%= reports_translation.longtitude %></td>
+    <td><%= reports_translation.start_on %></td>
+    <td><%= reports_translation.stop_on %></td>
+    <td><%= reports_translation.user_id %></td>
+    <td><%= reports_translation.task_id %></td>
+    <td><%= reports_translation.publish %></td>
+    <td><%= reports_translation.polypoint %></td>
+    <td><%= link_to 'Show', reports_translation %></td>
+    <td><%= link_to 'Edit', edit_reports_translation_path(reports_translation) %></td>
+    <td><%= link_to 'Destroy', reports_translation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reports translation', new_reports_translation_path %>

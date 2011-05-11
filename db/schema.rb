@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509084757) do
+ActiveRecord::Schema.define(:version => 20110511072054) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -215,6 +215,38 @@ ActiveRecord::Schema.define(:version => 20110509084757) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.string   "caption"
+  end
+
+  create_table "reports", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reports_translations", :force => true do |t|
+    t.integer  "report_id"
+    t.integer  "reports_type_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "content"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.date     "start_on"
+    t.date     "stop_on"
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.boolean  "publish"
+    t.text     "polypoint"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reports_types", :force => true do |t|
+    t.string   "name"
+    t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
