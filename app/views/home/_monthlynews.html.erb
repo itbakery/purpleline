@@ -8,7 +8,7 @@
 							<%@allnewletters_month.sort.each do |month,newletters| %>
 									<h3 style="margin-top:10px;background:#9BCAE8;"><%= convertmonth(month.strftime('%B')) %></h3>
 									<% for newletter in newletters %>
-										<li>
+										<li class=<%=cycle('even', 'odd')%>
 										
 											 <span style="font-size:14px;">
 											 <a href="/shownews/<%=newletter.id%>"><%= newletter.title %> </a>

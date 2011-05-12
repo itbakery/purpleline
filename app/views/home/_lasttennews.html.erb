@@ -7,7 +7,7 @@
       <%end%> 
 
 <% @lasttennewletters.each do |newsletter|%>
-            		<li>
+            		<li class=<%=cycle('even', 'odd')%>
             		 <span style="font-size:14px;">
                   <a href="/shownews/<%=newsletter.id%>"><%=newsletter.title%>
                  </span>

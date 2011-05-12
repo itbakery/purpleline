@@ -8,7 +8,7 @@
       <%end%> 
 
 <%  @allannounces.each do |announce|%>
-    <li>
+    <li class=<%=cycle('even', 'odd')%>
         <span style="font-size:14px;">
           <a href="/announce/<%=announce.id%>"><%=announce.title%>
        </span>  
