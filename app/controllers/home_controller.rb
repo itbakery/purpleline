@@ -268,12 +268,12 @@ end
   def progress
   	@progresses = Progress.all
     @h = HighChart.new('graph') do |f|
-      f.title({ :text=>"Progress Report  MRTA Purple Line Project : BANG YAI - BANG SUE SECTION "})
+      f.title({ :text=>"Overall Progress of Civil Works (C1/C2/C3) MRT Purple Line Project : Bang Yai – Bang Sue Section "})
       f.subtitle({:text => "Source from: PCPL "})
       f.legend({:layout=>"vertical",:align=>"right",:verticalAlign=> "top",:borderWidth =>'top',:style=>{:position=>'absolute', :bottom=>'auto', :left=>'0px', :top=>'20px'}})
       f.options[:x_axis][:categories] = @progresses.map(&:month)
       f.options[:x_axis][:labels] = {:rotation=>-90 , :align => 'right'}
-      f.options[:y_axis]={:startOnTick => false,:min=>0,:max=>100}
+      f.options[:y_axis]={:startOnTick => false,:min=>0,:max=>120}
       f.options[:y_axis][:title] = {:text=> "Project Progress (%)"}
       f.series(:type=> 'line',:name=> 'Schedule',:data=>  @progresses.map(&:schedule))
       f.series(:type=> 'line',:name=> 'Actual',:data=>  @progresses.map(&:actual))

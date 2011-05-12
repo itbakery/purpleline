@@ -24,7 +24,7 @@ class HighChart
   
   def defaults_options
     self.title({ :text=>"example test title from plugin"})
-    self.legend({:layout=>"vertical", :style=>{:position=>'absolute', :bottom=>'auto', :left=>'150px', :top=>'150px'} , :borderWidth=> 1,
+    self.legend({:layout=>"vertical", :style=>{:position=>'absolute', :bottom=>'auto', :left=>'5px', :top=>'10px'} , :borderWidth=> 1,
 		:backgroundColor=>'#FFFFFF'}) 
 		self.x_axis(
 		{:categories=> ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -39,7 +39,7 @@ class HighChart
 		self.plot_options({
 			:areaspline => {
 				:fillOpacity => 0.5
-			}
+			},
 		})
 		self.chart({:defaultSeriesType=>"areaspline" , :renderTo => nil})
 		self.subtitle({})
