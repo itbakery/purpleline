@@ -38,4 +38,32 @@ module ApplicationHelper
     link_to_function(name, ("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")").html_safe)
   end
 
+  def convertmonth(month)
+	case month
+	  when "January"
+	     return "มกราคม" 
+	  when "February"  
+	     return  "กุมภาพันธ์" 
+	  when  "March" 
+	     return  "มีนาคม" 
+	  when "April" 
+	     return "เมษายน" 
+	  when "May" 
+	     return  "พฤษภาคม"
+	  when "June" 
+	     return  "มิถุนายน" 
+	  when  "July" 
+	     return "กรกฎาคม" 
+	  when "August" 
+	     return "สิงหาคม" 
+	  when "September" 
+	     return  "กันยายน" 
+	  when  "October" 
+	      return  "ตุลาคม" 
+	  when "November" 
+	      return  "พฤศจิกายน" 
+	  when "December"
+	     return  "ธันวาคม" 
+	end
+  end	
 end

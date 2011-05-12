@@ -4,7 +4,7 @@
   <% @news.each do |newletter|%>
      <li>
 
-     <a href="/newletters/<%=newletter.id%>">
+     <a href="/shownews/<%=newletter.id%>">
      <span class="badge" ><%=newletter.start_on%></span>
      <div style="font-size:14px;display:block;margin-left:80px;color:#FFF;min-height:40px;"><%=newletter.title%>
           <%= image_tag("new.gif")  if (Date.today - newletter.start_on) < 15  %>

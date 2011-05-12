@@ -1,0 +1,18 @@
+
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2 style="margin-top:15px;">All Announces</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2 style="margin-top:15px;">ประกาศทั้งหมด</h2>
+      <%end%> 
+
+<%  @allannounces.each do |announce|%>
+    <li>
+        <span style="font-size:14px;">
+          <a href="/announce/<%=announce.id%>"><%=announce.title%>
+       </span>  
+                  <i style="float:right;"> <%= announce.start_on.to_date.to_s(:long) %></i>
+            		</li> 
+ <%end%>
+</ul>

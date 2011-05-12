@@ -8,10 +8,10 @@
       <%end%> 
 
 <% @allnewletters.each do |newsletter|%>
-            		<li>
-            		<span style="font-size:14px;">
-                  <a href="/shownews/<%=newsletter.id%>"><%=newsletter.title%>
-                </span>  
+    <li>
+        <span style="font-size:14px;">
+          <a href="/shownews/<%=newsletter.id%>"><%=newsletter.title%>
+       </span>  
                   <i style="float:right;"> <%= newsletter.start_on.to_date.to_s(:long) %></i>
             		</li> 
  <%end%>

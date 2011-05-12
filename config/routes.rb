@@ -41,7 +41,7 @@ end
   #get "home/mrta"
   #get "home/present"
   #get "home/filterstation"
-  get   "home/allannounce"
+  get   "/home/allannounce"
   get   "home/lasttenannounce"
   get   "home/monthlyannounce"
   get   "/home/allnews"
@@ -55,6 +55,7 @@ end
   match "/allstation" => "home#allstation"
   match "/main" => "home#index"
   match "/mrta" => "home#mrta"
+  match "/allannounce" =>  "home#allannounce"
   match "/project" => "home#project"
   match "/station/:id" => 'home#station'
   match "/faceboxmap/:id" => 'home#faceboxmap'

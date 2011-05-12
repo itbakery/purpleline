@@ -6,7 +6,7 @@
      	 <h2 style="margin-top:15px;">ข่าวสารประจำเดือน</h2>
       <%end%> 
 							<%@allnewletters_month.sort.each do |month,newletters| %>
-									<b><%= month.strftime('%B') %></b>
+									<h3><%= convertmonth(month.strftime('%B')) %></h3>
 									<% for newletter in newletters %>
 										<li>
 										

@@ -135,6 +135,10 @@ end
   	  @allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	  @allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	end
+  	respond_to do |format|
+  		format.html  {render :layout=>"announce"}		
+  		format.js   {render :layout=>"announce"}
+  	end
   end
   
   def lasttenannounce
@@ -352,4 +356,5 @@ include  Geokit::Mappable
   	redirect_to :action=> "index", :lang=>session[:lang]
   end
   	
+
 end
