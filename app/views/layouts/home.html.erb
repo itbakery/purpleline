@@ -85,11 +85,13 @@
     <img src="../images/global-footer-line.jpg">
   <div class="span-8" id="project">
      <div class="boxmenu">
-        <img src="../images/contruction.png">
+        
 					<%if session[:lang]=="en" %>
+					<a  href="/mrtaview/16"> <img src="../images/contruction.png"></a>
 					 <h2 class="section-title">Latest News&Events</h2>
 					<%end%>
 					<%if session[:lang]=="th" %>
+					<a  href="/mrtaview/40"> <img src="../images/contruction.png"></a>
 					 <h2 class="section-title">ข่าวและเหตุการณ์ล่าสุด</h2>
 					<%end%>          
           <%= render :partial => 'static/event'%>
@@ -99,7 +101,7 @@
   <!-- end project -->
   <div class="span-8" id="progress">
      <div class="boxmenu">
-     <img src="../images/progress.png">
+     <a href="/progress"><img src="../images/progress.png"></a>
 					<%if session[:lang]=="en" %>
 					 <h3 class="section-title">
 					   <a href="/progress" style=""> 
@@ -128,7 +130,7 @@
   <!-- end progress -->
   <div class="span-8 last" id="new_event">
       <div class="boxmenu">
-      <img src="../images/announce.png">   
+      <a href="/home/allnews"><img src="../images/announce.png"></a>   
 					<%if session[:lang]=="en" %>
              <h2 class="section-title">Latest Announcement</h2>
 					<%end%>
