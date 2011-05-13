@@ -5,7 +5,7 @@
       <%if session[:lang]=="th" %>
      	 <h2>ประกาศประจำเดือน</h2>
       <%end%> 
-		<%@allannounces_month.sort.each do |month, announces| %>
+		<%@allannounces_month.each do |month, announces| %>
 		   <h3 style="margin-top:10px;background:#9BCAE8;"><%= convertmonth(month.strftime('%B')) %></h3>
 			<% for announce in announces %>
 			<li class=<%=cycle('even', 'odd')%>
