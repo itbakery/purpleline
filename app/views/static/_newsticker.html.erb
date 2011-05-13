@@ -1,7 +1,8 @@
 <ul id="ticker01">
   <% @announces.each do |announce| %>
      <li>
-      <span class="badge"> <%=announce.start_on%> </span><a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>100,:omission=>"...")%></a>
+      <!-- <span class="badge"> <%=announce.start_on%> </span> -->
+      <a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>100,:omission=>"...")%></a>
      </li>
   <%end%>
 </ul>
