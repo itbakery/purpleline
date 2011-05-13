@@ -5,7 +5,8 @@
 	    var map = new GMap2(document.getElementById("map_div"));
         map.setCenter(new GLatLng(13.83333,100.522413), 13);
         map.setUIToDefault();
-        <%@stations = StationsTranslation.all%>
+        <%@stations = StationsTranslation.where("language_id=?",1) if session[:lang]=="th"%>
+        <%@stations = StationsTranslation.where("language_id=?",2) if session[:lang]=="en"%>
         	<%@stations.each_with_index do |station,index| %>
         	 <%unless station.latitude.nil?%>
            var latlng = new GLatLng(<%=station.latitude%>,<%=station.longtitude%>);
