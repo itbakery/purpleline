@@ -1,3 +1,7 @@
+<p>
+<a href="javascript:printContentDiv('lblPrint');" style="margin-left:600px;text-decoration:none;" ><img src="/images/icon_printer_only.gif" />print</a>
+</p>
+<div id="lblPrint" style="clear:both;">
 <div id="announcebox">
     <ul>
       <%@announces.each do |announce|%>
@@ -15,10 +19,13 @@
                  </div>-->
               </div>
         <%= @map.div(:width => 630, :height => 370).html_safe %>  
+        <!--
         debug<%= @p %>
         debug<%= @polyline %>
+        -->
          </div>     
       </li> 
       <%end%>
   </ui>
+</div>
 </div>

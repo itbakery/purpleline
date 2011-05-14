@@ -161,6 +161,7 @@ function placeMarker() {
   });
 }
 
+
 function updateMarker(marker, cells, opt_changeColor) {
   if (opt_changeColor) {
     var color = getColor(true);
