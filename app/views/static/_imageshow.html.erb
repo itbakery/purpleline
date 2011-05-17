@@ -2,7 +2,7 @@
 <div class="thumb">
 	   <%= link_to(image_tag(image.url(:thumb)), image.url(:large), :class => "lightbox") unless image.nil? %>
 	<div class="phototitle">
-	<%=truncate(image.caption,:length=>10,:omission=>"...")%>
+	<a href="/showreport/<%=image.assetable_id%>"><%=truncate(image.caption,:length=>10,:omission=>"...")%></a>
   </div>
 </div>  
 <%end%> 
