@@ -1,3 +1,8 @@
+  <div class="group">
+    <%= f.hidden_field :user_id, :class => 'text_field' %>
+    Prepare by: <%= @current_user.email %>
+  </div>
+
 <ol class="formatcol-three">
   <li>
   <div class="group">
@@ -80,17 +85,17 @@
   </div> 
 
    <div class="group" id="tabs-2">
-        <%if !@reports_translation.images.nil?%>
+        <%if !@reports_translation.images.blank?%>
             <%@reports_translation.images.each do |image|%>
-            <p><%= image_tag   image.url(:middle)%></p>
+            <p><%= image_tag  image.url(:middle)%></p>
             <%end%>
         <%else%>
-            <p>sorry there is no images relative</p>
+            <p>sorry there is no images </p>
         <%end%>
         
-				<%f.fields_for :images do |image_form| %>
-                    <%=render 'image_fields', :f=>image_form %>
-				<%end%>
+	     <%f.fields_for :images do |image_form| %>
+             <%=render 'image_fields', :f=>image_form %>
+		 <%end%>
 				<p><%=link_to_add_fields "Add",f,:images%> </p>
   </div> 
 </div>
@@ -117,11 +122,6 @@
   </li>
 </ol>
 
-  <div class="group">
-    <%= f.label :user_id, t("activerecord.attributes.reports_translation.user_id", :default => "User"), :class => :label %>
-    <%= f.hidden_field :user_id, :class => 'text_field' %>
-    <%= @current_user.email %>
-  </div>
 
 
 <div class="group navform wat-cf">

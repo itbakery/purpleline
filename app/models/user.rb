@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
   end
   cattr_reader :per_page
   @@per_page = 10
-  has_many :reports_translationsu
+  has_many :reports_translations
   has_many :events_translations
 end
