@@ -6,7 +6,15 @@
      	 <h2 style="margin-top:15px;">ข่าวสารประจำเดือน</h2>
       <%end%> 
 							<%@allnewletters_month.each do |month,newletters| %>
-									<h3 style="margin-top:10px;background:#9BCAE8;"><%= convertmonth(month.strftime('%B')) %></h3>
+									<h3 style="margin-top:10px;background:#9BCAE8;">
+							     <%if session[:lang]=="en" %>
+     	                 <h3><%= month.strftime('%B') %></h3>
+                   <%end%>
+                   <%if session[:lang]=="th" %>
+     	                 <h3><%= convertmonth(month.strftime('%B')) %></h3>
+                   <%end%>
+									
+									</h3>
 									<% for newletter in newletters %>
 										<li class=<%=cycle('even', 'odd')%>
 										

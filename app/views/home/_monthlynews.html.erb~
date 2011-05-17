@@ -5,15 +5,15 @@
       <%if session[:lang]=="th" %>
      	 <h2 style="margin-top:15px;">ข่าวสารประจำเดือน</h2>
       <%end%> 
-							<%@allnewletters_month.sort.each do |month,newletters| %>
-									<b><%= month.strftime('%B') %></b>
+							<%@allnewletters_month.each do |month,newletters| %>
+									<h3 style="margin-top:10px;background:#9BCAE8;"><%= convertmonth(month.strftime('%B')) %></h3>
 									<% for newletter in newletters %>
-										<li>
+										<li class=<%=cycle('even', 'odd')%>
 										
 											 <span style="font-size:14px;">
-											 <a href="/shownews/<%=newletter.id%>"><%= newletter.title %> </a><
+											 <a href="/shownews/<%=newletter.id%>"><%= newletter.title %> </a>
 											 </span>
-											<i style="float:right;"> start on <%= newletter.start_on.to_date.to_s(:long) %></i>
+											<i style="float:right;">  <%= newletter.start_on.to_date.to_s(:long) %></i>
 	
 										</li>
 									<% end %>

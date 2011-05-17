@@ -6,14 +6,14 @@
      	 <h2 style="margin-top:15px;">ข่าวสารประจำเดือน</h2>
       <%end%> 
 							<%@allnewletters_month.sort.each do |month,newletters| %>
-									<b><%= month.strftime('%B') %></b>
+									<h3><%= convertmonth(month.strftime('%B')) %></h3>
 									<% for newletter in newletters %>
 										<li>
 										
 											 <span style="font-size:14px;">
 											 <a href="/shownews/<%=newletter.id%>"><%= newletter.title %> </a>
 											 </span>
-											<i style="float:right;"> start on <%= newletter.start_on.to_date.to_s(:long) %></i>
+											<i style="float:right;">  <%= newletter.start_on.to_date.to_s(:long) %></i>
 										
 										</li>
 									<% end %>
