@@ -53,7 +53,15 @@
           <b><%= t("activerecord.attributes.admin_reports_translation.stop_on", :default => t("activerecord.labels.stop_on", :default => "Stop on")) %>:</b>
           <%= @reports_translation.stop_on %>
         </p>
-
+        <p>
+        <%if !@reports_translation.images.nil?%>
+            <%@reports_translation.images.each do |image|%>
+            <p><%= image_tag   image.url(:middle)%></p>
+            <%end%>
+        <%else%>
+            <p>sorry there is no images </p>
+        <%end%>
+        </p>
         <p>
           <b><%= t("activerecord.attributes.admin_reports_translation.user_id", :default => t("activerecord.labels.user_id", :default => "User")) %>:</b>
           <%= @reports_translation.user_id %>

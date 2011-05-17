@@ -1,4 +1,5 @@
 class Admin::ReportsTranslationsController < ApplicationController
+ before_filter :authenticate_user!
  layout "admin"
   # GET /reports_translations
   # GET /reports_translations.xml
@@ -26,7 +27,10 @@ class Admin::ReportsTranslationsController < ApplicationController
   # GET /reports_translations/new
   # GET /reports_translations/new.xml
   def new
-    @reports_translation = ReportsTranslation.new
+    
+    #@reports_translation = ReportsTranslation.new
+    @reports_translation = current_user.reports_translations.new
+    @current_user = current_user
     3.times do 
     	@reports_translation.images.build
     end

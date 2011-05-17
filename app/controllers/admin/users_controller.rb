@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-	 layout "admin"
+   layout "admin"
    before_filter :authenticate_user!
    def index
    	 page = params[:page] || 1

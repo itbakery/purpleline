@@ -43,7 +43,8 @@ class HomeController < ApplicationController
   	if params[:id]
   		@category = Category.find(params[:id])	
   		@category.announces.each do |a|
-  			@announces <<  AnnouncesTranslation.where(:announce_id=>a.id)
+  			@announces <<  AnnouncesTranslation.where(:announce_id=>a.id).where("language_id=?",1)  if session[:lang]=="th"
+  			@announces <<  AnnouncesTranslation.where(:announce_id=>a.id).where("language_id=?",2)  if session[:lang]=="en"
   		end		
    end  
   render :layout=>"announce"
