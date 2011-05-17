@@ -15,9 +15,34 @@
   <%= @map.to_html.html_safe rescue nil %>
   <%= csrf_meta_tag %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <script language="javascript">
+function printContentDiv(content){
+var printReady = document.getElementById(content);
+var txt= '</br><h3>ข้อมูลโครงการรถไฟฟ้าสายสีม่วง </h3>';
+
+if (document.getElementsByTagName != null){
+var txtheadTags = document.getElementsByTagName("head");
+if (txtheadTags.length > 0){
+var str=txtheadTags[0].innerHTML;
+txt += str; // str.replace(/funChkLoad();/ig, ” “);
+}
+}
+txt += 'การรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย   175 ถ.พระราม 9 ห้วยขวาง กรุงเทพฯ 10320';
+if (printReady != null){
+txt += printReady.innerHTML;
+}
+txt += '<center>โทร. 0 2612 2444 โทรสาร. 0 2612 2436 </center>';
+var printWin = window.open();
+printWin.document.open();
+printWin.document.write(txt);
+printWin.document.close();
+printWin.print();
+
+}
+</script>
 </head>
 <body>
-<!-- <%= render :partial => 'static/login'%> --> 
+
 <div class="container  maincontainer bluebg">
   <div class="span-24 last" id="header">
      <div id="title">
@@ -47,7 +72,7 @@
   </div>
   <!-- end header -->
   <div class="span-24 page_header last" id="banner">
-    <img src="../images/announcebanner.jpg">
+    <img src="../images/news.jpg">
   <div class="span-6" id="announcement">
    <div class="contentbox_3">
   <%= render :partial => '/static/leftmenu-news'%>

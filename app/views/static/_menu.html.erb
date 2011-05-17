@@ -25,7 +25,7 @@
                        <%if  c.icon.exists? then %>
                           <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
                        <%end%>
-                       <a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a>
+                          <span style="margin-left: 25px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a> </span>
                     </li>
                      <%end%>                      
                     </ul>   
@@ -57,8 +57,8 @@
                <li><a href="#">Bridge</a></li> 
                <li class="underline"><a href="#">Railsways System</a></li>                
 			</div>
-      <hr  style="border: 1px dotted #736F6E;" >
-                        <li><a href="#">Photo & Video</a></li>
+      <hr  style="border: 1px dotted #736F6E;width:200px;" >
+                        <li><a href="#">Progress Photo</a></li>
                         <li><a href="/progress">Graph</a></li>
       </ul>   
                      
@@ -85,13 +85,13 @@
 								 <li><a href="#">Chao Pharaya River Bridge</a></li>
 				</div>
 				<div class="">
-					 <h3>Special Systems</h3>
+					 <h3 style="width:200px;">Special Systems</h3>
 				</div>
 													<li><a style="padding-left:15px;" href="/pageview/23">Trackworks</a></li>
 													<li><a style="padding-left:15px;" href="/pageview/24">Railways Systems</a></li>
 													<li><a style="padding-left:15px;" href="/pageview/25">Rolling Stock</a></li>				
 				<div class="">
-					 <h3>Facilities</h3>
+					 <h3 style="width:200px;">Facilities</h3>
 				</div>			
 													<li><a style="padding-left:15px;" href="#">Lifts & Escalators</a></li>
 													<li><a style="padding-left:15px;" href="#">Handicap Facility</a></li>													
