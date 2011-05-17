@@ -49,18 +49,6 @@
        <%= link_to image_tag("th.png", :border=>0, :size=>"51x28"), :action => 'setlang', :lang=>"th" %>
        <%= link_to image_tag("en.png", :border=>0, :size=>"36x28"), :action => 'setlang', :lang=>"en" %>
     </div>
-    <!--
-    <div id="user_nav">
-         <% if user_signed_in? %>
-            Signed in as <%= current_user.email %>. Not you?
-            <%= link_to "Sign out", destroy_user_session_path %>
-         <% else %>
-            <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        <% end %>
-    </div>
-    -->
-    
-
     <div class="clear span-24 last" id="">
     	<%if session[:lang]=="en" %>
      	 <%= render :partial => '/static/menu'%>

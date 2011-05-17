@@ -28,9 +28,7 @@ class HighChart
 		:backgroundColor=>'#FFFFFF'}) 
 		self.x_axis(
 		{:categories=> ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-			:plotBands=> [{ 
-        :from=> 6.0,:to=> 6.5,:color=> 'rgba(68, 170, 213, .2)'
-			}],
+			#:plotBands=> [{ :from=> 6.0,:to=> 6.5,:color=> 'rgba(68, 170, 213, .2)'}],
 		 :labels=>{ :align=>'right',:rotation=>45 }
 		})
 		self.y_axis({:title=> {:text=> 'Fruit units'}, :labels=>{:align=>'right'} })

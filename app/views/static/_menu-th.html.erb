@@ -20,9 +20,9 @@
                 <div class="col_1">
                     <ul class="simple">
                     <% Category.all.each do |c| %>
-                    <li>
+                    <li style="position:relative;">
                        <%if  c.icon.exists? then %>
-                          <%= image_tag c.icon.url(:iconsmall), :size => "22x22"%>
+                          <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
                        <%end%>
                        <a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a>
                     </li>
