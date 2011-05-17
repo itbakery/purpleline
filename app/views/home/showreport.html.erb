@@ -4,16 +4,20 @@
 <div id="lblPrint" style="clear:both;">
 <div id="announcebox">
     <ul>
-      <%@newletters.each do |newletter|%>
+      <%@reports.each do |report|%>
        <li>
-        <h3  class="blockReplace" style="padding-top:10px;"><%=newletter.title%></h3>
+        <h3  class="blockReplace" style="padding-top:10px;"><%=report.title%></h3>
          <div class="group">
                <div class="envelope">
                  <div class="left">
-                 <%=newletter.content.html_safe%> 
+                 <%=report.content.html_safe%> 
+                 </div>
+                 <div class="envelope">
+                    <%=render :partial=> 'static/imageshow'%>
                  </div>
               </div>
-              <% unless @map.nil? %>    
+              <% unless @map.nil? %> 
+                
                 <%= @map.div(:width => 660, :height => 370).html_safe %>  
               <%end%>
          </div>     

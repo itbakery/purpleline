@@ -65,6 +65,7 @@ end
   match "/category/:id" => 'home#category'   
   match "/announce/:id" => 'home#announcement' 
   match "/showevent/:id" => 'home#showevent'   
+  match "/showreport/:id" => 'home#showreport'   
   match "/shownews/:id" => 'home#shownews'   
   match "/progress" => 'home#progress'
   match "/filterstation/:id" => 'home#filterstation'

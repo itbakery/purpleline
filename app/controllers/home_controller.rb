@@ -104,6 +104,30 @@ end
  	  render :layout=>"event"
   end
   
+  def showreport 	
+  	if params[:id]
+  		@reports = ReportsTranslation.where("id=?",params[:id]).where("publish =?",1)
+  	coordinates = ["#{@reports.first.latitude rescue nil}","#{@reports.first.longtitude rescue nil}"]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)	
+    @gmarker = GMarker.new(coordinates,:title => "#{@reports.first.title rescue nil}")
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+  	else
+  		@reports = ReportsTranslation.order("start_on desc")
+  	end
+  	
+  	  	@images = PurpleAsset.where("type=?","Report::Image").limit(16)
+  	@allreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@allreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	
+  	@allreports_month = @allreports.group_by { |t| t.start_on.beginning_of_month}
+  	@lasttenreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@lasttenreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+ 	  render :layout=>"report"
+  end
+  
   def shownews  	
   	if params[:id]
   	@newletters = NewslettersTranslation.where("id=?",params[:id]).where("publish =?",1)

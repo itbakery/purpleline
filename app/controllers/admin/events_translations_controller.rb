@@ -58,6 +58,7 @@ class Admin::EventsTranslationsController < ApplicationController
 
   # GET /events_translations/1/edit
   def edit
+    @current_user = current_user
     @events_translation = EventsTranslation.find(params[:id])
     coordinates = [@events_translation.latitude,@events_translation.longtitude]
     @map = GMap.new("map")

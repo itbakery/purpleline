@@ -47,8 +47,8 @@ class Admin::ReportsTranslationsController < ApplicationController
       var tmp = latlng.split(',');
       var px = tmp[0];
       var py = tmp[1];
-      jQuery('#announces_translation_latitude').val(px);
-      jQuery('#announces_translation_longtitude').val(py);
+      jQuery('#reports_translation_latitude').val(px);
+      jQuery('#reports_translation_longtitude').val(py);
        }")
 
     respond_to do |format|
@@ -59,7 +59,34 @@ class Admin::ReportsTranslationsController < ApplicationController
 
   # GET /reports_translations/1/edit
   def edit
+      @current_user = current_user    
+    @current_user = current_user
     @reports_translation = ReportsTranslation.find(params[:id])
+    coordinates = [@reports_translation.latitude,@reports_translation.longtitude]
+    @map = GMap.new("map")
+    @map.control_init(:large_map => true, :map_type => true)
+    @map.center_zoom_init(coordinates,15)
+    @gmarker = GMarker.new(coordinates,:title => "Drag to Select Station", :info_window => "Drag to Select", :draggable => true)
+    @map.overlay_global_init(@gmarker, "gmarker")
+    @map.overlay_init(@gmarker)
+
+    @map.event_init(@gmarker, :dragend, "function(){
+      var latlng = gmarker.getLatLng().toUrlValue();
+      var tmp = latlng.split(',');
+      var px = tmp[0];
+      var py = tmp[1];
+      jQuery('#reports_translation_latitude').val(px);
+      jQuery('#reports_translation_longtitude').val(py);
+       }")  
+    
+    
+    
+    
+    
+    
+    
+    
+    
   end
 
   # POST /reports_translations
