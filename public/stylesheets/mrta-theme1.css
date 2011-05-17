@@ -137,7 +137,8 @@ line-height:1.2em;
 
 #announcebox  .group {
   border-top:1px solid #BEDCE7;
-
+  width:660px;
+  clear:both;
 }
 
 #announcebox   .envelope {

@@ -1,32 +1,24 @@
 <p>
-<a href="javascript:printContentDiv('lblPrint');" style="margin-left:600px;text-decoration:none;" ><img src="/images/icon_printer_only.gif" />print</a>
+<a href="javascript:printContentDiv('lblPrint');" style="margin-left:600px;text-decoration:none;" ><span style="margin-top:5px;"><img src="/images/icon_printer_only.gif" /></span>print</a>
 </p>
 <div id="lblPrint" style="clear:both;">
 <div id="announcebox">
     <ul>
       <%@announces.each do |announce|%>
        <li>
-        <h3 class="blockReplace" style="padding-top:10px;" ><%=announce.title%></h3>
+        <h3 class="blockReplace" style="padding-top:10px;lear:both" ><%=announce.title%></h3></br>
          <div class="group">
                <div class="envelope">
                  <div class="left">
                  <%=announce.content.html_safe%> 
                    <h4>For more information, please contact: 0 2965 6000</h4>
                  </div>
-                <!-- <div class="right">
-                 From:<%=announce.start_on%>
-                 To:<%=announce.stop_on%>
-                 </div>
-                 -->
               </div>
-        <%= @map.div(:width => 630, :height => 370).html_safe %>  
-        <!--
-        debug<%= @p %>
-        debug<%= @polyline %>
-        -->
+           <%= @map.div(:width => 630, :height => 370).html_safe %>  
          </div>     
       </li> 
       <%end%>
-  </ui>
+   </ui>
 </div>
 </div>
+
