@@ -6,10 +6,10 @@
      	 <h2 style="margin-top:15px;">ข่าวสารประจำเดือน</h2>
       <%end%> 
 							<%@allnewletters_month.sort.each do |month,newletters| %>
-							     <%if session[:lang]=="en" %>
+							     <%if session[:lang]=="th" %>
      	                 <h3><%= month.strftime('%B') %></h3>
                    <%end%>
-                   <%if session[:lang]=="th" %>
+                   <%if session[:lang]=="en" %>
      	                 <h3><%= convertmonth(month.strftime('%B')) %></h3>
                    <%end%> 
 									

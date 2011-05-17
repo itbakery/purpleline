@@ -7,10 +7,10 @@
       <%end%> 
 		<%@allannounces_month.order("start_on desc").each do |month, announces| %>
 		   <h3>
-	     <%if session[:lang]=="en" %>
+	     <%if session[:lang]=="th" %>
      	    <h3><%= month.strftime('%B') %></h3>
        <%end%>
-       <%if session[:lang]=="th" %>
+       <%if session[:lang]=="en" %>
      	    <h3><%= convertmonth(month.strftime('%B')) %></h3>
        <%end%>
 		   </h3>
