@@ -7,9 +7,12 @@
         <% unless announce.nil? %>
 			   <li>
                    <%announce.order("start_on DESC").each do  |ann|%>
-						<h3> <span class="badge" style="float:left;font-size:12px;"> <%=ann.start_on  %> </span>
-						<%= image_tag("new.gif")  if (Date.today - ann.start_on) < 15  %>
-						<a href="/announce/<%=ann.id%>"> <%=ann.title%> </a>  </h3>
+						<h3 class="blockReplace" style="padding-top:10px;"> 
+						<span class="badge" style="float:left;font-size:12px;"> <%=ann.start_on  %>
+						</br><%= image_tag("new.gif")  if (Date.today - ann.start_on) < 15  %></span>
+						  
+						  <a href="/announce/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none"> <%=ann.title%> </a>
+						</h3>
 
 						 <div class="group">
 							   <div class="envelope">

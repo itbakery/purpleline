@@ -2,7 +2,7 @@
     <ul>
       <%@announces.each do |announce|%>
        <li>
-        <h3 ><%=announce.title%></h3>
+        <h3 class="blockReplace" style="padding-top:10px;"><%=announce.title%></h3>
          <div class="group">
                <div class="envelope">
                  <h4>Detail</h4>
@@ -15,9 +15,10 @@
                  To:<%=announce.stop_on%>
                  </div>-->
               </div>
-        <%= @map.div(:width => 630, :height => 370).html_safe %>  
+       
         
          </div>     
+          <%= @map.div(:width => 630, :height => 665).html_safe %>  
       </li> 
       <%end%>
   </ui>

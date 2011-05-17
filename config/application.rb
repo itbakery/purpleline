@@ -34,7 +34,7 @@ module Purpleline
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     #config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui  slide s3Slider rails )
     Paperclip::Railtie.insert
-    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui rails highcharts highcharts-theme  s3Slider slider facebox jquery.li-scroller jquery.lightbox-0.5 )
+    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui rails highcharts highcharts-theme  s3Slider  facebox jquery.li-scroller jquery.lightbox-0.5 )
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
