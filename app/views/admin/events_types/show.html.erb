@@ -10,10 +10,13 @@
     <div class="inner">
       
         <p>
-          <b><%= t("activerecord.attributes.admin_events_type.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
-          <%= @events_type.name %>
+          <b><%= t("activerecord.attributes.admin_events_type.name_th", :default => t("activerecord.labels.name_th", :default => "Name_TH")) %>:</b>
+          <%= @events_type.name_th %>
         </p>
-
+        <p>
+          <b><%= t("activerecord.attributes.admin_events_type.name_en", :default => t("activerecord.labels.name_en", :default => "Name_EN")) %>:</b>
+          <%= @events_type.name_en %>
+        </p>
         <p>
           <b><%= t("activerecord.attributes.admin_events_type.cache_slug", :default => t("activerecord.labels.cache_slug", :default => "Cache slug")) %>:</b>
           <%= @events_type.cache_slug %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110518084452) do
+ActiveRecord::Schema.define(:version => 20110518095558) do
 
   create_table "announces", :force => true do |t|
     t.string   "name"
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20110518084452) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "cache_slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_events_types", :id => false, :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "events_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -225,6 +232,13 @@ ActiveRecord::Schema.define(:version => 20110518084452) do
     t.datetime "updated_at"
   end
 
+  create_table "reports_reports_types", :id => false, :force => true do |t|
+    t.integer  "report_id"
+    t.integer  "reports_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "reports_translations", :force => true do |t|
     t.integer  "report_id"
     t.integer  "reports_type_id"
@@ -244,10 +258,11 @@ ActiveRecord::Schema.define(:version => 20110518084452) do
   end
 
   create_table "reports_types", :force => true do |t|
-    t.string   "name"
+    t.string   "name_th"
     t.string   "cache_slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_en"
   end
 
   create_table "roles", :force => true do |t|

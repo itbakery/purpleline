@@ -12,9 +12,7 @@
   </div>
  <div class="group"> 
    <label class="label">Select  Announcement Category</label>
-  <% for category in Category.all %>
-
- 
+<% for category in Category.all %>
   <%= check_box_tag "announce[category_ids][]", category.id, @announce.categories.include?(category) %>
   <%= category.name_en %>
 <% end %>

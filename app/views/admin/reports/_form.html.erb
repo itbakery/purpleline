@@ -10,7 +10,12 @@
     <%= f.text_field :cache_slug, :class => 'text_field' %>
     <span class="description">Ex: a simple text</span>
   </div>
-        
+  
+<% for reportcategory in ReportsType.all %>
+  <%= check_box_tag "report[reports_type_ids][]", reportcategory.id, @report.reports_types.include?(reportcategory) %>
+  <%= reportcategory.name_en %>
+<% end %>
+
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>

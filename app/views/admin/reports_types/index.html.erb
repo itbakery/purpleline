@@ -12,8 +12,11 @@
         <tr>             
           <th class="first">ID</th>
                     <th>
-            <%= t("activerecord.attributes.admin_reports_type.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+            <%= t("activerecord.attributes.admin_reports_type.name_th", :default => t("activerecord.labels.name_th", :default => "Name_TH")) %>
           </th>
+                    <th>
+            <%= t("activerecord.attributes.admin_reports_type.name_en", :default => t("activerecord.labels.name_en", :default => "Name_EN")) %>
+          </th>          
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
@@ -22,9 +25,12 @@
           <td>
             <%= reports_type.id %>
           </td>
-                    <td>
-            <%= link_to reports_type.name, admin_reports_type_path(reports_type) %>
+          <td>
+            <%= link_to reports_type.name_th, admin_reports_type_path(reports_type) %>
           </td>
+          <td>
+            <%= link_to reports_type.name_en, admin_reports_type_path(reports_type) %>
+          </td>          
                     <td>
             <%= reports_type.created_at %>
           </td>
