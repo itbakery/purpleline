@@ -21,23 +21,28 @@
                 <div class="col_1">
                     <ul class="simple">
                     <% Category.all.each do |c| %>
-                    <li>
+                    <li style="position:relative;">
                        <%if  c.icon.exists? then %>
                           <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
                        <%end%>
-                          <span style="margin-left: 25px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a> </span>
+                           <span style="margin-left: 25px;margin-top:2px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a></sapn>
                     </li>
                      <%end%>                      
                     </ul>   
                 </div>
          <h3>Events</h3>
-                <div class="col_1">
-                    <ul class="simple">
-
-                        <li><a href="">Public/Social Events</a></li>
-
-                    </ul>   
-                </div>                
+                <div class="col_1">                        
+				<ul class="simple">
+                    <% EventsType.all.each do |c| %>
+                    <li style="position:relative;">
+                       <%if  c.icon.exists? then %>
+                          <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+                       <%end%>
+                           <span style="margin-left: 25px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a></sapn>
+                    </li>
+                     <%end%>                      
+                 </ul>  
+                </div>              
 		</div>
 	</li>
 
@@ -46,24 +51,26 @@
 
 	<li class="menu_right"><a href="/progress" class="drop">Progress</a>
 		<div class="dropdown_1column ">
-                <div class="col_1">
-     <ul class="simple">
+             <div class="col_1">
+				<ul class="simple">
+                <% ReportsType.all.each do |c| %>
+					<li style="position:relative;">
+						<%if  c.icon.exists? then %>
+							  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+						<%end%>
+							   <span style="margin-left: 25px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
+					</li>
+                <%end%>                      
+                </ul> 
+            <ul class="simple">
 			<div class="">
-               <li><a href="#">Elevated Works</a></li>
-               <li><a href="#">Stations</a></li>
-               <li><a href="#">Depot</a></li>
-               <li><a href="#">Park & Ride Buildings</a></li>
-               
-               <li><a href="#">Bridge</a></li> 
-               <li class="underline"><a href="#">Railsways System</a></li>                
-			</div>
-      <hr  style="border: 1px dotted #736F6E;width:200px;" >
-                        <li><a href="#">Progress Photo</a></li>
-                        <li><a href="/progress">Graph</a></li>
-      </ul>   
+                <li class="underline"></li>                
+               <li><a href="#">Progress's Photo</a></li>
+               <li><a href="/progress">Phogress's Graph</a></li>
+           </div>   
+           </ul>   
                      
-                </div>
-                
+       </div>      
 		</div>
         
 	</li>
