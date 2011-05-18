@@ -17,10 +17,12 @@
           <b><%= t("activerecord.attributes.admin_reports_type.name_en", :default => t("activerecord.labels.name_en", :default => "Name_EN")) %>:</b>
           <%= @reports_type.name_en %>
         </p>
-        <p>
-          <b><%= t("activerecord.attributes.admin_reports_type.cache_slug", :default => t("activerecord.labels.cache_slug", :default => "Cache slug")) %>:</b>
-          <%= @reports_type.cache_slug %>
-        </p>
+
+           <p>icon:
+           <%if  @reports_type.icon.exists? then %>
+                 <%= image_tag @reports_type.icon.url(:iconsmall) %>
+           <%end%>
+           </p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_reports_type_path(@reports_type), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_reports_type_path(@reports_type), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

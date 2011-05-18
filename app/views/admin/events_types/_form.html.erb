@@ -11,11 +11,14 @@
 
   </div>
 
-  <div class="group">
-    <%= f.label :cache_slug, t("activerecord.attributes.events_type.cache_slug", :default => "Cache slug"), :class => :label %>
-    <%= f.text_field :cache_slug, :class => 'text_field' %>
-  </div>
-        
+
+  
+
+<div class="group">
+   <label class="label">Upload icon</label>
+   <%=f.file_field  :icon%> 
+ </div>  
+   
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
