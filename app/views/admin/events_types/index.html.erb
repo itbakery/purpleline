@@ -11,10 +11,14 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
-            <%= t("activerecord.attributes.admin_events_type.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          <th>
+            <%= t("activerecord.attributes.admin_events_type.name_th", :default => t("activerecord.labels.name_th", :default => "Name_TH")) %>
           </th>
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th>
+            <%= t("activerecord.attributes.admin_events_type.name_en", :default => t("activerecord.labels.name_en", :default => "Name_EN")) %>
+          </th>        
+          
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @events_types.each do |events_type| -%>
@@ -22,10 +26,13 @@
           <td>
             <%= events_type.id %>
           </td>
-                    <td>
-            <%= link_to events_type.name, admin_events_type_path(events_type) %>
+          <td>
+            <%= link_to events_type.name_th, admin_events_type_path(events_type) %>
           </td>
-                    <td>
+          <td>
+            <%= link_to events_type.name_en, admin_events_type_path(events_type) %>
+          </td>          
+          <td>
             <%= events_type.created_at %>
           </td>
           <td class="last">
