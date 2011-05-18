@@ -14,6 +14,9 @@
                     <th>
             <%= t("activerecord.attributes.admin_reports_translation.report_id", :default => t("activerecord.labels.report_id", :default => "Report_id")) %>
           </th>
+         <th>
+            <%= t("activerecord.attributes.admin_reports_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
+          </th>  
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
@@ -24,6 +27,9 @@
           </td>
                     <td>
             <%= link_to reports_translation.report_id, admin_reports_translation_path(reports_translation) %>
+          </td>
+                    <td>
+            <%= reports_translation.title %>
           </td>
                     <td>
             <%= reports_translation.created_at %>
