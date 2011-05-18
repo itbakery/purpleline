@@ -46,16 +46,27 @@
 	<li class="menu_right"><a href="/progress" class="drop">ความก้าวหน้า</a>
 		<div class="dropdown_1column ">
                 <div class="col_1">
+				<ul class="simple">
+                    <% EventsType.all.each do |c| %>
+                    <li style="position:relative;">
+                       <%if  c.icon.exists? then %>
+                          <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+                       <%end%>
+                           <span style="margin-left: 25px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
+                    </li>
+                     <%end%>                      
+                 </ul> 
+					
+					
+					
+					
+					
      <ul class="simple">
 			<div class="">
-               <li><a href="#">ทางรถไฟยกระดับ</a></li>
-               <li><a href="/allstation">สถานีรถไฟฟ้า</a></li>
-               <li><a href="#">ศูนย์ซ่อมบำรุง</a></li>
-               <li><a href="#">อาคารจอดรถ</a></li>
-               <li><a href="#">สะพานข้ามแม่น้ำ</a></li> 
-               <li class="underline"><a href="#">งานระบบรถไฟฟ้า</a></li>                
+                <li class="underline"></li>                
                <li><a href="#">ภาพถ่ายความคืบหน้า</a></li>
                <li><a href="/progress">แผนภูมิความก้าวหน้า</a></li>
+           </div>   
       </ul>   
                      
     </div>
@@ -119,16 +130,6 @@
 	
 	</li>
 	<li class="menu_right"><a href="/main?lang=th" class="drop">หน้าแรก</a>
-	<!--
-		<div class="dropdown_1column align_right">
-                <div class="col_1">
-                    <ul class="simple">
-										<div class="">
-										</div>
-                    </ul>   
-                </div>
-		</div>
-	-->
 	</li>	
 </ul>
 
