@@ -30,12 +30,18 @@
                     </ul>   
                 </div>
          <h3>เหตุการณ์</h3>
-                <div class="col_1">
-                    <ul class="simple">
-
-                        <li><a href="">กิจกรรมประชาสัมพันธ์และมวลชนสัมพันธ์</a></li>
-
-                    </ul>   
+                <div class="col_1">                        
+				<ul class="simple">
+					<li><a href="">กิจกรรมประชาสัมพันธ์และมวลชนสัมพันธ์</a></li>
+                    <% EventsType.all.each do |c| %>
+                    <li style="position:relative;">
+                       <%if  c.icon.exists? then %>
+                          <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+                       <%end%>
+                           <span style="margin-left: 25px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
+                    </li>
+                     <%end%>                      
+                 </ul>  
                 </div>                
 		</div>
 	</li>
@@ -47,7 +53,7 @@
 		<div class="dropdown_1column ">
                 <div class="col_1">
 				<ul class="simple">
-                    <% EventsType.all.each do |c| %>
+                    <% ReportsType.all.each do |c| %>
                     <li style="position:relative;">
                        <%if  c.icon.exists? then %>
                           <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
@@ -56,10 +62,6 @@
                     </li>
                      <%end%>                      
                  </ul> 
-					
-					
-					
-					
 					
      <ul class="simple">
 			<div class="">
