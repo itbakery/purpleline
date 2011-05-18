@@ -5,4 +5,4 @@ tmp/**/*
 config/database.yml
 public/system/*
 public/report/*
-public/icon/*
+public/icons/*
