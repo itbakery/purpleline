@@ -183,6 +183,36 @@ end
   end
   
   
+  def allreport
+    if params[:search] 
+      @reports = ReportsTranslation.search params[:search]
+    else
+  	  @reports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	  @reports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	end
+  	respond_to do |format|
+  		format.html  {render :layout=>"report"}		
+  		format.js   {render :layout=>"report"}
+  	end
+  end
+  
+  def lasttestreport
+  	@lasttestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@lasttestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  end
+  
+  def monthlyreport
+  	@reprots = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@reports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	
+  	@reports_month = @reports.group_by { |t| t.start_on.beginning_of_month}
+  	respond_to do |format|
+  		format.html  {render :layout=>'report'}		
+  		format.js   {render :layout=>'report'}
+  	end
+  end
+  
+  
   def  allnews
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"

@@ -6,15 +6,15 @@
 <ol class="formatcol-three">
   <li>
   <div class="group">
-    <%= f.label :event_id, t("activerecord.attributes.reports_translation.event_id", :default => "Event"), :class => :label %>
-    <%= f.collection_select :report_id,Event.all,:id,:name,{:prompt=>"Select Event"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.label :report_id, t("activerecord.attributes.reports_translation.report_id", :default => "Report"), :class => :label %>
+    <%= f.collection_select :report_id,Report.all,:id,:name,{:prompt=>"Select Report"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
   </li>
   <li>
   <div class="group">
-    <%= f.label :events_type_id, t("activerecord.attributes.reports_translation.events_type_id", :default => "Events type"), :class => :label %>
-    <%= f.collection_select :reports_type_id, EventsType.all,:id,:name,{:prompt=>"Select Event Type"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.label :events_type_id, t("activerecord.attributes.reports_translation.reports_type_id", :default => "Reports type"), :class => :label %>
+    <%= f.collection_select :reports_type_id, ReportsType.all,:id,:name,{:prompt=>"Select Report Type"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
  </li>
