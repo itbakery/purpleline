@@ -48,7 +48,31 @@ class HomeController < ApplicationController
   		end		
    end  
   render :layout=>"announce"
-end
+  end
+  
+    def eventstype  	
+    @events = []
+  	if params[:id]
+  		@eventstype = EventsType.find(params[:id])	
+  		@eventstype.events.each do |a|
+  			@events <<  EventsTranslation.where(:event_id=>a.id).where("language_id=?",1)  if session[:lang]=="th"
+  			@events <<  EventsTranslation.where(:event_id=>a.id).where("language_id=?",2)  if session[:lang]=="en"
+  		end		
+   end  
+  render :layout=>"event"
+  end
+  
+    def reportstype  	
+    @reports = []
+  	if params[:id]
+  		@reportstype = ReportsType.find(params[:id])	
+  		@reportstype.reports.each do |a|
+  			@reports <<  ReportsTranslation.where(:report_id=>a.id).where("language_id=?",1)  if session[:lang]=="th"
+  			@reports <<  ReportsTranslation.where(:report_id=>a.id).where("language_id=?",2)  if session[:lang]=="en"
+  		end		
+   end  
+  render :layout=>"report"
+  end
 
   def announcement  	
    if params[:id]

@@ -1,0 +1,39 @@
+<h2 style="line-height:1.5em;"><%=@reportstype.name_th if session[:lang]=="th" %> <%=@reportstype.name_en if session[:lang]=="en" %></h2>
+<% if @reports  %>
+	
+<div id="announcebox">
+    <ul>
+      <%@reports.each do |report|%>
+        <% unless report.nil? %>
+			   <li>
+                   <%report.order("start_on DESC").each do  |ann|%>
+						<h3 class="blockReplace" style="padding-top:10px;"> 
+						<span class="badge" style="float:left;font-size:12px;"> <%=ann.start_on  %>
+						</br><%= image_tag("new.gif")  if (Date.today - ann.start_on) < 15  %></span>
+						  
+						  <a href="/announce/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none"> <%=ann.title%> </a>
+						</h3>
+
+						 <div class="group">
+							   <div class="envelope">
+								 <div class="left clear">
+								 <%=ann.content.html_safe%> 
+								 <h4><%= "For more information, please contact: 0 2965 6000 " if session[:lang]=="en" %></h4>
+								 <h4><%= "ต้องการข้อมูลเพิ่มเติม กรุณาติดต่อ: 0 2965 6000 " if session[:lang]=="th" %></h4>      
+								 </div>
+							  </div> 
+						 </div> 
+                   <%end%>
+				     
+			  </li> 
+		 <%end%>
+      <%end%>
+  </ui>
+</div>
+
+
+<%else%>
+<p> No Infomation in this Reports</p>
+<%end%>
+
+     

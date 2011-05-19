@@ -47,6 +47,9 @@ end
   get   "/home/allnews"
   get   "/home/lasttennews"
   get   "/home/monthlynews"
+  get   "/home/allreport"
+  get   "home/lasttestreport"
+  get   "home/monthlyreport"
   get   "home/setlang"
   #match "/googlehostedservice.html"
   match "/page/:filename.:format" => "static_pages#page"
@@ -63,6 +66,9 @@ end
   match "/pageview/:id" => 'home#pageview'
   match "/mrtaview/:id" => 'home#mrtaview' 
   match "/category/:id" => 'home#category'   
+  match "/eventstype/:id" => 'home#eventstype'   
+  match "/reportstype/:id" => 'home#reportstype'   
+  
   match "/announce/:id" => 'home#announcement' 
   match "/showevent/:id" => 'home#showevent'   
   match "/showreport/:id" => 'home#showreport'   
