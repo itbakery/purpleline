@@ -5,16 +5,16 @@
 <div class="rectangle-t"><h3 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>Events</h3>
 <%end%>
 <%if session[:lang]=="th" %>
-<div class="rectangle-t"><h3 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>เหตุการณ์</h3>
+<div class="rectangle-t"><h3 style="hight:29px;"><%= image_tag("mrta-hg-ss.png")%>กิจกรรม</h3>
 <%end%>
 </div>
 <%if session[:lang]=="en" %>
     <div class="info">
       <ul id="menuleft">
       
-      <li class='toggle'><%=link_to "All Events", {:action=>'allannounce'}, :remote => true %></a></li> 
-      <li class='toggle'><%=link_to "Lastest Events", {:action=>'lasttenannounce'}, :remote => true %></a></li> 
-      <li class='toggle'><%=link_to "Monthly Events", {:action=>'monthlyannounce'}, :remote => true %></a></li>      
+      <li class='toggle'><%=link_to "All Events", {:action=>'allevent'}, :remote => true %></a></li> 
+      <li class='toggle'><%=link_to "Lastest Events", {:action=>'lasttestevent'}, :remote => true %></a></li> 
+      <li class='toggle'><%=link_to "Monthly Events", {:action=>'monthlyevent'}, :remote => true %></a></li>      
 
      </ul>
   </div>
@@ -26,9 +26,9 @@
     <div class="info">
       <ul id="menuleft">
       
-      <li class='toggle'><%=link_to "ประกาศทั้งหมด", {:action=>'allannounce'}, :remote => true %></a></li>            
-      <li class='toggle'><%=link_to "ประกาศล่าสุด", {:action=>'lasttenannounce'}, :remote => true %></a></li>  
-      <li class='toggle'><%=link_to "ประกาศประจำเดือน", {:action=>'monthlyannounce'}, :remote => true %></a></li>      
+      <li class='toggle'><%=link_to "กิจกรรมทั้งหมด", {:action=>'allevent'}, :remote => true %></a></li>            
+      <li class='toggle'><%=link_to "กิจกรรมล่าสุด", {:action=>'lasttestevent'}, :remote => true %></a></li>  
+      <li class='toggle'><%=link_to "กิจกรรมประจำเดือน", {:action=>'monthlyevent'}, :remote => true %></a></li>      
 
      </ul>
   </div>

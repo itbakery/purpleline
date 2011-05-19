@@ -50,6 +50,10 @@ end
   get   "/home/allreport"
   get   "home/lasttestreport"
   get   "home/monthlyreport"
+  get   "/home/allevent"
+  get   "home/lasttestevent"
+  get   "home/monthlyevent"
+    
   get   "home/setlang"
   #match "/googlehostedservice.html"
   match "/page/:filename.:format" => "static_pages#page"

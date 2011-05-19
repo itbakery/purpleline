@@ -235,6 +235,35 @@ class HomeController < ApplicationController
   		format.js   {render :layout=>'report'}
   	end
   end
+
+  def allevent
+    if params[:search] 
+      @events = EventsTranslation.search params[:search]
+    else
+  	  @events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	  @events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	end
+  	respond_to do |format|
+  		format.html  {render :layout=>"event"}		
+  		format.js   {render :layout=>"event"}
+  	end
+  end
+  
+  def lasttestevent
+  	@lasttestevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@lasttestreports = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  end
+  
+  def monthlyevent
+  	@events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
+  	@events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	
+  	@events_month = @events.group_by { |t| t.start_on.beginning_of_month}
+  	respond_to do |format|
+  		format.html  {render :layout=>'event'}		
+  		format.js   {render :layout=>'event'}
+  	end
+  end
   
   
   def  allnews
