@@ -58,15 +58,19 @@
 						<%if  c.icon.exists? then %>
 							  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
 						<%end%>
-							   <span style="margin-left: 25px;"><a href="/reportstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a></sapn>
+							   <span style="margin-left: 25px;"><a href="/reportstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_en%></a></span>
 					</li>
                 <%end%>                      
                 </ul> 
             <ul class="simple">
 			<div class="">
                 <li class="underline"></li>                
-               <li><a href="#">Progress's Photo</a></li>
-               <li><a href="/progress">Phogress's Graph</a></li>
+               <li  style="position:relative;">
+				   <span style="position:absolute;top:2px;"><img src="../images/gallery1.png"/> </span>
+                 <span style="margin-left: 27px;"><a href="#" style="display:inline; vertical-align:middle;">Progress's Photo</a></span></li>
+               <li  style="position:relative;">
+				 <span style="position:absolute;top:2px;"><img src="../images/graph_chart.png"/></span>
+                 <span style="margin-left: 27px;"><a href="/progress" style="display:inline; vertical-align:middle;">Phogress's Graph</a></span></li>
            </div>   
            </ul>   
                      

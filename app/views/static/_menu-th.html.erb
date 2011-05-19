@@ -57,15 +57,20 @@
 						<%if  c.icon.exists? then %>
 							  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
 						<%end%>
-							   <span style="margin-left: 25px;"><a href="/reportstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
+							   <span style="margin-left: 25px;"><a href="/reportstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></span>
 					</li>
                 <%end%>                      
                 </ul> 
             <ul class="simple">
 			<div class="">
                 <li class="underline"></li>                
-               <li><a href="#">ภาพถ่ายความคืบหน้า</a></li>
-               <li><a href="/progress">แผนภูมิความก้าวหน้า</a></li>
+                <li style="position:relative;">
+					<span style="position:absolute;top:2px;"><img src="../images/gallery1.png"/> </span>
+                    <span style="margin-left: 27px;"><a href="#">ภาพถ่ายความคืบหน้า</a></span>
+                </li>
+                <li style="position:relative;">
+					<span style="position:absolute;top:2px;"><img src="../images/graph_chart.png"/></span>
+                <span style="margin-left: 27px;"><a href="/progress">แผนภูมิความก้าวหน้า</a></span></li>
            </div>   
            </ul>   
                      
