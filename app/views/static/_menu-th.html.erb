@@ -1,140 +1,138 @@
 <ul id="menu">
-    <span class="cycle"></span> 
-   <span class="title"></span> 
-   
-	<li class="menu_right"><a href="/pageview/50?p=link" class="drop">เชื่อมโยง</a>
-	</li>
-   
-	<li class="menu_right"><a href="#" class="drop">ข่าวและกิจกรรม</a>
-    
-		<div class="dropdown_1column align_right">
-         <h3>ข่าวสาร</h3>
-                <div class="col_1">
-                    <ul class="simple">
-											<li><%=link_to "ข่าวสารทั้งหมด", {:action=>'allnews'} %></a></li> 
-											<li><%=link_to "ข่าวสารล่าสุด", {:action=>'lasttennews'} %></a></li> 
-											<li><%=link_to "ข่าวสารประจำเดือน", {:action=>'monthlynews'} %></a></li>      
-                    </ul>
-                </div>
-         <h3>ประกาศ</h3>
-                <div class="col_1">
-                    <ul class="simple">
-                    <% Category.all.each do |c| %>
-                    <li style="position:relative;">
-                       <%if  c.icon.exists? then %>
-                          <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
-                       <%end%>
-                           <span style="margin-left: 25px;margin-top:2px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
-                    </li>
-                     <%end%>                      
-                    </ul>   
-                </div>
-         <h3>กิจกรรม</h3>
-                <div class="col_1">                        
-				<ul class="simple">
-                    <% EventsType.all.each do |c| %>
-                    <li style="position:relative;">
-                       <%if  c.icon.exists? then %>
-                          <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
-                       <%end%>
-                           <span style="margin-left: 25px;"><a href="/eventstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
-                    </li>
-                     <%end%>                      
-                 </ul>  
-                </div>                
+<span class="cycle"></span> 
+<span class="title"></span> 
+
+<li class="menu_right"><a href="/pageview/50?p=link" class="drop">เชื่อมโยง</a>
+</li>
+
+<li class="menu_right"><a href="#" class="drop">ข่าวและกิจกรรม</a>
+
+<div class="dropdown_1column align_right">
+ <h3>ข่าวสาร</h3>
+		<div class="col_1">
+			<ul class="simple">
+									<li><%=link_to "ข่าวสารทั้งหมด", {:action=>'allnews'} %></a></li> 
+									<li><%=link_to "ข่าวสารล่าสุด", {:action=>'lasttennews'} %></a></li> 
+									<li><%=link_to "ข่าวสารประจำเดือน", {:action=>'monthlynews'} %></a></li>      
+			</ul>
 		</div>
-	</li>
+ <h3>ประกาศ</h3>
+		<div class="col_1">
+			<ul class="simple">
+			<% Category.all.each do |c| %>
+			<li style="position:relative;">
+			   <%if  c.icon.exists? then %>
+				  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+			   <%end%>
+				   <span style="margin-left: 25px;margin-top:2px;"><a href="/category/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
+			</li>
+			 <%end%>                      
+			</ul>   
+		</div>
+ <h3>กิจกรรม</h3>
+		<div class="col_1">                        
+		<ul class="simple">
+			<% EventsType.all.each do |c| %>
+			<li style="position:relative;">
+			   <%if  c.icon.exists? then %>
+				  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+			   <%end%>
+				   <span style="margin-left: 25px;"><a href="/eventstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></sapn>
+			</li>
+			 <%end%>                      
+		 </ul>  
+		</div>                
+</div>
+</li>
 
 
 
 
-	<li class="menu_right"><a href="/progress" class="drop">ความก้าวหน้า</a>
-		<div class="dropdown_1column ">
-             <div class="col_1">
-				<ul class="simple">
-                <% ReportsType.all.each do |c| %>
-					<li style="position:relative;">
-						<%if  c.icon.exists? then %>
-							  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
-						<%end%>
-							   <span style="margin-left: 25px;"><a href="/reportstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></span>
-					</li>
-                <%end%>                      
-                </ul> 
-            <ul class="simple">
+<li class="menu_right"><a href="/progress" class="drop">ความก้าวหน้า</a>
+<div class="dropdown_1column ">
+	 <div class="col_1">
+		<ul class="simple">
+		<% ReportsType.all.each do |c| %>
+			<li style="position:relative;">
+				<%if  c.icon.exists? then %>
+					  <span style="position:absolute;top:2px;"><%= image_tag c.icon.url(:iconsmall), :size => "22x22"%></span>
+				<%end%>
+					   <span style="margin-left: 25px;"><a href="/reportstype/<%=c.id%>"  style="display:inline; vertical-align:middle;"><%=c.name_th%></a></span>
+			</li>
+		<%end%>                      
+		</ul> 
+	<ul class="simple">
 			<div class="">
                 <li class="underline"></li>                
-                <li style="position:relative;">
-					<span style="position:absolute;top:2px;"><img src="../images/gallery1.png" width="28" height="28"/> </span>
-                    <span style="margin-left: 25px;"><a href="#">ภาพถ่ายความคืบหน้า</a></span>
-                </li>
-                <li style="position:relative;">
-					<span style="position:absolute;top:2px;"><img src="../images/graph_chart.png" width="28" height="28"/></span>
-                   <span style="margin-left: 25px;"><a href="/progress">แผนภูมิความก้าวหน้า</a></span>
-                </li>
-           </div>   
-           </ul>   
-                     
-       </div>      
+               <li  style="position:relative;">
+				   <span style="position:absolute;top:2px;"><img src="../images/gallery1.png" width="22" height="22"/> </span>
+                 <span style="margin-left: 27px;"><a href="#" style="display:inline; vertical-align:middle;">ภาพถ่ายความก้าวหน้า</a></span></li>
+               <li  style="position:relative;">
+				 <span style="position:absolute;top:2px;"><img src="../images/graph_chart.png" width="22" height="22"/></span>
+                 <span style="margin-left: 27px;"><a href="/progress" style="display:inline; vertical-align:middle;">แผนภูมิความก้าวหน้า</a></span></li>
+           </div>     
+   </ul>   
+			 
+</div>      
+</div>
+
+</li>
+<li class="menu_right"><a href="/pageview/40" class="drop">โครงการฯ</a>
+<div class="dropdown_1column ">
+		<div class="col_1">
+<ul class="simple">
+		<div class="">
+						 <li><a href="/pageview/27">การประมาณจำนวนผู้โดยสาร</a></li>
+						 <li><a href="/pageview/28">ข้อมูลการให้บริการเดินรถไฟฟ้า</a></li>
+						 <li><a href="/pageview/29">สถานีรถไฟฟ้า</a></li>
+						 <li><a href="/pageview/30">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li>
+						 <li><a href="/pageview/31">ศูนย์ซ่อมบำรุง</a></li> 
+						 <li><a href="/pageview/32">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li> 
+						 <li><a style="padding-left:15px;" href="/pageview/56">P&R สามแยกบางใหญ่</a></li> 
+						 <li><a style="padding-left:15px;" href="/pageview/58">P&R ท่าอิฐ</a></li> 
+						 <li><a style="padding-left:15px;" href="/pageview/60">P&R แยกนนทบุรี</a></li>
+						 <li><a style="padding-left:15px;" href="/pageview/62">P&R Depot</a></li>  									 
+						 <li><a href="/pageview/52">สะพานข้ามแม่น้ำเจ้าพระยา</a></li> 
 		</div>
-        
-	</li>
-	<li class="menu_right"><a href="/pageview/40" class="drop">โครงการฯ</a>
-		<div class="dropdown_1column ">
-                <div class="col_1">
-     <ul class="simple">
-				<div class="">
-								 <li><a href="/pageview/27">การประมาณจำนวนผู้โดยสาร</a></li>
-								 <li><a href="/pageview/28">ข้อมูลการให้บริการเดินรถไฟฟ้า</a></li>
-								 <li><a href="/pageview/29">สถานีรถไฟฟ้า</a></li>
-								 <li><a href="/pageview/30">แนวเส้นทาง และ โครงสร้างทางรถไฟยกระดับ</a></li>
-								 <li><a href="/pageview/31">ศูนย์ซ่อมบำรุง</a></li> 
-								 <li><a href="/pageview/32">อาคารจอดรถและสิ่งอำนวยความสะดวก</a></li> 
-								 <li><a style="padding-left:15px;" href="/pageview/56">P&R สามแยกบางใหญ่</a></li> 
-								 <li><a style="padding-left:15px;" href="/pageview/58">P&R ท่าอิฐ</a></li> 
-								 <li><a style="padding-left:15px;" href="/pageview/60">P&R แยกนนทบุรี</a></li>
-								 <li><a style="padding-left:15px;" href="/pageview/62">P&R Depot</a></li>  									 
-								 <li><a href="/pageview/52">สะพานข้ามแม่น้ำเจ้าพระยา</a></li> 
-				</div>
-				<div class="">
-					 <h3 style="width:200px;">ระบบอื่น	ๆ</h3>
-				</div>
-													<li><a style="padding-left:15px;" href="/pageview/48">ระบบรางรถไฟฟ้า</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/47">ระบบรถไฟฟ้า</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/42">ตู้รถไฟฟ้า</a></li>				
-				<div class="">
-					 <h3 style="width:200px;">สิ่งอำนวยความสะดวก</h3>
-				</div>			
-													<li><a style="padding-left:15px;" href="/pageview/43">ลิฟท์และบันไดเลื่อน</a></li>
-													<li><a style="padding-left:15px;" href="/pageview/46">สำหรับผู้พิการ</a></li>													
-      </ul>                  
-      </div>  
+		<div class="">
+			 <h3 style="width:200px;">ระบบอื่น	ๆ</h3>
 		</div>
-        
-	</li>
-	
-	<li class="menu_right"><a href="/mrtaview/1" class="drop">รฟม.</a>
-    
-		<div class="dropdown_1column">
-        
-                <div class="col_1">
-                    <ul class="simple">
-											 <li><a href="/mrtaview/1">ความเป็นมาของ รฟม.</a></li>
-											 <li><a href="/mrtaview/33">ผังองค์กรของ รฟม.</a></li>
-											 <li><a href="/mrtaview/35">โครงการรถไฟฟ้าสายสีม่วง</a></li>
-                       <li><a href="/mrtaview/39" style="padding-left:20px;">ผังองค์กรของโครงการ</a></li>
-											 <li><a href="/mrtaview/34" style="padding-left:20px;">กลุ่มบริษัทที่ปรึกษา</a></li>
-											 <li><a href="/mrtaview/45" style="padding-left:20px;">ผู้รับจ้างก่อสร้าง</a></li>                        
-											 <li><a href="/mrtaview/36">โครงการรถไฟฟ้าสายสีม่วง ส่วนต่อขยาย</a></li>
-											 <li><a href="/mrtaview/37">แปลนโครงข่ายรถไฟฟ้า</a></li>
-                    </ul>   
-                     
-                </div>
-                
+											<li><a style="padding-left:15px;" href="/pageview/48">ระบบรางรถไฟฟ้า</a></li>
+											<li><a style="padding-left:15px;" href="/pageview/47">ระบบรถไฟฟ้า</a></li>
+											<li><a style="padding-left:15px;" href="/pageview/42">ตู้รถไฟฟ้า</a></li>				
+		<div class="">
+			 <h3 style="width:200px;">สิ่งอำนวยความสะดวก</h3>
+		</div>			
+											<li><a style="padding-left:15px;" href="/pageview/43">ลิฟท์และบันไดเลื่อน</a></li>
+											<li><a style="padding-left:15px;" href="/pageview/46">สำหรับผู้พิการ</a></li>													
+</ul>                  
+</div>  
+</div>
+
+</li>
+
+<li class="menu_right"><a href="/mrtaview/1" class="drop">รฟม.</a>
+
+<div class="dropdown_1column">
+
+		<div class="col_1">
+			<ul class="simple">
+									 <li><a href="/mrtaview/1">ความเป็นมาของ รฟม.</a></li>
+									 <li><a href="/mrtaview/33">ผังองค์กรของ รฟม.</a></li>
+									 <li><a href="/mrtaview/35">โครงการรถไฟฟ้าสายสีม่วง</a></li>
+			   <li><a href="/mrtaview/39" style="padding-left:20px;">ผังองค์กรของโครงการ</a></li>
+									 <li><a href="/mrtaview/34" style="padding-left:20px;">กลุ่มบริษัทที่ปรึกษา</a></li>
+									 <li><a href="/mrtaview/45" style="padding-left:20px;">ผู้รับจ้างก่อสร้าง</a></li>                        
+									 <li><a href="/mrtaview/36">โครงการรถไฟฟ้าสายสีม่วง ส่วนต่อขยาย</a></li>
+									 <li><a href="/mrtaview/37">แปลนโครงข่ายรถไฟฟ้า</a></li>
+			</ul>   
+			 
 		</div>
-	
-	</li>
-	<li class="menu_right"><a href="/main?lang=th" class="drop">หน้าแรก</a>
-	</li>	
+		
+</div>
+
+</li>
+<li class="menu_right"><a href="/main?lang=th" class="drop">หน้าแรก</a>
+</li>	
 </ul>
 
