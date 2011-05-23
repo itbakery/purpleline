@@ -29,7 +29,22 @@
   
   </script>
   
-  
+   <script type="text/javascript" charset="utf-8">
+        window.onload = function () {
+            if (!/*@cc_on!@*/0) return;
+
+            var all = document.getElementsByTagName('*'), i = all.length;
+            while (i--) {
+                // adding a class match just to show the difference
+                if (all[i].className.match(/fix/) && all[i].scrollWidth > all[i].offsetWidth) {
+                    all[i].style['overflowY'] = 'hidden';
+                    all[i].style['paddingBottom'] = '20px';
+                }
+            }
+        };
+    </script>
+    
+
 </head>
 <body>
 <div class="container  maincontainer bluebg">
