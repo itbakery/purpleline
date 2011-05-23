@@ -231,8 +231,9 @@ function updateMarker(marker, cells, opt_changeColor) {
     jQuery('a[rel*=facebox]').facebox(); 
     
     jQuery('#tabs').tabs();
-    jQuery('ul#ticker01').liScroll();
     jQuery('.lightbox').lightBox();
+
+    jQuery('#marquee').marquee();
 
 });
 

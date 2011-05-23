@@ -109,6 +109,40 @@ border:medium none;
   color: #15ADFF;
 
 }
+
+
+ul.marquee {
+	/* required styles */
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+
+	/* optional styles for appearance */
+	width: 946px;
+	height: 50px; /* height should be included to reserve visual space for the marquee */
+
+	background-color: #f2f2ff;
+	border: 2px solid #08084d;
+}
+
+ul.marquee li {
+	/* required styles */
+	top: -999em;
+	left: 0;
+	float:left;
+	display: block;
+	white-space: nowrap; /* keep all text on a single line */
+
+	/* optional styles for appearance */
+	font: 14px Arial, Helvetica, sans-serif;
+	padding: 3px 5px;
+}
+
+
 #announcebox ul li{
 border-bottom:1px solid #fff;
 }
@@ -1377,4 +1411,22 @@ margin: 0 3px 3px 3px;
     padding: 10px 20px;
     width:642px;
     clear :both;
+}
+
+#masktext
+{
+   width: 950px;
+   height: 35px;
+   display:block;
+   overflow:hidden; /* to hide the text */
+   position: relative;
+   background: #ECEA8C;
+}
+
+#masktext ul
+{
+   list-style-type: none;
+   margin: 0px;
+   padding: 0px;
+   position: absolute;
 }
