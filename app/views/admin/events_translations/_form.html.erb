@@ -9,7 +9,7 @@
   <li>
   <div class="group">
     <%= f.label :events_type_id, t("activerecord.attributes.events_translation.events_type_id", :default => "Events type"), :class => :label %>
-    <%= f.collection_select :events_type_id, EventsType.all,:id,:name,{:prompt=>"Select Event Type"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :events_type_id, EventsType.all,:id,:name_th,{:prompt=>"Select Event Type"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
  </li>

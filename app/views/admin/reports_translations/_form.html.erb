@@ -14,7 +14,7 @@
   <li>
   <div class="group">
     <%= f.label :events_type_id, t("activerecord.attributes.reports_translation.reports_type_id", :default => "Reports type"), :class => :label %>
-    <%= f.collection_select :reports_type_id, ReportsType.all,:id,:name,{:prompt=>"Select Report Type"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :reports_type_id, ReportsType.all,:id,:name_th,{:prompt=>"Select Report Type"}, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
  </li>
