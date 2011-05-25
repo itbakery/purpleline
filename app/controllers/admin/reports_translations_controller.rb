@@ -59,7 +59,7 @@ class Admin::ReportsTranslationsController < ApplicationController
 
   # GET /reports_translations/1/edit
   def edit
-      @current_user = current_user    
+     
     @current_user = current_user
     @reports_translation = ReportsTranslation.find(params[:id])
     coordinates = [@reports_translation.latitude,@reports_translation.longtitude]

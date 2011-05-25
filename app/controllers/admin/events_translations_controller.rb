@@ -30,7 +30,8 @@ class Admin::EventsTranslationsController < ApplicationController
   # GET /events_translations/new
   # GET /events_translations/new.xml
   def new
-    @events_translation = EventsTranslation.new
+    @current_user = current_user
+    @events_translation = current_user.events_translations.new
     3.times do 
     	@events_translation.images.build
     end
