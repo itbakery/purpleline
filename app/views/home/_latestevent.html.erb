@@ -1,0 +1,18 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2>Latest News - Event</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ข่าวสารกิจกรรมล่าสุด</h2>
+      <%end%> 
+
+     <%@latestevents.each do |event|%>
+      <li class=<%=cycle('even', 'odd')%>
+           <span style="font-size:14px;">
+           <a href="/report/<%=event.id%>"><%=event.title%>
+           </span>
+           
+           <i style="float:right;"> start on <%= event.start_on.to_date.to_s(:long) %> </i>
+      </li> 
+     <%end%>
+</ul>

@@ -1,0 +1,15 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2>All Progress Reports</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ความก้าวหน้าทั้งหมด</h2>
+      <%end%> 
+
+<% @reports.each do |report|%>
+    <li class="<%=cycle('even', 'odd')%>" style="margin-top:5px;margin-buttom:5px;">
+        <i style="float:right;">start on <%= report.start_on.to_date.to_s(:long) %></i>
+        <div style="width:500px"><a href="/report/<%=report.id%>" ;><%=report.title%> </a></div>
+    </li>     
+ <%end%>
+</ul>

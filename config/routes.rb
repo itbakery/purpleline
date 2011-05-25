@@ -48,10 +48,10 @@ end
   get   "/home/lasttennews"
   get   "/home/monthlynews"
   get   "/home/allreport"
-  get   "home/lasttestreport"
+  get   "home/latestreport"
   get   "home/monthlyreport"
   get   "/home/allevent"
-  get   "home/lasttestevent"
+  get   "home/latestevent"
   get   "home/monthlyevent"
     
   get   "home/setlang"

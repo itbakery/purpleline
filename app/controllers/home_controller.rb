@@ -220,9 +220,9 @@ class HomeController < ApplicationController
   	end
   end
   
-  def lasttestreport
-  	@lasttestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
-  	@lasttestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  def latestreport
+  	@latestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@latestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
   end
   
   def monthlyreport
@@ -232,7 +232,7 @@ class HomeController < ApplicationController
   	@reports_month = @reports.group_by { |t| t.start_on.beginning_of_month}
   	respond_to do |format|
   		format.html  {render :layout=>'report'}		
-  		format.js   {render :layout=>'report'}
+  		format.js    {render :layout=>'report'}
   	end
   end
 
@@ -249,9 +249,9 @@ class HomeController < ApplicationController
   	end
   end
   
-  def lasttestevent
-  	@lasttestevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
-  	@lasttestreports = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  def latestevent
+  	@latestevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
+  	@latestevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
   end
   
   def monthlyevent

@@ -1,0 +1,27 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2>Monthly NEW EVENTS</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ข่าวสาร-กิจกรรมประจำเดือน</h2>
+      <%end%> 
+		<%@events_month.each do |month, events| %>
+		   <h3 style="margin-top:10px;background:#9BCAE8;">
+ 	     <%if session[:lang]=="en" %>
+   	    <h3><%= month.strftime('%B') %></h3>
+       <%end%>
+       <%if session[:lang]=="th" %>
+     	    <h3><%= convertmonth(month.strftime('%B')) %></h3>
+       <%end%>
+
+			<% for event in events %>
+			<li class=<%=cycle('even', 'odd')%>
+				<p>
+				 <a href="/event/<%=event.id%>"><%= event.title %> </a><br/>
+				<i style="float:right;">  <%= report.start_on.to_date.to_s(:long) %></i>
+				</p>
+			</li>
+	 <% end %>
+	<% end %>
+
+</ul>

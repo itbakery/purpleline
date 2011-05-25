@@ -1,0 +1,27 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2>Monthly Progress Reports</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2>ความก้าวหน้าประจำเดือน</h2>
+      <%end%> 
+		<%@reports_month.each do |month, reports| %>
+		   <h3 style="margin-top:10px;background:#9BCAE8;">
+ 	     <%if session[:lang]=="en" %>
+   	    <h3><%= month.strftime('%B') %></h3>
+       <%end%>
+       <%if session[:lang]=="th" %>
+     	    <h3><%= convertmonth(month.strftime('%B')) %></h3>
+       <%end%>
+
+			<% for report in reports %>
+			<li class=<%=cycle('even', 'odd')%>
+				<p>
+				 <a href="/report/<%=report.id%>"><%= report.title %> </a><br/>
+				<i style="float:right;">  <%= report.start_on.to_date.to_s(:long) %></i>
+				</p>
+			</li>
+	 <% end %>
+	<% end %>
+
+</ul>
