@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
-
+<p>test</p>
 <p>
   <b>Report:</b>
-  <%= @reports_translation.report_id %>
+  <%= Report.find(@reports_translation.report_id).name %>
 </p>
 
 <p>
   <b>Reports type:</b>
-  <%= @reports_translation.reports_type_id %>
+  <%= ReportsType.find(@reports_translation.reports_type_id).name_th %>
 </p>
 
 <p>

@@ -11,17 +11,17 @@
       
         <p>
           <b><%= t("activerecord.attributes.admin_reports_translation.report_id", :default => t("activerecord.labels.report_id", :default => "Report")) %>:</b>
-          <%= @reports_translation.report_id %>
+          <%= Report.find(@reports_translation.report_id).name %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.admin_reports_translation.reports_type_id", :default => t("activerecord.labels.reports_type_id", :default => "Reports type")) %>:</b>
-          <%= @reports_translation.reports_type_id %>
+           <%= ReportsType.find(@reports_translation.reports_type_id).name_th %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.admin_reports_translation.language_id", :default => t("activerecord.labels.language_id", :default => "Language")) %>:</b>
-          <%= @reports_translation.language_id %>
+          <%= Language.find(@reports_translation.language_id).name %>
         </p>
 
         <p>
