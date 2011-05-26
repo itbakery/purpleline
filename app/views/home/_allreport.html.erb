@@ -8,8 +8,7 @@
 
 <% @reports.each do |report|%>
     <li class="<%=cycle('even', 'odd')%>" style="margin-top:5px;margin-buttom:5px;">
-        <i style="float:right;">start on <%= report.start_on.to_date.to_s(:long) %></i>
-        <div style="width:500px"><a href="/report/<%=report.id%>" ;><%=report.title%> </a></div>
+        <div style="width:500px"><a href="/showreport/<%=report.id%>" ;><%=report.title%> </a></div>
     </li>     
  <%end%>
 </ul>

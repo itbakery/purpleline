@@ -21,7 +21,7 @@
  <li>
   <div class="group">
     <%= f.label :language_id, t("activerecord.attributes.reports_translation.language_id", :default => "Language"), :class => :label %>
-    <%= f.collection_select :language_id,Language.all,:id,:name,{:prompt=>"Select Language"}, {:class => 'text_field',:style=>"width:150px"} %>
+    <%= f.collection_select :language_id,Language.all,:id,:name, {:class => 'text_field',:style=>"width:150px"} %>
 
   </div>
   </li>

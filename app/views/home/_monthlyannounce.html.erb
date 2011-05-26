@@ -16,10 +16,8 @@
 
 			<% for announce in announces %>
 			<li class=<%=cycle('even', 'odd')%>
-				<p>
 				 <a href="/announce/<%=announce.id%>"><%= announce.title %> </a><br/>
 				<i style="float:right;">  <%= announce.start_on.to_date.to_s(:long) %></i>
-				</p>
 			</li>
 	 <% end %>
 	<% end %>

@@ -16,10 +16,7 @@
 
 			<% for report in reports %>
 			<li class=<%=cycle('even', 'odd')%>
-				<p>
-				 <a href="/report/<%=report.id%>"><%= report.title %> </a><br/>
-				<i style="float:right;">  <%= report.start_on.to_date.to_s(:long) %></i>
-				</p>
+				 <a href="/showreport/<%=report.id%>"><%= report.title %> </a><br/>
 			</li>
 	 <% end %>
 	<% end %>

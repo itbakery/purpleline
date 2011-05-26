@@ -211,8 +211,8 @@ class HomeController < ApplicationController
     if params[:search] 
       @reports = ReportsTranslation.search params[:search]
     else
-  	  @reports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
-  	  @reports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	  @reports = ReportsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc") if session[:lang]=="th"
+  	  @reports = ReportsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc") if session[:lang]=="en"
   	end
   	respond_to do |format|
   		format.html  {render :layout=>"report"}		
@@ -221,15 +221,19 @@ class HomeController < ApplicationController
   end
   
   def latestreport
-  	@latestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
-  	@latestreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  	@latestreports = ReportsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc").limit(10) if session[:lang]=="th"
+  	@latestreports = ReportsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc").limit(10) if session[:lang]=="en" 
+  	respond_to do |format|
+  		format.html  {render :layout=>"report"}		
+  		format.js   {render :layout=>"report"}
+  	end
   end
   
   def monthlyreport
-  	@reprots = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
-  	@reports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	@reports = ReportsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc") if session[:lang]=="th"
+  	@reports = ReportsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc") if session[:lang]=="en"
   	
-  	@reports_month = @reports.group_by { |t| t.start_on.beginning_of_month}
+  	@reports_month = @reports.group_by { |t| t.created_at.beginning_of_month}
   	respond_to do |format|
   		format.html  {render :layout=>'report'}		
   		format.js    {render :layout=>'report'}
@@ -240,8 +244,8 @@ class HomeController < ApplicationController
     if params[:search] 
       @events = EventsTranslation.search params[:search]
     else
-  	  @events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
-  	  @events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	  @events = EventsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc") if session[:lang]=="th"
+  	  @events = EventsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc") if session[:lang]=="en"
   	end
   	respond_to do |format|
   		format.html  {render :layout=>"event"}		
@@ -250,13 +254,17 @@ class HomeController < ApplicationController
   end
   
   def latestevent
-  	@latestevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
-  	@latestevents = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
+  	@latestevents = EventsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc").limit(10) if session[:lang]=="th"
+  	@latestevents = EventsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc").limit(10) if session[:lang]=="en"  	
+  	respond_to do |format|
+  		format.html  {render :layout=>"report"}		
+  		format.js   {render :layout=>"report"}
+  	end
   end
   
   def monthlyevent
-  	@events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
-  	@events = EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
+  	@events = EventsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc") if session[:lang]=="th"
+  	@events = EventsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc") if session[:lang]=="en"
   	
   	@events_month = @events.group_by { |t| t.start_on.beginning_of_month}
   	respond_to do |format|

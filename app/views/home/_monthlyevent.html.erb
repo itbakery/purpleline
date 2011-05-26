@@ -18,7 +18,6 @@
 			<li class=<%=cycle('even', 'odd')%>
 				<p>
 				 <a href="/event/<%=event.id%>"><%= event.title %> </a><br/>
-				<i style="float:right;">  <%= report.start_on.to_date.to_s(:long) %></i>
 				</p>
 			</li>
 	 <% end %>

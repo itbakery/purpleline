@@ -8,7 +8,6 @@
 
 <%  @events.each do |event|%>
     <li class="<%=cycle('even', 'odd')%>" style="margin-top:5px;margin-buttom:5px;">
-        <i style="float:right;">start on <%= event.start_on.to_date.to_s(:long) %></i>
         <div style="width:500px"><a href="/event/<%=event.id%>" ;><%=event.title%> </a></div>
     </li>     
  <%end%>
