@@ -67,8 +67,8 @@ class HomeController < ApplicationController
   	if params[:id]
   		@reportstype = ReportsType.find(params[:id])	
   		@reportstype.reports.each do |a|
-  			@reports <<  ReportsTranslation.where(:report_type_id=>a.id).where("language_id=?",1)  if session[:lang]=="th"
-  			@reports <<  ReportsTranslation.where(:report_type_id=>a.id).where("language_id=?",2)  if session[:lang]=="en"
+  			@reports <<  ReportsTranslation.where(:reports_type_id=>a.id).where("language_id=?",1)  if session[:lang]=="th"
+  			@reports <<  ReportsTranslation.where(:reports_type_id=>a.id).where("language_id=?",2)  if session[:lang]=="en"
   		end		
    end  
   render :layout=>"report"
