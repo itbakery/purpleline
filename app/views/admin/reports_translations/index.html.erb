@@ -11,9 +11,12 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.admin_reports_translation.report_id", :default => t("activerecord.labels.report_id", :default => "Report_id")) %>
           </th>
+          <th>
+            <%= t("activerecord.attributes.admin_reports_translation.reports_type_id", :default => t("activerecord.labels.reports_type_id", :default => "Report_Type_id")) %>
+          </th>          
          <th>
             <%= t("activerecord.attributes.admin_reports_translation.title", :default => t("activerecord.labels.title", :default => "Title")) %>
           </th>  
@@ -23,12 +26,16 @@
         <% @reports_translations.each do |reports_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
-            <%= reports_translation.id %>
+            <%= reports_translation.id %>-<%= Report.find(@reports_translation.report_id).name %>
           </td>
-                    <td>
-            <%= link_to reports_translation.report_id, admin_reports_translation_path(reports_translation) %>
-          </td>
-                    <td>
+          <td>
+            <%= reports_translation.report_id %>
+          </td>          
+          <td>
+            <%= reports_translation.reports_type_id %>-<%= ReportsType.find(@reports_translation.reports_type_id).name_th %>
+          </td>           
+
+          <td>
             <%= reports_translation.title %>
           </td>
                     <td>
