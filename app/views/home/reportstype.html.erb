@@ -6,11 +6,8 @@
       <%@reports.each do |report|%>
         <% unless report.nil? %>
 			   <li>
-                   <%report.order("start_on DESC").each do  |ann|%>
+                   <%report.order("created_at DESC").each do  |ann|%>
 						<h3 class="blockReplace" style="padding-top:10px;"> 
-						<span class="badge" style="float:left;font-size:12px;"> <%=ann.start_on  %>
-						</br><%= image_tag("new.gif")  if (Date.today - ann.start_on) < 15  %></span>
-						  
 						  <a href="/announce/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none"> <%=ann.title%> </a>
 						</h3>
 
