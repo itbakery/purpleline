@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"   	
-  	@images = PurpleAsset.where("type=?","Report::Image").limit(16)
+  	@imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id')
     @stations = StationsTranslation.all
     @userip = request.env['REMOTE_ADDR']
     #@member = Member.new
