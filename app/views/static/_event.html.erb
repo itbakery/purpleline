@@ -4,7 +4,7 @@
 
      <a href="/showevent/<%=event.id%>">
      <span class="badge" style="display:block;"><%=event.start_on%></span>
-     <div style="color:"#FFF";font-size:14px;display:block;margin-left:80px;"><%=event.title%>
+     <div style="color:#FFF;font-size:14px;display:block;margin-left:80px;"><%=event.title%>
         <%= image_tag("new.gif")  if (Date.today - event.start_on) < 15  %>
      </div>   
      </a>
