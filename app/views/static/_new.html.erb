@@ -1,7 +1,7 @@
 
 
 <ul >
-  <% @news.each do |newletter|%>
+   <% @news.each do |newletter|%>
      <li style="min-height:1.5em;>
 
      <a href="/shownews/<%=newletter.id%>">
@@ -10,12 +10,10 @@
           <%=newletter.title%>
           <%= image_tag("new.gif")  if (Date.today - newletter.start_on) < 15  %>
      </div>
-     <div style="hight:5px;">&nbsp; </div>
+
      </a>
           
      </li>
   <%end%>
 </ul>
-
-
 
