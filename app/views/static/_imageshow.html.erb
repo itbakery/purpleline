@@ -1,6 +1,6 @@
 <% @images.each  do |image| %>
 <div class="thumb">
-	   <%= link_to(image_tag(image.url(:thumb)), image.url(:large), :class => "lightbox") unless image.nil? %>
+	   <%= link_to(image_tag(image.url(:thumb)), image.url(:large), :class => "lightbox", :title=> image.caption) unless image.nil? %>
 	<div class="phototitle">
 	<a href="/showreport/<%=image.assetable_id%>"><%=truncate(image.caption,:length=>10,:omission=>"...")%></a>
   </div>
