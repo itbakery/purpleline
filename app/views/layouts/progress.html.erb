@@ -18,6 +18,14 @@
 
    });  
   </script>
+        <link rel="stylesheet" href="basic.css" type="text/css" />
+		<link rel="stylesheet" href="galleriffic-2.css" type="text/css" />
+		<script type="text/javascript" src="jquery.galleriffic.js"></script>
+		<script type="text/javascript" src="jquery.opacityrollover.js"></script>
+		<!-- We only want the thunbnails to display when javascript is disabled -->
+		<script type="text/javascript">
+			document.write('<style>.noscript { display: none; }</style>');
+		</script>
   
 </head>
 <body>
@@ -50,76 +58,16 @@
   </div>
   <!-- end header -->
   <div class="span-24 page_header last" style="background: #121212;" id="banner">
+  
+  
      <%= yield %>
+     
+     
   </div>
-  <!--
-  <div class="span-16" id="project_detail">
-    <div class="contentbox_2">projectdetail</div> 
-  </div>-->
-  <!-- end project_detail -->
-  <!--
-  <div class="span-8 last" id="announcement">
-   <div class="contentbox_3">projectdetail</div> 
-  </div>-->
-  <!-- end announcement -->
-  <div class="span-24 last" id="boxarea">
-    <img src="../images/global-footer-line.jpg">
-  <div class="span-8" id="project">
-     <div class="boxmenu">
-        <img src="../images/contruction.png">
-					<%if session[:lang]=="en" %>
-					 <h2 class="section-title">Latest News&Events</h2>
-					<%end%>
-					<%if session[:lang]=="th" %>
-					 <h2 class="section-title">ข่าวและเหตุการณ์ล่าสุด</h2>
-					<%end%>          
-          <%= render :partial => 'static/event'%>
-          <%= render :partial => 'static/new'%>
-     </div>
-  </div>
-  <!-- end project -->
-  <div class="span-8" id="progress">
-     <div class="boxmenu">
-     <img src="../images/progress.png">
-					<%if session[:lang]=="en" %>
-					 <h3 class="section-title">
-					   <a href="/progress" style=""> 
-					   <font color=#FFFFFF>
-					     Progress Graph
-					   </font>  
-					   </a>
-					 </h3>
-					<%end%>
-					<%if session[:lang]=="th" %>
-					 <h3 class="section-title">
-					   <a href="/progress" style=""> 
-					   <font color=#FFFFFF>
-					     แผนภูมิความก้าวหน้า
-					   </font>  
-					   </a>
-					 </h3>
-					 
-					<%end%>      
 
-       <span></span>
-     </div>
-  </div>
-  <!-- end progress -->
-  <div class="span-8 last" id="new_event">
-      <div class="boxmenu">
-      <img src="../images/announce.png">
-					<%if session[:lang]=="en" %>
-             <h2 class="section-title">Latest Announcement</h2>
-					<%end%>
-					<%if session[:lang]=="th" %>
-					 <h2 class="section-title">ประกาศล่าสุด</h2>
-					<%end%> 
-       <%= render :partial => 'static/announce'%>
-      </div>
-  </div>
-  <img src="../images/global-footer-line.jpg">
-  </div>
-   <!-- end new_event -->
+   
+   
+   
   <div  id="movebg" class="span-24 last">
     	<%if session[:lang]=="en" %>
      	 <div class=" "><%= render :partial => '/static/org' %></div>

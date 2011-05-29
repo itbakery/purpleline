@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"   	
-  	@imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id')
+  	@imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id').limit(12)
     @stations = StationsTranslation.all
     @userip = request.env['REMOTE_ADDR']
     #@member = Member.new
@@ -38,6 +38,31 @@ class HomeController < ApplicationController
   	render :layout=>"home"
   end
  
+  def gallery 
+    @progresses = Progress.all
+    @h = HighChart.new('graph') do |f|
+      f.title({ :text=>"Overall Progress of Civil Works (C1/C2/C3)  "})
+      f.subtitle({:text => "MRT Purple Line Project : Bang Yai – Bang Sue Section -- Source from: PCPL "})
+      f.legend({:layout=>"vertical",:align=>"right",:verticalAlign=> "top",:borderWidth =>'top',:style=>{:position=>'absolute', :bottom=>'auto', :left=>'0px', :top=>'20px'}})
+      f.options[:x_axis][:categories] = @progresses.map(&:month)
+      f.options[:x_axis][:labels] = {:rotation=>-90 , :align => 'right'}
+      f.options[:y_axis]={:startOnTick => false,:min=>0,:max=>120}
+      f.options[:y_axis][:title] = {:text=> "Project Progress (%)"}
+      f.series(:type=> 'line',:name=> 'Schedule',:data=>  @progresses.map(&:schedule))
+      f.series(:type=> 'line',:name=> 'Actual',:data=>  @progresses.map(&:actual))
+    end
+  	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).order("start_on desc").limit(5)
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"  
+
+  	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
+  	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"   	
+
+    @imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id')
+  	render :layout=>"progress"
+
+  end
+  
   def category  	
     @announces = []
   	if params[:id]
