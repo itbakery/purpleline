@@ -52,8 +52,9 @@ div.slideshow a.advance-link {
 	display: block;
 	width: 550px;
 	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
-	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	/*line-height: 502px; This should be set to be at least the height of the largest image in the slideshow */
 	text-align: center;
+	
 }
 div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
 	text-decoration: none;
