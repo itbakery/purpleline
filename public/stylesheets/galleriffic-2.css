@@ -59,8 +59,10 @@ div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.sli
 	text-decoration: none;
 }
 div.slideshow img {
-	vertical-align: middle;
+	vertical-align: top;
 	border: 1px solid #ccc;
+	width:600;
+	height:450;
 }
 div.download {
 	float: right;
