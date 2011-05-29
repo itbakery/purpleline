@@ -59,7 +59,7 @@ class HomeController < ApplicationController
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"   	
 
     @imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id')
-  	render :layout=>"progress"
+  	render :layout=>"gallery"
 
   end
   

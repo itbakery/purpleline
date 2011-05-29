@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>MRTA-PURPLE LINE BANG YAI - BANG SUE SECTION</title>
+  <%= stylesheet_link_tag "print", :media=>"print" %>
+  <%= stylesheet_link_tag "reset" %>
+  <%= stylesheet_link_tag "screen", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "menu", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "base", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "galleriffic-2", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "jush", :media=>"screen,projection" %>    
+  <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
+  <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <script type='text/javascript'>  
+			jQuery(document).ready(function($) {
+				// We only want these styles applied when javascript is enabled
+				$('div.navigation').css({'width' : '200px', 'float' : 'left'});
+				$('div.content').css('display', 'block');
+
+				// Initially set opacity on thumbs and add
+				// additional styling for hover effect on thumbs
+				var onMouseOutOpacity = 0.67;
+				$('#thumbs ul.thumbs li').opacityrollover({
+					mouseOutOpacity:   onMouseOutOpacity,
+					mouseOverOpacity:  1.0,
+					fadeSpeed:         'fast',
+					exemptionSelector: '.selected'
+				});
+				
+				// Initialize Advanced Galleriffic Gallery
+				var gallery = $('#thumbs').galleriffic({
+					delay:                     2500,
+					numThumbs:                 15,
+					preloadAhead:              10,
+					enableTopPager:            true,
+					enableBottomPager:         true,
+					maxPagesToShow:            7,
+					imageContainerSel:         '#slideshow',
+					controlsContainerSel:      '#controls',
+					captionContainerSel:       '#caption',
+					loadingContainerSel:       '#loading',
+					renderSSControls:          true,
+					renderNavControls:         true,
+					playLinkText:              'Play Slideshow',
+					pauseLinkText:             'Pause Slideshow',
+					prevLinkText:              '&lsaquo; Previous Photo',
+					nextLinkText:              'Next Photo &rsaquo;',
+					nextPageLinkText:          'Next &rsaquo;',
+					prevPageLinkText:          '&lsaquo; Prev',
+					enableHistory:             false,
+					autoStart:                 false,
+					syncTransitions:           true,
+					defaultTransitionDuration: 900,
+					onSlideChange:             function(prevIndex, nextIndex) {
+						// 'this' refers to the gallery, which is an extension of $('#thumbs')
+						this.find('ul.thumbs').children()
+							.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+							.eq(nextIndex).fadeTo('fast', 1.0);
+					},
+					onPageTransitionOut:       function(callback) {
+						this.fadeTo('fast', 0.0, callback);
+					},
+					onPageTransitionIn:        function() {
+						this.fadeTo('fast', 1.0);
+					}
+				});
+			});
+
+  </script>
+  
+</head>
+<body>
+<div class="container  maincontainer bluebg">
+  <div class="span-24 last" id="header">
+   <div id="title">
+    	<%if session[:lang]=="en" %>
+     	 <%= link_to image_tag("title-en.png",:border=>0,:size=>"340x35")%>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <%= link_to image_tag("title-th.png",:border=>0,:size=>"340x35")%>
+      <%end%>   	 
+    </div>     
+    <div id="fullmap">
+       <%= link_to image_tag("map.png", :border=>0, :size=>"30x28",:alt=>"click view full screen map") ,:action => 'fullmap'%>
+       <%= link_to image_tag("th.png", :border=>0, :size=>"51x28"), :action => 'setlang', :lang=>"th" %>
+       <%= link_to image_tag("en.png", :border=>0, :size=>"36x28"), :action => 'setlang', :lang=>"en" %>
+
+    </div>
+    <div class="clear span-24 last" id="">
+    	<%if session[:lang]=="en" %>
+     	 <%= render :partial => '/static/menu'%>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <%= render :partial => '/static/menu-th'%>
+      <%end%> 
+ 
+    </div>
+
+  </div>
+
+  <div class="span-24 page_header last" style="background: #121212;" id="banner">
+     <%= high_chart("progresschart", @h)%>
+     <div style="clear: both;"></div>
+
+     <%= yield %>
+  </div>
+
+  <div class="span-24 last" id="footer">
+     <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
+     All rights reserved <br/> 
+     Webmaster : webmaster@pcpl-th.com<br/>
+     Public Relation Division : pr@mrta.co.th
+     
+     </div>
+  </div>
+</div>
+</body>
+</html>

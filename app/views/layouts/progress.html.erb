@@ -7,71 +7,17 @@
   <%= stylesheet_link_tag "reset" %>
   <%= stylesheet_link_tag "screen", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "menu", :media=>"screen,projection" %>
-  <%= stylesheet_link_tag "basic", :media=>"screen,projection" %>
-  <%= stylesheet_link_tag "galleriffic-2", :media=>"screen,projection" %>  
   <%= stylesheet_link_tag "mrta-theme1", :media=>"screen,projection" %>
   <%= stylesheet_link_tag "jquery-ui-1.7.2.custom", :media=>"screen,projection" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				// We only want these styles applied when javascript is enabled
-				$('div.navigation').css({'width' : '300px', 'float' : 'left'});
-				$('div.content').css('display', 'block');
+  <script type='text/javascript'>  
 
-				// Initially set opacity on thumbs and add
-				// additional styling for hover effect on thumbs
-				var onMouseOutOpacity = 0.67;
-				$('#thumbs ul.thumbs li').opacityrollover({
-					mouseOutOpacity:   onMouseOutOpacity,
-					mouseOverOpacity:  1.0,
-					fadeSpeed:         'fast',
-					exemptionSelector: '.selected'
-				});
-				
-				// Initialize Advanced Galleriffic Gallery
-				var gallery = $('#thumbs').galleriffic({
-					delay:                     2500,
-					numThumbs:                 15,
-					preloadAhead:              10,
-					enableTopPager:            true,
-					enableBottomPager:         true,
-					maxPagesToShow:            7,
-					imageContainerSel:         '#slideshow',
-					controlsContainerSel:      '#controls',
-					captionContainerSel:       '#caption',
-					loadingContainerSel:       '#loading',
-					renderSSControls:          true,
-					renderNavControls:         true,
-					playLinkText:              'Play Slideshow',
-					pauseLinkText:             'Pause Slideshow',
-					prevLinkText:              '&lsaquo; Previous Photo',
-					nextLinkText:              'Next Photo &rsaquo;',
-					nextPageLinkText:          'Next &rsaquo;',
-					prevPageLinkText:          '&lsaquo; Prev',
-					enableHistory:             false,
-					autoStart:                 false,
-					syncTransitions:           true,
-					defaultTransitionDuration: 900,
-					onSlideChange:             function(prevIndex, nextIndex) {
-						// 'this' refers to the gallery, which is an extension of $('#thumbs')
-						this.find('ul.thumbs').children()
-							.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
-							.eq(nextIndex).fadeTo('fast', 1.0);
-					},
-					onPageTransitionOut:       function(callback) {
-						this.fadeTo('fast', 0.0, callback);
-					},
-					onPageTransitionIn:        function() {
-						this.fadeTo('fast', 1.0);
-					}
-				});
-			});
-		</script>		<!-- We only want the thunbnails to display when javascript is disabled -->
-		<script type="text/javascript">
-			document.write('<style>.noscript { display: none; }</style>');
-		</script>
+  jQuery(document).ready(function() {
+
+   });  
+  </script>
   
 </head>
 <body>
@@ -100,28 +46,13 @@
       <%end%> 
  
     </div>
-    <!-- end main-navigation -->
-  </div>
-  <!-- end header -->
-  <div class="span-24 page_header last" style="background: #121212;" id="banner">
-  
-  
-     <%= yield %>
-     
-     
+
   </div>
 
-   
-   
-   
-  <div  id="movebg" class="span-24 last">
-    	<%if session[:lang]=="en" %>
-     	 <div class=" "><%= render :partial => '/static/org' %></div>
-      <%end%>
-      <%if session[:lang]=="th" %>
-     	 <div class=" "><%= render :partial => '/static/org-th' %></div>
-      <%end%> 
+  <div class="span-24 page_header last" style="background: #121212;" id="banner">
+     <%= yield %>
   </div>
+
   <div class="span-24 last" id="footer">
      <div class="footertext"> &copy;  2010 Mass Rapid Transit Authority of Thailand
      All rights reserved <br/> 
@@ -130,8 +61,6 @@
      
      </div>
   </div>
-  <!-- end footer -->
 </div>
-<!-- <%= yield %> -->
 </body>
 </html>
