@@ -10,19 +10,19 @@
 
 <div id="thumbs" class="navigation">
 
-<ul class="thumbs noscript">
-<% @imageshash.each_with_index  do |images,index| %>
-	<li>
-		<%if images.assetable_type == "ReportsTranslation" %>
-		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "thumb", :title=> images.caption) unless images.blank? %>
-	  <div class="caption">
-		<a href="/showreport/<%=images.assetable_id%>" style="color:#FFF"><%=images.caption%></a>
-	  </div>
-	<%end%> 
-    </ul>
-<%end%>
-</ul>
-<div style="clear: both;"></div>
+	<ul class="thumbs noscript">
+		<% @imageshash.each_with_index  do |images,index| %>
+			<li>
+				<%if images.assetable_type == "ReportsTranslation" %>
+			       <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "thumb", :title=> images.caption) unless images.blank? %>
+				  <div class="caption">
+					<a href="/showreport/<%=images.assetable_id%>" style="color:#FFF"><%=images.caption%></a>
+				  </div>
+				<%end%> 
+			</li>
+		<%end%>
+	</ul>
+   <div style="clear: both;"></div>
 </div>
 
 
