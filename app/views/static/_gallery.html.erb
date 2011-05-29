@@ -1,12 +1,28 @@
-<ul class="thumbs noscript">
+<div id="gallery" class="content">
+	<div id="controls" class="controls"></div>
+	<div class="slideshow-container">
+		<div id="loading" class="loader"></div>
+		<div id="slideshow" class="slideshow"></div>
+	</div>
+
+	<div id="caption" class="caption-container"></div>
+</div>
+
+<div id="thumbs" class="navigation">
+
+<ul class="thumbs">
 <% @imageshash.each_with_index  do |images,index| %>
 	<li>
 		<%if images.assetable_type == "ReportsTranslation" %>
 		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "thumb", :title=> images.caption) unless images.blank? %>
 	  <div class="caption">
-		<a href="/showreport/<%=images.assetable_id%>"><%=images.caption%></a>
+		<a href="/showreport/<%=images.assetable_id%>" style="color:#FFF"><%=images.caption%></a>
 	  </div>
 	<%end%> 
     </ul>
 <%end%>
 </ul>
+<div style="clear: both;"></div>
+</div>
+
+
