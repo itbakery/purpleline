@@ -75,7 +75,16 @@
   <!-- end header -->
   <div class="span-24 page_header last" id="banner">
     <div id="feature"><%= render :partial => '/static/s3slider'%></div>
-    <div id="selectlocation"><%= render :partial => '/static/selectlocation'%> </div>
+
+   
+      <%if session[:lang]=="en" %>
+     	 <div id="selectlocation_en">
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	<div id="selectlocation_th">
+      <%end%>     
+          <%= render :partial => '/static/selectlocation'%> 
+      </div>
   </div>
   <div class="span-24 page_header  last">
       <div id="masktext" class="masktext" > 

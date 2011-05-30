@@ -1127,13 +1127,22 @@ position:relative;
   float: left;
   
 }
-#selectlocation {
+#selectlocation_en {
   float: right;
-  background: url("../images/selectlocation.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/selectlocation_en.png") no-repeat scroll 0 0 transparent;
   position: relative;
   width: 320px;
   height: 280px;
 }
+
+#selectlocation_th {
+  float: right;
+  background: url("../images/selectlocation_th.png") no-repeat scroll 0 0 transparent;
+  position: relative;
+  width: 320px;
+  height: 280px;
+}
+
 
 #destination_dropdown {
   -moz-border-radius: 4px 4px 4px 4px;
