@@ -26,7 +26,7 @@
         <% @reports_translations.each do |reports_translation| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
-            <%= reports_translation.id %>-<%= Report.find(reports_translation.id).name %>
+            <%= reports_translation.id %>-<%= Report.find(reports_translation.id).name rescue nil %>
           </td>
           <td>
             <%= reports_translation.report_id %>
