@@ -32,7 +32,7 @@
             <%= reports_translation.report_id %>
           </td>          
           <td>
-            <%= reports_translation.reports_type_id %>-<%= ReportsType.find(reports_translation.reports_type_id).name_th %>
+            <%= reports_translation.reports_type_id %>-<%= ReportsType.find(reports_translation.reports_type_id).name_th rescue nil%>
           </td>           
 
           <td>
