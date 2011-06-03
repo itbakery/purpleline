@@ -1,6 +1,6 @@
 <ul id="marquee" class="marquee">
   <% @announces.each do |announce| %>
          <img src="../images/bullet-hot.gif" />
-         <a href="/announce/<%=announce.id%>" style="font-size:17px; margin-right: 10px;text-decoration:none;"><%=truncate(announce.title,:length=>100,:omission=>"...")%></a>  
+         <a href="/announce/<%=announce.id%>" style="font-size:17px; margin-left:5px;margin-right: 10px;text-decoration:none;"><%=truncate(announce.title,:length=>100,:omission=>"...")%></a>  
   <%end%>
 </ul>
