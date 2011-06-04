@@ -1,7 +1,7 @@
 <% @imageshash.each_with_index  do |images,index| %>
 	<div class="thumb">
 		<%if images.assetable_type == "ReportsTranslation" %>
-		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "lightbox", :title=> images.caption + </br> test) unless images.nil? %>
+		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "lightbox", :title=> images.caption + "</br> test") unless images.nil? %>
 		<div class="phototitle">
 		<a href="/showreport/<%=images.assetable_id%>"><%=truncate(images.caption,:length=>12,:omission=>"...")%></a>
 	  </div>
