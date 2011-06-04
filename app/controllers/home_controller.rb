@@ -15,7 +15,7 @@ class HomeController < ApplicationController
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"   	
   	
-  	@imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id').limit(12)
+  	@imageshash = PurpleAsset.where("type=?","Report::Image").order("created_at desc").group('assetable_id').limit(12)
     @stations = StationsTranslation.all
     @userip = request.env['REMOTE_ADDR']
     #@member = Member.new
@@ -59,7 +59,7 @@ class HomeController < ApplicationController
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"   	
 
-    @imageshash = PurpleAsset.where("type=?","Report::Image").group('assetable_id')
+    @imageshash = PurpleAsset.where("type=?","Report::Image").order("created_at desc").group('assetable_id')
   	render :layout=>"gallery"
 
   end
