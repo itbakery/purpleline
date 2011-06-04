@@ -47,13 +47,7 @@
 
 
    <div class="group" id="tabs-2">
-        <%if !@reports_translation.images.blank?%>
-            <%@reports_translation.images.each do |image|%>
-            <p><%= image_tag  image.url(:middle)%></p>
-            <%end%>
-        <%else%>
-            <p>sorry there is no images </p>
-        <%end%>
+
         
 	     <%f.fields_for :images do |image_form| %>
              <%=render 'image_fields', :f=>image_form %>

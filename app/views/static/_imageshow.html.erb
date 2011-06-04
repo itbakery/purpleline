@@ -1,10 +1,10 @@
 <% @imageshash.each_with_index  do |images,index| %>
 	<div class="thumb">
-	    <% captionthai = images.caption_en rescue nil %>
+	    <% captionthai = images.caption_en rescue nil  %>
 	    <% captionen  = images.caption rescue nil %>
-	    <% showtext = #{captionthai}\r\n#{captionen} %>
+	    <% showtext = "#{captionthai}\r\n#{captionen}" %>
 		<%if images.assetable_type == "ReportsTranslation" %>
-		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "lightbox", :title=> images.caption  ) unless images.nil? %>
+		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "lightbox", :title=> "#{showtext}"  ) unless images.nil? %>
 		<div class="phototitle">
 		<a href="/showreport/<%=images.assetable_id%>"><%=truncate(images.caption,:length=>12,:omission=>"...")%></a>
 	  </div>

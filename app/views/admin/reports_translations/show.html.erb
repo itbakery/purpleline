@@ -47,6 +47,8 @@
         <p>
         <%if !@reports_translation.images.nil?%>
             <%@reports_translation.images.each do |image|%>
+            <p>Eng:<%=image.caption %></p>
+            <p>Thai:<%=image.caption_en %></p>
             <p><%= image_tag   image.url(:middle)%></p>
             <%end%>
         <%else%>
