@@ -13,7 +13,7 @@
 			<% @imageshash.each_with_index  do |images,index| %>
 				<li>
 					<%if images.assetable_type == "ReportsTranslation" %>
-					   <%= link_to(image_tag(images.url(:thumb)), images.url(:large),:width=>"600px", :class => "thumb", :title=> "images.caption" + "</br>test" ) unless images.blank? %>
+					   <%= link_to(image_tag(images.url(:thumb)), images.url(:large),:width=>"600px", :class => "thumb", :title=>images.caption ) unless images.blank? %>
 					  <div class="caption">
 						<a href="/showreport/<%=images.assetable_id%>" style="color:#FFF"><%=images.caption%></a>
 					  </div>
