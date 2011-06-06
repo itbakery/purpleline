@@ -9,8 +9,8 @@ class HomeController < ApplicationController
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
   	@announces =  AnnouncesTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"  	
   	
-  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
-  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"  
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
+  	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"  
 
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(7) if session[:lang]=="th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("stop_on >= ?",Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(7) if session[:lang]=="en"   	
