@@ -1,6 +1,6 @@
   <div class="group">
     <%= f.hidden_field :user_id, :class => 'text_field' %>
-    Prepare by: <%= @current_user.email %>
+    Prepare by: <%= @current_user.email rescue nil %>
   </div>
 
 <ol class="formatcol-three">

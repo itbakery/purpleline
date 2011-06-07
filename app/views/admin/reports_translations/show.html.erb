@@ -11,7 +11,7 @@
       
         <p>
           <b><%= t("activerecord.attributes.admin_reports_translation.report_id", :default => t("activerecord.labels.report_id", :default => "Report")) %>:</b>
-          <%= Report.find(@reports_translation.report_id).name %>
+          <%= Report.find(@reports_translation.report_id).name rescue nil %>
         </p>
 
         <p>
