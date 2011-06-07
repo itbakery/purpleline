@@ -8,7 +8,7 @@
 			   <li>
                    <%report.order("created_at DESC").each do  |ann|%>
 						<h3 class="blockReplace" style="padding-top:10px;"> 
-						  <a href="/announce/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none"> <%=ann.title%> </a>
+						  <a href="/showreport/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none"><%=image_tag(ann.images[0].url(:thumb))%> <%=ann.title%> </a>
 						</h3>
 
 						 <div class="group">
