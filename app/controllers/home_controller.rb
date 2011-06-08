@@ -168,7 +168,7 @@ class HomeController < ApplicationController
   		@reports = ReportsTranslation.order("start_on desc")
   	end
   	
-  	@imageshash = PurpleAsset.where("type=?","Report::Image").order("created_at desc").group('assetable_id')
+  	@imageshash = PurpleAsset.where("type=?","Report::Image").order("created_at desc").group('assetable_id').limit(6)
   	@allreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allreports = ReportsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	
