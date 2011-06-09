@@ -97,17 +97,9 @@
     <img src="../images/global-footer-line.jpg">
   <div class="span-8" id="project">
      <div class="boxmenu">
-        
-					<%if session[:lang]=="en" %>
-					<a  href="/mrtaview/16"> <img src="../images/contruction.png"></a>
-					 <h2 class="section-title">Latest News&Events</h2>
-					<%end%>
-					<%if session[:lang]=="th" %>
-					<a  href="/mrtaview/40"> <img src="../images/contruction.png"></a>
-					 <h2 class="section-title">ข่าวและเหตุการณ์ล่าสุด</h2>
-					<%end%>          
+	      <%= render :partial => 'static/new'%>      
           <%= render :partial => 'static/event'%>
-          <%= render :partial => 'static/new'%>
+
      </div>
   </div>
   <!-- end project -->

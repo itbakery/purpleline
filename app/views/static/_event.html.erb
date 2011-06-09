@@ -1,3 +1,9 @@
+	<%if session[:lang]=="en" %>
+		<h2 class="section-title">Latest Events</h2>
+	<%end%>
+		<%if session[:lang]=="th" %>
+		<h2 class="section-title">เหตุการณ์ล่าสุด</h2>
+	<%end%> 
 <ul >
   <% @events.each do |event|%>
      <li style="min-height:4em;" >

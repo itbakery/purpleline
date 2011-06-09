@@ -1,4 +1,9 @@
-
+	<%if session[:lang]=="en" %>
+		<h2 class="section-title">Latest News</h2>
+	<%end%>
+		<%if session[:lang]=="th" %>
+		<h2 class="section-title">ข่าวล่าสุด</h2>
+	<%end%> 
 
 <ul >
   <% @news.each do |newletter|%>
