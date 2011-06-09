@@ -97,6 +97,12 @@
     <img src="../images/global-footer-line.jpg">
   <div class="span-8" id="project">
      <div class="boxmenu">
+    <%if session[:lang]=="en" %>
+        <a  href="/mrtaview/16"> <img src="../images/contruction.png"></a>
+     <%end%>
+    <%if session[:lang]=="th" %>
+        <a  href="/mrtaview/40"> <img src="../images/contruction.png"></a>
+    <%end%>
 	      <%= render :partial => 'static/new'%>      
           <%= render :partial => 'static/event'%>
 
