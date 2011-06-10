@@ -2,7 +2,7 @@
 	<div class="thumb">
 	    <% captionthai = images.caption_en rescue nil  %>
 	    <% captionen  = images.caption rescue nil %>
-	    <% showtext = "#{captionthai}\r\n#{captionen}" %>
+      <% showtext = "#{captionthai}</br>#{captionen}" %>
 		<%if images.assetable_type == "ReportsTranslation" %>
 		   <%= link_to(image_tag(images.url(:thumb)), images.url(:large), :class => "lightbox", :title=> "#{showtext}"  ) unless images.nil? %>
 		<div class="phototitle">
