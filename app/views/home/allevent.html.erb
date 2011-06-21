@@ -1,0 +1,16 @@
+<ul>
+    	<%if session[:lang]=="en" %>
+     	 <h2 style="margin-top:15px;">All News-Events</h2>
+      <%end%>
+      <%if session[:lang]=="th" %>
+     	 <h2 style="margin-top:15px;">ข่าวสารทั้งหมด</h2>
+      <%end%> 
+
+<% @events.each do |event|%>
+       <li class=<%=cycle('even', 'odd')%>
+        <span style="font-size:14px;">
+          <a href="/event/<%=event.id%>"><%=event.title%> </a>
+       </span>  
+ <%end%>
+</ul>
+
