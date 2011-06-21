@@ -64,7 +64,8 @@ class HomeController < ApplicationController
 
   end
   
-  def category  	
+  def category  
+  session[:lang] = params[:lang] || "th"	
     @announces = []
   	if params[:id]
   		@category = Category.find(params[:id])	
@@ -76,7 +77,8 @@ class HomeController < ApplicationController
   render :layout=>"announce"
   end
   
-    def eventstype  	
+    def eventstype  
+    session[:lang] = params[:lang] || "th"	
     @events = []
   	if params[:id]
   		@eventstype = EventsType.find(params[:id])	
@@ -89,6 +91,7 @@ class HomeController < ApplicationController
   end
   
     def reportstype  	
+    session[:lang] = params[:lang] || "th"
     @reports = []
   	if params[:id]
   		@reportstype = ReportsType.find(params[:id])	
@@ -100,7 +103,8 @@ class HomeController < ApplicationController
   render :layout=>"report"
   end
 
-  def announcement  	
+  def announcement  
+  session[:lang] = params[:lang] || "th"	
    if params[:id]
 			 @announces = AnnouncesTranslation.where("id=?",params[:id]).where("publish =?",1)
 			 coordinates = [@announces.first.latitude,@announces.first.longtitude]
@@ -132,7 +136,8 @@ class HomeController < ApplicationController
   render :layout=>"announce"
   end
   
-  def showevent  	
+  def showevent  
+  session[:lang] = params[:lang] || "th"	
   	if params[:id]
   		@events = EventsTranslation.where("id=?",params[:id]).where("publish =?",1)
   	coordinates = [@events.first.latitude,@events.first.longtitude]
@@ -155,6 +160,7 @@ class HomeController < ApplicationController
   end
   
   def showreport 	
+  session[:lang] = params[:lang] || "th"
   	if params[:id]
   		@reports = ReportsTranslation.where("id=?",params[:id]).where("publish =?",1)
   	coordinates = ["#{@reports.first.latitude rescue nil}","#{@reports.first.longtitude rescue nil}"]
@@ -178,7 +184,8 @@ class HomeController < ApplicationController
  	  render :layout=>"report"
   end
   
-  def shownews  	
+  def shownews  
+  session[:lang] = params[:lang] || "th"	
   	if params[:id]
   	@newletters = NewslettersTranslation.where("id=?",params[:id]).where("publish =?",1)
   	unless @newletters.first.latitude.blank?
@@ -204,6 +211,7 @@ class HomeController < ApplicationController
   end
   
   def allannounce
+  session[:lang] = params[:lang] || "th"
     if params[:search] 
       @allannounces = AnnouncesTranslation.search params[:search]
     else
@@ -217,11 +225,13 @@ class HomeController < ApplicationController
   end
   
   def lasttenannounce
+  session[:lang] = params[:lang] || "th"
   	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
   	@lasttenannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
   end
   
   def monthlyannounce
+  session[:lang] = params[:lang] || "th"
   	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allannounces = AnnouncesTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	
@@ -234,6 +244,7 @@ class HomeController < ApplicationController
   
   
   def allreport
+  session[:lang] = params[:lang] || "th"
     if params[:search] 
       @reports = ReportsTranslation.search params[:search]
     else
@@ -247,6 +258,7 @@ class HomeController < ApplicationController
   end
   
   def latestreport
+  session[:lang] = params[:lang] || "th"
   	@latestreports = ReportsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc").limit(10) if session[:lang]=="th"
   	@latestreports = ReportsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc").limit(10) if session[:lang]=="en" 
   	respond_to do |format|
@@ -267,9 +279,11 @@ class HomeController < ApplicationController
   end
 
   def allevent
+  session[:lang] = params[:lang] || "th"
     if params[:search] 
       @events = EventsTranslation.search params[:search]
     else
+     
   	  @events = EventsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc") if session[:lang]=="th"
   	  @events = EventsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc") if session[:lang]=="en"
   	end
@@ -280,6 +294,7 @@ class HomeController < ApplicationController
   end
   
   def latestevent
+  session[:lang] = params[:lang] || "th"
   	@latestevents = EventsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc").limit(10) if session[:lang]=="th"
   	@latestevents = EventsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc").limit(10) if session[:lang]=="en"  	
   	respond_to do |format|
@@ -289,6 +304,7 @@ class HomeController < ApplicationController
   end
   
   def monthlyevent
+  session[:lang] = params[:lang] || "th"
   	@events = EventsTranslation.where("publish =?",1).where("language_id=?",1).order("created_at desc") if session[:lang]=="th"
   	@events = EventsTranslation.where("publish =?",1).where("language_id=?",2).order("created_at desc") if session[:lang]=="en"
   	
@@ -301,6 +317,7 @@ class HomeController < ApplicationController
   
   
   def  allnews
+  session[:lang] = params[:lang] || "th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	respond_to do |format|
@@ -310,6 +327,7 @@ class HomeController < ApplicationController
   end
   
   def lasttennews
+  session[:lang] = params[:lang] || "th"
   	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(10) if session[:lang]=="th"
   	@lasttennewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(10) if session[:lang]=="en"  	
 	  	respond_to do |format|
@@ -319,6 +337,7 @@ class HomeController < ApplicationController
   end
   
   def monthlynews
+  session[:lang] = params[:lang] || "th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc") if session[:lang]=="th"
   	@allnewletters = NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc") if session[:lang]=="en"
   	
@@ -337,11 +356,13 @@ class HomeController < ApplicationController
   end
     
   def event
+  session[:lang] = params[:lang] || "th"
   	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
   	@events =  EventsTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"  
   end
   
   def  newletter
+  session[:lang] = params[:lang] || "th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",1).order("start_on desc").limit(5) if session[:lang]=="th"
   	@news =  NewslettersTranslation.where("start_on <=?", Time.now).where("publish =?",1).where("language_id=?",2).order("start_on desc").limit(5) if session[:lang]=="en"    	
   end
