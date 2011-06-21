@@ -77,7 +77,7 @@ class HomeController < ApplicationController
   render :layout=>"announce"
   end
   
-    def eventstype  
+  def eventstype  
     session[:lang] = params[:lang] || "th"	
     @events = []
   	if params[:id]
@@ -86,11 +86,13 @@ class HomeController < ApplicationController
   			@events <<  EventsTranslation.where(:event_id=>a.id).where("language_id=?",1)  if session[:lang]=="th"
   			@events <<  EventsTranslation.where(:event_id=>a.id).where("language_id=?",2)  if session[:lang]=="en"
   		end		
-   end  
-  render :layout=>"event"
+    end  
+    render :layout=>"event"
   end
   
-    def reportstype  	
+  
+  
+  def reportstype  	
     session[:lang] = params[:lang] || "th"
     @reports = []
   	if params[:id]

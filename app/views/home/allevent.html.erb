@@ -9,7 +9,7 @@
 <% @events.each do |event|%>
        <li class=<%=cycle('even', 'odd')%>
         <span style="font-size:14px;">
-          <a href="/event/<%=event.id%>"><%=event.title%> </a>
+          <a href="/showevent/<%=event.id%>"><%=event.title%> </a>
        </span>  
  <%end%>
 </ul>

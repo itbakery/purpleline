@@ -8,7 +8,7 @@
 
 <%  @events.each do |event|%>
     <li class="<%=cycle('even', 'odd')%>" style="margin-top:5px;margin-buttom:5px;">
-        <div style="width:500px"><a href="/event/<%=event.id%>" ;><%=event.title%> </a></div>
+        <div style="width:500px"><a href="/showevent/<%=event.id%>" ;><%=event.title%> </a></div>
     </li>     
  <%end%>
 </ul>
