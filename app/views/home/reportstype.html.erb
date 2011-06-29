@@ -7,10 +7,7 @@
         <% unless report.nil? %>
 			   <li>
                    <%report.order("created_at DESC").each do  |ann|%>
-						<h3 class="blockReplace" style="padding-top:10px;"> 
-						<!--
-						  <a href="/showreport/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none;text-align: top;"><%=image_tag(ann.images[0].url(:thumb))%> <span style="text-align:top;"><%=ann.title%> </span></a>
-						-->
+						<h3 class="blockReplace" style="padding-top:10px;"> a href="/showreport/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none;text-align: top;"><%=image_tag(ann.images[0].url(:thumb))%> <span style="text-align:top;">
 						<a href="/showreport/<%=ann.id%>" style="color:#FFFFFF;text-decoration:none;text-align: top;"><span style="text-align:top;"><%=ann.title%> </span></a>
 						</h3>
 
