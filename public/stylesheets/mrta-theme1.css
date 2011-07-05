@@ -1123,7 +1123,7 @@ position:relative;
 /*--- select location-----------------------------*/
 #banner {
   overflow: hidden;
-  z-index: -1;
+  z-index: -10;
 }
 #feature {
   position: relative;
