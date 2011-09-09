@@ -109,6 +109,40 @@ border:medium none;
   color: #15ADFF;
 
 }
+
+
+ul.marquee {
+	/* required styles */
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+
+	/* optional styles for appearance */
+	width: 946px;
+	height: 50px; /* height should be included to reserve visual space for the marquee */
+
+	background-color: #f2f2ff;
+	border: 2px solid #08084d;
+}
+
+ul.marquee li {
+	/* required styles */
+	top: -999em;
+	left: 0;
+	float:left;
+	display: block;
+	white-space: nowrap; /* keep all text on a single line */
+
+	/* optional styles for appearance */
+	font: 14px Arial, Helvetica, sans-serif;
+	padding: 3px 5px;
+}
+
+
 #announcebox ul li{
 border-bottom:1px solid #fff;
 }
@@ -118,25 +152,27 @@ border-bottom:1px solid #fff;
 -moz-border-radius-bottomright:5px;
 
 background:url("../images/subnav_background.gif") repeat-x repeat-y scroll 0 0 transparent;
-*/
+
 background: #FAFAFA;
+* text-shadow:1px 1px 0 rgba(255, 255, 255, 0.6);
+*/
 border-color:#FAFAFA #DDDDDD #D2D2D2;
 border-left:1px solid #DDDDDD;
 border-right:1px solid #DDDDDD;
 border-style:solid;
 border-width:1px;
-height:45px;
 padding:0 10px;
 position:relative;
 z-index:3;
 margin-top:10px;
 line-height:1.2em;
-text-shadow:1px 1px 0 rgba(255, 255, 255, 0.6);
+
 }
 
 #announcebox  .group {
   border-top:1px solid #BEDCE7;
-
+  width:660px;
+  clear:both;
 }
 
 #announcebox   .envelope {
@@ -147,6 +183,7 @@ border-right:1px solid #BEDCE7;
 padding:0 0.7em 0.7em;
 overflow:hidden;
 position:relative;
+border-radius: 4px 4px 4px 4px;
 }
 
 #announcebox .left {
@@ -176,9 +213,8 @@ clear:both;
 color:#333333;
 display:block;
 float:left;
-font-weight:bold;
 margin-right:10px;
-margin-top:-1px;
+margin-top:8px;
 margin-bottom:5px;
 padding:5px;
 text-align:center;
@@ -205,7 +241,9 @@ line-height:100%;
 }
 
 #menuleft li {
-   background: -moz-linear-gradient(center top , #EEEEEE, #BBBBBB) repeat scroll 0 0 transparent;
+
+   /* background: -moz-linear-gradient(center top , #EEEEEE, #BBBBBB) repeat scroll 0 0 transparent;*/
+   background: #EEEEEE;
    border-color: -moz-use-text-color #777777 #777777;
    font-size: 1.5em;
    min-height:20px; 
@@ -1085,19 +1123,29 @@ position:relative;
 /*--- select location-----------------------------*/
 #banner {
   overflow: hidden;
+  z-index: -10;
 }
 #feature {
   position: relative;
   float: left;
   
 }
-#selectlocation {
+#selectlocation_en {
   float: right;
-  background: url("../images/selectlocation.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/selectlocation_en.png") no-repeat scroll 0 0 transparent;
   position: relative;
   width: 320px;
   height: 280px;
 }
+
+#selectlocation_th {
+  float: right;
+  background: url("../images/selectlocation_th.png") no-repeat scroll 0 0 transparent;
+  position: relative;
+  width: 320px;
+  height: 280px;
+}
+
 
 #destination_dropdown {
   -moz-border-radius: 4px 4px 4px 4px;
@@ -1308,8 +1356,8 @@ div#containerribbon {
     .extruder.left.a .flap .flapLabel{
       background:#772B14;
     }
-.odd {background :#BFB3CB;margin-top:5px;margin-bottom:5px;}
-.even {background :#FFFFFF;margin-top:5px;margin-bottom:5px;}
+.odd {background :#BFB3CB;margin-top:2px;margin-bottom:2px; padding: 5px 5px;font-size:14px;color:#000;}
+.even {background :#FFFFFF;margin-top:5px;margin-bottom:5px;padding: 5px 5px;font-size:14px;color:#000;}
 
 
 
@@ -1337,3 +1385,61 @@ font-size:13px;
 width: 130px;
 margin: 0 3px 3px 3px;
 } 
+.black_overlay{
+			display: none;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			z-index:1001;
+			-moz-opacity: 0.8;
+			opacity:.80;
+			filter: alpha(opacity=80);
+		}
+.white_content {
+			display: none;
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			padding: 16px;
+			border: 16px solid orange;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+		}
+		
+.blockReplace {
+    background-color: #1F4155;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    float: left;
+    font-size: 16px;
+    height: 85px;
+    line-height: 20px;
+    padding: 10px 20px;
+    width:642px;
+    clear :both;
+}
+
+#masktext
+{
+   width: 950px;
+   height: 35px;
+   display:block;
+   overflow:hidden; /* to hide the text */
+   position: relative;
+   background: #ECEA8C;
+}
+
+#masktext ul
+{
+   list-style-type: none;
+   margin: 0px;
+   padding: 5px;
+   position: absolute;
+   height:110%;
+}

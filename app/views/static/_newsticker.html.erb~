@@ -1,7 +1,6 @@
-<ul id="ticker01">
+<ul id="marquee" class="marquee">
   <% @announces.each do |announce| %>
-     <li>
-      <span class="badge"> <%=announce.start_on%> </span><a href="/announce/<%=announce.id%>"><%=truncate(announce.title,:length=>120,:omission=>"...")%></a>
-     </li>
+         <img src="../images/bullet-hot.gif" />
+         <a href="/announce/<%=announce.id%>" style="line-height:100%;font-size:17px; margin-left:5px;margin-right: 10px;text-decoration:none;"><%=truncate(announce.title,:length=>100,:omission=>"...")%></a>  
   <%end%>
 </ul>
