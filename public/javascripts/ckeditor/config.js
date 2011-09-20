@@ -37,7 +37,7 @@ CKEDITOR.editorConfig = function( config )
         ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
         ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
         ['Link','Unlink','Anchor'],
-        ['Image','Embed','Flash','youtube','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
+        ['Image','Embed','Flash','Youtube','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
     ];
 };
 

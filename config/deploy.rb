@@ -9,9 +9,9 @@ set :deploy_to, "/home/#{application}"
 
 default_run_options[:pty] = true
 ssh_options[:port] = 8022
-role :web, "mrta-purpleline.com"
-role :app, "mrta-purpleline.com"
-role :db,  "mrta-purpleline.com", :primary => true
+role :web, "203.146.127.131"
+role :app, "203.146.127.131"
+role :db,  "203.146.127.131", :primary => true
 
 
 # If you are using Passenger mod_rails uncomment this:
