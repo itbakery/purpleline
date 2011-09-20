@@ -22,7 +22,7 @@ CKEDITOR.editorConfig = function( config )
   //config.startupFocus = true;
   
   // works only with en, ru, uk languages
-  config.extraPlugins = "embed,attachment";
+  config.extraPlugins = "embed,attachment,youtube";
   
   config.toolbar = 'Easy';
   
@@ -37,7 +37,7 @@ CKEDITOR.editorConfig = function( config )
         ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
         ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
         ['Link','Unlink','Anchor'],
-        ['Image','Embed','Flash','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
+        ['Image','Embed','Flash','youtube','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
     ];
 };
 
