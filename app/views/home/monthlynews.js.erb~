@@ -1,3 +1,0 @@
-jQuery(".container").html("<%=escape_javascript(render(:partial=>'layout/newsletters'))%>");
-jQuery("#display").html("<%=escape_javascript(render(:partial=>'monthlynews'))%>");
-

@@ -1,2 +1,0 @@
-jQuery("#feature").html("<%= escape_javascript(render(:partial => "filtermap",:locals=>{:map => @map}))%>");
-
