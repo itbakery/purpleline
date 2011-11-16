@@ -6,3 +6,9 @@ config/database.yml
 public/system/*
 public/report/*
 public/icons/*
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
