@@ -1,14 +1,16 @@
 
+default_run_options[:pty] = true
 set :application, "purpleline"
 set :repository,  "git@github.com:itbakery/purpleline.git"
 set :user, "admin"
 set :scm, :git
-set  :run_method, :run
-set  :ssh_options, {:forward_agent => true }
+set :run_method, :run
 set :deploy_to, "/home/#{application}"
-
-default_run_options[:pty] = true
+set :scm_verbose,true
+set :branch, "master"
+set :deploy_via, :remote_cache
 ssh_options[:port] = 8022
+ssh_options[:forward_agent] = true
 role :web, "203.146.127.131"
 role :app, "203.146.127.131"
 role :db,  "203.146.127.131", :primary => true
