@@ -1,4 +1,4 @@
-
+require "bundler/capistrano"
 default_run_options[:pty] = true
 set :application, "purpleline"
 set :repository,  "git@github.com:itbakery/purpleline.git"
