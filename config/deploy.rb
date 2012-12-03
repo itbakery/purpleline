@@ -5,9 +5,16 @@ set :repository,  "git@github.com:itbakery/purpleline.git"
 set :user, "admin"
 set :scm, :git
 set :run_method, :run
-set :deploy_to, "/home/#{application}"
+set :deploy_to, "/home/admin/#{application}"
 set :scm_verbose,true
 set :branch, "master"
+#==== intetration with capistrano
+require 'rvm/capistrano'
+set :rvm_type, :user
+#set :rvm_ruby_string, "1.9.3"
+set :rvm_bin_path, "/home/admin/.rvm/bin"
+set :rvm_ruby_string, "ruby-1.9.3-p327@purpleline"
+
 set :deploy_via, :remote_cache
 ssh_options[:port] = 8022
 ssh_options[:forward_agent] = true
