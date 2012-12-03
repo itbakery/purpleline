@@ -31,7 +31,7 @@ gem 'capistrano'
 
 gem 'mysql'
 gem 'rmagick'
-gem 'paperclip'
+gem 'paperclip', "~> 3.3.1"
 gem 'rack'
 gem 'will_paginate', '~>3.0.pre2'
 gem 'meta_where'
