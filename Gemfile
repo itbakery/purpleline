@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2' , '0.2.7'
+#gem 'mysql2' , '0.2.7'
+gem 'mysql2' 
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,7 +35,7 @@ gem 'rmagick'
 gem 'paperclip', "~> 3.3.1"
 gem 'rack'
 gem 'will_paginate', '~>3.0.pre2'
-gem 'meta_where'
+#gem 'meta_where'
 gem 'json'
 gem 'responds_to_parent'
 gem 'jquery-rails'
@@ -48,7 +49,7 @@ gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
 gem 'rails3-generators'
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 gem 'dynamic_form'
-gem 'web-app-theme'
+gem 'web-app-theme', :git =>'git://github.com/pilu/web-app-theme.git'
 gem 'acts_as_tree'
 gem 'friendly_id', "~> 3.1"
 gem 'passenger'
@@ -65,9 +66,6 @@ gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch
 gem 'devise'
 gem 'cancan'
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
-gem 'thinking-sphinx',
-  :git     => 'git://github.com/freelancing-god/thinking-sphinx.git',
-  :branch  => 'rails3',
-  :require => 'thinking_sphinx'
+gem 'thinking-sphinx'
 
 
