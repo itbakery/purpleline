@@ -9,9 +9,9 @@ set :deploy_to, "/home/admin/#{application}"
 set :scm_verbose,true
 set :branch, "master"
 #==== intetration with capistrano
-#require 'rvm/capistrano'
+require 'rvm/capistrano'
 set :rvm_type, :user
-#set :rvm_ruby_string, "1.9.3"
+set :rvm_ruby_string, "1.9.3"
 set :rvm_bin_path, "/home/admin/.rvm/bin"
 #set :rvm_ruby_string, "ruby-1.9.3-p286@purpleline"
 #set :rvm_ruby_string, "ruby-1.9.3-p327@purpleline"

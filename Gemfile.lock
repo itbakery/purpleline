@@ -153,6 +153,8 @@ GEM
     riddle (1.5.3)
     rmagick (2.13.1)
     ruby-openid (2.2.2)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -202,6 +204,7 @@ DEPENDENCIES
   responds_to_parent
   rmagick
   ruby-openid
+  rvm-capistrano
   thinking-sphinx
   web-app-theme!
   will_paginate (~> 3.0.pre2)

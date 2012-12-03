@@ -67,5 +67,6 @@ gem 'devise'
 gem 'cancan'
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 gem 'thinking-sphinx'
+gem 'rvm-capistrano'
 
 
