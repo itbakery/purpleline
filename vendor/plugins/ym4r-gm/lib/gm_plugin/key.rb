@@ -8,6 +8,7 @@ module Ym4r
     
     #Class fo the manipulation of the API key
     class ApiKey
+      RAILS_ENV="production"
       #Read the API key config for the current ENV
       #unless File.exist?(RAILS_ROOT + '/config/gmaps_api_key.yml')
       #  raise GMapsAPIKeyConfigFileNotFoundException.new("File RAILS_ROOT/config/gmaps_api_key.yml not found")
