@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class HomeController < ApplicationController
-  include ActionView::Helpers::PrototypeHelper
+  #include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
   
