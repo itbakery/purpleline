@@ -1,7 +1,7 @@
 class Admin::StationsTranslationsController < ApplicationController
   layout "admin"
   before_filter :authenticate_user!  
-  include ActionView::Helpers::PrototypeHelper
+  #include ActionView::Helpers::PrototypeHelper
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
   # GET /stations_translations
