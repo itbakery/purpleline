@@ -24,6 +24,9 @@ role :app, "203.146.127.131"
 role :db,  "203.146.127.131", :primary => true
 
 
+after :deploy, "deploy:rvm:trust_rvmrc"
+after :deploy, "deploy:cleanup"
+
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
@@ -90,6 +93,11 @@ end
       ln -nfs #{shared_path}/db/sphinx #{current_path}/db/sphinx 
     CMD
   end
-
+  desc "trust rvm"
+  namespace :rvm do
+  task :trust_rvmrc do
+    run "rvm rvmrc trust #{release_path}"
+  end
+  end
 end
 
