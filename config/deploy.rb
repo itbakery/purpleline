@@ -53,9 +53,9 @@ namespace :deploy do
 task :after_update_code, :roles => :app do
 
   %w{uploads  avatars swfs ckeditor_assets map icons system report}.each do |share|
-    run "rm -rf #{release_path}/public/#{share} "
-    run "mkdir -p #{shared_path}/purple/#{share} "
-    run "ln -nfs #{shared_path}/purple/#{share} #{release_path}/public/#{share} "
+    run "rm -rf #{release_path}/public/#{share}"
+    run "mkdir -p #{shared_path}/purple/#{share}"
+    run "ln -nfs #{shared_path}/purple/#{share} #{release_path}/public/#{share}"
     run "cd #{release_path} && bundle install"
   end
 
