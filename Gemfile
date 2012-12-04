@@ -70,3 +70,4 @@ gem 'thinking-sphinx'
 gem 'rvm-capistrano'
 
 
+
