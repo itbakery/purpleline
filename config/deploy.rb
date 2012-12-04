@@ -23,7 +23,7 @@ role :web, "203.146.127.131"
 role :app, "203.146.127.131"
 role :db,  "203.146.127.131", :primary => true
 
-
+after "deploy:update_code", "deploy:bundle_install"
 after :deploy, "deploy:rvm:trust_rvmrc"
 after :deploy, "deploy:cleanup"
 
@@ -50,13 +50,12 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 
-task :after_update_code, :roles => :app do
+task :bundle_install, :roles => :app do
 
   %w{uploads  avatars swfs ckeditor_assets map icons system report}.each do |share|
     run "rm -rf #{release_path}/public/#{share}"
     run "mkdir -p #{shared_path}/purple/#{share}"
     run "ln -nfs #{shared_path}/purple/#{share} #{release_path}/public/#{share}"
-    run "cd #{release_path} && bundle install"
   end
 
 end
