@@ -1,7 +1,7 @@
 class Admin::AnnouncesTranslationsController < ApplicationController
   layout "admin"
   before_filter :authenticate_user!
-  include ActionView::Base::PrototypeHelper
+  include ActionView::Base
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
   # GET /announces_translations
