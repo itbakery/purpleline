@@ -45,7 +45,7 @@ module Purpleline
     config.filter_parameters += [:password]
     config.autoload_paths += %W( #{config.root}/app/models/ckeditor )
 
-
+    config.assets.enabled = false
 
     #ActionController::Base.asset_host = "http://www.mrta-purpleline.com"
     config.action_mailer.default_url_options = { :host => 'mrta-purpleline.com' }
