@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/galetahub/rails-ckeditor.git
-  revision: 522049946f6bcd119f830de695bc9d9792641905
-  branch: rails3
-  specs:
-    ckeditor (3.5.4)
-      mime-types (>= 1.16)
-
-GIT
   remote: git://github.com/pilu/web-app-theme.git
   revision: b7310fe5001ed03b965049f293fce3527ae98dae
   specs:
@@ -64,13 +56,16 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    ckeditor (3.6.2)
+      mime-types (~> 1.16)
+      orm_adapter (~> 0.0.5)
     cocaine (0.4.2)
     daemon_controller (1.1.0)
-    devise (2.1.2)
+    devise (2.1.0)
       bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
+      orm_adapter (~> 0.0.7)
       railties (~> 3.1)
-      warden (~> 1.2.1)
+      warden (~> 1.1.1)
     dynamic_form (1.1.4)
     erubis (2.7.0)
     fastthread (1.0.7)
@@ -98,7 +93,6 @@ GEM
     middleware (0.1.0)
     mime-types (1.19)
     multi_json (1.5.0)
-    mysql (2.9.0)
     mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -107,7 +101,7 @@ GEM
     net-ssh (2.6.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    orm_adapter (0.4.0)
+    orm_adapter (0.0.7)
     paperclip (3.3.1)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -174,7 +168,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
-    warden (1.2.1)
+    warden (1.1.1)
       rack (>= 1.0)
     will_paginate (3.0.3)
 
@@ -186,7 +180,7 @@ DEPENDENCIES
   bhm-google-maps
   cancan
   capistrano
-  ckeditor!
+  ckeditor (= 3.6.2)
   declarative_authorization!
   devise
   dynamic_form
@@ -196,7 +190,6 @@ DEPENDENCIES
   geokit-rails3
   jquery-rails
   json
-  mysql
   mysql2
   paperclip (~> 3.3.1)
   passenger
