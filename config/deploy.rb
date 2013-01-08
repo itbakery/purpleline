@@ -9,6 +9,7 @@ set :deploy_to, "/home/#{application}"
 set :scm_verbose,true
 set :branch, "master"
 #==== intetration with capistrano
+#admin meenoktam
 require 'rvm/capistrano'
 set :rvm_type, :user
 set :rvm_ruby_string, "1.9.3"
@@ -87,12 +88,12 @@ end
   task :search_index, :roles => :app do
     run "cd #{current_path} && rake ts:in RAILS_ENV=production"
   end
-  
+
   desc "Re-establish symlinks"
   task :copy_sphinx do
     run <<-CMD
       rm -rf #{current_path}/db/sphinx &&
-      ln -nfs #{shared_path}/db/sphinx #{current_path}/db/sphinx 
+      ln -nfs #{shared_path}/db/sphinx #{current_path}/db/sphinx
     CMD
   end
   desc "trust rvm"

@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/galetahub/rails-ckeditor.git
-  revision: 522049946f6bcd119f830de695bc9d9792641905
-  branch: rails3
-  specs:
-    ckeditor (3.5.4)
-      mime-types (>= 1.16)
-
-GIT
   remote: git://github.com/pilu/web-app-theme.git
   revision: b7310fe5001ed03b965049f293fce3527ae98dae
   specs:
@@ -64,6 +56,9 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    ckeditor (3.7.3)
+      mime-types
+      orm_adapter
     cocaine (0.4.2)
     daemon_controller (1.1.0)
     devise (2.1.2)
@@ -76,7 +71,7 @@ GEM
     fastthread (1.0.7)
     friendly_id (3.3.3.0)
       babosa (~> 0.3.0)
-    geoip (1.2.0)
+    geoip (1.2.1)
     geokit (1.6.5)
       multi_json
     geokit-rails3 (0.1.5)
@@ -95,7 +90,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
-    multi_json (1.4.0)
+    multi_json (1.5.0)
     mysql (2.9.0)
     mysql2 (0.3.11)
     net-scp (1.0.4)
@@ -146,7 +141,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.0.2)
+    rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
     responds_to_parent (1.1.0)
@@ -182,7 +177,7 @@ DEPENDENCIES
   bhm-google-maps
   cancan
   capistrano
-  ckeditor!
+  ckeditor
   declarative_authorization!
   devise
   dynamic_form

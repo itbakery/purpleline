@@ -6,7 +6,7 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'mysql2' , '0.2.7'
-gem 'mysql2' 
+gem 'mysql2'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -62,12 +62,13 @@ gem 'geokit-rails3'
 #gem 'bhm-google-maps'
 #gem 'geokit-rails'
 gem 'bhm-google-maps'
-gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
+gem 'ckeditor'
+#gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
 gem 'devise'
 gem 'cancan'
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 gem 'thinking-sphinx'
 gem 'rvm-capistrano'
-
+#gem 'rails-ckeditor'
 
 
