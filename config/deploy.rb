@@ -26,7 +26,7 @@ role :db,  "203.146.127.131", :primary => true
 
 #after "deploy:update_code", "deploy:bundle_install"
 after "deploy:update_code", :roles => [:web] do
-   run "cd #{release_path} && bundle install --without development test"
+   run "cd #{release_path} && RAILS_ENV=production bundle install "
 end
 after :deploy, "deploy:rvm:trust_rvmrc"
 after :deploy, "deploy:cleanup"
