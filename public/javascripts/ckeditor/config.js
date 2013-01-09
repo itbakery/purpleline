@@ -1,43 +1,32 @@
-/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
+/**
+ * @license Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.html or http://ckeditor.com/license
+ */
 
-CKEDITOR.editorConfig = function( config )
-{
-  config.PreserveSessionOnFileBrowser = true;
-  // Define changes to default configuration here. For example:
-  config.language = 'en';
-  // config.uiColor = '#AADC6E';
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here.
+	// For the complete reference:
+	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
-  //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form'] ; 
-  
-  config.height = '400px';
-  config.width = '600px';
-  
-  //config.resize_enabled = false;
-  //config.resize_maxHeight = 2000;
-  //config.resize_maxWidth = 750;
-  
-  //config.startupFocus = true;
-  
-  // works only with en, ru, uk languages
-  config.extraPlugins = "embed,attachment,youtube";
-  
-  config.toolbar = 'Easy';
-  
-  config.toolbar_Easy =
-    [
-        ['Source','-','Preview','Templates'],
-        ['Cut','Copy','Paste','PasteText','PasteFromWord',],
-        ['Maximize','-','About'],
-        ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-        ['Styles','Format'],
-        ['Bold','Italic','Underline','Strike','-','Subscript','Superscript', 'TextColor'],
-        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
-        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-        ['Link','Unlink','Anchor'],
-        ['Image','Embed','Flash','Youtube','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
-    ];
+	// The toolbar groups arrangement, optimized for two toolbar rows.
+	config.toolbarGroups = [
+		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'links' },
+		{ name: 'insert' },
+		{ name: 'forms' },
+		{ name: 'tools' },
+		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'others' },
+		'/',
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
+		{ name: 'styles' },
+		{ name: 'colors' },
+		{ name: 'about' }
+	];
+
+	// Remove some buttons, provided by the standard plugins, which we don't
+	// need to have in the Standard(s) toolbar.
+	config.removeButtons = 'Underline,Subscript,Superscript';
 };
-
