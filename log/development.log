@@ -1,0 +1,35 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-01-11 13:39:02 +0700
+  Processing by HomeController#index as HTML
+  Parameters: {"lang"=>"th"}
+Geokit is using the domain: localhost
+Mysql2::Error: Can't create/write to file '/tmp/#sql_1c1e_0.MYI' (Errcode: 2): SHOW FIELDS FROM `stations_translations`
+Completed 500 Internal Server Error in 151ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Can't create/write to file '/tmp/#sql_1c1e_0.MYI' (Errcode: 2): SHOW FIELDS FROM `stations_translations`):
+  app/controllers/home_controller.rb:20:in `index'
+
+Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (99.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-01-11 13:39:07 +0700
+  Processing by Admin::PagesController#index as HTML
+Geokit is using the domain: localhost
+Completed 401 Unauthorized in 105ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-01-11 13:39:07 +0700
+  Processing by Devise::SessionsController#new as HTML
+Geokit is using the domain: localhost
+Mysql2::Error: Can't create/write to file '/tmp/#sql_1c1e_0.MYI' (Errcode: 2): SHOW FIELDS FROM `users`
+Completed 500 Internal Server Error in 108ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Can't create/write to file '/tmp/#sql_1c1e_0.MYI' (Errcode: 2): SHOW FIELDS FROM `users`):
+  
+
+Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
