@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -16,7 +16,7 @@ CKEDITOR.plugins.add( 'panel',
  * @constant
  * @example
  */
-CKEDITOR.UI_PANEL = 'panel';
+CKEDITOR.UI_PANEL = 2;
 
 CKEDITOR.ui.panel = function( document, definition )
 {
@@ -136,13 +136,12 @@ CKEDITOR.ui.panel.prototype =
 					className = parentDiv.getParent().getAttribute( 'class' ),
 					langCode = parentDiv.getParent().getAttribute( 'lang' ),
 					doc = iframe.getFrameDocument();
+				// Initialize the IFRAME document body.
+				doc.$.open();
 
-				// Make it scrollable on iOS. (#8308)
-				CKEDITOR.env.iOS && parentDiv.setStyles(
-					{
-						'overflow' : 'scroll',
-						'-webkit-overflow-scrolling' : 'touch'
-					});
+				// Support for custom document.domain in IE.
+				if ( CKEDITOR.env.isCustomDomain() )
+					doc.$.domain = document.domain;
 
 				var onLoad = CKEDITOR.tools.addFunction( CKEDITOR.tools.bind( function( ev )
 					{
@@ -151,7 +150,7 @@ CKEDITOR.ui.panel.prototype =
 							this.onLoad();
 					}, this ) );
 
-				var data =
+				doc.$.write(
 					'<!DOCTYPE html>' +
 					'<html dir="' + dir + '" class="' + className + '_container" lang="' + langCode + '">' +
 						'<head>' +
@@ -163,9 +162,8 @@ CKEDITOR.ui.panel.prototype =
 						// after <body>, so it (body) becames immediatelly
 						// available. (#3031)
 						CKEDITOR.tools.buildStyleHtml( this.css ) +
-					'<\/html>';
-
-				doc.write( data );
+					'<\/html>' );
+				doc.$.close();
 
 				var win = doc.getWindow();
 
@@ -196,7 +194,6 @@ CKEDITOR.ui.panel.prototype =
 
 				holder = doc.getBody();
 				holder.unselectable();
-				CKEDITOR.env.air && CKEDITOR.tools.callFunction( onLoad );
 			}
 			else
 				holder = this.document.getById( this.id );
@@ -251,6 +248,16 @@ CKEDITOR.ui.panel.prototype =
 		block._.focusIndex = -1;
 
 		this._.onKeyDown = block.onKeyDown && CKEDITOR.tools.bind( block.onKeyDown, block );
+
+		block.onMark = function( item )
+		{
+			holder.setAttribute( 'aria-activedescendant', item.getId() + '_option' );
+		};
+
+		block.onUnmark = function()
+		{
+			holder.removeAttribute( 'aria-activedescendant' );
+		};
 
 		block.show();
 
@@ -377,12 +384,11 @@ CKEDITOR.ui.panel.block = CKEDITOR.tools.createClass(
 					return false;
 
 				case 'click' :
-				case 'mouseup' :
 					index = this._.focusIndex;
 					link = index >= 0 && this.element.getElementsByTag( 'a' ).getItem( index );
 
 					if ( link )
-						link.$[ keyAction ] ? link.$[ keyAction ]() : link.$[ 'on' + keyAction ]();
+						link.$.click ? link.$.click() : link.$.onclick();
 
 					return false;
 			}
@@ -391,10 +397,3 @@ CKEDITOR.ui.panel.block = CKEDITOR.tools.createClass(
 		}
 	}
 });
-
-/**
- * Fired when a panel is added to the document
- * @name CKEDITOR#ariaWidget
- * @event
- * @param {Object} holder The element wrapping the panel
- */

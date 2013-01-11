@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -25,7 +25,7 @@ CKEDITOR.plugins.add( 'smiley',
  * a slash.
  * @name CKEDITOR.config.smiley_path
  * @type String
- * @default <code><em>CKEDITOR.basePath</em> + 'plugins/smiley/images/'</code>
+ * @default {@link CKEDITOR.basePath} + 'plugins/smiley/images/'
  * @example
  * config.smiley_path = 'http://www.example.com/images/smileys/';
  * @example
