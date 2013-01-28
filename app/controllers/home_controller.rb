@@ -83,8 +83,8 @@ class HomeController < ApplicationController
     @events = []
   	if params[:id]
   		@eventstype = EventsType.find(params[:id])
-  		@events <<  EventsTranslation.where(:event_type_id=>@eventstype.id).where("language_id=?",1)  if session[:lang]=="th"
-  		@events <<  EventsTranslation.where(:event_type_id=>@eventstype.id).where("language_id=?",2)  if session[:lang]=="en"
+  		@events <<  EventsTranslation.where(:events_type_id =>@eventstype.id).where("language_id=?",1)  if session[:lang]=="th"
+  		@events <<  EventsTranslation.where(:events_type_id =>@eventstype.id).where("language_id=?",2)  if session[:lang]=="en"
     end
     render :layout=>"event"
   end
