@@ -11,32 +11,25 @@ CKEDITOR.editorConfig = function( config )
 
   /* Filebrowser routes */
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
-  //config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
-  config.filebrowserBrowseUrl = "/ckeditor_assets/attachment_files";
+  config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
 
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Flash dialog.
-  //config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
-  config.filebrowserFlashBrowseUrl = "/ckeditor_assets/attachment_files";
+  config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
 
   // The location of a script that handles file uploads in the Flash dialog.
-  //config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
-  config.filebrowserFlashUploadUrl = "/ckeditor_assets/attachment_files";
+  config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
 
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Link tab of Image dialog.
-  //config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
-  config.filebrowserImageBrowseLinkUrl = "/ckeditor_assets/pictures";
+  config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
 
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Image dialog.
-  //config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
-  config.filebrowserImageBrowseUrl = "/ckeditor_assets/pictures";
+  config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
 
   // The location of a script that handles file uploads in the Image dialog.
-  //config.filebrowserImageUploadUrl = "/ckeditor/pictures";
-  config.filebrowserImageUploadUrl = "/ckeditor_assets/pictures";
+  config.filebrowserImageUploadUrl = "/ckeditor/pictures";
 
   // The location of a script that handles file uploads.
-  //config.filebrowserUploadUrl = "/ckeditor/attachment_files";
-  config.filebrowserUploadUrl = "/ckeditor_assets/attachment_files";
+  config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
   // Rails CSRF token
 //  config.filebrowserParams = function(){
