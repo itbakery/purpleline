@@ -33,3 +33,5 @@ ActiveRecord::StatementInvalid (Mysql2::Error: Can't create/write to file '/tmp/
 Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
 Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
 Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
