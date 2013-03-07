@@ -186,14 +186,15 @@ jQuery(document).ready(function() {
 
     });
 
+    var pickerOpts = { dateFormat: $datepicker.RFC_822 };
     jQuery('#announces_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#announces_translation_stop_on').datepicker({numberOfMonths:2});
 
     jQuery('#events_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#events_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2});
-    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2});
+    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2, pickerOpts});
+    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2, pickerOpts});
 
     jQuery('#tasks_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#tasks_translation_stop_on').datepicker({numberOfMonths:2});
