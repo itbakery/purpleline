@@ -186,25 +186,25 @@ function updateMarker(marker, cells, opt_changeColor) {
 
    	 	});
 
-    jQuery('#announces_translation_start_on').datepicker({numberOfMonths:2,dateFormate: 'yy-mm-dd'});
-    jQuery('#announces_translation_stop_on').datepicker({numberOfMonths:2,dateFormate: 'yy-mm-dd'});
+    jQuery('#announces_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#announces_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#events_translation_start_on').datepicker({numberOfMonths:2,dateFormate: 'yy-mm-dd'});
-    jQuery('#events_translation_stop_on').datepicker({numberOfMonths:2,dateFormate: 'yy-mm-dd'});
+    jQuery('#events_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#events_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2, dateFormate: 'yy-mm-dd'});
-    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2, dateFormate: 'yy-mm-dd' });
+    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2, dateFormate: 'dd/mm/yy'});
+    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2, dateFormate: 'dd/mm/yy' });
 
-    jQuery('#tasks_translation_start_on').datepicker({numberOfMonths:2,  dateFormate: 'yy-mm-dd'});
-    jQuery('#tasks_translation_stop_on').datepicker({numberOfMonths:2,  dateFormate: 'yy-mm-dd'});
+    jQuery('#tasks_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#tasks_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#pages_translation_start_on').datepicker({numberOfMonths:2,  dateFormate: 'yy-mm-dd'});
-    jQuery('#pages_translation_stop_on').datepicker({numberOfMonths:2,  dateFormate: 'yy-mm-dd'});
+    jQuery('#pages_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#pages_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#new_events_translation_start_on').datepicker({numberOfMonths:2, dateFormate: 'yy-mm-dd'});
-    jQuery('#new_events_translation_stop_on').datepicker({numberOfMonths:2,  dateFormate: 'yy-mm-dd'});
+    jQuery('#new_events_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#new_events_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#progress_issuedate').datepicker({numberOfMonths:2,  dateFormate: 'yy-mm-dd'});
+    jQuery('#progress_issuedate').datepicker({numberOfMonths:2});
 
 
    jQuery('div.mrtalink').click(function(){location.href='http://www.mrta.co.th'});
