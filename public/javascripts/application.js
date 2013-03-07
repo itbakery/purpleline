@@ -104,11 +104,11 @@ function startDrawing(poly, name, onUpdate, color) {
 	jQuery.each(path,function(index,value){
 	  data_path += value;
     });
-     //alert("debug");   
+     //alert("debug");
      jQuery("#announces_translation_polypoint").val(data_path);
      jQuery("#events_translation_polypoint").val(data_path);
-    //end 
-    
+    //end
+
     GEvent.addListener(poly,"lineupdated",function(){
 		var newpath=[];
 		var newdata_path="";
@@ -124,7 +124,7 @@ function startDrawing(poly, name, onUpdate, color) {
          jQuery("#announces_translation_polypoint").val(newdata_path);
          jQuery("#events_translation_polypoint").val(newdata_path);
 	});
-    
+
     select("hand_b");
     var cells = addFeatureEntry(name, color);
     GEvent.bind(poly, "lineupdated", cells.desc, onUpdate);
@@ -185,38 +185,38 @@ function updateMarker(marker, cells, opt_changeColor) {
                       autoHeight: false,
 
    	 	});
-	
+
     jQuery('#announces_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#announces_translation_stop_on').datepicker({numberOfMonths:2});
-    
+
     jQuery('#events_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#events_translation_stop_on').datepicker({numberOfMonths:2});
-    
-    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2});
-    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2});    
-    
+
+    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2, dateFormate: 'yy-mm-dd'});
+    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2, dateFormate: 'yy-mm-dd' });
+
     jQuery('#tasks_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#tasks_translation_stop_on').datepicker({numberOfMonths:2});
-   
+
     jQuery('#pages_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#pages_translation_stop_on').datepicker({numberOfMonths:2});
-   
+
     jQuery('#new_events_translation_start_on').datepicker({numberOfMonths:2});
-    jQuery('#new_events_translation_stop_on').datepicker({numberOfMonths:2});  
-   
+    jQuery('#new_events_translation_stop_on').datepicker({numberOfMonths:2});
+
     jQuery('#progress_issuedate').datepicker({numberOfMonths:2});
 
-   
+
    jQuery('div.mrtalink').click(function(){location.href='http://www.mrta.co.th'});
     jQuery('div.mrtalink').css('cursor','pointer');
-   
-   
+
+
     jQuery('div.pcpl').click(function(){location.href='http://mrta-purpleline.com/project',target='_blank'});
     jQuery('div.pcpllink').css('cursor','pointer');
-   
+
     jQuery('#tabs').tabs();
-    jQuery('#tabs').tabs('paging', { cycle: true, follow: true } ); 
-   
+    jQuery('#tabs').tabs('paging', { cycle: true, follow: true } );
+
     jQuery('#menuleft  li').hover(
                     function(){
     		         jQuery('ul',this).slideDown(100);
@@ -225,11 +225,11 @@ function updateMarker(marker, cells, opt_changeColor) {
     		    	 jQuery('ul',this).slideUp(100);
     		    }
     );
-   
+
     jQuery('#memberform').dialog({autoOpen: false,width: 550,title:'move marker to your location'});
-    
-    jQuery('a[rel*=facebox]').facebox(); 
-    
+
+    jQuery('a[rel*=facebox]').facebox();
+
     jQuery('#tabs').tabs();
     jQuery('.lightbox').lightBox();
 
