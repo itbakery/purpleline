@@ -192,8 +192,8 @@ jQuery(document).ready(function() {
     jQuery('#events_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#events_translation_stop_on').datepicker({numberOfMonths:2});
 
-    jQuery('#newsletters_translation_start_on').datepicker({dateFormate: "dd/mm/yy"});
-    jQuery('#newsletters_translation_stop_on').datepicker({dateFormate: "dd/mm/yy"});
+    jQuery('#newsletters_translation_start_on').datepicker({numberOfMonths:2});
+    jQuery('#newsletters_translation_stop_on').datepicker({numberOfMonths:2});
 
     jQuery('#tasks_translation_start_on').datepicker({numberOfMonths:2});
     jQuery('#tasks_translation_stop_on').datepicker({numberOfMonths:2});
